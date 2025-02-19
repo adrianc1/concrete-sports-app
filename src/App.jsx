@@ -15,16 +15,6 @@ import {
 import { faCalendar } from '@fortawesome/free-regular-svg-icons';
 import './App.css';
 
-function TopNavBar() {
-	return (
-		<div className="topNavBar">
-			<FontAwesomeIcon icon={faGear} className="nav-icons" />
-			<h1 className="school-name">Concrete High School</h1>
-			<FontAwesomeIcon icon={faBars} className="menu-bars nav-icons" />
-		</div>
-	);
-}
-
 function Banner() {
 	return (
 		<div className="banner">
@@ -38,40 +28,46 @@ function MainPage() {
 		<div className="main-page">
 			<div className="icon-container">
 				<a href="https://www.concrete.k12.wa.us/sports/">
-					<FontAwesomeIcon icon={faBook} />
+					<FontAwesomeIcon icon={faBook} className="icon" />
 				</a>
-				<p className="icon-title">Sports Home</p>
+				<p className="icon-title">Home</p>
 			</div>
 			<div className="icon-container">
-				<a href="https://www.concrete.k12.wa.us/">
-					<FontAwesomeIcon icon={faBullhorn} />
+				<a href="https://www.maxpreps.com/news/YP0yn3hwCUKLuv3qXPmbzg/basketball-recap-concrete-comes-up-short.htm">
+					<FontAwesomeIcon icon={faBullhorn} className="icon" />
 					<p className="icon-title">Announcements</p>
 				</a>
 			</div>
 
 			<div className="icon-container">
-				<a href="https://www.concrete.k12.wa.us/hs-calendar-grid/">
-					<FontAwesomeIcon icon={faClipboardList} />
+				<a
+					href="https://www.maxpreps.com/print/schedule.aspx?schoolid=749e9af8-8e9f-44e6-aca1-cd16a602ccfc&ssid=20ea215d-54ce-4502-8305-748bdc872d49&print=1"
+					target="blank"
+				>
+					<FontAwesomeIcon icon={faClipboardList} className="icon" />
 				</a>
 				<p className="icon-title">Schedule</p>
 			</div>
 
 			<div className="icon-container">
 				<a href="https://www.concrete.k12.wa.us/hs-calendar-grid/">
-					<FontAwesomeIcon icon={faCalendar} />
+					<FontAwesomeIcon icon={faCalendar} className="icon" />
 				</a>
 				<p className="icon-title">Calendar</p>
 			</div>
 
 			<div className="icon-container">
-				<a href="" className="container">
-					<FontAwesomeIcon icon={faShareNodes} />
+				<a
+					href="https://www.maxpreps.com/wa/concrete/concrete-lions/basketball/standings/"
+					className="container"
+				>
+					<FontAwesomeIcon icon={faShareNodes} className="icon" />
 				</a>
 				<p className="icon-title">Standings</p>
 			</div>
 			<div className="icon-container">
 				<a href="" className="container">
-					<FontAwesomeIcon icon={faLocationDot} />
+					<FontAwesomeIcon icon={faLocationDot} className="icon" />
 				</a>
 				<p className="icon-title">Map</p>
 			</div>
@@ -79,7 +75,33 @@ function MainPage() {
 	);
 }
 
-function SideNavBar() {}
+function SideNavBar({ show }) {
+	return (
+		<div className={show ? 'side-nav active' : 'side-nav'}>
+			<img src="Concrete-Logo.png" alt="" className="logo" />
+			<ul>
+				<li>
+					<a href="https://www.concrete.k12.wa.us/sports/">Home</a>
+				</li>
+				<li>
+					<a href="https://www.maxpreps.com/print/schedule.aspx?schoolid=749e9af8-8e9f-44e6-aca1-cd16a602ccfc&ssid=20ea215d-54ce-4502-8305-748bdc872d49&print=1">
+						Schedule
+					</a>
+				</li>
+				<li>
+					<a href="https://www.concrete.k12.wa.us/hs-calendar-grid/">
+						Calendar
+					</a>
+				</li>
+				<li>
+					<a href="https://www.maxpreps.com/wa/concrete/concrete-lions/basketball/standings/">
+						Standings
+					</a>
+				</li>
+			</ul>
+		</div>
+	);
+}
 
 function Footer() {
 	return (
@@ -98,11 +120,20 @@ function Footer() {
 }
 
 function App() {
-	const [count, setCount] = useState(0);
+	const [showNav, setShowNav] = useState(false);
 
 	return (
 		<>
-			<TopNavBar />
+			<header className="topNavBar">
+				<img src="Concrete-Logo.png" alt="" className="nav-logo" />
+				<h1 className="school-name">Concrete High School</h1>
+				<FontAwesomeIcon
+					icon={faBars}
+					className="menu-bars nav-icons"
+					onClick={() => setShowNav(!showNav)}
+				/>
+			</header>
+			<SideNavBar show={showNav} />
 			<Banner />
 			<MainPage />
 			<Footer />
