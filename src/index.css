@@ -1,0 +1,101 @@
+*,
+html,
+body,
+#root {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: 'Open Sans', serif;
+	height: 100vh;
+	width: 100vw;
+	margin: 0;
+	padding: 0;
+	color: rgb(255, 255, 255);
+}
+
+#root {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+.topNavBar {
+	width: 100%;
+	padding: 2rem 0;
+	display: flex;
+	justify-content: space-around;
+	background-color: rgb(69, 30, 107);
+}
+
+.school-name {
+	font-weight: 400;
+	font-size: 1.5rem;
+}
+.nav-icons {
+	font-size: 1.5rem;
+	align-self: center;
+}
+.menu-bars {
+	align-self: center;
+}
+
+.banner {
+	display: block;
+	width: 100%;
+	height: 100%;
+	height: auto;
+	overflow: hidden;
+}
+
+.banner > img {
+	vertical-align: bottom;
+	padding: 0;
+	width: 100%;
+	height: auto;
+}
+
+.main-page {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	text-align: center;
+	font-size: 2rem;
+	flex-grow: 1;
+	width: 100%;
+	background-color: rgb(27, 27, 27);
+	justify-content: center;
+	align-items: center;
+}
+
+.main-page > * {
+	width: 100%;
+	color: #fff;
+}
+.container {
+	width: 100%;
+}
+
+.icon-title {
+	font-size: 1rem;
+	text-decoration: none;
+}
+
+a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.footer {
+	width: 100%;
+	padding: 1.3rem 0;
+	display: flex;
+	justify-content: space-around;
+	background-color: rgb(69, 30, 107);
+}
+
+.footer > * {
+	font-size: 1.5rem;
+}
