@@ -126,7 +126,7 @@ function App() {
 		<>
 			<header className="topNavBar">
 				<img src="Concrete-Logo.png" alt="" className="nav-logo" />
-				<h1 className="school-name">Concrete High School</h1>
+				<h1 className="school-name">CHS Lions Basketball</h1>
 				<FontAwesomeIcon
 					icon={faBars}
 					className="menu-bars nav-icons"

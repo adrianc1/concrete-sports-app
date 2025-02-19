@@ -7,7 +7,7 @@ body,
 	padding: 0;
 }
 body {
-	font-family: 'Open Sans', serif;
+	font-family: 'Anton', serif;
 	height: 100vh;
 	width: 100vw;
 	margin: 0;
@@ -25,7 +25,7 @@ body {
 
 .topNavBar {
 	width: 100%;
-	padding: 2rem 0;
+	padding: 1rem 0;
 	display: flex;
 	justify-content: space-around;
 	background-color: rgb(69, 30, 107);
@@ -34,6 +34,7 @@ body {
 .school-name {
 	font-weight: 400;
 	font-size: 1.5rem;
+	letter-spacing: 0.1rem;
 }
 .nav-icons {
 	font-size: 1.5rem;
@@ -85,7 +86,8 @@ body {
 .nav-logo {
 	margin: 0;
 	padding: 0;
-	width: 50px;
+	width: 40px;
+	height: auto;
 }
 
 .banner {
@@ -107,10 +109,12 @@ body {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	text-align: center;
+	font-family: 'Open Sans';
 	font-size: 2rem;
 	flex-grow: 1;
 	width: 100%;
-	background-color: rgb(27, 27, 27);
+	background: linear-gradient(to top, rgb(41, 41, 41), black);
+
 	justify-content: center;
 	align-items: center;
 }
@@ -129,7 +133,7 @@ body {
 }
 
 .icon {
-	color: #fff;
+	color: rgb(217, 181, 0);
 }
 
 a {
