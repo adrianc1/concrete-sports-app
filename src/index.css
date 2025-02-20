@@ -114,7 +114,6 @@ body {
 	flex-grow: 1;
 	width: 100%;
 	background: linear-gradient(to top, rgb(41, 41, 41), black);
-
 	justify-content: center;
 	align-items: center;
 }
@@ -133,7 +132,7 @@ body {
 }
 
 .icon {
-	color: rgb(217, 181, 0);
+	color: rgb(243, 187, 64);
 }
 
 a {
