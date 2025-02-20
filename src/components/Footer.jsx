@@ -1,10 +1,4 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-	faPhone,
-	faEnvelope,
-	faGlobe,
-} from '@fortawesome/free-solid-svg-icons';
-
 import { icons } from '../utils/icons';
 
 function Footer() {
