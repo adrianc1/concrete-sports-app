@@ -23,7 +23,7 @@ function MainPage() {
 			{/* SCHEDULE */}
 			<div className="icon-container">
 				<a
-					href="https://www.maxpreps.com/print/schedule.aspx?schoolid=749e9af8-8e9f-44e6-aca1-cd16a602ccfc&ssid=20ea215d-54ce-4502-8305-748bdc872d49&print=1"
+					href="https://concretehslions.com/teams/3446004/basketball/varsity/schedule"
 					target="blank"
 				>
 					<FontAwesomeIcon icon={icons.schedule} className="icon" />
