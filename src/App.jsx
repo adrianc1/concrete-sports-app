@@ -8,10 +8,16 @@ import logo from './assets/Concrete-Logo.png';
 
 function App() {
 	const [showNav, setShowNav] = useState(false);
+	const [showExitIcon, setShowExitIcon] = useState(false);
 
 	return (
 		<>
-			<Header toggleNav={() => setShowNav(!showNav)} logo={logo} />
+			<Header
+				toggleNav={() => setShowNav(!showNav)}
+				toggleIcon={() => setShowExitIcon(!showExitIcon)}
+				logo={logo}
+				display={showExitIcon}
+			/>
 			<SideNavBar show={showNav} logo={logo} />
 			<Banner />
 			<MainPage />

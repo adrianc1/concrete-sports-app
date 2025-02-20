@@ -1,5 +1,3 @@
-// import logo from '../assets/Concrete-Logo.png';
-
 function SideNavBar({ show, logo }) {
 	return (
 		<div className={show ? 'side-nav active' : 'side-nav'}>
