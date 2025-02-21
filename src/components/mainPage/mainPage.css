@@ -11,6 +11,7 @@
 	align-items: center;
 	gap: 0;
 	row-gap: 0;
+	padding-top: 2rem;
 }
 
 .main-page > * {
@@ -36,4 +37,20 @@
 a {
 	color: #fff;
 	text-decoration: none;
+}
+
+@media (min-width: 768px) {
+	.main-page {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+	.icon {
+		font-size: 3rem;
+		margin-bottom: 2rem;
+	}
+
+	.icon-title {
+		font-size: 1.8rem;
+		text-decoration: none;
+	}
 }

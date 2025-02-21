@@ -4,6 +4,7 @@
 	display: flex;
 	justify-content: space-around;
 	background-color: rgb(69, 30, 107);
+	align-items: center;
 }
 
 .nav-logo {
@@ -26,4 +27,22 @@
 }
 .menu-bars {
 	align-self: center;
+}
+
+@media (min-width: 768px) {
+	.school-name {
+		color: rgb(243, 187, 64);
+		font-weight: 400;
+		font-size: 1.8rem;
+		letter-spacing: 0.1rem;
+	}
+	.nav-icons {
+		font-size: 1.8rem;
+		margin-right: 0.5rem;
+		align-self: center;
+	}
+
+	.nav-logo {
+		width: 3.8rem;
+	}
 }

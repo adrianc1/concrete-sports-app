@@ -2,7 +2,7 @@
 	width: 65%;
 	background-color: #011627;
 	position: absolute;
-	height: 95vh;
+	height: calc(100dvh);
 	left: -100%;
 	padding: 0 2rem;
 	transition: all 0.8s;
