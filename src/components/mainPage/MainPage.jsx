@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { icons } from '../utils/icons';
+import { icons } from '../../utils/icons';
+import './mainPage.css';
 
 function MainPage() {
 	return (

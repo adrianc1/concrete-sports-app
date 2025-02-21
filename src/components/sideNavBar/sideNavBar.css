@@ -1,0 +1,25 @@
+.side-nav {
+	width: 65%;
+	background-color: #011627;
+	position: absolute;
+	height: 95vh;
+	left: -100%;
+	padding: 0 2rem;
+	transition: all 0.8s;
+}
+
+.list-group-item {
+	color: #fff;
+	background-color: transparent;
+	border: none;
+	margin-top: 2.5rem;
+}
+
+.side-nav.active {
+	left: 0;
+}
+
+.logo {
+	margin-top: 2rem;
+	width: 3rem;
+}

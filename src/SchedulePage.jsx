@@ -1,9 +1,11 @@
+import ListGroup from 'react-bootstrap/ListGroup';
+
 function Schedule() {
 	return (
-		<div className="schedule-main">
-			<ul className="schedule-container">
-				<li className="game-item"></li>
-			</ul>
-		</div>
+		<ListGroup>
+			<ListGroup.Item></ListGroup.Item>
+		</ListGroup>
 	);
 }
+
+export default Schedule;

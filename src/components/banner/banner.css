@@ -1,0 +1,14 @@
+.banner {
+	display: block;
+	width: 100%;
+	height: 100%;
+	height: auto;
+	overflow: hidden;
+}
+
+.banner > img {
+	vertical-align: bottom;
+	padding: 0;
+	width: 100%;
+	height: auto;
+}

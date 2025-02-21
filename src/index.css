@@ -9,7 +9,7 @@ body,
 body {
 	font-family: 'Anton', serif;
 	overflow-x: hidden;
-	height: 100vh;
+	height: 100dvh;
 	width: 100vw;
 	margin: 0;
 	padding: 0;
@@ -34,136 +34,34 @@ body {
 	height: 100%;
 }
 
-.topNavBar {
-	width: 100%;
-	padding: 2rem 0;
-	display: flex;
-	justify-content: space-around;
-	background-color: rgb(69, 30, 107);
-}
+@media (min-width: 768px) {
+	.main-page {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
 
-.school-name {
-	color: rgb(243, 187, 64);
-	font-weight: 400;
-	font-size: 1.5rem;
-	letter-spacing: 0.1rem;
-}
-.nav-icons {
-	font-size: 1.5rem;
-	align-self: center;
-}
-.menu-bars {
-	align-self: center;
-}
+	.school-name {
+		color: rgb(243, 187, 64);
+		font-weight: 400;
+		font-size: 1.8rem;
+		letter-spacing: 0.1rem;
+	}
+	.nav-icons {
+		font-size: 1.8rem;
+		margin-right: 0.5rem;
+		align-self: center;
+	}
 
-.side-nav {
-	width: 75%;
-	background-color: #011627;
-	position: absolute;
-	height: 95vh;
-	left: -100%;
-	padding: 0 2rem;
-	transition: all 1s;
-}
+	.nav-logo {
+		width: 3.8rem;
+	}
 
-.side-nav.active {
-	left: 0;
-}
+	.icon {
+		font-size: 4rem;
+		margin-bottom: 2rem;
+	}
 
-.side-nav ul {
-	padding: 0;
-}
-
-.side-nav ul li {
-	list-style-type: none;
-	line-height: 5rem;
-}
-
-.side-nav ul li a {
-	color: #fff;
-	display: block;
-	text-decoration: none;
-	font-size: 1.5rem;
-}
-
-.side-nav ul li a.active {
-	background-color: yellow;
-}
-
-.logo {
-	margin-top: 2rem;
-	width: 3rem;
-}
-
-.nav-logo {
-	margin: 0;
-	padding: 0;
-	width: 3rem;
-	height: auto;
-}
-
-.banner {
-	display: block;
-	width: 100%;
-	height: 100%;
-	height: auto;
-	overflow: hidden;
-}
-
-.banner > img {
-	vertical-align: bottom;
-	padding: 0;
-	width: 100%;
-	height: auto;
-}
-
-.main-page {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	text-align: center;
-	font-family: 'Open Sans';
-	font-size: 2rem;
-	flex-grow: 1;
-	width: 100%;
-	background: linear-gradient(to top, rgb(41, 41, 41), black);
-	justify-content: center;
-	align-items: center;
-	gap: 0;
-	row-gap: 0;
-}
-
-.main-page > * {
-	width: 100%;
-	color: #fff;
-	margin: 0;
-	padding: 0;
-}
-.container {
-	width: 100%;
-}
-
-.icon-title {
-	font-size: 1rem;
-	text-decoration: none;
-}
-
-.icon {
-	color: rgb(243, 187, 64);
-}
-
-a {
-	color: #fff;
-	text-decoration: none;
-}
-
-.footer {
-	width: 100%;
-	padding: 2rem 0;
-	display: flex;
-	justify-content: space-around;
-	background-color: rgb(69, 30, 107);
-}
-
-.footer > * {
-	font-size: 1.5rem;
+	.icon-title {
+		font-size: 2rem;
+		text-decoration: none;
+	}
 }

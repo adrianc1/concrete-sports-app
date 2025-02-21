@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faX } from '@fortawesome/free-solid-svg-icons';
+import './header.css';
 
 function Header({ toggleNav, logo, toggleIcon, display }) {
 	const handleBothToggles = () => {

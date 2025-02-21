@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
-import SideNavBar from './components/SideNavBar';
-import Banner from './components/Banner';
-import MainPage from './components/MainPage';
-import Footer from './components/Footer';
-import Header from './components/Header';
+import SideNavBar from './components/sideNavBar/SideNavBar';
+import Banner from './components/banner/Banner';
+import MainPage from './components/mainPage/MainPage';
+import Footer from './components/footer/Footer';
+import Header from './components/header/Header';
 import logo from './assets/Concrete-Logo.png';
+import Schedule from './SchedulePage';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 function App() {
 	const [showNav, setShowNav] = useState(false);

@@ -1,5 +1,5 @@
-import myImage from '../assets/concreteBannerImg.gif';
-
+import myImage from '../../assets/concreteBannerImg.gif';
+import './banner.css';
 function Banner() {
 	return (
 		<div className="banner">
