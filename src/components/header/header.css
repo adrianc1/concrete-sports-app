@@ -27,6 +27,7 @@
 }
 .menu-bars {
 	align-self: center;
+	color: white;
 }
 
 @media (min-width: 768px) {

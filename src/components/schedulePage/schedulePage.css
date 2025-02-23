@@ -1,0 +1,16 @@
+body {
+}
+
+.list-group {
+	width: 100%;
+}
+.list-group-item.game {
+	color: black;
+	display: flex;
+	flex-direction: column;
+	letter-spacing: 0.1rem;
+	height: 100%;
+	border-bottom: 1px solid black;
+	justify-self: center;
+	margin: auto 0;
+}

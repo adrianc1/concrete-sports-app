@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link, BrowserRouter, Routes } from 'react-router';
 import SideNavBar from './components/sideNavBar/SideNavBar';
 import Banner from './components/banner/Banner';
 import MainPage from './components/mainPage/MainPage';
@@ -6,6 +7,7 @@ import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
 import logo from './assets/Concrete-Logo.png';
 import Schedule from './components/schedulePage/SchedulePage';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ListGroup from 'react-bootstrap/ListGroup';
 
@@ -24,7 +26,7 @@ function App() {
 			<SideNavBar show={showNav} logo={logo} />
 			<Banner />
 			<MainPage />
-			{/* <Footer /> */}
+			<Footer />
 		</>
 	);
 }

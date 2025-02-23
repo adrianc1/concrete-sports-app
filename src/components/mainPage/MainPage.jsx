@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { icons } from '../../utils/icons';
 import './mainPage.css';
+import { Link } from 'react-router';
 
 function MainPage() {
 	return (
@@ -22,15 +23,13 @@ function MainPage() {
 			</div>
 
 			{/* SCHEDULE */}
-			<div className="icon-container">
-				<a
-					href="https://concretehslions.com/teams/3446004/basketball/varsity/schedule"
-					target="blank"
-				>
-					<FontAwesomeIcon icon={icons.schedule} className="icon" />
-				</a>
-				<p className="icon-title">Schedule</p>
-			</div>
+			<ul className="icon-container">
+				<FontAwesomeIcon icon={icons.schedule} className="icon" />
+
+				<li className="icon-title">
+					<Link to="/SchedulePage">Schedule</Link>
+				</li>
+			</ul>
 
 			{/* CALENDAR */}
 			<div className="icon-container">

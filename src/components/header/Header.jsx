@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faX } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router';
 import './header.css';
 
 function Header({ toggleNav, logo, toggleIcon, display }) {
@@ -9,7 +10,10 @@ function Header({ toggleNav, logo, toggleIcon, display }) {
 	};
 	return (
 		<header className="topNavBar">
-			<img src={logo} alt="Logo" className="nav-logo" />
+			<Link to="/">
+				<img src={logo} alt="Logo" className="nav-logo" />
+			</Link>
+
 			<h1 className="school-name">Concrete Lions Basketball</h1>
 			<FontAwesomeIcon
 				icon={faBars}

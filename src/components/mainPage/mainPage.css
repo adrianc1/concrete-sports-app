@@ -34,6 +34,13 @@
 	color: rgb(243, 187, 64);
 }
 
+.icon-container {
+	list-style-type: none;
+}
+
+li.icon-title::marker {
+	list-style: none;
+}
 a {
 	color: #fff;
 	text-decoration: none;
