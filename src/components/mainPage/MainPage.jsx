@@ -57,7 +57,7 @@ function MainPage() {
 				<div>
 					<FontAwesomeIcon icon={icons.map} className="icon" />
 					<div className="icon-title">
-						<Link to="/MapFrame">Map</Link>
+						<Link to="/Photos">Photos</Link>
 					</div>
 				</div>
 			</div>
