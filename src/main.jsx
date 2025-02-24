@@ -9,7 +9,7 @@ import SportsHome from './components/mainPage/SportsHome.jsx';
 import Announcements from './components/mainPage/Announcements.jsx';
 import Calendar from './components/mainPage/Calendar.jsx';
 import Standings from './components/mainPage/Standings.jsx';
-import MapFrame from './components/mainPage/MapFrame.jsx';
+import Photos from './components/mainPage/Photos.jsx';
 
 createRoot(document.getElementById('root')).render(
 	<StrictMode>
@@ -21,7 +21,7 @@ createRoot(document.getElementById('root')).render(
 				<Route path="/SchedulePage" element={<SchedulePage />}></Route>
 				<Route path="/Calendar" element={<Calendar />}></Route>
 				<Route path="/Standings" element={<Standings />}></Route>
-				<Route path="/MapFrame" element={<MapFrame />}></Route>
+				<Route path="/Photos" element={<Photos />}></Route>
 			</Routes>
 		</BrowserRouter>
 	</StrictMode>

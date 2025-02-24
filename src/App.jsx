@@ -6,10 +6,7 @@ import MainPage from './components/mainPage/MainPage';
 import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
 import logo from './assets/Concrete-Logo.png';
-import Schedule from './components/schedulePage/SchedulePage';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ListGroup from 'react-bootstrap/ListGroup';
 
 function App() {
 	const [showNav, setShowNav] = useState(false);

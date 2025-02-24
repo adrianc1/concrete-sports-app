@@ -17,8 +17,8 @@ function MapFrame() {
 			<SideNavBar show={showNav} logo={logo} />
 
 			<iframe
-				src="https://concretehslions.com/teams/4531696/boys/basketball/varsity"
-				title="Announcements"
+				src="https://concretehslions.com/photos/team/4531696#select-team"
+				title="Photos"
 				style={{
 					position: 'fixed',
 					top: '4rem',
