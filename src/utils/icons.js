@@ -8,6 +8,7 @@ import {
 	faEnvelope,
 	faGlobe,
 	faX,
+	faImage,
 } from '@fortawesome/free-solid-svg-icons';
 import { faCalendar } from '@fortawesome/free-regular-svg-icons';
 
@@ -22,4 +23,5 @@ export const icons = {
 	envelope: faEnvelope,
 	globe: faGlobe,
 	xIcon: faX,
+	image: faImage,
 };

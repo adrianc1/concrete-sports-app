@@ -9,9 +9,6 @@
 	background: linear-gradient(to top, rgb(41, 41, 41), black);
 	justify-content: center;
 	align-items: center;
-	gap: 0;
-	row-gap: 0;
-	padding-top: 2rem;
 }
 
 .main-page > * {
@@ -30,7 +27,7 @@
 }
 
 .icon {
-	margin-bottom: 0.8rem;
+	margin-bottom: 0.5rem;
 	color: rgb(243, 187, 64);
 }
 

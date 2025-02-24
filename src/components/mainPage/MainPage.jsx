@@ -55,7 +55,7 @@ function MainPage() {
 			{/* MAP */}
 			<div className="icon-container">
 				<div>
-					<FontAwesomeIcon icon={icons.map} className="icon" />
+					<FontAwesomeIcon icon={icons.image} className="icon" />
 					<div className="icon-title">
 						<Link to="/Photos">Photos</Link>
 					</div>
