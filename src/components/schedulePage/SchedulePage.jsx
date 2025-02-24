@@ -23,13 +23,10 @@ function Schedule() {
 			<ListGroup>
 				{games.map((game, index) => (
 					<ListGroupItem key={index} className="game">
-						{game.date}
-						<br />
-						{game.opponent}
-						<br />
-						{game.location}
-						<br />
-						{game.result}
+						<div>{game.date}</div>
+						<div>{game.opponent}</div>
+						<div>{game.result}</div>
+						{/* {game.location} */}
 					</ListGroupItem>
 				))}
 			</ListGroup>

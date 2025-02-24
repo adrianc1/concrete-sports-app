@@ -17,7 +17,7 @@ function SportsHome() {
 				title="Sports Home"
 				style={{
 					position: 'fixed',
-					top: '4rem',
+					top: '1rem',
 					left: 0,
 					width: '100vw',
 					height: '100vh',

@@ -23,7 +23,8 @@ export async function scrapeGames() {
 		let game = {};
 
 		game.date = await gameElement
-			.$eval('.date.print-show', (el) => el.innerText.trim())
+			.$eval('[data-event-date]', (el) => el.getAttribute('data-event-date'))
+			.then((text) => text.replace(/\s+/g, ' ').split(', ')[1]) // Extracts the month and day
 			.catch(() => 'n/a');
 
 		game.opponent = await gameElement
@@ -46,8 +47,9 @@ export async function scrapeGames() {
 	}
 	await browser.close();
 
-	await fs.writeFile('games.json', JSON.stringify(games, null, 2));
-
-	console.log('Games data saved to games.json');
+	await fs
+		.writeFile('games.json', JSON.stringify(games, null, 2))
+		.then(() => console.log('✅ Games data successfully saved to games.json'))
+		.catch((err) => console.error('❌ Error writing file:', err));
 }
 scrapeGames();
