@@ -8,54 +8,58 @@ function MainPage() {
 		<div className="main-page">
 			{/* HOME BUTTON */}
 			<div className="icon-container">
-				<a href="https://www.concrete.k12.wa.us/sports/">
-					<FontAwesomeIcon icon={icons.home} className="icon" />
-				</a>
-				<p className="icon-title">Home</p>
+				<FontAwesomeIcon icon={icons.home} className="icon" />
+				<div className="icon-title">
+					<Link to="/SportsHome">Sports Home</Link>
+				</div>
 			</div>
 
 			{/* ANNOUNCEMENTS */}
 			<div className="icon-container">
-				<a href="https://www.maxpreps.com/news/YP0yn3hwCUKLuv3qXPmbzg/basketball-recap-concrete-comes-up-short.htm">
+				<div className="icon-container">
 					<FontAwesomeIcon icon={icons.announcements} className="icon" />
-					<p className="icon-title">Announcements</p>
-				</a>
+					<div className="icon-title">
+						<Link to="/Announcements">Announcements</Link>
+					</div>
+				</div>
 			</div>
 
 			{/* SCHEDULE */}
-			<ul className="icon-container">
+			<div className="icon-container">
 				<FontAwesomeIcon icon={icons.schedule} className="icon" />
-
-				<li className="icon-title">
+				<div className="icon-title">
 					<Link to="/SchedulePage">Schedule</Link>
-				</li>
-			</ul>
+				</div>
+			</div>
 
 			{/* CALENDAR */}
 			<div className="icon-container">
-				<a href="https://www.concrete.k12.wa.us/hs-calendar-grid/">
+				<div>
 					<FontAwesomeIcon icon={icons.calendar} className="icon" />
-				</a>
-				<p className="icon-title">Calendar</p>
+					<div className="icon-title">
+						<Link to="/Calendar">Calendar</Link>
+					</div>
+				</div>
 			</div>
 
 			{/* STANDINGS */}
 			<div className="icon-container">
-				<a
-					href="https://www.maxpreps.com/wa/concrete/concrete-lions/basketball/standings/"
-					className="container"
-				>
+				<div>
 					<FontAwesomeIcon icon={icons.standings} className="icon" />
-				</a>
-				<p className="icon-title">Standings</p>
+					<div className="icon-title">
+						<Link to="/Standings">Standings</Link>
+					</div>
+				</div>
 			</div>
 
 			{/* MAP */}
 			<div className="icon-container">
-				<a href="" className="container">
+				<div>
 					<FontAwesomeIcon icon={icons.map} className="icon" />
-				</a>
-				<p className="icon-title">Map</p>
+					<div className="icon-title">
+						<Link to="/MapFrame">Map</Link>
+					</div>
+				</div>
 			</div>
 		</div>
 	);

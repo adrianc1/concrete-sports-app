@@ -15,18 +15,12 @@ function SideNavBar({ show, logo }) {
 				<Link to="/SchedulePage">Schedule</Link>
 			</ListGroup.Item>
 
-			<ListGroup.Item
-				action
-				href="https://www.concrete.k12.wa.us/hs-calendar-grid/"
-			>
-				Calendar
+			<ListGroup.Item>
+				<Link to="/Calendar">Events Calendar</Link>
 			</ListGroup.Item>
 
-			<ListGroup.Item
-				action
-				href="https://www.maxpreps.com/wa/concrete/concrete-lions/basketball/standings/"
-			>
-				Standings
+			<ListGroup.Item>
+				<Link to="/Standings">Standings</Link>
 			</ListGroup.Item>
 
 			<ListGroup.Item action href="#">

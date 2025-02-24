@@ -2,15 +2,11 @@ import { useState } from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
 import games from '../webScraper/games.json';
 import logo from '../../assets/Concrete-Logo.png';
-import './schedulePage.css';
 import { ListGroupItem } from 'react-bootstrap';
 import Header from '../header/Header';
 import SideNavBar from '../sideNavBar/SideNavBar';
-import '../header/header.css';
-
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './schedulePage.css';
 
 function Schedule() {
 	const [showNav, setShowNav] = useState(false);
@@ -40,12 +36,5 @@ function Schedule() {
 		</>
 	);
 }
-
-// const root = document.getElementById('root');
-// createRoot(root).render(
-// 	<StrictMode>
-// 		<Schedule />
-// 	</StrictMode>
-// );
 
 export default Schedule;
