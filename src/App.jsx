@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Link, BrowserRouter, Routes } from 'react-router';
+import { useState } from 'react';
 import SideNavBar from './components/sideNavBar/SideNavBar';
 import Banner from './components/banner/Banner';
 import MainPage from './components/mainPage/MainPage';

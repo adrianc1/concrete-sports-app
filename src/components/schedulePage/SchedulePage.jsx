@@ -24,9 +24,11 @@ function Schedule() {
 				{games.map((game, index) => (
 					<ListGroupItem key={index} className="game">
 						<div>{game.date}</div>
-						<div>{game.opponent}</div>
+						<div>
+							{game.location.includes('Away') ? '@' : ''} {'  '}
+							{game.opponent}
+						</div>
 						<div>{game.result}</div>
-						{/* {game.location} */}
 					</ListGroupItem>
 				))}
 			</ListGroup>

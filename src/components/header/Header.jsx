@@ -8,6 +8,7 @@ function Header({ toggleNav, logo, toggleIcon, display }) {
 		toggleNav();
 		toggleIcon();
 	};
+
 	return (
 		<header className="topNavBar">
 			<Link to="/">
