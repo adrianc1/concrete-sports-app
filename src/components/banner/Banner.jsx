@@ -3,22 +3,32 @@ import { width } from '@fortawesome/free-brands-svg-icons/fa42Group';
 import ImageSlider from '../imageSlider/ImageSlider';
 import './banner.css';
 import welcomeBanner from '../../assets/concreteBannerImg.gif';
+import cascadeSupply from '../../assets/cascadesupplylogo.jpg';
+import farmersMarket from '../../assets/farmersmarket.jpg';
 import actOneLogo from '../../assets/actonelogo.jpg';
-import banner from '../../assets/banner.jpg';
+import loggersLandingLogo from '../../assets/loggerslandinglogo.jpg';
+import birdsView from '../../assets/birdsviewdiner.jpg';
+import edasc from '../../assets/edasc.jpg';
+import valleysWest from '../../assets/valleyswest.jpg';
+
 import './banner.css';
 
 function Banner() {
 	const slides = [
 		{ url: welcomeBanner },
 		{ url: actOneLogo },
-		{ url: actOneLogo },
-		{ url: banner },
+		{ url: cascadeSupply },
+		{ url: farmersMarket },
+		{ url: loggersLandingLogo },
+		{ url: birdsView },
+		{ url: edasc },
+		{ url: valleysWest },
 	];
 
 	const containerStyles = {
 		width: '100%',
-		height: '20rem',
-		margin: '0 auto',
+		height: '10rem',
+		margin: '4rem auto 0 auto',
 	};
 
 	return (

@@ -5,16 +5,20 @@ const ImageSlider = ({ slides }) => {
 	const [currentIndex, setCurrentIndex] = useState(0);
 
 	const sliderStyles = {
-		height: '100%',
-		position: 'relative',
-	};
-	const slideStyles = {
 		width: '100%',
 		height: '100%',
-		borderRadius: '10px',
-		backgroundPosition: 'center',
-		backgroundColor: 'blue',
-		backgroundImage: `url(${slides[currentIndex].url})`,
+		position: 'relative',
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'center',
+		overflow: 'hidden', // Prevents images from spilling out
+	};
+
+	const imgStyles = {
+		width: '100%', // Makes sure the image never overflows horizontally
+		minHeight: '100%', // Ensures it doesn't get taller than the container
+		objectFit: 'cover', // Ensures the whole image is visible
+		borderRadius: '1px',
 	};
 
 	const leftArrowStyles = {
@@ -22,10 +26,10 @@ const ImageSlider = ({ slides }) => {
 		top: '50%',
 		transform: 'translate(0, -50%)',
 		left: '32px',
-		fontSize: '45px',
-		color: 'red',
-		zIndex: '1',
+		fontSize: '2rem',
+		color: 'rgb(255, 255, 255)',
 		cursor: 'pointer',
+		zIndex: 2,
 	};
 
 	const rightArrowStyles = {
@@ -33,33 +37,35 @@ const ImageSlider = ({ slides }) => {
 		top: '50%',
 		transform: 'translate(0, -50%)',
 		right: '32px',
-		fontSize: '45px',
-		color: 'red',
+		fontSize: '2rem',
+		color: 'rgb(255, 255, 255)',
+		borderRadius: '10px',
+		padding: '0',
+		cursor: 'pointer',
+		zIndex: 2,
 	};
 
 	const dotsContainerStyles = {
 		display: 'flex',
 		justifyContent: 'center',
+		position: 'absolute',
+		bottom: '10px',
+		width: '100%',
 	};
 
 	const dotStyles = {
-		margin: '0 3px',
+		margin: '0 5px',
 		cursor: 'pointer',
-		fontSize: '60px',
-		color: 'red',
-		zIndex: '999999999',
+		fontSize: '20px',
+		color: 'rgb(255, 255, 255)',
 	};
 
 	function goToPrevious() {
-		const isFirstSlide = currentIndex === 0;
-		const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
-		setCurrentIndex(newIndex);
+		setCurrentIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
 	}
 
 	function goToNext() {
-		const isLastSlide = currentIndex === slides.length - 1;
-		const newIndex = isLastSlide ? 0 : currentIndex + 1;
-		setCurrentIndex(newIndex);
+		setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
 	}
 
 	return (
@@ -67,15 +73,19 @@ const ImageSlider = ({ slides }) => {
 			<div style={leftArrowStyles} onClick={goToPrevious}>
 				←
 			</div>
+			<img src={slides[currentIndex].url} alt="Slide" style={imgStyles} />
 			<div style={rightArrowStyles} onClick={goToNext}>
 				→
 			</div>
-			<div style={slideStyles}></div>
 			<div style={dotsContainerStyles}>
-				{slides.map((slide, slideIndex) => (
-					<div key={slideIndex} style={dotStyles}>
-						•{' '}
-					</div>
+				{slides.map((_, index) => (
+					<span
+						key={index}
+						style={dotStyles}
+						onClick={() => setCurrentIndex(index)}
+					>
+						•
+					</span>
 				))}
 			</div>
 		</div>
