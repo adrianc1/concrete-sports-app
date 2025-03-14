@@ -1,5 +1,5 @@
 import { faArrowUpWideShort } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const ImageSlider = ({ slides }) => {
 	const [currentIndex, setCurrentIndex] = useState(0);
@@ -67,6 +67,16 @@ const ImageSlider = ({ slides }) => {
 	function goToNext() {
 		setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
 	}
+
+	useEffect(() => {
+		console.log('useEffect runs'); // Debugging to verify only runs once
+
+		const interval = setInterval(() => {
+			setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1)); // Correct way to update state
+		}, 3000);
+
+		return () => clearInterval(interval); // Cleanup function
+	}, []); // Empty dependency array ensures it runs only once
 
 	return (
 		<div style={sliderStyles}>
