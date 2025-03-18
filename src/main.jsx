@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SchedulePage from './components/schedulePage/SchedulePage.jsx';
+import Boosters from './components/boosters/Boosters.jsx';
 import './index.css';
 import App from './App.jsx';
 import SportsHome from './components/mainPage/SportsHome.jsx';
@@ -22,6 +23,7 @@ createRoot(document.getElementById('root')).render(
 				<Route path="/Calendar" element={<Calendar />}></Route>
 				<Route path="/Standings" element={<Standings />}></Route>
 				<Route path="/Photos" element={<Photos />}></Route>
+				<Route path="/Boosters" element={<Boosters />}></Route>
 			</Routes>
 		</BrowserRouter>
 	</StrictMode>
