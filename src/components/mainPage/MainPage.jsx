@@ -19,7 +19,7 @@ function MainPage() {
 				<div className="icon-container">
 					<FontAwesomeIcon icon={icons.announcements} className="icon" />
 					<div className="icon-title">
-						<Link to="/Announcements">Announcements</Link>
+						<Link to="/Announcements">CHS Boosters</Link>
 					</div>
 				</div>
 			</div>

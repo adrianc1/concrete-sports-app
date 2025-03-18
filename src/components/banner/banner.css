@@ -1,12 +1,11 @@
 .banner {
 	display: block;
 	width: 100%;
-	height: 100%;
 	height: auto;
-	overflow: hidden;
 }
 
 .banner > img {
+	z-index: 99;
 	vertical-align: bottom;
 	padding: 0;
 	width: 100%;

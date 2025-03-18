@@ -6,7 +6,8 @@
 	font-size: 2rem;
 	flex-grow: 1;
 	width: 100%;
-	background: linear-gradient(to top, rgb(41, 41, 41), black);
+	/* background: linear-gradient(to top, rgb(41, 41, 41), rgb(126, 126, 126)); */
+	background-color: rgb(126, 126, 126);
 	justify-content: center;
 	align-items: center;
 }
