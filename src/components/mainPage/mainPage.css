@@ -7,7 +7,7 @@
 	flex-grow: 1;
 	width: 100%;
 	/* background: linear-gradient(to top, rgb(41, 41, 41), rgb(126, 126, 126)); */
-	background-color: rgb(59, 59, 59);
+	background-color: rgb(226, 226, 226);
 	justify-content: center;
 	align-items: center;
 }
@@ -29,7 +29,7 @@
 
 .icon {
 	margin-bottom: 0.5rem;
-	color: rgb(242, 188, 64);
+	color: rgb(66, 10, 114);
 }
 
 .icon-container {
@@ -40,7 +40,7 @@ li.icon-title::marker {
 	list-style: none;
 }
 a {
-	color: #fff;
+	color: #303030;
 	text-decoration: none;
 }
 

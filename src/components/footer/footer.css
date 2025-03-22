@@ -8,6 +8,8 @@
 
 .footer > * {
 	font-size: 1.5rem;
+	color: #fff;
+	/* color: rgb(242, 188, 64); */
 }
 
 @media (min-width: 768px) {
