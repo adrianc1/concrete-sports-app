@@ -3,13 +3,15 @@
 	grid-template-columns: 1fr 1fr;
 	text-align: center;
 	font-family: 'Open Sans';
-	font-size: 2rem;
+	font-size: 2.4rem;
 	flex-grow: 1;
 	width: 100%;
-	/* background: linear-gradient(to top, rgb(41, 41, 41), rgb(126, 126, 126)); */
-	background-color: rgb(226, 226, 226);
+	/* background: linear-gradient(to top, rgb(41, 41, 41), rgb(119, 119, 119)); */
+	background: linear-gradient(to top, rgb(242, 188, 64), rgb(203, 203, 203));
+	/* background-color: rgb(226, 226, 226); */
 	justify-content: center;
 	align-items: center;
+	color: #fff;
 }
 
 .main-page > * {
@@ -23,13 +25,16 @@
 }
 
 .icon-title {
-	font-size: 1rem;
+	font-size: 1.1rem;
 	text-decoration: none;
+	letter-spacing: 0.1rem;
+	font-weight: 600;
 }
 
 .icon {
 	margin-bottom: 0.5rem;
 	color: rgb(66, 10, 114);
+	/* color: rgb(242, 188, 64); */
 }
 
 .icon-container {
@@ -40,7 +45,7 @@ li.icon-title::marker {
 	list-style: none;
 }
 a {
-	color: #303030;
+	color: #000000;
 	text-decoration: none;
 }
 
