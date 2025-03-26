@@ -2,31 +2,38 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { icons } from '../../utils/icons';
 import './mainPage.css';
 import { Link } from 'react-router';
+import { GoCalendar } from 'react-icons/go';
+import { PiMegaphoneLight } from 'react-icons/pi';
+import { TfiClipboard } from 'react-icons/tfi';
+import { HiOutlineTrophy } from 'react-icons/hi2';
+import { TbPhotoSensor2 } from 'react-icons/tb';
+import { MdOutlineAddBusiness } from 'react-icons/md';
 
 function MainPage() {
 	return (
 		<div className="main-page">
-			{/* HOME BUTTON */}
-			<div className="icon-container">
-				<FontAwesomeIcon icon={icons.home} className="icon" />
-				<div className="icon-title">
-					<Link to="/SportsHome">Sports Home</Link>
-				</div>
-			</div>
-
-			{/* ANNOUNCEMENTS */}
+			{/* BOOSTER */}
 			<div className="icon-container">
 				<div className="icon-container">
-					<FontAwesomeIcon icon={icons.announcements} className="icon" />
+					<PiMegaphoneLight />
 					<div className="icon-title">
 						<Link to="/Boosters">CHS Booster</Link>
 					</div>
 				</div>
 			</div>
 
+			{/* SPONSERS */}
+			<div className="icon-container">
+				<MdOutlineAddBusiness value={{ color: 'blue' }} />
+
+				<div className="icon-title">
+					<Link to="/SportsHome">Sponsers</Link>
+				</div>
+			</div>
+
 			{/* SCHEDULE */}
 			<div className="icon-container">
-				<FontAwesomeIcon icon={icons.schedule} className="icon" />
+				<TfiClipboard />
 				<div className="icon-title">
 					<Link to="/SchedulePage">Schedule</Link>
 				</div>
@@ -35,7 +42,7 @@ function MainPage() {
 			{/* CALENDAR */}
 			<div className="icon-container">
 				<div>
-					<FontAwesomeIcon icon={icons.calendar} className="icon" />
+					<GoCalendar />
 					<div className="icon-title">
 						<Link to="/Calendar">Calendar</Link>
 					</div>
@@ -45,7 +52,7 @@ function MainPage() {
 			{/* STANDINGS */}
 			<div className="icon-container">
 				<div>
-					<FontAwesomeIcon icon={icons.standings} className="icon" />
+					<HiOutlineTrophy />
 					<div className="icon-title">
 						<Link to="/Standings">Standings</Link>
 					</div>
@@ -55,7 +62,7 @@ function MainPage() {
 			{/* MAP */}
 			<div className="icon-container">
 				<div>
-					<FontAwesomeIcon icon={icons.image} className="icon" />
+					<TbPhotoSensor2 />
 					<div className="icon-title">
 						<Link to="/Photos">Photos</Link>
 					</div>

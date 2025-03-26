@@ -1,5 +1,5 @@
-import './sideNavBar.css';
 import { Link } from 'react-router';
+import './sideNavBar.css';
 
 function SideNavBar({ show, logo }) {
 	return (

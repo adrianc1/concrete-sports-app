@@ -1,7 +1,9 @@
 .side-nav {
 	width: 100%;
 	height: 100%;
-	background-color: #f2f2f2;
+	background-color: #f2bc40;
+	background-color: #fff;
+
 	position: fixed;
 	height: calc(100dvh);
 	left: -100%;
@@ -9,17 +11,18 @@
 	z-index: 100;
 }
 
-ul {
+.nav-list {
 	padding-left: 1rem;
 	width: 100%;
 	display: flex;
+	gap: 3rem;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-around;
 }
 
-li {
+.nav-list li a {
 	width: 100%;
-	color: #3a3a3a;
+	color: #420a72;
 	background-color: transparent;
 	margin-top: 2.5rem;
 	list-style: none;
