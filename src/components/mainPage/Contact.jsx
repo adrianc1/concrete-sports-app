@@ -16,25 +16,25 @@ function Contact() {
 		},
 		{
 			team: 'Girls Basketball',
-			coachName: 'Head Coach',
+			coachName: 'First Last',
 			coachEmail: 'girlsbball@notrealemail.com',
 			coachPhone: '360-555-0123',
 		},
 		{
 			team: 'Softball',
-			coachName: 'Head Coach',
+			coachName: 'First Last',
 			coachEmail: 'softball@notrealemail.com',
 			coachPhone: '360-555-0125',
 		},
 		{
 			team: 'Baseball',
-			coachName: 'Head Coach',
+			coachName: 'First Last',
 			coachEmail: 'baseball@notrealemail.com',
 			coachPhone: '360-555-0129',
 		},
 		{
 			team: 'Wrestling',
-			coachName: 'Head Coach',
+			coachName: 'First Last',
 			coachEmail: 'wrestling@notrealemail.com',
 			coachPhone: '360-555-0127',
 		},
@@ -50,7 +50,7 @@ function Contact() {
 			<SideNavBar show={showNav} logo={logo} />
 
 			<div className="contact-page">
-				<div className="page-title">Coach Connect</div>
+				<div className="page-title">Coach Contact</div>
 
 				<ul className="coach-list">
 					{coachList.map((coach, index) => {
@@ -61,7 +61,10 @@ function Contact() {
 								<span className="coach-name">
 									Head Coach: {coach.coachName}
 								</span>
-								<span className="coach-email">Email: {coach.coachEmail}</span>
+								<span className="coach-email">
+									Email:{' '}
+									<a href={'mailto:' + coach.coachEmail}>{coach.coachEmail}</a>{' '}
+								</span>
 								<span className="coach-phone">Phone: {coach.coachPhone}</span>
 							</li>
 						);

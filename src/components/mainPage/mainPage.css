@@ -3,7 +3,7 @@
 	grid-template-columns: 1fr 1fr;
 	text-align: center;
 	font-family: 'Open Sans';
-	font-size: 2.4rem;
+	font-size: 2.8rem;
 	flex-grow: 1;
 	width: 100%;
 	background: linear-gradient(to top, rgb(41, 41, 41), rgb(119, 119, 119));
@@ -16,6 +16,8 @@
 .main-page > * {
 	width: 100%;
 	color: rgb(242, 188, 64);
+	/* color: rgb(66, 10, 114); */
+
 	margin: 0;
 	padding: 0;
 }
@@ -44,6 +46,8 @@ li.icon-title::marker {
 }
 a {
 	color: #e0e0e0;
+	/* color: black; */
+
 	text-decoration: none;
 }
 

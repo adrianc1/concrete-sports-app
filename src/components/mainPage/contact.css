@@ -21,16 +21,21 @@
 
 .coach-item {
 	display: flex;
-	font-size: 0.7rem;
+	font-size: 0.8rem;
 	flex-direction: column;
 	height: 100%;
 	width: 100%;
 	justify-content: space-around;
 	list-style: none;
-	border-bottom: 1px solid gold;
+	border-bottom: 1px solid #f2bc40;
 }
 
 .coach-title {
 	font-size: 1.3rem;
-	margin-bottom: 0.5rem;
+	margin-bottom: 0.3rem;
+	color: #420a72;
+}
+
+.coach-email a {
+	color: #f2bc40;
 }
