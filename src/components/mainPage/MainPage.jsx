@@ -62,7 +62,7 @@ function MainPage() {
 				<div>
 					<TbPhotoSensor2 />
 					<div className="icon-title">
-						<Link to="/Photos">Photos</Link>
+						<Link to="/IFrame">IFrame</Link>
 					</div>
 				</div>
 			</div>

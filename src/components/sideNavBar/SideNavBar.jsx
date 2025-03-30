@@ -42,8 +42,8 @@ function SideNavBar({ show, logo }) {
 				<li>
 					<a href="#">Wrestling</a>
 				</li>
+				<p className="copyright">Adrian Crosby 2025&copy;</p>
 			</ul>
-			<p className="copyright">Adrian Crosby 2025&copy;</p>
 		</nav>
 	);
 }

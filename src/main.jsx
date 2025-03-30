@@ -11,6 +11,7 @@ import Sponsors from './components/mainPage/Sponsors.jsx';
 import Contact from './components/mainPage/Contact.jsx';
 import LiveStream from './components/mainPage/LiveStream.jsx';
 import Photos from './components/mainPage/Photos.jsx';
+import IFrame from './components/iframe/IFrame.jsx';
 
 createRoot(document.getElementById('root')).render(
 	<StrictMode>
@@ -19,7 +20,7 @@ createRoot(document.getElementById('root')).render(
 				<Route path="/" element={<App />} />
 				<Route path="/Sponsors" element={<Sponsors />}></Route>
 				<Route path="/SchoolDistrict" element={<SchoolDistrict />}></Route>
-
+				<Route path="/IFrame" element={<IFrame />} />
 				<Route path="/SchedulePage" element={<SchedulePage />}></Route>
 				<Route path="/Contact" element={<Contact />}></Route>
 				<Route path="/LiveStream" element={<LiveStream />}></Route>

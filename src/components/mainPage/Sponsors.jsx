@@ -10,6 +10,7 @@ import './sponsors.css';
 function Sponsors() {
 	const [showNav, setShowNav] = useState(false);
 	const [showExitIcon, setShowExitIcon] = useState(false);
+	const [showIframe, setShowIframe] = useState(false);
 
 	const sponsorList = [
 		{
@@ -28,29 +29,29 @@ function Sponsors() {
 			isExternal: true,
 		},
 		{
-			name: 'Another Business Here',
+			name: 'Your Business Here',
 			url: 'https://concrete-theatre.com/',
 			phone: '360-555-1234',
 			address: '1 Main Street, Concrete, Washington, United States 98237',
 			isExternal: true,
 		},
 		{
-			name: 'Another Business Here',
+			name: 'Your Business Here',
 			url: 'https://concrete-theatre.com/',
 			phone: '360-555-1234',
 			address: '1 Main Street, Concrete, Washington, United States 98237',
 			isExternal: true,
 		},
 		{
-			name: 'Another Business Here',
+			name: 'Your Business Here',
 			url: 'https://concrete-theatre.com/',
 			phone: '360-555-1234',
 			address: '1 Main Street, Concrete, Washington, United States 98237',
 			isExternal: true,
 		},
 	];
-	function handleClick(e) {
-		console.log(e.target);
+	function handleClick() {
+		setShowIframe(true);
 	}
 	return (
 		<div className="main-sponsors-div">
@@ -67,9 +68,17 @@ function Sponsors() {
 					return (
 						<li className="sponsor-item" key={index}>
 							{sponsor.isExternal ? (
-								<a href={sponsor.url} onClick={handleClick}>
-									<span className="sponsor-name">{sponsor.name}</span>
-								</a>
+								// <div onClick={handleClick}>
+								// 	<span className="sponsor-name">{sponsor.name}</span>
+								// 	{showIframe && <IFrame url={sponsor.url} />}
+								// </div>
+								<Link
+									className="sponsor-name"
+									to="/IFrame"
+									onClick={handleClick}
+								>
+									{sponsor.name}
+								</Link>
 							) : (
 								<Link
 									className="sponsor-name"

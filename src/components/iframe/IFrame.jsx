@@ -3,11 +3,11 @@ import Header from '../header/Header';
 import SideNavBar from '../sideNavBar/SideNavBar';
 import logo from '../../assets/Concrete-Logo.png';
 
-function IFrame({ url }) {
+function IFrame({ url = 'https://concrete-theatre.com/' }) {
 	const [showNav, setShowNav] = useState(false);
 	const [showExitIcon, setShowExitIcon] = useState(false);
 	return (
-		<div className="main-iframe">
+		<div>
 			<Header
 				toggleNav={() => setShowNav(!showNav)}
 				toggleIcon={() => setShowExitIcon(!showExitIcon)}
@@ -17,7 +17,7 @@ function IFrame({ url }) {
 			<SideNavBar show={showNav} logo={logo} />
 			<iframe
 				src={url}
-				title="WATCH THE SHOW"
+				title="Announcements"
 				style={{
 					position: 'fixed',
 					top: '4rem',

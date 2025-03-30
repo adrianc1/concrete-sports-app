@@ -6,7 +6,7 @@
 	position: fixed;
 	height: calc(100dvh);
 	left: -100%;
-	transition: all 0.8s;
+	transition: all 1s;
 	z-index: 100;
 }
 
@@ -62,5 +62,5 @@
 	letter-spacing: 0.1rem;
 	margin-left: 1rem;
 	position: fixed;
-	bottom: 1rem;
+	bottom: 0;
 }
