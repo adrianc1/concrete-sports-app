@@ -1,0 +1,36 @@
+.contact-page {
+	margin-top: 4rem;
+	height: 100vh;
+}
+
+.page-title {
+	text-align: center;
+	font-size: 2rem;
+}
+
+.coach-list {
+	width: 100vw;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	padding: 0;
+	margin: 0 0 0 1rem;
+	list-style: none;
+}
+
+.coach-item {
+	display: flex;
+	font-size: 0.7rem;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+	justify-content: space-around;
+	list-style: none;
+	border-bottom: 1px solid gold;
+}
+
+.coach-title {
+	font-size: 1.3rem;
+	margin-bottom: 0.5rem;
+}

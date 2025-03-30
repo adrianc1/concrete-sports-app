@@ -18,6 +18,8 @@
 	flex-direction: column;
 	justify-content: space-around;
 	border-bottom: 2px dotted purple;
+	list-style: none;
+	list-style-type: none;
 }
 
 .nav-list li a {
@@ -25,6 +27,11 @@
 	color: #420a72;
 	background-color: transparent;
 	margin-top: 2.5rem;
+	list-style: none;
+	list-style-type: none;
+}
+
+.nav-list li {
 	list-style: none;
 	list-style-type: none;
 }
