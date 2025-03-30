@@ -1,0 +1,42 @@
+.sponsors-title {
+	text-align: center;
+	font-size: 2rem;
+	margin-top: 4rem;
+}
+
+.sponsor-list {
+	width: 100vw;
+	height: 100vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	padding: 0;
+	margin: 0 0 0 1rem;
+	list-style: none;
+}
+
+.sponsor-item {
+	display: flex;
+	font-size: 0.7rem;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+	justify-content: space-around;
+	list-style: none;
+	border-bottom: 1px solid gold;
+}
+
+.sponsor-name {
+	font-size: 1.3rem;
+	margin-bottom: 0.5rem;
+	color: #420a72;
+	text-decoration: underline;
+}
+
+.sponsor-message {
+	font-size: 0.6rem;
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 2rem;
+	line-height: 1rem;
+}

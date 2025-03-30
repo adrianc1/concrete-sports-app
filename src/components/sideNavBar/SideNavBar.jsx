@@ -13,13 +13,16 @@ function SideNavBar({ show, logo }) {
 					<Link to="/Boosters">CHS Booster</Link>
 				</li>
 				<li>
+					<Link to="/Sponsors">Sponsors</Link>
+				</li>
+				<li>
 					<Link to="/Contact">Coach Connect</Link>
 				</li>
 				<li>
 					<Link to="/SchoolDistrict">School District</Link>
 				</li>
 			</ul>
-			<ul className="nav-schedule nav-list">
+			<ul className="nav-schedule">
 				<h4>Schedules</h4>
 				<li>
 					<Link to="/SchedulePage">Boys Basketball</Link>
@@ -40,6 +43,7 @@ function SideNavBar({ show, logo }) {
 					<a href="#">Wrestling</a>
 				</li>
 			</ul>
+			<p className="copyright">Adrian Crosby 2025&copy;</p>
 		</nav>
 	);
 }
