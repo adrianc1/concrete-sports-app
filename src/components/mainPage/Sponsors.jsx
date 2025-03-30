@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import Header from '../header/Header';
 import logo from '../../assets/Concrete-Logo.png';
+import SideNavBar from '../sideNavBar/SideNavBar';
+import IFrame from '../iframe/IFrame';
+
 import { Link } from 'react-router';
 
 import './sponsors.css';
@@ -31,26 +34,48 @@ function Sponsors() {
 			address: '1 Main Street, Concrete, Washington, United States 98237',
 			isExternal: true,
 		},
+		{
+			name: 'Another Business Here',
+			url: 'https://concrete-theatre.com/',
+			phone: '360-555-1234',
+			address: '1 Main Street, Concrete, Washington, United States 98237',
+			isExternal: true,
+		},
+		{
+			name: 'Another Business Here',
+			url: 'https://concrete-theatre.com/',
+			phone: '360-555-1234',
+			address: '1 Main Street, Concrete, Washington, United States 98237',
+			isExternal: true,
+		},
 	];
+	function handleClick(e) {
+		console.log(e.target);
+	}
 	return (
-		<div>
+		<div className="main-sponsors-div">
 			<Header
 				toggleNav={() => setShowNav(!showNav)}
 				toggleIcon={() => setShowExitIcon(!showExitIcon)}
 				logo={logo}
 				display={showExitIcon}
 			/>
+			<SideNavBar show={showNav} logo={logo} />
 			<ul className="sponsor-list">
 				<h2 className="sponsors-title">Sponsors</h2>
 				{sponsorList.map((sponsor, index) => {
 					return (
 						<li className="sponsor-item" key={index}>
 							{sponsor.isExternal ? (
-								<a href={sponsor.url}>
+								<a href={sponsor.url} onClick={handleClick}>
 									<span className="sponsor-name">{sponsor.name}</span>
 								</a>
 							) : (
-								<Link className="sponsor-name" to={sponsor.url}>
+								<Link
+									className="sponsor-name"
+									to={sponsor.url}
+									onClick={handleClick}
+								>
 									{sponsor.name}
 								</Link>
 							)}
@@ -61,14 +86,14 @@ function Sponsors() {
 						</li>
 					);
 				})}
+				<p className="sponsor-message">
+					A heartfelt thank you to our sponsors! Your generous support has
+					directly empowered our Concrete athletes, providing them with
+					invaluable resources and opportunities. We've witnessed their growth
+					and success thanks to your belief in them. We are deeply grateful for
+					your partnership.
+				</p>
 			</ul>
-			<p className="sponsor-message">
-				A heartfelt thank you to our sponsors! Your generous support has
-				directly empowered our Concrete athletes, providing them with invaluable
-				resources and opportunities. We've witnessed their growth and success
-				thanks to your belief in them. We are deeply grateful for your
-				partnership.
-			</p>
 		</div>
 	);
 }

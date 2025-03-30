@@ -12,6 +12,7 @@ const ImageSlider = ({ slides }) => {
 		alignItems: 'center',
 		justifyContent: 'center',
 		overflow: 'hidden', // Prevents images from spilling out
+		transition: 'all 2s ease-out',
 	};
 
 	const imgStyles = {
@@ -19,12 +20,15 @@ const ImageSlider = ({ slides }) => {
 		minHeight: '100%', // Ensures it doesn't get taller than the container
 		objectFit: 'cover', // Ensures the whole image is visible
 		borderRadius: '1px',
+		transition: 'all 2s',
 	};
 
 	const leftArrowStyles = {
 		position: 'absolute',
 		top: '50%',
 		transform: 'translate(0, -50%)',
+		transition: 'all 2s',
+
 		left: '32px',
 		fontSize: '2rem',
 		color: 'rgb(255, 255, 255)',
@@ -69,8 +73,6 @@ const ImageSlider = ({ slides }) => {
 	}
 
 	useEffect(() => {
-		console.log('useEffect runs'); // Debugging to verify only runs once
-
 		const interval = setInterval(() => {
 			setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1)); // Correct way to update state
 		}, 3000);
