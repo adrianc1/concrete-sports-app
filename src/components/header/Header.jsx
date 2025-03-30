@@ -15,7 +15,7 @@ function Header({ toggleNav, logo, toggleIcon, display }) {
 				<img src={logo} alt="Logo" className="nav-logo" />
 			</Link>
 
-			<h1 className="school-name">Concrete Lions Basketball</h1>
+			<h1 className="school-name">Concrete Lions Sports</h1>
 			<FontAwesomeIcon
 				icon={faBars}
 				className={

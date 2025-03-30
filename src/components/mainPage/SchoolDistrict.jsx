@@ -3,7 +3,7 @@ import Header from '../header/Header';
 import logo from '../../assets/Concrete-Logo.png';
 import SideNavBar from '../sideNavBar/SideNavBar';
 
-function Standings() {
+function SchoolDistrict() {
 	const [showNav, setShowNav] = useState(false);
 	const [showExitIcon, setShowExitIcon] = useState(false);
 	return (
@@ -15,13 +15,12 @@ function Standings() {
 				display={showExitIcon}
 			/>
 			<SideNavBar show={showNav} logo={logo} />
-
 			<iframe
-				src="https://concretehslions.com/teams/4531696/boys/basketball/varsity"
-				title="Standings"
+				src="https://www.concrete.k12.wa.us/"
+				title="Announcements"
 				style={{
 					position: 'fixed',
-					top: '1rem',
+					top: '4rem',
 					left: 0,
 					width: '100vw',
 					height: '100vh',
@@ -32,4 +31,4 @@ function Standings() {
 	);
 }
 
-export default Standings;
+export default SchoolDistrict;

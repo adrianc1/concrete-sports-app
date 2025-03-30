@@ -2,8 +2,7 @@ import { useState } from 'react';
 import Header from '../header/Header';
 import logo from '../../assets/Concrete-Logo.png';
 import SideNavBar from '../sideNavBar/SideNavBar';
-
-function SportsHome() {
+function Contact() {
 	const [showNav, setShowNav] = useState(false);
 	const [showExitIcon, setShowExitIcon] = useState(false);
 	return (
@@ -16,8 +15,8 @@ function SportsHome() {
 			/>
 			<SideNavBar show={showNav} logo={logo} />
 			<iframe
-				src="https://concretehslions.com/teams/4531696/boys/basketball/varsity"
-				title="Announcements"
+				src="https://concretehslions.com/events"
+				title="Events Calendar"
 				style={{
 					position: 'fixed',
 					top: '1rem',
@@ -31,4 +30,4 @@ function SportsHome() {
 	);
 }
 
-export default SportsHome;
+export default Contact;

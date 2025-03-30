@@ -10,16 +10,34 @@ function SideNavBar({ show, logo }) {
 					<Link to="/">Home</Link>
 				</li>
 				<li>
-					<Link to="/SchedulePage">CHS Boosters</Link>
+					<Link to="/Boosters">CHS Booster</Link>
 				</li>
 				<li>
-					<Link to="/Calendar">Schedule</Link>
+					<Link to="/Contact">Coach Connect</Link>
 				</li>
 				<li>
-					<Link to="/Standings">Standings</Link>
+					<Link to="/SchoolDistrict">School District</Link>
+				</li>
+			</ul>
+			<ul className="nav-schedule nav-list">
+				<h4>Schedules</h4>
+				<li>
+					<Link to="/SchedulePage">Boys Basketball</Link>
 				</li>
 				<li>
-					<a href="#">Contact Us</a>
+					<a href="#">Girls Basketball</a>
+				</li>
+				<li>
+					<a href="#">Football</a>
+				</li>
+				<li>
+					<a href="#">Softball</a>
+				</li>
+				<li>
+					<a href="#">Baseball</a>
+				</li>
+				<li>
+					<a href="#">Wrestling</a>
 				</li>
 			</ul>
 		</nav>

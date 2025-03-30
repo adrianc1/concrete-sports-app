@@ -3,7 +3,6 @@
 	height: 100%;
 	background-color: #f2bc40;
 	background-color: #fff;
-
 	position: fixed;
 	height: calc(100dvh);
 	left: -100%;
@@ -15,9 +14,10 @@
 	padding-left: 1rem;
 	width: 100%;
 	display: flex;
-	gap: 3rem;
+	gap: 1.5rem;
 	flex-direction: column;
 	justify-content: space-around;
+	border-bottom: 2px dotted purple;
 }
 
 .nav-list li a {
@@ -29,7 +29,7 @@
 	list-style-type: none;
 }
 
-li::marker {
+.nav-list li::marker {
 	content: none;
 }
 

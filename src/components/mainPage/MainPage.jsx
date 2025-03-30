@@ -1,11 +1,9 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { icons } from '../../utils/icons';
 import './mainPage.css';
 import { Link } from 'react-router';
-import { GoCalendar } from 'react-icons/go';
+import { RiContactsLine } from 'react-icons/ri';
 import { PiMegaphoneLight } from 'react-icons/pi';
-import { TfiClipboard } from 'react-icons/tfi';
-import { HiOutlineTrophy } from 'react-icons/hi2';
+import { IoSchoolOutline } from 'react-icons/io5';
+import { MdLiveTv } from 'react-icons/md';
 import { TbPhotoSensor2 } from 'react-icons/tb';
 import { MdOutlineAddBusiness } from 'react-icons/md';
 
@@ -27,34 +25,34 @@ function MainPage() {
 				<MdOutlineAddBusiness value={{ color: 'blue' }} />
 
 				<div className="icon-title">
-					<Link to="/SportsHome">Sponsers</Link>
+					<Link to="/Sponsors">Sponsors</Link>
 				</div>
 			</div>
 
-			{/* SCHEDULE */}
-			<div className="icon-container">
-				<TfiClipboard />
-				<div className="icon-title">
-					<Link to="/SchedulePage">Schedule</Link>
-				</div>
-			</div>
-
-			{/* CALENDAR */}
+			{/* COACH CONTACT */}
 			<div className="icon-container">
 				<div>
-					<GoCalendar />
+					<RiContactsLine />
 					<div className="icon-title">
-						<Link to="/Calendar">Calendar</Link>
+						<Link to="/Contact">Coach Contact</Link>
 					</div>
 				</div>
 			</div>
 
-			{/* STANDINGS */}
+			{/* SCHOOL DISTRICT */}
+			<div className="icon-container">
+				<IoSchoolOutline />
+				<div className="icon-title">
+					<Link to="/SchoolDistrict">School District</Link>
+				</div>
+			</div>
+
+			{/* LIVE STREAM */}
 			<div className="icon-container">
 				<div>
-					<HiOutlineTrophy />
+					<MdLiveTv />
 					<div className="icon-title">
-						<Link to="/Standings">Standings</Link>
+						<Link to="/LiveStream">Watch Live</Link>
 					</div>
 				</div>
 			</div>

@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import Header from '../header/Header';
 import logo from '../../assets/Concrete-Logo.png';
-import SideNavBar from '../sideNavBar/SideNavBar';
-function Calendar() {
+function Sponsors() {
 	const [showNav, setShowNav] = useState(false);
 	const [showExitIcon, setShowExitIcon] = useState(false);
 	return (
@@ -13,10 +12,9 @@ function Calendar() {
 				logo={logo}
 				display={showExitIcon}
 			/>
-			<SideNavBar show={showNav} logo={logo} />
 			<iframe
-				src="https://concretehslions.com/events"
-				title="Events Calendar"
+				src="https://concretehslions.com/"
+				title="Sports Home"
 				style={{
 					position: 'fixed',
 					top: '1rem',
@@ -30,4 +28,4 @@ function Calendar() {
 	);
 }
 
-export default Calendar;
+export default Sponsors;

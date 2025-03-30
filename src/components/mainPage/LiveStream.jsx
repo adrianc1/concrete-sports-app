@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import Header from '../header/Header';
 import logo from '../../assets/Concrete-Logo.png';
-function SportsHome() {
+import SideNavBar from '../sideNavBar/SideNavBar';
+
+function LiveStream() {
 	const [showNav, setShowNav] = useState(false);
 	const [showExitIcon, setShowExitIcon] = useState(false);
 	return (
@@ -12,12 +14,14 @@ function SportsHome() {
 				logo={logo}
 				display={showExitIcon}
 			/>
+			<SideNavBar show={showNav} logo={logo} />
+
 			<iframe
-				src="https://concretehslions.com/"
-				title="Sports Home"
+				src="https://www.nfhs.org/"
+				title="Standings"
 				style={{
 					position: 'fixed',
-					top: '1rem',
+					top: '4rem',
 					left: 0,
 					width: '100vw',
 					height: '100vh',
@@ -28,4 +32,4 @@ function SportsHome() {
 	);
 }
 
-export default SportsHome;
+export default LiveStream;
