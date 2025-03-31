@@ -6,8 +6,8 @@
 	font-size: 2.8rem;
 	flex-grow: 1;
 	width: 100%;
-	background: linear-gradient(to top, rgb(41, 41, 41), rgb(119, 119, 119));
-	/* background-color: rgb(226, 226, 226); */
+	/* background: linear-gradient(to top, rgb(32, 32, 32), rgb(102, 102, 102)); */
+	background-color: rgb(220, 220, 220);
 	justify-content: center;
 	align-items: center;
 	color: #fff;
@@ -16,7 +16,7 @@
 .main-page > * {
 	width: 100%;
 	color: rgb(242, 188, 64);
-	/* color: rgb(66, 10, 114); */
+	color: rgb(66, 10, 114);
 
 	margin: 0;
 	padding: 0;
@@ -29,24 +29,38 @@
 	font-size: 1.1rem;
 	text-decoration: none;
 	letter-spacing: 0.13rem;
+	font-weight: 700;
 }
 
 .icon {
-	margin-bottom: 0.5rem;
-	/* color: rgb(66, 10, 114); */
-	color: rgb(242, 188, 64);
+	margin-bottom: 1rem;
+	color: rgb(66, 10, 114);
+	/* color: rgb(242, 188, 64); */
 }
 
 .icon-container {
 	list-style-type: none;
+	border-radius: 30px;
+	height: 80%;
+	margin: 0 auto;
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	/* box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+		rgba(0, 0, 0, 0.06) 0px 0px 0px 1px; */
 }
 
 li.icon-title::marker {
 	list-style: none;
 }
+
 a {
 	color: #e0e0e0;
-	/* color: black; */
+	color: black;
 
 	text-decoration: none;
 }

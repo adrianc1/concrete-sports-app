@@ -1,7 +1,7 @@
 import './mainPage.css';
 import { Link } from 'react-router';
 import { RiContactsLine } from 'react-icons/ri';
-import { PiMegaphoneLight } from 'react-icons/pi';
+import { RiMegaphoneLine } from 'react-icons/ri';
 import { IoSchoolOutline } from 'react-icons/io5';
 import { MdLiveTv } from 'react-icons/md';
 import { TbPhotoSensor2 } from 'react-icons/tb';
@@ -11,61 +11,68 @@ function MainPage() {
 	return (
 		<div className="main-page">
 			{/* BOOSTER */}
-			<div className="icon-container">
-				<div className="icon-container">
-					<PiMegaphoneLight />
-					<div className="icon-title">
-						<Link to="/Boosters">CHS Booster</Link>
-					</div>
+			<Link to="/Boosters" className="icon-container">
+				<div className="icon">
+					<RiMegaphoneLine />
 				</div>
-			</div>
+				<div className="icon-title">
+					CHS <br /> Booster
+				</div>
+			</Link>
 
 			{/* SPONSERS */}
-			<div className="icon-container">
-				<MdOutlineAddBusiness value={{ color: 'blue' }} />
 
-				<div className="icon-title">
-					<Link to="/Sponsors">Sponsors</Link>
+			<Link to="/Sponsors" className="icon-container">
+				<div className="icon">
+					<MdOutlineAddBusiness />
 				</div>
-			</div>
+				<div className="icon-title">
+					Sponsors
+					<br />
+				</div>
+			</Link>
 
 			{/* COACH CONTACT */}
-			<div className="icon-container">
-				<div>
+
+			<Link to="/Contact" className="icon-container">
+				<div className="icon">
 					<RiContactsLine />
-					<div className="icon-title">
-						<Link to="/Contact">Coach Contact</Link>
-					</div>
 				</div>
-			</div>
+				<div className="icon-title">
+					Coach <br /> Connect
+				</div>
+			</Link>
 
 			{/* SCHOOL DISTRICT */}
-			<div className="icon-container">
-				<IoSchoolOutline />
-				<div className="icon-title">
-					<Link to="/SchoolDistrict">School District</Link>
+
+			<Link to="/SchoolDistrict" className="icon-container">
+				<div className="icon">
+					<IoSchoolOutline />
 				</div>
-			</div>
+				<div className="icon-title">
+					School <br /> District
+				</div>
+			</Link>
 
 			{/* LIVE STREAM */}
-			<div className="icon-container">
-				<div>
-					<MdLiveTv />
-					<div className="icon-title">
-						<Link to="/LiveStream">Watch Live</Link>
-					</div>
-				</div>
-			</div>
 
-			{/* MAP */}
-			<div className="icon-container">
-				<div>
-					<TbPhotoSensor2 />
-					<div className="icon-title">
-						<Link to="/IFrame">IFrame</Link>
-					</div>
+			<Link to="/LiveStream" className="icon-container">
+				<div className="icon">
+					<MdLiveTv />
 				</div>
-			</div>
+				<div className="icon-title">
+					Watch <br /> Live
+				</div>
+			</Link>
+
+			{/* Photos */}
+
+			<Link to="/Photos" className="icon-container">
+				<div className="icon">
+					<TbPhotoSensor2 />
+				</div>
+				<div className="icon-title">Photos</div>
+			</Link>
 		</div>
 	);
 }

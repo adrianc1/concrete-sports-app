@@ -17,7 +17,7 @@ function LiveStream() {
 			<SideNavBar show={showNav} logo={logo} />
 
 			<iframe
-				src="https://www.nfhs.org/"
+				src="https://nfhsnetwork.playonsports.com/overview"
 				title="Standings"
 				style={{
 					position: 'fixed',
