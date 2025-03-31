@@ -15,7 +15,7 @@
 
 .main-page > * {
 	width: 100%;
-	color: rgb(242, 188, 64);
+	/* color: rgb(242, 188, 64); */
 	color: rgb(66, 10, 114);
 
 	margin: 0;
@@ -34,8 +34,9 @@
 
 .icon {
 	margin-bottom: 0.5rem;
-	color: rgb(66, 10, 114);
-	/* color: rgb(242, 188, 64); */
+	font-size: 3rem;
+	/* color: rgb(66, 10, 114); */
+	color: rgb(232, 174, 39);
 }
 
 .icon-container {
