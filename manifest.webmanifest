@@ -30,7 +30,7 @@
 	"start_url": "./index.html",
 	"display": "standalone",
 	"background_color": "#ffffff",
-	"theme_color": "#007bff",
+	"theme_color": "rgb(66, 10, 114)",
 	"description": "A description of my progressive web app.",
 	"orientation": "any",
 	"screenshots": [
