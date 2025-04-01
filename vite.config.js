@@ -12,7 +12,7 @@ export default defineConfig({
 				start_url: '/', // Required
 				display: 'standalone', // Recommended
 				background_color: '#ffffff', // Recommended
-				theme_color: '#42b883', // Recommended
+				theme_color: '#420a72', // Recommended
 				lang: 'en', // Recommended
 				scope: '/', // Recommended
 				icons: [
