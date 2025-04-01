@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import { RiContactsLine } from 'react-icons/ri';
 import { RiMegaphoneLine } from 'react-icons/ri';
 import { IoSchoolOutline } from 'react-icons/io5';
-import { MdLiveTv } from 'react-icons/md';
+import { PiUsers } from 'react-icons/pi';
 import { TbPhotoSensor2 } from 'react-icons/tb';
 import { MdOutlineAddBusiness } from 'react-icons/md';
 
@@ -58,11 +58,9 @@ function MainPage() {
 
 			<Link to="/LiveStream" className="icon-container">
 				<div className="icon">
-					<MdLiveTv />
+					<PiUsers />
 				</div>
-				<div className="icon-title">
-					Watch <br /> Live
-				</div>
+				<div className="icon-title">Players of the Month</div>
 			</Link>
 
 			{/* Photos */}

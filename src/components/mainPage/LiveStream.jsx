@@ -15,19 +15,26 @@ function LiveStream() {
 				display={showExitIcon}
 			/>
 			<SideNavBar show={showNav} logo={logo} />
-
-			<iframe
-				src="https://nfhsnetwork.playonsports.com/overview"
-				title="Standings"
+			<div
+				className="player-of-the-month-page"
 				style={{
-					position: 'fixed',
-					top: '4rem',
-					left: 0,
+					marginTop: '4rem',
+					padding: 0,
 					width: '100vw',
-					height: '100vh',
-					border: 'none',
+					textAlign: 'left',
+					border: '1px solid red',
 				}}
-			></iframe>
+			>
+				<h1 style={{ textAlign: 'center' }}>Players of the Month</h1>
+				<div className="player-profile">
+					<div className="player-name">Name: Dwayne Johnson</div>
+					<div className="player-position">Position: Guard</div>
+					<div className="fav-food">Favorite Food: Candy and Junk Food</div>
+					<div className="coach-text">
+						From Coach: Dwayne is like a ROCK! Tough as nails and really nice.{' '}
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 }
