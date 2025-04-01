@@ -2,16 +2,29 @@ import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 import react from '@vitejs/plugin-react';
 
-// https://vite.dev/config/
 export default defineConfig({
 	plugins: [
 		react(),
 		VitePWA({
 			manifest: {
+				name: 'Concrete Sports App', // Required
+				short_name: 'Concrete Sports App', // Required
+				start_url: '/', // Required
+				display: 'standalone', // Recommended
+				background_color: '#ffffff', // Recommended
+				theme_color: '#42b883', // Recommended
+				lang: 'en', // Recommended
+				scope: '/', // Recommended
 				icons: [
 					{
-						src: 'https://sportshub2-uploads.vnn-prod.zone/files/sites/2894/2020/12/09061207/Concrete-Logo.png',
-						sizes: '36x36, 96x96, 512x512',
+						src: '/icons/manifest-icon-512.maskable.png',
+						sizes: '512x512',
+						type: 'image/png',
+						purpose: 'any maskable',
+					},
+					{
+						src: '/icons/manifest-icon-192.maskable.png',
+						sizes: '192x192',
 						type: 'image/png',
 						purpose: 'any maskable',
 					},
