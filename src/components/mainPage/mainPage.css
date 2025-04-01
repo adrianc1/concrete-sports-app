@@ -15,7 +15,6 @@
 
 .main-page > * {
 	width: 100%;
-	/* color: rgb(242, 188, 64); */
 	color: rgb(66, 10, 114);
 
 	margin: 0;
@@ -26,16 +25,14 @@
 }
 
 .icon-title {
-	font-size: 1.1rem;
+	font-size: 1rem;
 	text-decoration: none;
 	letter-spacing: 0.13rem;
 	font-weight: 700;
 }
 
 .icon {
-	margin-bottom: 0.5rem;
 	font-size: 3rem;
-	/* color: rgb(66, 10, 114); */
 	color: rgb(232, 174, 39);
 }
 
@@ -49,10 +46,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-
 	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-	/* box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-		rgba(0, 0, 0, 0.06) 0px 0px 0px 1px; */
 }
 
 li.icon-title::marker {
@@ -62,7 +56,6 @@ li.icon-title::marker {
 a {
 	color: #e0e0e0;
 	color: black;
-
 	text-decoration: none;
 }
 
