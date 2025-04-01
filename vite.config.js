@@ -10,8 +10,8 @@ export default defineConfig({
 			manifest: {
 				icons: [
 					{
-						src: '/icons/manifest-icon-512.maskable.png',
-						sizes: '512x512',
+						src: 'https://sportshub2-uploads.vnn-prod.zone/files/sites/2894/2020/12/09061207/Concrete-Logo.png',
+						sizes: '36x36, 96x96, 512x512',
 						type: 'image/png',
 						purpose: 'any maskable',
 					},
