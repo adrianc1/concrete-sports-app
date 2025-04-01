@@ -1,6 +1,7 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faX } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { MdClose } from 'react-icons/md';
+
 import './header.css';
 
 function Header({ toggleNav, logo, toggleIcon, display }) {
@@ -16,16 +17,14 @@ function Header({ toggleNav, logo, toggleIcon, display }) {
 			</Link>
 
 			<h1 className="school-name">Concrete Lions Sports</h1>
-			<FontAwesomeIcon
-				icon={faBars}
+			<GiHamburgerMenu
 				className={
 					display ? 'menu-bars nav-icons hidden' : 'menu-bars nav-icons active'
 				}
 				onClick={handleBothToggles}
 			/>
 
-			<FontAwesomeIcon
-				icon={faX}
+			<MdClose
 				className={display ? 'nav-icons active' : 'side-nav hidden'}
 				onClick={handleBothToggles}
 			/>
