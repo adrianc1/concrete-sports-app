@@ -1,16 +1,8 @@
-import { width } from '@fortawesome/free-brands-svg-icons/fa42Group';
-// import myImage from '../../assets/concreteBannerImg.gif';
 import ImageSlider from '../imageSlider/ImageSlider';
 import './banner.css';
 import welcomeBanner from '../../assets/concreteBannerImg.gif';
 import cascadeSupply from '../../assets/cascadesupplylogo.jpg';
-import farmersMarket from '../../assets/farmersmarket.jpg';
 import actOneLogo from '../../assets/actonelogo.jpg';
-import loggersLandingLogo from '../../assets/loggerslandinglogo.jpg';
-import birdsView from '../../assets/birdsviewdiner.jpg';
-import edasc from '../../assets/edasc.jpg';
-import valleysWest from '../../assets/valleyswest.jpg';
-
 import './banner.css';
 
 function Banner() {
@@ -18,11 +10,6 @@ function Banner() {
 		{ url: welcomeBanner },
 		{ url: actOneLogo },
 		{ url: cascadeSupply },
-		{ url: farmersMarket },
-		{ url: loggersLandingLogo },
-		{ url: birdsView },
-		{ url: edasc },
-		{ url: valleysWest },
 	];
 
 	const containerStyles = {

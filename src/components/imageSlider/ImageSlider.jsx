@@ -1,4 +1,3 @@
-import { faArrowUpWideShort } from '@fortawesome/free-solid-svg-icons';
 import { useState, useEffect } from 'react';
 
 const ImageSlider = ({ slides }) => {

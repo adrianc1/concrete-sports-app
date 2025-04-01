@@ -54,7 +54,7 @@ function MainPage() {
 				</div>
 			</Link>
 
-			{/* LIVE STREAM */}
+			{/* PLAYER OF THE MONTH */}
 
 			<Link to="/LiveStream" className="icon-container">
 				<div className="icon">
