@@ -10,7 +10,7 @@ import './index.css';
 import App from './App.jsx';
 import Sponsors from './components/mainPage/Sponsors.jsx';
 import Contact from './components/mainPage/Contact.jsx';
-import PlayersOfTheMonth from './components/mainPage/playersOfTheMonth.jsx';
+import PlayersOfTheMonth from './components/mainPage/PlayersOfTheMonth.jsx';
 import Photos from './components/mainPage/Photos.jsx';
 import IFrame from './components/iframe/IFrame.jsx';
 

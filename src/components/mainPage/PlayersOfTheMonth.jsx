@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Header from '../header/Header';
 import logo from '../../assets/Concrete-Logo.png';
 import SideNavBar from '../sideNavBar/SideNavBar';
-import './playerofthemonth.css';
+import './player.css';
 
 function PlayersOfTheMonth() {
 	const [showNav, setShowNav] = useState(false);
@@ -19,11 +19,10 @@ function PlayersOfTheMonth() {
 			<div
 				className="player-of-the-month-page"
 				style={{
-					marginTop: '4rem',
+					marginTop: '5rem',
 					padding: 0,
 					width: '100vw',
 					textAlign: 'left',
-					border: '1px solid red',
 				}}
 			>
 				<h1 style={{ textAlign: 'center' }}>Players of the Month</h1>
@@ -39,15 +38,15 @@ function PlayersOfTheMonth() {
 					<div className="player-position">Position: Shortstop/Pitcher</div>
 					<div className="player-grade">Grade: 12</div>
 					<div className="coach-text">
-						Ethan's dedication and skill are truly remarkable. He's a player who
+						Ethans dedication and skill are truly remarkable. Hes a player who
 						leads by example and always gives his all. He is a true team player.{' '}
 					</div>
 					<div className="player-highlights">
-						Highlights: Ethan's exceptional performance throughout the month has
-						been instrumental in Northwood's undefeated streak. His powerful
+						Highlights: Ethans exceptional performance throughout the month has
+						been instrumental in Northwoods undefeated streak. His powerful
 						hitting and consistent pitching have made him a dual threat. In a
 						crucial game against rival Southridge, he hit two home runs and
-						pitched a complete game shutout. Ethan's leadership on and off the
+						pitched a complete game shutout. Ethans leadership on and off the
 						field is highly valued by his teammates and coaches.
 					</div>
 				</div>
@@ -65,17 +64,17 @@ function PlayersOfTheMonth() {
 					<div className="player-position">Position: Center Field/Pitcher</div>
 					<div className="player-grade">Grade: 11</div>
 					<div className="coach-text">
-						Maya's athleticism and competitive spirit are unmatched. She brings
+						Mayas athleticism and competitive spirit are unmatched. She brings
 						an energy to the team that is contagious. She is a very valuable
 						player.
 					</div>
 					<div className="player-highlights">
-						Highlights: Maya's speed and agility in the outfield, coupled with
+						Highlights: Mayas speed and agility in the outfield, coupled with
 						her powerful hitting and solid pitching, have made her a standout
 						player. She had a streak of 10 consecutive games with at least one
 						hit and one stolen base. In the regional tournament opener, she hit
-						a walk-off triple and pitched seven strong innings. Maya's ability
-						to cover a lot of ground in center field has saved many runs for her
+						a walk-off triple and pitched seven strong innings. Mayas ability to
+						cover a lot of ground in center field has saved many runs for her
 						team.
 					</div>
 				</div>

@@ -15,4 +15,6 @@
 	align-items: center;
 	flex-direction: column;
 	text-align: left;
+	margin: 0 auto;
+	gap: 0.5rem;
 }
