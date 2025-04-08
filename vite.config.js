@@ -31,11 +31,11 @@ export default defineConfig({
 					},
 				],
 			},
-			// includeAssets: [
-			// 	'./public/icons/concretelogo.png',
-			// 	'./src/assets/actonelogo.jpg',
-			// 	'./src/assets/cascadesupplylogo.jpg',
-			// ],
+			includeAssets: [
+				'./public/icons/concretelogo.png',
+				'./src/assets/actonelogo.jpg',
+				'./src/assets/cascadesupplylogo.jpg',
+			],
 
 			workbox: {
 				runtimeCaching: [
@@ -54,10 +54,20 @@ export default defineConfig({
 						},
 					},
 					{
-						urlPattern: /\.(woff2|woff|ttf|otf)$/i, // Font caching
+						urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i, // Google Fonts API
 						handler: 'CacheFirst',
 						options: {
-							cacheName: 'font-cache',
+							cacheName: 'google-fonts-cache',
+							cacheableResponse: {
+								statuses: [0, 200],
+							},
+						},
+					},
+					{
+						urlPattern: /^https:\/\/fonts\.gstatic\.com\/.*/i, // Google Fonts files
+						handler: 'CacheFirst',
+						options: {
+							cacheName: 'gstatic-fonts-cache',
 							cacheableResponse: {
 								statuses: [0, 200],
 							},
