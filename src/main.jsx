@@ -1,6 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router';
+import { registerSW } from 'virtual:pwa-register';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SchedulePage from './components/schedulePage/SchedulePage.jsx';
 import SchoolDistrict from './components/mainPage/SchoolDistrict.jsx';
@@ -12,6 +13,11 @@ import Contact from './components/mainPage/Contact.jsx';
 import LiveStream from './components/mainPage/LiveStream.jsx';
 import Photos from './components/mainPage/Photos.jsx';
 import IFrame from './components/iframe/IFrame.jsx';
+
+if ('serviceWorker' in navigator) {
+	// && !/localhost/.test(window.location)) {
+	registerSW();
+}
 
 createRoot(document.getElementById('root')).render(
 	<StrictMode>
