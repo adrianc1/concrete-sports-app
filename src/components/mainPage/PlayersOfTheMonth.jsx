@@ -2,6 +2,9 @@ import { useState } from 'react';
 import Header from '../header/Header';
 import logo from '../../assets/Concrete-Logo.png';
 import SideNavBar from '../sideNavBar/SideNavBar';
+import player_1 from '../../assets/player_1.jpg';
+import player_2 from '../../assets/player_2.jpg';
+
 import './player.css';
 
 function PlayersOfTheMonth() {
@@ -28,11 +31,7 @@ function PlayersOfTheMonth() {
 				<h1 style={{ textAlign: 'center' }}>Players of the Month</h1>
 				<div className="player-profile">
 					<div className="player-photo-container">
-						<img
-							src="src/assets/player_1.jpg"
-							className="player-photo-img"
-							alt=""
-						/>
+						<img src={player_1} className="player-photo-img" alt="" />
 					</div>
 					<div className="player-name">Name: Ethan Rodriguez</div>
 					<div className="player-position">Position: Shortstop/Pitcher</div>
@@ -54,11 +53,7 @@ function PlayersOfTheMonth() {
 				<br />
 				<div className="player-profile">
 					<div className="player-photo-container">
-						<img
-							src="src/assets/player_2.jpg"
-							className="player-photo-img"
-							alt=""
-						/>
+						<img src={player_2} className="player-photo-img" alt="" />
 					</div>
 					<div className="player-name">Name: Maya Chen</div>
 					<div className="player-position">Position: Center Field/Pitcher</div>
