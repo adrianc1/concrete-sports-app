@@ -56,7 +56,7 @@ function MainPage() {
 
 			{/* PLAYER OF THE MONTH */}
 
-			<Link to="/LiveStream" className="icon-container">
+			<Link to="/PlayersOfTheMonth" className="icon-container">
 				<div className="icon">
 					<PiUsers />
 				</div>

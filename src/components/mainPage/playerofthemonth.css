@@ -1,0 +1,18 @@
+.player-photo-container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.player-photo-img {
+	width: 50%;
+}
+
+.player-profile {
+	width: 80%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: left;
+}
