@@ -53,6 +53,16 @@ export default defineConfig({
 							},
 						},
 					},
+					{
+						urlPattern: /\.(woff2|woff|ttf|otf)$/i, // Font caching
+						handler: 'CacheFirst',
+						options: {
+							cacheName: 'font-cache',
+							cacheableResponse: {
+								statuses: [0, 200],
+							},
+						},
+					},
 				],
 			},
 		}),
