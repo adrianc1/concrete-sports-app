@@ -31,11 +31,11 @@ export default defineConfig({
 					},
 				],
 			},
-			includeAssets: [
-				'./public/icons/concretelogo.png',
-				'./src/assets/actonelogo.jpg',
-				'./src/assets/cascadesupplylogo.jpg',
-			],
+			// includeAssets: [
+			// 	'./public/icons/concretelogo.png',
+			// 	'./src/assets/actonelogo.jpg',
+			// 	'./src/assets/cascadesupplylogo.jpg',
+			// ],
 
 			workbox: {
 				runtimeCaching: [
