@@ -32,44 +32,44 @@ export default defineConfig({
 				],
 			},
 
-			workbox: {
-				runtimeCaching: [
-					{
-						urlPattern: /\.(png|jpe?g|svg|gif|webp)$/i,
-						handler: 'CacheFirst',
-						options: {
-							cacheName: 'image-cache',
-							expiration: {
-								maxEntries: 150,
-								maxAgeSeconds: 60 * 60 * 24 * 30, // 30 Days
-							},
-							cacheableResponse: {
-								statuses: [0, 200],
-							},
-						},
-					},
-					{
-						urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i, // Google Fonts API
-						handler: 'CacheFirst',
-						options: {
-							cacheName: 'google-fonts-cache',
-							cacheableResponse: {
-								statuses: [0, 200],
-							},
-						},
-					},
-					{
-						urlPattern: /^https:\/\/fonts\.gstatic\.com\/.*/i, // Google Fonts files
-						handler: 'CacheFirst',
-						options: {
-							cacheName: 'gstatic-fonts-cache',
-							cacheableResponse: {
-								statuses: [0, 200],
-							},
-						},
-					},
-				],
-			},
+			// workbox: {
+			// 	runtimeCaching: [
+			// 		{
+			// 			urlPattern: /\.(png|jpe?g|svg|gif|webp)$/i,
+			// 			handler: 'CacheFirst',
+			// 			options: {
+			// 				cacheName: 'image-cache',
+			// 				expiration: {
+			// 					maxEntries: 150,
+			// 					maxAgeSeconds: 60 * 60 * 24 * 30, // 30 Days
+			// 				},
+			// 				cacheableResponse: {
+			// 					statuses: [0, 200],
+			// 				},
+			// 			},
+			// 		},
+			// 		{
+			// 			urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i, // Google Fonts API
+			// 			handler: 'CacheFirst',
+			// 			options: {
+			// 				cacheName: 'google-fonts-cache',
+			// 				cacheableResponse: {
+			// 					statuses: [0, 200],
+			// 				},
+			// 			},
+			// 		},
+			// 		{
+			// 			urlPattern: /^https:\/\/fonts\.gstatic\.com\/.*/i, // Google Fonts files
+			// 			handler: 'CacheFirst',
+			// 			options: {
+			// 				cacheName: 'gstatic-fonts-cache',
+			// 				cacheableResponse: {
+			// 					statuses: [0, 200],
+			// 				},
+			// 			},
+			// 		},
+			// 	],
+			// },
 		}),
 	],
 });
