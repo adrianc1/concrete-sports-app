@@ -23,7 +23,7 @@ function SideNavBar({ show, logo }) {
 				</li>
 			</ul>
 			<ul className="nav-schedule">
-				<h4>Schedules</h4>
+				<h4>Team Schedules</h4>
 				<li>
 					<Link to="/SchedulePage">Boys Basketball</Link>
 				</li>

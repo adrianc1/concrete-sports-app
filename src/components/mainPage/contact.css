@@ -1,12 +1,13 @@
 .contact-page {
 	margin-top: 4rem;
-	height: 100vh;
+	height: 100dvh;
 	background-color: rgb(220, 220, 220);
 }
 
 .page-title {
 	text-align: center;
 	font-size: 2rem;
+	padding-bottom: 1rem;
 }
 
 .coach-list {
@@ -18,6 +19,7 @@
 	padding: 0;
 	margin: 0 0 0 1rem;
 	list-style: none;
+	background-color: rgb(220, 220, 220);
 }
 
 .coach-item {
@@ -28,15 +30,56 @@
 	width: 100%;
 	justify-content: space-around;
 	list-style: none;
-	border-bottom: 1px solid #f2bc40;
+	border-bottom: 3px solid #f2bc40;
+	background-color: rgb(220, 220, 220);
 }
 
 .coach-title {
-	font-size: 1.3rem;
+	font-size: 1.5rem;
 	margin-bottom: 0.3rem;
 	color: #420a72;
 }
 
 .coach-email a {
-	color: #f2bc40;
+	color: rgb(232, 174, 39);
+}
+
+.coach-phone,
+.coach-name,
+.coach-email {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+
+@media (min-width: 768px) {
+	.contact-page {
+		padding-top: 3rem;
+	}
+	.page-title {
+		font-size: 3rem;
+	}
+	.coach-title {
+		font-size: 2.2rem;
+	}
+	.coach-item {
+		font-size: 1.5rem;
+		letter-spacing: 0.07rem;
+		height: 100%;
+	}
+	.coach-list {
+		margin-left: 1.5rem;
+		height: 100%;
+		background-color: rgb(220, 220, 220);
+	}
+	.player-info span {
+		font-size: 2rem;
+	}
+
+	.coach-phone,
+	.coach-name,
+	.coach-email {
+		font-size: 1.8rem;
+		font-weight: 600;
+	}
 }

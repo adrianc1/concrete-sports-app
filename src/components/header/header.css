@@ -36,19 +36,22 @@
 }
 
 @media (min-width: 768px) {
+	.topNavBar {
+		padding: 1.5rem 0;
+	}
 	.school-name {
-		color: rgb(243, 187, 64);
+		color: rgb(242, 188, 64);
 		font-weight: 400;
-		font-size: 1.8rem;
-		letter-spacing: 0.1rem;
+		font-size: 2rem;
+		letter-spacing: 0.2rem;
 	}
 	.nav-icons {
-		font-size: 1.8rem;
+		font-size: 2rem;
 		margin-right: 0.5rem;
 		align-self: center;
 	}
 
 	.nav-logo {
-		width: 3.8rem;
+		width: 5rem;
 	}
 }

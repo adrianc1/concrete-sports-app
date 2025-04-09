@@ -28,8 +28,8 @@ function Boosters() {
 
 				<ul className="booster-club-perks">
 					<li>
-						You can attend meetings every second wednesday of each month at
-						7:30PM in the high school cafeteria.
+						ATTEND MEETINGS EVERY SECOND WEDNESDAY OF EACH MONTH AT 7:30PM IN
+						THE HIGH SCHOOL CAFETERIA.
 					</li>
 					<li>HELP ON FUNDRAISING COMMITTEES.</li>
 					<li>

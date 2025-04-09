@@ -50,7 +50,7 @@ function Contact() {
 			<SideNavBar show={showNav} logo={logo} />
 
 			<div className="contact-page">
-				<div className="page-title">Coach Contact</div>
+				<div className="page-title">Coach Connect</div>
 
 				<ul className="coach-list">
 					{coachList.map((coach, index) => {

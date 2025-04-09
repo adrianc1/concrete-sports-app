@@ -16,7 +16,6 @@
 .main-page > * {
 	width: 100%;
 	color: rgb(66, 10, 114);
-
 	margin: 0;
 	padding: 0;
 }
@@ -65,12 +64,15 @@ a {
 	}
 
 	.icon {
-		font-size: 3rem;
+		font-size: 5rem;
 		margin-bottom: 2rem;
 	}
 
 	.icon-title {
-		font-size: 1.8rem;
+		font-size: 2.1rem;
 		text-decoration: none;
+	}
+	.icon-container {
+		height: 65%;
 	}
 }

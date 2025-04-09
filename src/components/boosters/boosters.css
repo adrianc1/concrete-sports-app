@@ -6,18 +6,22 @@ body {
 	box-sizing: border-box;
 }
 .boosters-main {
-	width: 100%;
+	width: 100dvw;
 	height: 100dvh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	background-color: rgb(220, 220, 220);
+	font-family: 'Arial';
+	font-weight: 400;
 }
 
 .boosters-title {
 	margin-top: 5rem;
+	font-size: 1.5rem;
 	color: black;
 	text-transform: uppercase;
+	font-weight: 800;
 }
 
 .booster-sub-title {
@@ -26,7 +30,7 @@ body {
 
 .booster-club-perks {
 	width: 95%;
-	height: 95%;
+	height: 80%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -49,4 +53,21 @@ button {
 	justify-content: space-around;
 	width: 100%;
 	margin: 0 2rem 1rem 2rem;
+}
+
+@media (min-width: 768px) {
+	.boosters-title {
+		font-size: 2.7rem;
+		padding-top: 4rem;
+	}
+	.booster-sub-title {
+		font-size: 1.4rem;
+	}
+	.booster-club-perks li {
+		font-size: 1.6rem;
+	}
+	button {
+		padding: 1rem 2rem;
+		font-size: 1.5rem;
+	}
 }

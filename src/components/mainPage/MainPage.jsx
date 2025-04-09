@@ -60,7 +60,9 @@ function MainPage() {
 				<div className="icon">
 					<PiUsers />
 				</div>
-				<div className="icon-title">Players of the Month</div>
+				<div className="icon-title">
+					Players of <br /> the Month
+				</div>
 			</Link>
 
 			{/* Photos */}

@@ -20,7 +20,7 @@ function SchoolDistrict() {
 				title="Announcements"
 				style={{
 					position: 'fixed',
-					top: '4rem',
+					top: '6rem',
 					left: 0,
 					width: '100vw',
 					height: '100vh',
