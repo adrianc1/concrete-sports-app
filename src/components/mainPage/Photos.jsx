@@ -16,18 +16,31 @@ function MapFrame() {
 			/>
 			<SideNavBar show={showNav} logo={logo} />
 
-			<iframe
-				src="https://concretehslions.com/photos/team/4531696#select-team"
-				title="Photos"
-				style={{
-					position: 'fixed',
-					top: '4rem',
-					left: 0,
-					width: '100vw',
-					height: '100vh',
-					border: 'none',
-				}}
-			></iframe>
+			<img
+				src="../../src/assets/team_photo_1.png"
+				alt=""
+				style={{ marginTop: '7rem' }}
+			/>
+			<img
+				src="../../src/assets/team_photo_2.jpg"
+				alt=""
+				style={{ marginTop: '1rem' }}
+			/>
+			<img
+				src="../../src/assets/team_photo_3.jpg"
+				alt=""
+				style={{ marginTop: '1rem' }}
+			/>
+			<img
+				src="../../src/assets/team_photo_4.jpg"
+				alt=""
+				style={{ marginTop: '1rem' }}
+			/>
+			<img
+				src="../../src/assets/team_photo_5.jpg"
+				alt=""
+				style={{ marginTop: '1rem' }}
+			/>
 		</div>
 	);
 }

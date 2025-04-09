@@ -21,6 +21,12 @@ function SideNavBar({ show, logo }) {
 				<li>
 					<Link to="/SchoolDistrict">School District</Link>
 				</li>
+				<li>
+					<Link to="/Photos">Photos</Link>
+				</li>
+				<li>
+					<Link to="/PlayersOfTheMonth">Players Of The Month</Link>
+				</li>
 			</ul>
 			<ul className="nav-schedule">
 				<h4>Team Schedules</h4>
