@@ -31,16 +31,6 @@ function MapFrame() {
 				alt=""
 				style={{ marginTop: '1rem' }}
 			/>
-			<img
-				src="../../src/assets/team_photo_4.jpg"
-				alt=""
-				style={{ marginTop: '1rem' }}
-			/>
-			<img
-				src="../../src/assets/team_photo_5.jpg"
-				alt=""
-				style={{ marginTop: '1rem' }}
-			/>
 		</div>
 	);
 }

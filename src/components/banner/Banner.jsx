@@ -14,7 +14,7 @@ function Banner() {
 
 	const containerStyles = {
 		width: '100%',
-		height: '16rem',
+		height: '12rem',
 		margin: '4rem auto 0 auto',
 	};
 
