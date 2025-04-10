@@ -3,8 +3,8 @@ import Header from '../header/Header';
 import logo from '../../assets/Concrete-Logo.png';
 import SideNavBar from '../sideNavBar/SideNavBar';
 import team_1 from '../../assets/team_photo_1.png';
-// import team_2 from '../../assets/team_photo_2.jpg';
-import team_3 from '../../assets/team_photo_3.jpg';
+import team_2 from '../../assets/IMG_9949.png';
+import team_3 from '../../assets/IMG_9950.png';
 
 function MapFrame() {
 	const [showNav, setShowNav] = useState(false);
@@ -29,7 +29,7 @@ function MapFrame() {
 					className="team-photo"
 					style={{ width: '100%' }}
 				/>
-				<img src={team_1} alt="" className="team-photo" />
+				<img src={team_2} alt="" className="team-photo" />
 				<img src={team_3} alt="" className="team-photo" />
 			</div>
 		</div>
