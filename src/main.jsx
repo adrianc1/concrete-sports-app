@@ -17,6 +17,8 @@ import IFrame from './components/iframe/IFrame.jsx';
 if ('serviceWorker' in navigator) {
 	// && !/localhost/.test(window.location)) {
 	registerSW();
+} else {
+	console.log('no workers');
 }
 
 createRoot(document.getElementById('root')).render(
