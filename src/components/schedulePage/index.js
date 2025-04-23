@@ -1,5 +1,5 @@
 export { default as GirlsBballSchedule } from './GirlsBballSchedule';
-export { default as SchedulePage } from './schedulePage';
+export { default as SchedulePage } from './SchedulePage';
 export { default as BaseballSchedule } from './BaseballSchedule';
 export { default as FootballSchedule } from './FootballSchedule';
 export { default as SoftballSchedule } from './SoftballSchedule';
