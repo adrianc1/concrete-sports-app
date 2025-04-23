@@ -3,7 +3,16 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router';
 import { registerSW } from 'virtual:pwa-register';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import SchedulePage from './components/schedulePage/SchedulePage.jsx';
+import {
+	SchedulePage,
+	GirlsBballSchedule,
+	BaseballSchedule,
+	FootballSchedule,
+	SoftballSchedule,
+	TrackSchedule,
+	VolleyballSchedule,
+	WrestlingSchedule,
+} from './components/schedulePage';
 import SchoolDistrict from './components/mainPage/SchoolDistrict.jsx';
 import Boosters from './components/boosters/Boosters.jsx';
 import './index.css';
@@ -35,6 +44,22 @@ createRoot(document.getElementById('root')).render(
 				></Route>
 				<Route path="/Photos" element={<Photos />}></Route>
 				<Route path="/Boosters" element={<Boosters />}></Route>
+				<Route
+					path="/GirlsBballSchedule"
+					element={<GirlsBballSchedule />}
+				></Route>
+				<Route path="/FootballSchedule" element={<FootballSchedule />}></Route>
+				<Route path="/BaseballSchedule" element={<BaseballSchedule />}></Route>
+				<Route path="/SoftballSchedule" element={<SoftballSchedule />}></Route>
+				<Route path="/TrackSchedule" element={<TrackSchedule />}></Route>
+				<Route
+					path="/WrestlingSchedule"
+					element={<WrestlingSchedule />}
+				></Route>
+				<Route
+					path="/VolleyballSchedule"
+					element={<VolleyballSchedule />}
+				></Route>
 			</Routes>
 		</BrowserRouter>
 	</StrictMode>

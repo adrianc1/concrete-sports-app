@@ -34,20 +34,27 @@ function SideNavBar({ show, logo }) {
 					<Link to="/SchedulePage">Boys Basketball</Link>
 				</li>
 				<li>
-					<a href="#">Girls Basketball</a>
+					<Link to="/GirlsBballSchedule">Girls Basketball</Link>
 				</li>
 				<li>
-					<a href="#">Football</a>
+					<Link to="/FootballSchedule">Football</Link>
 				</li>
 				<li>
-					<a href="#">Softball</a>
+					<Link to="/BaseballSchedule">Baseball</Link>
 				</li>
 				<li>
-					<a href="#">Baseball</a>
+					<Link to="/SoftballSchedule">Softball</Link>
 				</li>
 				<li>
-					<a href="#">Wrestling</a>
+					<Link to="/VolleyballSchedule">Volleyball</Link>
 				</li>
+				<li>
+					<Link to="/TrackSchedule">Track</Link>
+				</li>
+				<li>
+					<Link to="/WrestlingSchedule">Wrestling</Link>
+				</li>
+
 				<p className="copyright">Adrian Crosby 2025&copy;</p>
 			</ul>
 		</nav>

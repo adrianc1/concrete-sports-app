@@ -29,8 +29,18 @@ function MapFrame() {
 					className="team-photo"
 					style={{ width: '100%' }}
 				/>
-				<img src={team_2} alt="" className="team-photo" />
-				<img src={team_3} alt="" className="team-photo" />
+				<img
+					src={team_2}
+					alt=""
+					className="team-photo"
+					style={{ width: '100%' }}
+				/>
+				<img
+					src={team_3}
+					alt=""
+					className="team-photo"
+					style={{ width: '100%' }}
+				/>
 			</div>
 		</div>
 	);

@@ -12,31 +12,51 @@ function Contact() {
 			team: 'Boys Basketball',
 			coachName: 'Danny Crosby',
 			coachEmail: 'coachdanny@notrealemail.com',
-			coachPhone: '360-555-1234',
 		},
 		{
 			team: 'Girls Basketball',
-			coachName: 'First Last',
-			coachEmail: 'girlsbball@notrealemail.com',
-			coachPhone: '360-555-0123',
+			coachName: 'Kevik  Rensink',
+			coachEmail: 'Kevik.Rensink@pse.com',
+		},
+		{
+			team: 'Football',
+			coachName: 'Patrick  Silmane',
+			coachEmail: 'psilmane@concrete.k12.wa.us',
+		},
+		{
+			team: 'Volleyball',
+			coachName: 'Kevik  Rensink',
+			coachEmail: 'Kevik.Rensink@pse.com',
 		},
 		{
 			team: 'Softball',
-			coachName: 'First Last',
-			coachEmail: 'softball@notrealemail.com',
-			coachPhone: '360-555-0125',
+			coachName: 'Iris Nevin',
+			coachEmail: 'inevin@concrete.k12.wa.us',
 		},
 		{
 			team: 'Baseball',
-			coachName: 'First Last',
-			coachEmail: 'baseball@notrealemail.com',
-			coachPhone: '360-555-0129',
+			coachName: 'Elliott Weyand',
+			coachEmail: 'eweyand@concrete.k12.wa.us',
 		},
 		{
 			team: 'Wrestling',
-			coachName: 'First Last',
-			coachEmail: 'wrestling@notrealemail.com',
-			coachPhone: '360-555-0127',
+			coachName: 'Riley Fichter',
+			coachEmail: 'rileyf2410@hotmail.com',
+		},
+		{
+			team: 'Track',
+			coachName: 'Jason  Miller',
+			coachEmail: 'jason@concrete-herald.com',
+		},
+		{
+			team: 'Cheer',
+			coachName: 'Tracie  Meacham',
+			coachEmail: 'tmeacham@concrete.k12.wa.us',
+		},
+		{
+			team: 'Athletic Director',
+			coachName: 'Randy Sweeney',
+			coachEmail: 'rsweeney@concrete.k12.wa.us',
 		},
 	];
 	return (
@@ -65,7 +85,6 @@ function Contact() {
 									Email:{' '}
 									<a href={'mailto:' + coach.coachEmail}>{coach.coachEmail}</a>{' '}
 								</span>
-								<span className="coach-phone">Phone: {coach.coachPhone}</span>
 							</li>
 						);
 					})}
