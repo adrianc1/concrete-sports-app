@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
-import games from '../webScraper/TrackGames.json';
+import games from '../webScraper/trackGames.json';
 import logo from '../../assets/Concrete-Logo.png';
 import { ListGroupItem } from 'react-bootstrap';
 import Header from '../header/Header';
