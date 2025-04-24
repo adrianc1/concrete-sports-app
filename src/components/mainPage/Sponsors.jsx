@@ -43,10 +43,17 @@ function Sponsors() {
 			isExternal: true,
 		},
 		{
-			name: 'Adrian Crosby',
-			url: 'https://concrete-theatre.com/',
+			name: 'Adrian Crosby!',
+			url: 'check out my website here!',
 			phone: '714-340-5029',
-			address: 'adriancrosby02@gmail.com',
+			address: 'email: adriancrosby02@gmail.com',
+			isExternal: true,
+		},
+		{
+			name: 'Dreaux Digital & Design',
+			url: 'check out my website here!',
+			phone: '714-340-5029',
+			address: 'email: adriancrosby02@gmail.com',
 			isExternal: true,
 		},
 	];

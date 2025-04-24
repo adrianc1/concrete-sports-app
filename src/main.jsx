@@ -37,11 +37,6 @@ const updateSW = registerSW({
 	},
 });
 
-if ('serviceWorker' in navigator) {
-	// && !/localhost/.test(window.location)) {
-	registerSW();
-}
-
 createRoot(document.getElementById('root')).render(
 	<StrictMode>
 		<BrowserRouter>
