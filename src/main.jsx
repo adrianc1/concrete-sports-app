@@ -23,6 +23,20 @@ import PlayersOfTheMonth from './components/mainPage/PlayersOfTheMonth.jsx';
 import Photos from './components/mainPage/Photos.jsx';
 import IFrame from './components/iframe/IFrame.jsx';
 
+const updateSW = registerSW({
+	onNeedRefresh() {
+		const shouldUpdate = confirm(
+			'A new version of the app is available. Reload to update?'
+		);
+		if (shouldUpdate) {
+			updateSW(true);
+		}
+	},
+	onOfflineReady() {
+		console.log('App is ready to use offline!');
+	},
+});
+
 if ('serviceWorker' in navigator) {
 	// && !/localhost/.test(window.location)) {
 	registerSW();
