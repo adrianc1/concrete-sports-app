@@ -43,10 +43,10 @@ function Sponsors() {
 			isExternal: true,
 		},
 		{
-			name: 'Your Business Here',
+			name: 'Adrian Crosby',
 			url: 'https://concrete-theatre.com/',
-			phone: '360-555-1234',
-			address: '1 Main Street, Concrete, Washington, United States 98237',
+			phone: '714-340-5029',
+			address: 'adriancrosby02@gmail.com',
 			isExternal: true,
 		},
 	];
