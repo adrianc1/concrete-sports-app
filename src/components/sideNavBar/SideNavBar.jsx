@@ -18,15 +18,15 @@ function SideNavBar({ show, logo }) {
 				<li>
 					<Link to="/Contact">Coach Connect</Link>
 				</li>
-				<li>
+				{/* <li>
 					<Link to="/SchoolDistrict">School District</Link>
 				</li>
 				<li>
 					<Link to="/Photos">Photos</Link>
-				</li>
-				<li>
+				</li> */}
+				{/* <li>
 					<Link to="/PlayersOfTheMonth">Players Of The Month</Link>
-				</li>
+				</li> */}
 			</ul>
 			<ul className="nav-schedule">
 				<h4>Team Schedules</h4>
@@ -54,9 +54,8 @@ function SideNavBar({ show, logo }) {
 				<li>
 					<Link to="/WrestlingSchedule">Wrestling</Link>
 				</li>
-
-				<p className="copyright">Adrian Crosby 2025&copy;</p>
 			</ul>
+			<p className="copyright">Adrian Crosby 2025&copy;</p>
 		</nav>
 	);
 }
