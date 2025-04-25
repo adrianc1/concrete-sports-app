@@ -7,6 +7,13 @@ import './boosters.css';
 function Boosters() {
 	const [showNav, setShowNav] = useState(false);
 	const [showExitIcon, setShowExitIcon] = useState(false);
+	const [showModal, setShowModal] = useState(false);
+
+	const modalToggle = () => {
+		setShowModal(!showModal);
+		console.log(showModal);
+	};
+
 	return (
 		<div>
 			<div className="nav">
@@ -46,10 +53,54 @@ function Boosters() {
 					</li>
 				</ul>
 				<div className="button-container">
-					<button>JOIN THE CLUB!</button>
+					<button onClick={modalToggle}>JOIN THE CLUB!</button>
 					<button>DONATE TODAY</button>
 				</div>
 			</div>
+
+			{showModal && (
+				<div className="modal-page">
+					<div className="overlay"></div>
+					<div className="modal-container">
+						<div className="modal-content">
+							<form
+								onSubmit={(e) => {
+									e.preventDefault();
+									console.log('Form submitted');
+								}}
+							>
+								<div>
+									<label>First Name</label>
+									<input type="text" name="firstName" />
+								</div>
+
+								<div>
+									<label>Last Name</label>
+									<input type="text" name="lastName" />
+								</div>
+
+								<div>
+									<label>Phone Number</label>
+									<input type="tel" name="phone" />
+								</div>
+
+								<div>
+									<label>Email</label>
+									<input type="email" name="email" />
+								</div>
+
+								<button
+									type="submit"
+									className="submit-form-btn"
+									onClick={modalToggle}
+								>
+									Submit
+								</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			)}
 		</div>
 	);
 }
