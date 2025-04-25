@@ -11,7 +11,7 @@ function Contact() {
 		{
 			team: 'Boys Basketball',
 			coachName: 'Danny Crosby',
-			coachEmail: 'coachdanny@notrealemail.com',
+			coachEmail: 'dcrosby@concrete.k12.wa.us',
 		},
 		{
 			team: 'Girls Basketball',
