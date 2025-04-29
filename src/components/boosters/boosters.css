@@ -54,24 +54,6 @@ button {
 	width: 100%;
 	margin: 0 2rem 1rem 2rem;
 }
-
-@media (min-width: 768px) {
-	.boosters-title {
-		font-size: 2.7rem;
-		padding-top: 4rem;
-	}
-	.booster-sub-title {
-		font-size: 1.4rem;
-	}
-	.booster-club-perks li {
-		font-size: 1.6rem;
-	}
-	button {
-		padding: 1rem 2rem;
-		font-size: 1.5rem;
-	}
-}
-
 .modal-page {
 	position: fixed;
 	top: 0;
@@ -93,21 +75,19 @@ button {
 
 .modal-container {
 	height: 50%;
-	width: 50%;
+	width: 70%;
 	background-color: white;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
 	margin: 0 auto;
-
-	border: 3px solid red;
 }
 
 .modal-content {
 	height: 100%;
 	width: 100%;
-	border: 4px solid purple;
+	border: 8px solid rgb(66, 10, 114);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -125,7 +105,7 @@ button {
 }
 
 .submit-form-btn {
-	width: 30%;
+	width: 50%;
 	align-self: center;
 	padding: 0;
 	letter-spacing: 0.3rem;
@@ -145,13 +125,38 @@ button {
 	display: block;
 	margin-bottom: 4px;
 	font-weight: bold;
-	margin: 0 auto;
+	margin: 0 auto 0.5rem auto;
 	text-align: left;
-	width: 50%;
+	width: 90%;
 }
 
 .modal-content form input {
-	width: 50%;
+	width: 90%;
 	box-sizing: border-box;
 	margin: 0 auto;
+	padding-left: 1rem;
+}
+
+@media (min-width: 768px) {
+	.boosters-title {
+		font-size: 2.7rem;
+		padding-top: 4rem;
+	}
+	.booster-sub-title {
+		font-size: 1.4rem;
+	}
+	.booster-club-perks li {
+		font-size: 1.6rem;
+	}
+	button {
+		padding: 1rem 2rem;
+		font-size: 1.5rem;
+	}
+	.modal-content form label {
+		width: 80%;
+	}
+
+	.modal-content form input {
+		width: 80%;
+	}
 }
