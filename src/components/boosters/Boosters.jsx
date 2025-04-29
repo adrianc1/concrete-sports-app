@@ -54,7 +54,6 @@ function Boosters() {
 				</ul>
 				<div className="button-container">
 					<button onClick={modalToggle}>JOIN THE CLUB!</button>
-					<button>DONATE TODAY</button>
 				</div>
 			</div>
 

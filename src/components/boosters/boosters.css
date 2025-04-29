@@ -88,52 +88,70 @@ button {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin: 0 auto;
 }
 
 .modal-container {
 	height: 50%;
-	width: 70%;
+	width: 50%;
 	background-color: white;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
+	margin: 0 auto;
+
+	border: 3px solid red;
 }
 
 .modal-content {
 	height: 100%;
 	width: 100%;
+	border: 4px solid purple;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .modal-content form {
-	border: 2px solid red;
 	height: 100%;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	align-items: flex-start;
+	align-items: center;
 	text-align: left;
+	margin: 0 auto;
 }
 
 .submit-form-btn {
-	width: 50%;
+	width: 30%;
 	align-self: center;
+	padding: 0;
+	letter-spacing: 0.3rem;
+	font-size: 1.5rem;
 }
 
 .modal-content form div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
 	margin-bottom: 1rem;
-	margin-left: 1rem;
+	text-align: left;
 }
 
 .modal-content form label {
 	display: block;
 	margin-bottom: 4px;
 	font-weight: bold;
+	margin: 0 auto;
+	text-align: left;
+	width: 50%;
 }
 
 .modal-content form input {
-	width: 100%;
-	padding: 0rem 6rem;
+	width: 50%;
 	box-sizing: border-box;
+	margin: 0 auto;
 }
