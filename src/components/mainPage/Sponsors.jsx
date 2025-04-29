@@ -42,18 +42,12 @@ function Sponsors() {
 			address: '1 Main Street, Concrete, Washington, United States 98237',
 			isExternal: true,
 		},
+
 		{
-			name: 'Adrian Crosby!',
-			url: 'check out my website here!',
+			name: 'Dreaux Digital',
+			url: 'https://adriancrosby.netlify.app/',
 			phone: '714-340-5029',
-			address: 'email: adriancrosby02@gmail.com',
-			isExternal: true,
-		},
-		{
-			name: 'Dreaux Digital & Design',
-			url: 'check out my website here!',
-			phone: '714-340-5029',
-			address: 'email: adriancrosby02@gmail.com',
+			address: 'adriancrosby02@gmail.com',
 			isExternal: true,
 		},
 	];
