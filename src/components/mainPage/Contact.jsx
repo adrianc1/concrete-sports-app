@@ -74,12 +74,11 @@ function Contact() {
 
 				<ul className="coach-list">
 					{coachList.map((coach, index) => {
-						console.log(coach);
 						return (
 							<li className="coach-item" key={index}>
 								<span className="coach-title"> {coach.team}</span>
 								<span className="coach-name">
-									Head Coach: {coach.coachName}
+									<span>Head Coach:</span> {coach.coachName}
 								</span>
 								<span className="coach-email">
 									Email:{' '}

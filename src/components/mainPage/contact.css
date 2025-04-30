@@ -1,5 +1,6 @@
 .contact-page {
 	margin-top: 4rem;
+	padding-top: 4rem;
 	height: 100vh;
 	width: 100vw;
 	background-color: rgb(220, 220, 220);
@@ -18,7 +19,7 @@
 	height: 100%;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
+	justify-content: space-between;
 	padding: 0;
 	margin: 0 0 0 1rem;
 	list-style: none;
@@ -36,6 +37,7 @@
 	border-bottom: 3px solid #f2bc40;
 	background-color: rgb(220, 220, 220);
 	padding: 2rem 0;
+	gap: 1rem;
 }
 
 .coach-title {
@@ -56,9 +58,13 @@
 	font-weight: 600;
 }
 
+.coach-name span {
+	font-size: 1rem;
+}
+
 @media (min-width: 768px) {
 	.contact-page {
-		padding-top: 3rem;
+		padding-top: 4rem;
 	}
 	.page-title {
 		font-size: 3rem;
@@ -69,13 +75,13 @@
 	.coach-item {
 		font-size: 1.5rem;
 		letter-spacing: 0.07rem;
-		height: 100%;
-		width: 100vw;
+		/* height: 100%;
+		width: 100vw; */
 	}
 	.coach-list {
 		/* margin-left: 1.5rem; */
 		height: 100%;
-		width: 100vw;
+		width: 100%;
 		background-color: rgb(220, 220, 220);
 	}
 	.player-info span {

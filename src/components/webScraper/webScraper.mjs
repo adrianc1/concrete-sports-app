@@ -67,18 +67,18 @@ const schedulesToScrape = [
 	// 	url: 'https://concretehslions.com/teams/4531695/girls/volleyball/varsity/schedule',
 	// 	output: 'volleyballGames.json',
 	// },
-	{
-		url: 'https://concretehslions.com/teams/4531698/girls/basketball/varsity/schedule',
-		output: 'girlsBballGames.json',
-	},
+	// {
+	// 	url: 'https://concretehslions.com/teams/4531698/girls/basketball/varsity/schedule',
+	// 	output: 'girlsBballGames.json',
+	// },
 	// {
 	// 	url: 'https://concretehslions.com/teams/4531705/boys/wrestling/varsity/schedule',
 	// 	output: 'wrestlingGames.json',
 	// },
-	// {
-	// 	url: 'https://concretehslions.com/teams/4531700/boys/baseball/varsity/schedule',
-	// 	output: 'baseballGames.json',
-	// },
+	{
+		url: 'https://concretehslions.com/teams/4531700/boys/baseball/varsity/schedule',
+		output: 'baseballGames.json',
+	},
 	// {
 	// 	url: 'https://concretehslions.com/teams/4531701/girls/fastpitch-softball/varsity/schedule',
 	// 	output: 'softballGames.json',
@@ -94,10 +94,14 @@ const schedulesToScrape = [
 	// Add more as needed
 ];
 
-async function scrapeAll() {
-	for (const { url, output } of schedulesToScrape) {
-		await scrapeGames(url, output);
-	}
-}
+// async function scrapeAll() {
+// 	for (const { url, output } of schedulesToScrape) {
+// 		await scrapeGames(url, output);
+// 	}
+// }
 
-scrapeAll();
+// scrapeAll();
+
+scrapeGames(
+	'https://concretehslions.com/teams/4531700/boys/baseball/varsity/schedule'
+);

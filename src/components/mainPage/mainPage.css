@@ -15,7 +15,7 @@
 
 .main-page > * {
 	width: 100%;
-	color: rgb(66, 10, 114);
+	color: rgb(255, 255, 255);
 	margin: 0;
 	padding: 0;
 }
@@ -38,7 +38,7 @@
 .icon-container {
 	list-style-type: none;
 	border-radius: 30px;
-	height: 80%;
+	height: 75%;
 	margin: 0 auto;
 	width: 80%;
 	display: flex;
@@ -46,6 +46,7 @@
 	justify-content: center;
 	align-items: center;
 	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	background-color: rgb(66, 10, 114);
 }
 
 li.icon-title::marker {

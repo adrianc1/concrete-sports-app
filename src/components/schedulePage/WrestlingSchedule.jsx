@@ -25,7 +25,8 @@ function WrestlingSchedule() {
 					<ListGroupItem key={index} className="game">
 						<div>{game.date}</div>
 						<div>
-							{game.location.includes('Away') ? '@' : ''} {'  '}
+							{game.location.includes('Away') ? 'Away @' : ''} {'  '}
+							{'  '}
 							{game.opponent}
 						</div>
 						<div>{game.result}</div>

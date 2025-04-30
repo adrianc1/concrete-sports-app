@@ -1,14 +1,32 @@
 [
-  {
-    "date": "Mar 19",
-    "opponent": "n/a",
-    "location": "Away",
-    "result": "---"
-  },
-  {
-    "date": "Mar 19",
-    "opponent": "n/a",
-    "location": "Away",
-    "result": "---"
-  }
+	{
+		"date": "Mar 19",
+		"opponent": "Coupeville High School, Friday Harbor High School, La Conner High School, Mount Vernon Christian High School,Orcas Island High School",
+		"location": "Away",
+		"result": "---"
+	},
+	{
+		"date": "Mar 26",
+		"opponent": "Coupeville High School, Friday Harbor High School, La Conner High School, Mount Vernon Christian High School,Orcas Island High School",
+		"location": "Away",
+		"result": "---"
+	},
+	{
+		"date": "Apr 4",
+		"opponent": "Blaine High School,East Jefferson High School,Friday Harbor High School, Granite Falls High School,La Conner High School,Lummi Nation School,Meridian High School,Mount Baker High School,Mount Vernon Christian High School,Nooksack Valley High School,Orcas Island High School",
+		"location": "Away",
+		"result": "---"
+	},
+	{
+		"date": "Apr 16",
+		"opponent": "Coupeville High School, Friday Harbor High School, La Conner High School, Mount Vernon Christian High School,Orcas Island High School",
+		"location": "Away",
+		"result": "---"
+	},
+	{
+		"date": "May 7",
+		"opponent": "Coupeville High School, Friday Harbor High School, La Conner High School, Mount Vernon Christian High School,Orcas Island High School",
+		"location": "Away",
+		"result": "---"
+	}
 ]
