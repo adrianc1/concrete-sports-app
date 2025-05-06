@@ -73,7 +73,7 @@
 	text-align: center;
 }
 
-@media (min-width: 767px) {
+@media (min-width: 768px) {
 	.side-nav {
 		font-size: 1.7rem;
 	}
