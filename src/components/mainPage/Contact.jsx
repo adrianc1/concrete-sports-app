@@ -78,7 +78,7 @@ function Contact() {
 							<li className="coach-item" key={index}>
 								<span className="coach-title"> {coach.team}</span>
 								<span className="coach-name">
-									<span>Head Coach:</span> {coach.coachName}
+									<span>Contact:</span> {coach.coachName}
 								</span>
 								<span className="coach-email">
 									Email:{' '}

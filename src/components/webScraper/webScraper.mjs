@@ -55,52 +55,52 @@ export async function scrapeGames(url, outputFilename = 'games.json') {
 
 // Example usage
 const schedulesToScrape = [
-	// {
-	// 	url: 'https://concretehslions.com/teams/4531696/boys/basketball/varsity/schedule',
-	// 	output: 'boysBballGames.json',
-	// },
-	// {
-	// 	url: 'https://concretehslions.com/teams/4531694/boys/football/varsity/schedule',
-	// 	output: 'footballGames.json',
-	// },
-	// {
-	// 	url: 'https://concretehslions.com/teams/4531695/girls/volleyball/varsity/schedule',
-	// 	output: 'volleyballGames.json',
-	// },
-	// {
-	// 	url: 'https://concretehslions.com/teams/4531698/girls/basketball/varsity/schedule',
-	// 	output: 'girlsBballGames.json',
-	// },
-	// {
-	// 	url: 'https://concretehslions.com/teams/4531705/boys/wrestling/varsity/schedule',
-	// 	output: 'wrestlingGames.json',
-	// },
+	{
+		url: 'https://concretehslions.com/teams/4531696/boys/basketball/varsity/schedule',
+		output: 'boysBballGames.json',
+	},
+	{
+		url: 'https://concretehslions.com/teams/4531694/boys/football/varsity/schedule',
+		output: 'footballGames.json',
+	},
+	{
+		url: 'https://concretehslions.com/teams/4531695/girls/volleyball/varsity/schedule',
+		output: 'volleyballGames.json',
+	},
+	{
+		url: 'https://concretehslions.com/teams/4531698/girls/basketball/varsity/schedule',
+		output: 'girlsBballGames.json',
+	},
+	{
+		url: 'https://concretehslions.com/teams/4531705/boys/wrestling/varsity/schedule',
+		output: 'wrestlingGames.json',
+	},
 	{
 		url: 'https://concretehslions.com/teams/4531700/boys/baseball/varsity/schedule',
 		output: 'baseballGames.json',
 	},
-	// {
-	// 	url: 'https://concretehslions.com/teams/4531701/girls/fastpitch-softball/varsity/schedule',
-	// 	output: 'softballGames.json',
-	// },
-	// {
-	// 	url: 'https://concretehslions.com/teams/4531703/coed/track-&-field/varsity/schedule',
-	// 	output: 'trackGames.json',
-	// },
-	// {
-	// 	url: 'https://concretehslions.com/teams/4531694/boys/football/varsity/schedule',
-	// 	output: 'footballGames.json',
-	// },
+	{
+		url: 'https://concretehslions.com/teams/4531701/girls/fastpitch-softball/varsity/schedule',
+		output: 'softballGames.json',
+	},
+	{
+		url: 'https://concretehslions.com/teams/4531703/coed/track-&-field/varsity/schedule',
+		output: 'trackGames.json',
+	},
+	{
+		url: 'https://concretehslions.com/teams/4531694/boys/football/varsity/schedule',
+		output: 'footballGames.json',
+	},
 	// Add more as needed
 ];
 
-// async function scrapeAll() {
-// 	for (const { url, output } of schedulesToScrape) {
-// 		await scrapeGames(url, output);
-// 	}
-// }
+async function scrapeAll() {
+	for (const { url, output } of schedulesToScrape) {
+		await scrapeGames(url, output);
+	}
+}
 
-// scrapeAll();
+scrapeAll();
 
 scrapeGames(
 	'https://concretehslions.com/teams/4531700/boys/baseball/varsity/schedule'

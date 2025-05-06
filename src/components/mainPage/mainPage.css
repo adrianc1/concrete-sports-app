@@ -1,3 +1,7 @@
+* {
+	margin: 0;
+	padding: 0;
+}
 .main-page {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -6,6 +10,7 @@
 	font-size: 2.8rem;
 	flex-grow: 1;
 	width: 100%;
+	height: 100dvh;
 	/* background: linear-gradient(to top, rgb(32, 32, 32), rgb(102, 102, 102)); */
 	background-color: rgb(220, 220, 220);
 	justify-content: center;
@@ -27,7 +32,7 @@
 	font-size: 1rem;
 	text-decoration: none;
 	letter-spacing: 0.13rem;
-	font-weight: 700;
+	font-weight: 600;
 }
 
 .icon {
@@ -36,7 +41,6 @@
 }
 
 .icon-container {
-	list-style-type: none;
 	border-radius: 30px;
 	height: 80%;
 	margin: 0 auto;
@@ -47,6 +51,7 @@
 	align-items: center;
 	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 	background-color: rgb(66, 10, 114);
+	gap: 0;
 }
 
 li.icon-title::marker {
@@ -54,9 +59,20 @@ li.icon-title::marker {
 }
 
 a {
-	color: #e0e0e0;
 	color: black;
 	text-decoration: none;
+}
+
+@media (max-width: 400px) {
+	.boosters-title {
+		font-size: 1.2rem;
+	}
+	.icon {
+		font-size: 2.5rem;
+	}
+	.icon-title {
+		font-size: 0.8rem;
+	}
 }
 
 @media (min-width: 768px) {
@@ -65,15 +81,26 @@ a {
 	}
 
 	.icon {
-		font-size: 5rem;
+		font-size: 4rem;
 		margin-bottom: 2rem;
 	}
 
 	.icon-title {
-		font-size: 2.1rem;
+		font-size: 2rem;
 		text-decoration: none;
 	}
 	.icon-container {
-		height: 65%;
+		height: 85%;
+		width: 90%;
+	}
+}
+
+@media (min-width: 868px) {
+	.icon-title {
+		font-size: 2.1rem;
+		text-decoration: none;
+	}
+	.boosters-tit .icon {
+		font-size: 5rem;
 	}
 }

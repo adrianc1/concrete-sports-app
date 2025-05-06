@@ -1,6 +1,6 @@
 .contact-page {
 	margin-top: 4rem;
-	padding-top: 4rem;
+	padding-top: 2rem;
 	height: 100vh;
 	width: 100vw;
 	background-color: rgb(220, 220, 220);
@@ -85,7 +85,7 @@
 		background-color: rgb(220, 220, 220);
 	}
 	.player-info span {
-		font-size: 2rem;
+		font-size: 2.2rem;
 	}
 
 	.coach-phone,

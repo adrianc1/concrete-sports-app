@@ -68,6 +68,9 @@ function Boosters() {
 									console.log('Form submitted');
 								}}
 							>
+								<span className="close-modal-button" onClick={modalToggle}>
+									X
+								</span>
 								<div>
 									<label>First Name</label>
 									<input type="text" name="firstName" />

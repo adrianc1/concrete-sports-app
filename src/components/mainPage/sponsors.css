@@ -1,6 +1,6 @@
 .main-sponsors-div {
 	display: flex;
-	height: 100%;
+	height: 100vh;
 	flex-direction: column;
 	background-color: rgb(220, 220, 220);
 	overflow: scroll;

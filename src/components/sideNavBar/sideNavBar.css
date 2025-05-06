@@ -66,14 +66,14 @@
 }
 
 .copyright {
-	font-size: 0.5rem;
+	font-size: 0.7rem;
 	letter-spacing: 0.1rem;
 	position: relative;
 	width: 100%;
 	text-align: center;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 767px) {
 	.side-nav {
 		font-size: 1.7rem;
 	}
