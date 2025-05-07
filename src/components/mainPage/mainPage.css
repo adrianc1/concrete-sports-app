@@ -8,14 +8,15 @@
 	text-align: center;
 	font-family: 'Open Sans';
 	font-size: 2.8rem;
-	flex-grow: 1;
+	/* flex-grow: 1; */
 	width: 100%;
-	height: 100vh;
+	height: calc(100dvh - 200px);
 	/* background: linear-gradient(to top, rgb(32, 32, 32), rgb(102, 102, 102)); */
 	background-color: rgb(220, 220, 220);
 	justify-content: center;
 	align-items: center;
 	color: #fff;
+	align-items: center;
 }
 
 .main-page > * {
@@ -23,9 +24,6 @@
 	color: rgb(255, 255, 255);
 	margin: 0;
 	padding: 0;
-}
-.container {
-	width: 100%;
 }
 
 .icon-title {
@@ -42,7 +40,7 @@
 
 .icon-container {
 	border-radius: 30px;
-	height: 80%;
+	height: 20vh;
 	margin: 0 auto;
 	width: 80%;
 	display: flex;
@@ -90,7 +88,7 @@ a {
 		text-decoration: none;
 	}
 	.icon-container {
-		height: 85%;
+		height: 80%;
 		width: 90%;
 	}
 }
