@@ -19,3 +19,9 @@
 		height: 350px;
 	}
 }
+
+@media (min-width: 1200px) {
+	.slider-container {
+		height: 550px;
+	}
+}
