@@ -10,7 +10,7 @@ import './sponsors.css';
 function Sponsors() {
 	const [showNav, setShowNav] = useState(false);
 	const [showExitIcon, setShowExitIcon] = useState(false);
-	const [showIframe, setShowIframe] = useState(false);
+	const [iframeUrl, setIframeUrl] = useState('');
 
 	const sponsorList = [
 		{
@@ -51,11 +51,18 @@ function Sponsors() {
 			isExternal: true,
 		},
 	];
+	function handleSposorClick(url, isExternal) {
+		if (isExternal) {
+			setIframeUrl(url);
+		} else {
+			console.log(`navigating to ${url}`);
+		}
+	}
 	function handleClick() {
-		setShowIframe(true);
+		setIframeUrl(url);
 	}
 	return (
-		<div className="main-sponsors-div">
+		<div>
 			<Header
 				toggleNav={() => setShowNav(!showNav)}
 				toggleIcon={() => setShowExitIcon(!showExitIcon)}
@@ -63,47 +70,51 @@ function Sponsors() {
 				display={showExitIcon}
 			/>
 			<SideNavBar show={showNav} logo={logo} />
-			<ul className="sponsor-list">
+			<div className="sponsors-content">
 				<h2 className="sponsors-title">Sponsors</h2>
-				{sponsorList.map((sponsor, index) => {
-					return (
-						<li className="sponsor-item" key={index}>
-							{sponsor.isExternal ? (
-								// <div onClick={handleClick}>
-								// 	<span className="sponsor-name">{sponsor.name}</span>
-								// 	{showIframe && <IFrame url={sponsor.url} />}
-								// </div>
-								<Link
-									className="sponsor-name"
-									to="/IFrame"
-									onClick={handleClick}
-								>
-									{sponsor.name}
-								</Link>
-							) : (
-								<Link
-									className="sponsor-name"
-									to={sponsor.url}
-									onClick={handleClick}
-								>
-									{sponsor.name}
-								</Link>
-							)}
-							<span className="sponsor-address">
-								Address: {sponsor.address}
-							</span>
-							<span className="sponsor-phone">Phone: {sponsor.phone}</span>
-						</li>
-					);
-				})}
-				<p className="sponsor-message">
-					A heartfelt thank you to our sponsors! Your generous support has
-					directly empowered our Concrete athletes, providing them with
-					invaluable resources and opportunities. We've witnessed their growth
-					and success thanks to your belief in them. We are deeply grateful for
-					your partnership.
-				</p>
-			</ul>
+				<ul className="sponsor-list">
+					{sponsorList.map((sponsor, index) => {
+						return (
+							<li className="sponsor-item" key={index}>
+								{sponsor.isExternal ? (
+									<span
+										className="sponsor-name"
+										onClick={() =>
+											handleSposorClick(sponsor.url, sponsor.isExternal)
+										}
+									>
+										{sponsor.name}
+									</span>
+								) : (
+									<Link
+										className="sponsor-name"
+										to={sponsor.url}
+										onClick={handleClick}
+									>
+										{sponsor.name}
+									</Link>
+								)}
+
+								<span className="sponsor-address">
+									Address: {sponsor.address}
+								</span>
+								<span className="sponsor-phone">Phone: {sponsor.phone}</span>
+							</li>
+						);
+					})}
+					<p className="sponsor-message">
+						A heartfelt thank you to our sponsors! Your generous support has
+						directly empowered our Concrete athletes, providing them with
+						invaluable resources and opportunities. We've witnessed their growth
+						and success thanks to your belief in them. We are deeply grateful
+						for your partnership.
+					</p>
+				</ul>
+
+				{iframeUrl && (
+					<IFrame url={iframeUrl} onClose={() => setIframeUrl('')} />
+				)}
+			</div>
 		</div>
 	);
 }

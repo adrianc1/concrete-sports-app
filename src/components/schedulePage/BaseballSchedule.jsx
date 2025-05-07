@@ -21,6 +21,7 @@ function BaseballSchedule() {
 			/>
 			<SideNavBar show={showNav} logo={logo} />
 			<ListGroup>
+				<h2>Baseball</h2>
 				{games.map((game, index) => (
 					<ListGroupItem key={index} className="game">
 						<div>{game.date}</div>

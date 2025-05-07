@@ -55,7 +55,7 @@ function SideNavBar({ show, logo }) {
 					<Link to="/WrestlingSchedule">Wrestling</Link>
 				</li>
 			</ul>
-			<p className="copyright">Dreaux Digital! 2025&copy;</p>
+			<p className="copyright">Dreaux Digital 2025&copy;</p>
 		</nav>
 	);
 }

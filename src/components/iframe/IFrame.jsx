@@ -1,31 +1,21 @@
 import { useState } from 'react';
-import Header from '../header/Header';
-import SideNavBar from '../sideNavBar/SideNavBar';
+// import Header from '../header/Header';
+// import SideNavBar from '../sideNavBar/SideNavBar';
 import logo from '../../assets/Concrete-Logo.png';
+import './iframe.css';
 
-function IFrame({ url = 'https://concrete-theatre.com/' }) {
-	const [showNav, setShowNav] = useState(false);
-	const [showExitIcon, setShowExitIcon] = useState(false);
+function IFrame({ url, onClose }) {
 	return (
-		<div>
-			<Header
-				toggleNav={() => setShowNav(!showNav)}
-				toggleIcon={() => setShowExitIcon(!showExitIcon)}
-				logo={logo}
-				display={showExitIcon}
-			/>
-			<SideNavBar show={showNav} logo={logo} />
+		<div className="iframe-overlay">
+			<div className="iframe-header">
+				<button onClick={onClose} className="iframe-close-btn">
+					✕ Close
+				</button>
+			</div>
 			<iframe
 				src={url}
-				title="Announcements"
-				style={{
-					position: 'fixed',
-					top: '4rem',
-					left: 0,
-					width: '100vw',
-					height: '100vh',
-					border: 'none',
-				}}
+				title="Embedded Page"
+				className="iframe-content"
 			></iframe>
 		</div>
 	);
