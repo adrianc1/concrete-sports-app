@@ -1,27 +1,30 @@
 .main-sponsors-div {
 	display: flex;
-	height: 100vh;
+	min-height: 100dvh;
 	flex-direction: column;
 	background-color: rgb(220, 220, 220);
-	overflow: scroll;
+	overflow: hidden;
 }
 .sponsors-title {
 	text-align: center;
 	font-size: 2rem;
-	margin-top: 4rem;
+	margin-top: 1rem;
 	font-family: 'Arial';
 	font-weight: 600;
 }
 
 .sponsor-list {
 	font-family: 'Arial';
+	overflow: hidden;
+
 	font-weight: 800;
 	width: 100vw;
 	height: 100vh;
-	flex: 3;
+	/* flex: 3; */
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
+	align-items: center;
 	padding: 0;
 	margin: 0 0 0 1rem;
 	list-style: none;
@@ -54,12 +57,13 @@
 	margin-top: 2rem;
 	line-height: 1rem;
 	bottom: 0rem;
+	padding-bottom: 2rem;
 	position: relative;
 }
 
 @media (min-width: 768px) {
 	.sponsors-title {
-		margin-top: 7rem;
+		margin-top: 1rem;
 		font-size: 3rem;
 	}
 
@@ -70,7 +74,6 @@
 	.sponsor-item {
 		font-size: 1.4rem;
 		justify-content: center;
-		gap: 1rem;
 	}
 	.sponsor-message {
 		font-size: 1rem;
