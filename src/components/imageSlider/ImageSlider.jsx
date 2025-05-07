@@ -1,30 +1,11 @@
 import { useState, useEffect } from 'react';
-
+import './ImageSlider.css';
 const ImageSlider = ({ slides }) => {
 	const [currentIndex, setCurrentIndex] = useState(0);
 
-	const sliderStyles = {
-		width: '100%',
-		height: '100%',
-		position: 'relative',
-		display: 'flex',
-		alignItems: 'center',
-		justifyContent: 'center',
-		overflow: 'hidden', // Prevents images from spilling out
-		transition: 'all 2s ease-out',
-	};
-
-	const imgStyles = {
-		width: '100%', // Makes sure the image never overflows horizontally
-		minHeight: '100%', // Ensures it doesn't get taller than the container
-		objectFit: 'cover', // Ensures the whole image is visible
-		borderRadius: '1px',
-		transition: 'all 2s',
-	};
-
 	const leftArrowStyles = {
 		position: 'absolute',
-		top: '50%',
+		top: '60%',
 		transform: 'translate(0, -50%)',
 		transition: 'all 2s',
 
@@ -37,7 +18,7 @@ const ImageSlider = ({ slides }) => {
 
 	const rightArrowStyles = {
 		position: 'absolute',
-		top: '50%',
+		top: '60%',
 		transform: 'translate(0, -50%)',
 		right: '32px',
 		fontSize: '2rem',
@@ -80,14 +61,17 @@ const ImageSlider = ({ slides }) => {
 	}, []); // Empty dependency array ensures it runs only once
 
 	return (
-		<div style={sliderStyles}>
+		<div className="slider-container">
 			<div style={leftArrowStyles} onClick={goToPrevious}>
 				←
 			</div>
-			<img src={slides[currentIndex].url} alt="Slide" style={imgStyles} />
+
+			<img src={slides[currentIndex].url} alt="Slide" className="img-slide" />
+
 			<div style={rightArrowStyles} onClick={goToNext}>
 				→
 			</div>
+
 			<div style={dotsContainerStyles}>
 				{slides.map((_, index) => (
 					<span

@@ -1,5 +1,4 @@
 import ImageSlider from '../imageSlider/ImageSlider';
-import './banner.css';
 import welcomeBanner from '../../assets/concreteBannerImg.gif';
 import cascadeSupply from '../../assets/cascadesupplylogo.jpg';
 import actOneLogo from '../../assets/actonelogo.jpg';
@@ -12,17 +11,11 @@ function Banner() {
 		{ url: cascadeSupply },
 	];
 
-	const containerStyles = {
-		width: '100%',
-		height: '12rem',
-		margin: '4rem auto 0 auto',
-	};
-
 	return (
 		<div className="banner">
 			{/* <img src={myImage} alt="Banner" /> */}
-			<div style={containerStyles}>
-				{' '}
+			<div className="img-container">
+				{/* {' '} */}
 				<ImageSlider slides={slides} />
 			</div>
 		</div>

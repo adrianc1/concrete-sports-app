@@ -1,7 +1,7 @@
 .banner {
-	display: block;
 	width: 100%;
-	height: auto;
+	height: 100%;
+	overflow: hidden;
 }
 
 .banner > img {
@@ -9,12 +9,13 @@
 	vertical-align: bottom;
 	padding: 0;
 	width: 100%;
-	height: auto;
+	border: 3px solid blue;
+	object-fit: cover;
+	align-self: center;
 }
 
-@media (min-width: 768px) {
-	.banner {
-		margin-top: 2.4rem;
-		/* height: 12rem; */
+/* @media (min-width: 768px) {
+	.image-container {
+		height: 100px;
 	}
-}
+} */
