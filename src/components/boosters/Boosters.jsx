@@ -19,7 +19,6 @@ function Boosters() {
 	// EmailClient.init('_LFinvdPQE4j4ldKB');
 
 	const sendEmail = (e) => {
-		e.preventDefault();
 		emailjs.sendForm(
 			'service_o41p86x',
 			'template_ajau399',
