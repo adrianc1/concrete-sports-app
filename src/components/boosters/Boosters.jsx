@@ -2,6 +2,8 @@ import { useState } from 'react';
 import Header from '../header/Header';
 import SideNavBar from '../sideNavBar/SideNavBar';
 import logo from '../../assets/Concrete-Logo.png';
+import emailjs from '@emailjs/browser';
+
 import './boosters.css';
 
 function Boosters() {
@@ -12,6 +14,18 @@ function Boosters() {
 	const modalToggle = () => {
 		setShowModal(!showModal);
 		console.log(showModal);
+	};
+
+	// EmailClient.init('_LFinvdPQE4j4ldKB');
+
+	const sendEmail = (e) => {
+		e.preventDefault();
+		emailjs.sendForm(
+			'service_o41p86x',
+			'template_ajau399',
+			e.target,
+			'_LFinvdPQE4j4ldKB'
+		);
 	};
 
 	return (
@@ -62,12 +76,7 @@ function Boosters() {
 					<div className="overlay"></div>
 					<div className="modal-container">
 						<div className="modal-content">
-							<form
-								onSubmit={(e) => {
-									e.preventDefault();
-									console.log('Form submitted');
-								}}
-							>
+							<form onSubmit={sendEmail}>
 								<span className="close-modal-button" onClick={modalToggle}>
 									X
 								</span>
@@ -94,7 +103,7 @@ function Boosters() {
 								<button
 									type="submit"
 									className="submit-form-btn"
-									onClick={modalToggle}
+									// onClick={modalToggle}
 								>
 									Submit
 								</button>
