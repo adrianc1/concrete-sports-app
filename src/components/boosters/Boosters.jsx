@@ -72,9 +72,9 @@ function Boosters() {
 						(I.E. RECENTLY NEW TRACK).
 					</li>
 				</ul>
-				<div className="button-container">
+				{/* <div className="button-container">
 					<button onClick={modalToggle}>JOIN THE CLUB!</button>
-				</div>
+				</div> */}
 			</div>
 
 			{showModal && (

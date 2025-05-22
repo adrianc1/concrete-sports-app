@@ -4,8 +4,9 @@ import { RiContactsLine } from 'react-icons/ri';
 import { RiMegaphoneLine } from 'react-icons/ri';
 import { IoSchoolOutline } from 'react-icons/io5';
 import { PiUsers } from 'react-icons/pi';
-import { TbPhotoSensor2 } from 'react-icons/tb';
+import { FaTrophy } from 'react-icons/fa6';
 import { MdOutlineAddBusiness } from 'react-icons/md';
+import { GiLion } from 'react-icons/gi';
 
 function MainPage() {
 	return (
@@ -13,10 +14,10 @@ function MainPage() {
 			{/* BOOSTER */}
 			<Link to="/Boosters" className="icon-container">
 				<div className="icon">
-					<RiMegaphoneLine />
+					<GiLion />
 				</div>
 				<div className="icon-title">
-					CHS <br /> Booster
+					Booster <br /> Club
 				</div>
 			</Link>
 
@@ -65,13 +66,13 @@ function MainPage() {
 				</div>
 			</Link>
 
-			{/* Photos */}
+			{/* Announcements */}
 
-			<Link to="/Photos" className="icon-container">
+			<Link to="/Updates" className="icon-container">
 				<div className="icon">
-					<TbPhotoSensor2 />
+					<RiMegaphoneLine />
 				</div>
-				<div className="icon-title">Photos</div>
+				<div className="icon-title">Updates</div>
 			</Link>
 		</div>
 	);

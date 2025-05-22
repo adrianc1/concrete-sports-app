@@ -10,7 +10,7 @@ function SideNavBar({ show, logo }) {
 					<Link to="/">Home</Link>
 				</li>
 				<li>
-					<Link to="/Boosters">CHS Booster</Link>
+					<Link to="/Boosters">Booster Club</Link>
 				</li>
 				<li>
 					<Link to="/Sponsors">Sponsors</Link>
@@ -18,12 +18,12 @@ function SideNavBar({ show, logo }) {
 				<li>
 					<Link to="/Contact">Coach Connect</Link>
 				</li>
-				{/* <li>
+				<li>
 					<Link to="/SchoolDistrict">School District</Link>
 				</li>
 				<li>
-					<Link to="/Photos">Photos</Link>
-				</li> */}
+					<Link to="/Updates">Updates</Link>
+				</li>
 				{/* <li>
 					<Link to="/PlayersOfTheMonth">Players Of The Month</Link>
 				</li> */}

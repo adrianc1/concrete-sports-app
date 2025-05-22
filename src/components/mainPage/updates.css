@@ -1,0 +1,24 @@
+.annoucenment-title {
+	margin: 1rem 0;
+}
+.team-updates-list {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	font-family: 'Times New Roman', Times, serif;
+	height: 50vh;
+	margin: auto 0;
+	padding: 0;
+}
+
+.team-updates-list li {
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid black;
+	width: 100vw;
+	list-style-type: none;
+	padding-left: 0.5rem;
+}
+.team-updates-list span {
+	font-weight: 600;
+}

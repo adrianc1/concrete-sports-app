@@ -20,7 +20,7 @@ import App from './App.jsx';
 import Sponsors from './components/mainPage/Sponsors.jsx';
 import Contact from './components/mainPage/Contact.jsx';
 import PlayersOfTheMonth from './components/mainPage/PlayersOfTheMonth.jsx';
-import Photos from './components/mainPage/Photos.jsx';
+import Updates from './components/mainPage/Updates.jsx';
 import IFrame from './components/iframe/IFrame.jsx';
 
 const updateSW = registerSW({
@@ -51,7 +51,7 @@ createRoot(document.getElementById('root')).render(
 					path="/PlayersOfTheMonth"
 					element={<PlayersOfTheMonth />}
 				></Route>
-				<Route path="/Photos" element={<Photos />}></Route>
+				<Route path="/Updates" element={<Updates />}></Route>
 				<Route path="/Boosters" element={<Boosters />}></Route>
 				<Route
 					path="/GirlsBballSchedule"
