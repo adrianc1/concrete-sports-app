@@ -45,9 +45,9 @@ function Sponsors() {
 
 		{
 			name: 'Dreaux Digital',
-			url: 'https://dreauxdigital.netlify.app/',
-			phone: '714-340-5029',
-			address: 'adriancrosby02@gmail.com',
+			url: 'https://dreauxdigital.com',
+			phone: '-',
+			address: 'adrian@dreauxdigital.com',
 			isExternal: true,
 		},
 	];
