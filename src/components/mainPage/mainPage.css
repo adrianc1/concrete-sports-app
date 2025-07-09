@@ -1,27 +1,42 @@
+/* Universal Box-Sizing for consistency */
 * {
 	margin: 0;
 	padding: 0;
-}
-.main-page {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	text-align: center;
-	font-family: 'Open Sans';
-	font-size: 2.8rem;
-	/* flex-grow: 1; */
-	width: 100%;
-	height: calc(100dvh - 200px);
-	/* background: linear-gradient(to top, rgb(32, 32, 32), rgb(102, 102, 102)); */
-	background-color: rgb(220, 220, 220);
-	justify-content: center;
-	align-items: center;
-	color: #fff;
-	align-items: center;
+	box-sizing: border-box; /* Ensures padding and border are included in element's total width/height */
 }
 
+/* Base Font Fallback */
+body {
+	font-family: 'Open Sans', sans-serif; /* Add a generic sans-serif fallback */
+}
+
+.main-page {
+	display: grid;
+	grid-template-columns: 1fr 1fr; /* Default 2 columns for smaller screens */
+	gap: 20px; /* Space between grid items */
+	padding: 20px; /* Padding around the entire grid */
+	text-align: center;
+	font-size: 2.8rem; /* This font size seems very large for the main page text itself, but keeping it as per your original. Consider adjusting if it's a general text element and not a heading. */
+	width: 100%;
+	min-height: calc(
+		100dvh - 200px
+	); /* Use min-height to allow content to grow, preventing overflow for content. */
+	background: linear-gradient(
+		to bottom right,
+		#f0f2f5,
+		#e0e4eb
+	); /* Your light background gradient */
+	justify-content: center;
+	align-items: center;
+	color: #333; /* Default text color for the main page, darker for contrast on light background */
+}
+
+/* Ensure child elements don't get unwanted padding/margin */
 .main-page > * {
 	width: 100%;
-	color: rgb(255, 255, 255);
+	/* Keep color as white if this applies to content *within* the icon-containers,
+       but if it's main-page specific text, consider #333 for contrast */
+	color: inherit; /* Inherit from main-page for consistency, or specify a dark color */
 	margin: 0;
 	padding: 0;
 }
@@ -29,76 +44,146 @@
 .icon-title {
 	font-size: 1rem;
 	text-decoration: none;
-	letter-spacing: 0.13rem;
-	font-weight: 600;
+	letter-spacing: 0.08rem; /* Slightly reduced for better readability */
+	font-weight: 500; /* A bit lighter than 600 often looks more modern */
+	color: #f0f0f0; /* Soft white for good contrast against purple */
 }
 
 .icon {
-	font-size: 3rem;
-	color: rgb(232, 174, 39);
+	font-size: 3rem; /* Base icon size */
+	color: rgb(232, 174, 39); /* Your golden yellow/orange for the icon */
+}
+
+/* If your icon is an actual image (real-logo), ensure it scales */
+.icon .real-logo {
+	width: 30%; /* Keep as is for images */
+	max-width: 100px; /* Add a max-width to prevent very large image icons */
+	height: auto; /* Maintain aspect ratio */
 }
 
 .icon-container {
-	border-radius: 30px;
-	height: 20vh;
+	border-radius: 20px; /* Slightly less aggressive rounding for a modern feel */
+	height: 20vh; /* Using viewport height for responsiveness */
 	margin: 0 auto;
-	width: 80%;
+	width: 80%; /* Width relative to parent column */
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-	background-color: rgb(66, 10, 114);
-	gap: 0;
+	gap: 10px; /* Small gap between icon and title for breathing room */
+
+	/* Your deep purple background */
+	background: linear-gradient(
+		135deg,
+		rgb(66, 10, 114),
+		rgb(50, 8, 90)
+	); /* Subtle dark purple gradient */
+
+	/* Modern, layered box-shadow */
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+		rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+
+	/* Smooth transitions for interactive effects */
+	transition: transform 0.3s ease-out, box-shadow 0.3s ease-out,
+		background 0.3s ease-out;
+	cursor: pointer; /* Indicates interactivity */
+	overflow: hidden; /* Ensures content within the container respects border-radius */
 }
 
+.icon-container:hover {
+	transform: translateY(
+		-8px
+	); /* Lifts the card on hover for a dynamic effect */
+	/* Deeper, more diffused shadow on hover */
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px -5px,
+		rgba(0, 0, 0, 0.1) 0px 10px 15px -5px;
+	/* Slightly darker gradient on hover */
+	background: linear-gradient(135deg, rgb(75, 12, 128), rgb(58, 9, 105));
+}
+
+/* If icon-title is an li element, remove default marker */
 li.icon-title::marker {
 	list-style: none;
 }
 
+/* Ensure links inherit color from their parent by default */
 a {
-	color: black;
+	color: inherit; /* Links inside icon-container will be #f0f0f0 */
 	text-decoration: none;
 }
 
+/* Media Queries for Responsiveness */
+
 @media (max-width: 400px) {
+	.main-page {
+		font-size: 2rem; /* Adjust main page font for very small screens */
+		gap: 15px;
+		padding: 15px;
+	}
 	.boosters-title {
+		/* Assuming this refers to a general title on the main page */
 		font-size: 1.2rem;
 	}
 	.icon {
-		font-size: 2.5rem;
+		font-size: 2.5rem; /* Adjust icon size for small screens */
 	}
 	.icon-title {
-		font-size: 0.8rem;
-	}
-}
-
-@media (min-width: 768px) {
-	.main-page {
-		grid-template-columns: 1fr 1fr 1fr;
-	}
-
-	.icon {
-		font-size: 4rem;
-		margin-bottom: 2rem;
-	}
-
-	.icon-title {
-		font-size: 2rem;
-		text-decoration: none;
+		font-size: 0.8rem; /* Adjust title font size for small screens */
 	}
 	.icon-container {
-		height: 80%;
-		width: 90%;
+		height: 18vh; /* Slightly adjust height for very small screens */
+		width: 90%; /* Take up more width on very small screens */
+		border-radius: 15px; /* Slightly less rounded for compact screens */
 	}
 }
 
+/* Start of 3-column layout for medium to large screens */
+@media (min-width: 768px) {
+	.main-page {
+		grid-template-columns: repeat(
+			3,
+			1fr
+		); /* Consistently 3 columns from here upwards */
+		gap: 30px; /* More gap for larger screens */
+		padding: 40px;
+	}
+	.icon {
+		font-size: 4rem; /* Larger icon size for medium screens */
+		margin-bottom: 0.5rem; /* Small margin to push title down, if gap is not enough */
+	}
+	.icon-title {
+		font-size: 1.8rem; /* Larger title font for medium screens */
+	}
+	.icon-container {
+		height: 25vh; /* Adjust height for medium screens */
+		width: 85%; /* Adjust width for medium screens */
+		border-radius: 25px; /* Slightly more rounded on medium screens */
+	}
+}
+
+/* @media (min-width: 868px) and (min-width: 1024px) are now combined into the 768px+ rule for column count.
+   Only size-specific adjustments for elements within the 3-column layout are kept. */
 @media (min-width: 868px) {
 	.icon-title {
-		font-size: 2.1rem;
-		text-decoration: none;
+		font-size: 2.1rem; /* Slightly larger title font */
 	}
-	.boosters-tit .icon {
-		font-size: 5rem;
+	.icon {
+		font-size: 5rem; /* Even larger icon */
+	}
+	.icon-container {
+		height: 30vh; /* Adjust height further for larger screens */
+	}
+}
+
+@media (min-width: 1024px) {
+	/* Main page grid-template-columns is intentionally NOT changed here,
+       it remains `repeat(3, 1fr)` from the 768px media query. */
+	.main-page {
+		max-width: 1200px; /* Max width to contain the grid for very wide screens */
+		margin: 0 auto; /* Center the grid on very wide screens */
+	}
+	.icon-container {
+		height: 35vh; /* Adjust height for very large screens */
+		max-width: 280px; /* Set a max-width to prevent containers from becoming too wide */
 	}
 }
