@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Header from '../header/Header';
 import logo from '../../assets/Concrete-Logo.png';
 import SideNavBar from '../sideNavBar/SideNavBar';
-import './contact.css';
+import '../homePage/homePageStyles/contact.css';
 function Contact() {
 	const [showNav, setShowNav] = useState(false);
 	const [showExitIcon, setShowExitIcon] = useState(false);

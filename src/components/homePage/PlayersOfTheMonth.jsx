@@ -5,7 +5,7 @@ import SideNavBar from '../sideNavBar/SideNavBar';
 import player_1 from '../../assets/player_1.jpg';
 import player_2 from '../../assets/player_2.jpg';
 
-import './player.css';
+import '../homePage/homePageStyles/player.css';
 
 function PlayersOfTheMonth() {
 	const [showNav, setShowNav] = useState(false);

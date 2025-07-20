@@ -1,27 +1,9 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from 'react-router';
+import { createBrowserRouter, Router, RouterProvider } from 'react-router';
 import { registerSW } from 'virtual:pwa-register';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {
-	SchedulePage,
-	GirlsBballSchedule,
-	BaseballSchedule,
-	FootballSchedule,
-	SoftballSchedule,
-	TrackSchedule,
-	VolleyballSchedule,
-	WrestlingSchedule,
-} from './components/schedulePage';
-import SchoolDistrict from './components/mainPage/SchoolDistrict.jsx';
-import Boosters from './components/boosters/Boosters.jsx';
-import './index.css';
-import App from './App.jsx';
-import Sponsors from './components/mainPage/Sponsors.jsx';
-import Contact from './components/mainPage/Contact.jsx';
-import PlayersOfTheMonth from './components/mainPage/PlayersOfTheMonth.jsx';
-import Updates from './components/mainPage/Updates.jsx';
-import IFrame from './components/iframe/IFrame.jsx';
+import Routes from './routes/Routes.jsx';
 
 const updateSW = registerSW({
 	onNeedRefresh() {
@@ -37,12 +19,17 @@ const updateSW = registerSW({
 	},
 });
 
+const router = createBrowserRouter(Routes);
+
 createRoot(document.getElementById('root')).render(
 	<StrictMode>
-		<BrowserRouter>
+		<RouterProvider router={router} />
+		{/* <BrowserRouter>
 			<Routes>
 				<Route path="/" element={<App />} />
+
 				<Route path="/Sponsors" element={<Sponsors />}></Route>
+
 				<Route path="/SchoolDistrict" element={<SchoolDistrict />}></Route>
 				<Route path="/IFrame" element={<IFrame />} />
 				<Route path="/SchedulePage" element={<SchedulePage />}></Route>
@@ -70,6 +57,6 @@ createRoot(document.getElementById('root')).render(
 					element={<VolleyballSchedule />}
 				></Route>
 			</Routes>
-		</BrowserRouter>
+		</BrowserRouter> */}
 	</StrictMode>
 );

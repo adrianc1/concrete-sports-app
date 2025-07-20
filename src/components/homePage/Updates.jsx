@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Header from '../header/Header';
 import logo from '../../assets/Concrete-Logo.png';
 import SideNavBar from '../sideNavBar/SideNavBar';
-import './updates.css';
+import '../homePage/homePageStyles/updates.css';
 
 function Updates() {
 	const [showNav, setShowNav] = useState(false);

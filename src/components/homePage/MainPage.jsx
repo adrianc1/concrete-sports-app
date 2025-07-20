@@ -1,10 +1,9 @@
-import './mainPage.css';
+import '../homePage/homePageStyles/mainPage.css';
 import { Link } from 'react-router';
 import { RiContactsLine } from 'react-icons/ri';
 import { RiMegaphoneLine } from 'react-icons/ri';
 import { IoSchoolOutline } from 'react-icons/io5';
 import { PiUsers } from 'react-icons/pi';
-import { FaTrophy } from 'react-icons/fa6';
 import { MdOutlineAddBusiness } from 'react-icons/md';
 import { GiLion } from 'react-icons/gi';
 

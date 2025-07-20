@@ -6,7 +6,7 @@ import IFrame from '../iframe/IFrame';
 
 import { Link } from 'react-router';
 
-import './sponsors.css';
+import '../homePage/homePageStyles/sponsors.css';
 function Sponsors() {
 	const [showNav, setShowNav] = useState(false);
 	const [showExitIcon, setShowExitIcon] = useState(false);

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import SideNavBar from './components/sideNavBar/SideNavBar';
 import Banner from './components/banner/Banner';
-import MainPage from './components/mainPage/MainPage';
+import MainPage from './components/homePage/MainPage';
 // import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
 import logo from './assets/Concrete-Logo.png';
