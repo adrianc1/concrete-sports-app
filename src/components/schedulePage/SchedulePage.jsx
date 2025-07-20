@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
-import games from '../webScraper/games.json';
+import games from '../../utils/webScraper/games.json';
 import logo from '../../assets/Concrete-Logo.png';
 import { ListGroupItem } from 'react-bootstrap';
-import Header from '../header/Header';
-import SideNavBar from '../sideNavBar/SideNavBar';
+import Header from '../../layout/Header';
+import SideNavBar from '../../layout/SideNavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './schedulePage.css';
 

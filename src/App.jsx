@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import SideNavBar from './components/sideNavBar/SideNavBar';
+import SideNavBar from './layout/SideNavBar';
 import Banner from './components/banner/Banner';
 import MainPage from './components/homePage/MainPage';
 // import Footer from './components/footer/Footer';
-import Header from './components/header/Header';
+import Header from './layout/Header';
 import logo from './assets/Concrete-Logo.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

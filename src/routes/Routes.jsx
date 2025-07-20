@@ -10,7 +10,7 @@ import {
 	WrestlingSchedule,
 } from '../components/schedulePage';
 import SchoolDistrict from '../components/homePage/SchoolDistrict.jsx';
-import Boosters from '../components/boosters/Boosters.jsx';
+import Boosters from '../components/homePage/Boosters.jsx';
 
 import Sponsors from '../components/homePage/Sponsors.jsx';
 import Contact from '../components/homePage/Contact.jsx';

@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import Header from '../header/Header';
-import SideNavBar from '../sideNavBar/SideNavBar';
+import Header from '../../layout/Header';
+import SideNavBar from '../../layout/SideNavBar';
 import logo from '../../assets/Concrete-Logo.png';
 import emailjs from '@emailjs/browser';
-
-import './boosters.css';
+import '../homePage/homePageStyles/boosters.css';
 
 function Boosters() {
 	const [showNav, setShowNav] = useState(false);

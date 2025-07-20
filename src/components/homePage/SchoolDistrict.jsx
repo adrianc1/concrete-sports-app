@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import Header from '../header/Header';
+import Header from '../../layout/Header';
 import logo from '../../assets/Concrete-Logo.png';
-import SideNavBar from '../sideNavBar/SideNavBar';
+import SideNavBar from '../../layout/SideNavBar';
 
 function SchoolDistrict() {
 	const [showNav, setShowNav] = useState(false);
