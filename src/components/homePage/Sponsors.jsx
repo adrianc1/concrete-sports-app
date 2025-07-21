@@ -3,7 +3,6 @@ import Header from '../../layout/Header';
 import logo from '../../assets/Concrete-Logo.png';
 import SideNavBar from '../../layout/SideNavBar';
 import IFrame from '../iframe/IFrame';
-
 import { Link } from 'react-router';
 
 import '../homePage/homePageStyles/sponsors.css';
@@ -58,7 +57,7 @@ function Sponsors() {
 			console.log(`navigating to ${url}`);
 		}
 	}
-	function handleClick() {
+	function handleClick(url) {
 		setIframeUrl(url);
 	}
 	return (
@@ -105,9 +104,9 @@ function Sponsors() {
 					<p className="sponsor-message">
 						A heartfelt thank you to our sponsors! Your generous support has
 						directly empowered our Concrete athletes, providing them with
-						invaluable resources and opportunities. We've witnessed their growth
-						and success thanks to your belief in them. We are deeply grateful
-						for your partnership.
+						invaluable resources and opportunities. We&apos;ve witnessed their
+						growth and success t hanks to your belief in them. We are deeply
+						grateful for your partnership.
 					</p>
 				</ul>
 
