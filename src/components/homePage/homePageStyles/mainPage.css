@@ -208,7 +208,8 @@ a {
 			3,
 			1fr
 		); /* Consistently 3 columns from here upwards */
-		gap: 30px; /* More gap for larger screens */
+		grid-template-rows: repeat(2, minmax(200px, 1fr));
+		gap: 80px; /* More gap for larger screens */
 		padding: 40px;
 	}
 	.icon-container {
@@ -245,7 +246,7 @@ a {
 	/* Main page grid-template-columns is intentionally NOT changed here,
        it remains `repeat(3, 1fr)` from the 768px media query. */
 	.main-page {
-		max-width: 1200px; /* Max width to contain the grid for very wide screens */
+		max-width: 1600px;
 		margin: 0 auto; /* Center the grid on very wide screens */
 	}
 	.icon-container {
