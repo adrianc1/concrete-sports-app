@@ -29,6 +29,7 @@ function MainPage() {
 				<div className="icon-title">
 					Sponsors
 					<br />
+					List
 				</div>
 			</Link>
 
@@ -71,7 +72,10 @@ function MainPage() {
 				<div className="icon">
 					<RiMegaphoneLine />
 				</div>
-				<div className="icon-title">Updates</div>
+				<div className="icon-title">
+					Sports <br />
+					Updates
+				</div>
 			</Link>
 		</div>
 	);
