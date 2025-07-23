@@ -91,18 +91,16 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 12px;
+	gap: 8px;
 	position: relative;
 	overflow: hidden;
 
-	/* Modern subtle background with transparency */
-
 	/* Subtle border for modern definition */
-	/* border: 1px solid rgba(255, 255, 255, 0.15); */
+	border: 1px solid rgba(255, 255, 255, 0.15);
 
 	/* Contemporary shadow system */
-	/* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08),
-		inset 0 1px 0 rgba(255, 255, 255, 0.05); */
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08),
+		inset 0 1px 0 rgba(255, 255, 255, 0.05);
 
 	/* Smooth modern transitions */
 	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
