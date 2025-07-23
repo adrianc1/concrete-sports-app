@@ -79,6 +79,11 @@ body {
 
 .icon-container {
 	border-radius: 24px;
+	background: linear-gradient(
+		45deg,
+		rgba(96, 10, 114, 0.15),
+		rgba(50, 8, 90, 0.25)
+	);
 	height: 16vh;
 	margin: 0 auto;
 	width: 80%;
