@@ -13,25 +13,19 @@ body {
 .main-page {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	grid-template-rows: repeat(3, minmax(200px, 1fr)); /* Add this line */
 	gap: 12px;
 	padding: 20px;
 	text-align: center;
 	font-size: 2.5rem;
 	width: 100%;
-	min-height: calc(
-		100dvh - 250px
-	); /* Use min-height to allow content to grow, preventing overflow for content. */
-	background: linear-gradient(
-		to bottom right,
-		#f0f2f5,
-		#e0e4eb
-	); /* Your light background gradient */
+	min-height: calc(100dvh - 250px);
+	background: linear-gradient(to bottom right, #f0f2f5, #e0e4eb);
 	justify-content: center;
 	align-items: center;
-	color: #333; /* Default text color for the main page, darker for contrast on light background */
+	color: #333;
 }
 
-/* Ensure child elements don't get unwanted padding/margin */
 .main-page > * {
 	width: 100%;
 	color: inherit;
@@ -53,6 +47,8 @@ body {
 
 .icon {
 	font-size: 2.8rem;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 	background: linear-gradient(
 		45deg,
 		rgba(96, 10, 114, 0.15),
