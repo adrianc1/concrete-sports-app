@@ -7,19 +7,19 @@
 
 /* Base Font Fallback */
 body {
-	font-family: 'Open Sans', sans-serif; /* Add a generic sans-serif fallback */
+	font-family: 'Open Sans', sans-serif;
 }
 
 .main-page {
 	display: grid;
-	grid-template-columns: 1fr 1fr; /* Default 2 columns for smaller screens */
-	gap: 20px; /* Space between grid items */
-	padding: 20px; /* Padding around the entire grid */
+	grid-template-columns: 1fr 1fr;
+	gap: 12px;
+	padding: 20px;
 	text-align: center;
-	font-size: 2.8rem; /* This font size seems very large for the main page text itself, but keeping it as per your original. Consider adjusting if it's a general text element and not a heading. */
+	font-size: 2.5rem;
 	width: 100%;
 	min-height: calc(
-		100dvh - 200px
+		100dvh - 250px
 	); /* Use min-height to allow content to grow, preventing overflow for content. */
 	background: linear-gradient(
 		to bottom right,
@@ -34,71 +34,136 @@ body {
 /* Ensure child elements don't get unwanted padding/margin */
 .main-page > * {
 	width: 100%;
-	/* Keep color as white if this applies to content *within* the icon-containers,
-       but if it's main-page specific text, consider #333 for contrast */
-	color: inherit; /* Inherit from main-page for consistency, or specify a dark color */
+	color: inherit;
 	margin: 0;
 	padding: 0;
 }
 
 .icon-title {
-	font-size: 1rem;
+	font-size: 0.95rem;
 	text-decoration: none;
-	letter-spacing: 0.08rem; /* Slightly reduced for better readability */
-	font-weight: 500; /* A bit lighter than 600 often looks more modern */
-	color: #f0f0f0; /* Soft white for good contrast against purple */
+	letter-spacing: 0.12rem;
+	font-weight: 500;
+	color: rgb(66, 10, 114);
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	text-transform: uppercase;
+	opacity: 0.95;
+	transition: opacity 0.2s ease;
 }
 
 .icon {
-	font-size: 3rem; /* Base icon size */
-	color: rgb(232, 174, 39); /* Your golden yellow/orange for the icon */
+	font-size: 2.8rem;
+	background: linear-gradient(
+		45deg,
+		rgba(96, 10, 114, 0.15),
+		rgba(50, 8, 90, 0.25)
+	);
+	border-radius: 50%; /* Makes it a perfect circle */
+	padding: 20px; /* Adjust this to control circle size */
+	width: 80px; /* Fixed width for perfect circle */
+	height: 80px; /* Same as width for perfect circle */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: rgb(66, 10, 114);
+	filter: drop-shadow(0 2px 8px rgba(232, 174, 39, 0.3));
+	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease;
 }
 
-/* If your icon is an actual image (real-logo), ensure it scales */
 .icon .real-logo {
-	width: 30%; /* Keep as is for images */
-	max-width: 100px; /* Add a max-width to prevent very large image icons */
-	height: auto; /* Maintain aspect ratio */
+	width: 28%;
+	max-width: 90px;
+	height: auto;
+	filter: drop-shadow(0 2px 8px rgba(232, 174, 39, 0.3));
 }
 
 .icon-container {
-	border-radius: 20px; /* Slightly less aggressive rounding for a modern feel */
-	height: 20vh; /* Using viewport height for responsiveness */
+	border-radius: 24px;
+	height: 16vh;
 	margin: 0 auto;
-	width: 80%; /* Width relative to parent column */
+	width: 80%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 10px; /* Small gap between icon and title for breathing room */
+	gap: 12px;
+	position: relative;
+	overflow: hidden;
 
-	/* Your deep purple background */
-	background: linear-gradient(
-		135deg,
-		rgb(66, 10, 114),
-		rgb(50, 8, 90)
-	); /* Subtle dark purple gradient */
+	/* Modern subtle background with transparency */
 
-	/* Modern, layered box-shadow */
-	box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-		rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+	/* Subtle border for modern definition */
+	/* border: 1px solid rgba(255, 255, 255, 0.15); */
 
-	/* Smooth transitions for interactive effects */
-	transition: transform 0.3s ease-out, box-shadow 0.3s ease-out,
-		background 0.3s ease-out;
-	cursor: pointer; /* Indicates interactivity */
-	overflow: hidden; /* Ensures content within the container respects border-radius */
+	/* Contemporary shadow system */
+	/* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08),
+		inset 0 1px 0 rgba(255, 255, 255, 0.05); */
+
+	/* Smooth modern transitions */
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	cursor: pointer;
+	backdrop-filter: blur(20px);
+}
+
+/* Subtle animated background pattern */
+.icon-container::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: radial-gradient(
+		circle at 30% 20%,
+		rgba(232, 174, 39, 0.03) 0%,
+		transparent 50%
+	);
+	opacity: 0;
+	transition: opacity 0.4s ease;
 }
 
 .icon-container:hover {
-	transform: translateY(
-		-8px
-	); /* Lifts the card on hover for a dynamic effect */
-	/* Deeper, more diffused shadow on hover */
-	box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px -5px,
-		rgba(0, 0, 0, 0.1) 0px 10px 15px -5px;
-	/* Slightly darker gradient on hover */
-	background: linear-gradient(135deg, rgb(75, 12, 128), rgb(58, 9, 105));
+	transform: translateY(-6px) scale(1.02);
+
+	/* Enhanced shadow on hover */
+	box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18), 0 8px 16px rgba(0, 0, 0, 0.12),
+		inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+	/* Enhanced hover background - still subtle */
+	background: linear-gradient(
+		145deg,
+		rgba(75, 12, 128, 0.25),
+		rgba(58, 9, 105, 0.35)
+	);
+
+	border-color: rgba(255, 255, 255, 0.25);
+}
+
+.icon-container:hover::before {
+	opacity: 1;
+}
+
+.icon-container:hover .icon {
+	transform: scale(1.08);
+	filter: drop-shadow(0 4px 16px rgba(232, 174, 39, 0.4));
+}
+
+.icon-container:hover .icon-title {
+	opacity: 1;
+}
+
+/* Active state for better UX */
+.icon-container:active {
+	transform: translateY(-2px) scale(1.01);
+	transition-duration: 0.1s;
+}
+
+/* Modern focus state for accessibility */
+.icon-container:focus {
+	outline: none;
+	border-color: rgba(232, 174, 39, 0.4);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08),
+		inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 0 3px rgba(232, 174, 39, 0.2);
 }
 
 /* If icon-title is an li element, remove default marker */
@@ -147,17 +212,19 @@ a {
 		gap: 30px; /* More gap for larger screens */
 		padding: 40px;
 	}
-	.icon {
-		font-size: 4rem; /* Larger icon size for medium screens */
-		margin-bottom: 0.5rem; /* Small margin to push title down, if gap is not enough */
-	}
-	.icon-title {
-		font-size: 1.8rem; /* Larger title font for medium screens */
-	}
 	.icon-container {
-		height: 25vh; /* Adjust height for medium screens */
-		width: 85%; /* Adjust width for medium screens */
-		border-radius: 25px; /* Slightly more rounded on medium screens */
+		border-radius: 20px;
+		height: 18vh;
+		width: 85%;
+	}
+
+	.icon {
+		font-size: 2.4rem;
+	}
+
+	.icon-title {
+		font-size: 0.85rem;
+		letter-spacing: 0.1rem;
 	}
 }
 
