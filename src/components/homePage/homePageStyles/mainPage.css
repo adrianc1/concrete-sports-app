@@ -2,7 +2,7 @@
 * {
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box; /* Ensures padding and border are included in element's total width/height */
+	box-sizing: border-box;
 }
 
 /* Base Font Fallback */
@@ -167,14 +167,12 @@ body {
 		inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 0 3px rgba(232, 174, 39, 0.2);
 }
 
-/* If icon-title is an li element, remove default marker */
 li.icon-title::marker {
 	list-style: none;
 }
 
-/* Ensure links inherit color from their parent by default */
 a {
-	color: inherit; /* Links inside icon-container will be #f0f0f0 */
+	color: inherit;
 	text-decoration: none;
 }
 
@@ -188,7 +186,6 @@ a {
 		padding: 15px;
 	}
 	.boosters-title {
-		/* Assuming this refers to a general title on the main page */
 		font-size: 1.2rem;
 	}
 	.icon {
@@ -197,7 +194,7 @@ a {
 		width: 4rem;
 	}
 	.icon-title {
-		font-size: 1rem; /* Adjust title font size for small screens */
+		font-size: 1rem;
 	}
 	.icon-container {
 		height: 10rem;
@@ -206,16 +203,12 @@ a {
 	}
 }
 
-/* Start of 3-column layout for medium to large screens */
 @media (min-width: 767px) {
 	.main-page {
 		min-height: calc(100dvh - 425px);
-		grid-template-columns: repeat(
-			3,
-			1fr
-		); /* Consistently 3 columns from here upwards */
+		grid-template-columns: repeat(3, 1fr);
 		grid-template-rows: repeat(2, minmax(200px, 1fr));
-		gap: 20px; /* More gap for larger screens */
+		gap: 20px;
 		padding: 30px;
 	}
 	.icon-container {
@@ -254,12 +247,14 @@ a {
 
 @media (min-width: 1024px) {
 	.main-page {
+		min-height: calc(100dvh - 150px);
 		max-width: 1600px;
 		margin: 0 auto; /* Center the grid on very wide screens */
+		row-gap: 50px;
 	}
 	.icon-container {
 		height: 20rem;
-		max-width: 280px;
+		max-width: 350px;
 	}
 
 	.icon {
