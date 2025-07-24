@@ -7,7 +7,7 @@
 
 /* Base Font Fallback */
 body {
-	font-family: 'Open Sans', sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 .main-page {
@@ -55,6 +55,7 @@ body {
 		rgba(96, 10, 114, 0.15),
 		rgba(50, 8, 90, 0.25)
 	);
+	background: rgb(66, 10, 114);
 	border-radius: 50%;
 	padding: 10px;
 	width: 80px;
@@ -63,6 +64,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	color: rgb(66, 10, 114);
+	color: rgba(232, 174, 39, 1);
 	filter: drop-shadow(0 2px 8px rgba(232, 174, 39, 0.3));
 	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease;
 }
