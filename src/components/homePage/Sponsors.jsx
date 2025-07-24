@@ -61,7 +61,7 @@ function Sponsors() {
 		setIframeUrl(url);
 	}
 	return (
-		<div>
+		<div className="sponsor-container">
 			<Header
 				toggleNav={() => setShowNav(!showNav)}
 				toggleIcon={() => setShowExitIcon(!showExitIcon)}

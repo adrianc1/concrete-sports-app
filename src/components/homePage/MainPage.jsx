@@ -73,7 +73,7 @@ function MainPage() {
 					<RiMegaphoneLine />
 				</div>
 				<div className="icon-title">
-					Sports <br />
+					Team <br />
 					Updates
 				</div>
 			</Link>

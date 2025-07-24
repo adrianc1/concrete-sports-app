@@ -1,9 +1,8 @@
 .contact-page {
 	padding-top: 1rem;
-	height: 100vh;
+	min-height: 100vh;
 	width: 100vw;
-	background-color: rgb(220, 220, 220);
-	overflow: scroll;
+	background-color: rgb(240, 240, 240);
 	overflow-x: hidden;
 }
 
@@ -15,14 +14,11 @@
 
 .coach-list {
 	width: 100vw;
-	height: 100%;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
 	padding: 0;
 	margin: 0 0 0 1rem;
 	list-style: none;
-	background-color: rgb(220, 220, 220);
 }
 
 .coach-item {
@@ -34,7 +30,7 @@
 	justify-content: space-around;
 	list-style: none;
 	border-bottom: 3px solid #f2bc40;
-	background-color: rgb(220, 220, 220);
+	background-color: inherit;
 	padding: 2rem 0;
 	gap: 1rem;
 }
@@ -81,7 +77,7 @@
 		/* margin-left: 1.5rem; */
 		height: 100%;
 		width: 100%;
-		background-color: rgb(220, 220, 220);
+		background-color: inherit;
 	}
 	.player-info span {
 		font-size: 2.2rem;

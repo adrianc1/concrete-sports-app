@@ -60,7 +60,7 @@ function Contact() {
 		},
 	];
 	return (
-		<div>
+		<div className="contact-container">
 			<Header
 				toggleNav={() => setShowNav(!showNav)}
 				toggleIcon={() => setShowExitIcon(!showExitIcon)}
