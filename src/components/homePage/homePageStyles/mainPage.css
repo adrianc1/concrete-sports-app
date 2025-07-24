@@ -58,8 +58,8 @@ body {
 	background: rgb(66, 10, 114);
 	border-radius: 50%;
 	padding: 10px;
-	width: 80px;
-	height: 80px;
+	width: 5rem;
+	height: 5rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -182,7 +182,8 @@ a {
 
 @media (max-width: 400px) {
 	.main-page {
-		font-size: 2rem; /* Adjust main page font for very small screens */
+		min-height: calc(100dvh - 100px);
+		font-size: 2rem;
 		gap: 15px;
 		padding: 15px;
 	}
@@ -191,33 +192,36 @@ a {
 		font-size: 1.2rem;
 	}
 	.icon {
-		font-size: 2.5rem; /* Adjust icon size for small screens */
+		font-size: 2.5rem;
+		height: 4rem;
+		width: 4rem;
 	}
 	.icon-title {
-		font-size: 0.8rem; /* Adjust title font size for small screens */
+		font-size: 1rem; /* Adjust title font size for small screens */
 	}
 	.icon-container {
-		height: 18vh; /* Slightly adjust height for very small screens */
-		width: 90%; /* Take up more width on very small screens */
-		border-radius: 15px; /* Slightly less rounded for compact screens */
+		height: 10rem;
+		width: 90%;
+		border-radius: 15px;
 	}
 }
 
 /* Start of 3-column layout for medium to large screens */
-@media (min-width: 768px) {
+@media (min-width: 767px) {
 	.main-page {
+		min-height: calc(100dvh - 425px);
 		grid-template-columns: repeat(
 			3,
 			1fr
 		); /* Consistently 3 columns from here upwards */
 		grid-template-rows: repeat(2, minmax(200px, 1fr));
-		gap: 80px; /* More gap for larger screens */
-		padding: 40px;
+		gap: 20px; /* More gap for larger screens */
+		padding: 30px;
 	}
 	.icon-container {
 		border-radius: 20px;
 		height: 18vh;
-		width: 85%;
+		width: 90%;
 	}
 
 	.icon {
@@ -225,32 +229,41 @@ a {
 	}
 
 	.icon-title {
-		font-size: 0.85rem;
+		font-size: 1rem;
 		letter-spacing: 0.1rem;
 	}
 }
 
 @media (min-width: 868px) {
+	.main-page {
+		min-height: calc(100dvh - 450px);
+	}
 	.icon-title {
-		font-size: 2.1rem;
+		font-size: 1.8rem;
 	}
 	.icon {
-		font-size: 5rem;
+		font-size: 4rem;
+		height: 6rem;
+		width: 6rem;
 	}
 	.icon-container {
-		height: 30vh; /* Adjust height further for larger screens */
+		width: 90%;
+		height: 18rem;
 	}
 }
 
 @media (min-width: 1024px) {
-	/* Main page grid-template-columns is intentionally NOT changed here,
-       it remains `repeat(3, 1fr)` from the 768px media query. */
 	.main-page {
 		max-width: 1600px;
 		margin: 0 auto; /* Center the grid on very wide screens */
 	}
 	.icon-container {
-		height: 35vh; /* Adjust height for very large screens */
-		max-width: 280px; /* Set a max-width to prevent containers from becoming too wide */
+		height: 20rem;
+		max-width: 280px;
+	}
+
+	.icon {
+		height: 8rem;
+		width: 8rem;
 	}
 }
