@@ -55,7 +55,7 @@ body {
 		rgba(96, 10, 114, 0.15),
 		rgba(50, 8, 90, 0.25)
 	);
-	background: rgb(66, 10, 114);
+	background: rgba(66, 10, 114, 0.8);
 	border-radius: 50%;
 	padding: 10px;
 	width: 80px;
