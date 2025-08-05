@@ -5,7 +5,7 @@ import logo from '../../assets/Concrete-Logo.png';
 import { ListGroupItem } from 'react-bootstrap';
 import Header from '../../layout/Header';
 import SideNavBar from '../../layout/SideNavBar';
-import { Trophy } from 'lucide-react';
+import ComingSoon from '../../layout/ComingSoon';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './schedulePage.css';
 
@@ -23,10 +23,7 @@ function BaseballSchedule() {
 			<SideNavBar show={showNav} logo={logo} />
 			<ListGroup>
 				<h2>Baseball</h2>
-				<h3 className="coming-soon">Schedule Coming Soon!</h3>
-				<div className="coming-soon-icon">
-					<Trophy size={100} />
-				</div>
+				<ComingSoon />
 				{/* {games.map((game, index) => (
 					<ListGroupItem key={index} className="game">
 						<div>{game.date}</div>

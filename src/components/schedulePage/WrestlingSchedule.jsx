@@ -7,7 +7,7 @@ import Header from '../../layout/Header';
 import SideNavBar from '../../layout/SideNavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './schedulePage.css';
-import { Trophy } from 'lucide-react';
+import ComingSoon from '../../layout/ComingSoon';
 
 function WrestlingSchedule() {
 	const [showNav, setShowNav] = useState(false);
@@ -23,10 +23,7 @@ function WrestlingSchedule() {
 			<SideNavBar show={showNav} logo={logo} />
 			<ListGroup>
 				<h2>Wrestling</h2>
-				<h3 className="coming-soon">Schedule Coming Soon!</h3>
-				<div className="coming-soon-icon">
-					<Trophy size={100} />
-				</div>
+				<ComingSoon />
 				{/* {games.map((game, index) => (
 					<ListGroupItem key={index} className="game">
 						<div>{game.date}</div>
