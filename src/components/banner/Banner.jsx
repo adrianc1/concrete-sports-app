@@ -2,7 +2,7 @@ import ImageSlider from '../imageSlider/ImageSlider';
 import welcomeBanner from '../../assets/concreteBannerImg.gif';
 import actOneLogo from '../../assets/actonelogo.jpg';
 import kayak from '../../assets/kayak2.png';
-import uptownAuto from '../../assets/uptown.png';
+import uptownAuto from '../../assets/uptown2.png';
 import './banner.css';
 function Banner() {
 	const slides = [
