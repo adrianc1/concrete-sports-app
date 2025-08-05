@@ -6,6 +6,10 @@
 h2 {
 	text-align: center;
 }
+
+.coming-soon {
+	margin: 1rem auto;
+}
 .list-group-item.game {
 	font-size: 0.8rem;
 	padding: 1rem;
