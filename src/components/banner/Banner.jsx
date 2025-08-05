@@ -1,14 +1,15 @@
 import ImageSlider from '../imageSlider/ImageSlider';
 import welcomeBanner from '../../assets/concreteBannerImg.gif';
-import cascadeSupply from '../../assets/cascadesupplylogo.jpg';
 import actOneLogo from '../../assets/actonelogo.jpg';
+import kayak from '../../assets/kayak.png';
+import uptownAuto from '../../assets/uptown.png';
 import './banner.css';
-
 function Banner() {
 	const slides = [
 		{ url: welcomeBanner },
 		{ url: actOneLogo },
-		{ url: cascadeSupply },
+		{ url: kayak },
+		{ url: uptownAuto },
 	];
 
 	return (
