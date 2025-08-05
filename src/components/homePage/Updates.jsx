@@ -21,36 +21,67 @@ function Updates() {
 			</div>
 			<ul className="team-updates-list">
 				<li>
-					Football Season Begins ---{' '}
-					<span className="start-date">09/11/25</span>
+					<span className="event-info">
+						Back to School Night
+						<span className="start-date">August 28, 2025</span>
+					</span>
+					<span className="start-time">4:30pm - 6:00pm</span>
 				</li>
+
 				<li>
-					Girls Volleyball Season Begins ---
-					<span className="start-date">09/18/25</span>
+					<span className="event-info">
+						Football Season Begins
+						<span className="start-date">09/11/25</span>
+					</span>
 				</li>
+
 				<li>
-					Boys Basketball Season Begins ---{' '}
-					<span className="start-date">11/10/25</span>
+					<span className="event-info">
+						Girls Volleyball Season Begins
+						<span className="start-date">09/18/25</span>
+					</span>
 				</li>
+
 				<li>
-					Girls Basketball Season Begins ---
-					<span className="start-date">11/10/25</span>
+					<span className="event-info">
+						Boys Basketball Season Begins
+						<span className="start-date">11/10/25</span>
+					</span>
 				</li>
+
 				<li>
-					Wrestling Season Begins ---
-					<span className="start-date">11/22/25</span>
+					<span className="event-info">
+						Girls Basketball Season Begins
+						<span className="start-date">11/10/25</span>
+					</span>
 				</li>
+
 				<li>
-					Baseball Season Begins ---{' '}
-					<span className="start-date">03/25/26</span>
+					<span className="event-info">
+						Wrestling Season Begins
+						<span className="start-date">11/22/25</span>
+					</span>
 				</li>
+
 				<li>
-					Softball Season Begins ---
-					<span className="start-date">03/24/26</span>
+					<span className="event-info">
+						Baseball Season Begins
+						<span className="start-date">03/25/26</span>
+					</span>
 				</li>
+
 				<li>
-					Track Season Begins ---
-					<span className="start-date">02/22/26</span>
+					<span className="event-info">
+						Softball Season Begins
+						<span className="start-date">03/24/26</span>
+					</span>
+				</li>
+
+				<li>
+					<span className="event-info">
+						Track Season Begins
+						<span className="start-date">02/22/26</span>
+					</span>
 				</li>
 			</ul>
 		</div>

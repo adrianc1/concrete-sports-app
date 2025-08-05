@@ -1,6 +1,7 @@
 .annoucenment-title {
 	margin: 1rem 0;
 }
+
 .team-updates-list {
 	display: flex;
 	flex-direction: column;
@@ -13,12 +14,29 @@
 
 .team-updates-list li {
 	display: flex;
-	align-items: center;
+	justify-content: space-between;
+	align-items: flex-start;
 	border-bottom: 1px solid black;
 	width: 100vw;
 	list-style-type: none;
 	padding-left: 0.5rem;
 }
-.team-updates-list span {
+
+.event-info {
 	font-weight: 600;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	text-align: left;
+}
+
+.start-time {
+	padding-right: 1rem;
+	align-self: flex-start;
+	margin: auto 0;
+}
+
+.start-date {
+	font-weight: 400;
 }
