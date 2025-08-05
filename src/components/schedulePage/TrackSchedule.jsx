@@ -5,6 +5,7 @@ import logo from '../../assets/Concrete-Logo.png';
 import { ListGroupItem } from 'react-bootstrap';
 import Header from '../../layout/Header';
 import SideNavBar from '../../layout/SideNavBar';
+import { Trophy } from 'lucide-react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './schedulePage.css';
 
@@ -23,6 +24,9 @@ function TrackSchedule() {
 			<ListGroup>
 				<h2>Track</h2>
 				<h3 className="coming-soon">Schedule Coming Soon!</h3>
+				<div className="coming-soon-icon">
+					<Trophy size={64} />
+				</div>
 				{/* {games.map((game, index) => (
 					<ListGroupItem key={index} className="game">
 						<div>{game.date}</div>

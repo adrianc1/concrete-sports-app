@@ -8,7 +8,12 @@ h2 {
 }
 
 .coming-soon {
-	margin: 1rem auto;
+	margin: 2rem auto;
+	color: rgb(66, 10, 114);
+}
+.coming-soon-icon {
+	margin: 2rem auto;
+	color: rgb(242, 188, 64);
 }
 .list-group-item.game {
 	font-size: 0.8rem;

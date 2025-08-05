@@ -50,11 +50,6 @@ body {
 	font-size: 2.8rem;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	/* background: linear-gradient(
-		45deg,
-		rgba(96, 10, 114, 0.15),
-		rgba(50, 8, 90, 0.25)
-	); */
 	background: rgb(66, 10, 114);
 	border-radius: 50%;
 	padding: 10px;
@@ -92,21 +87,14 @@ body {
 	gap: 8px;
 	position: relative;
 	overflow: hidden;
-
-	/* Subtle border for modern definition */
 	border: 1px solid rgba(255, 255, 255, 0.15);
-
-	/* Contemporary shadow system */
 	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08),
 		inset 0 1px 0 rgba(255, 255, 255, 0.05);
-
-	/* Smooth modern transitions */
 	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 	cursor: pointer;
 	backdrop-filter: blur(20px);
 }
 
-/* Subtle animated background pattern */
 .icon-container::before {
 	content: '';
 	position: absolute;
@@ -125,18 +113,13 @@ body {
 
 .icon-container:hover {
 	transform: translateY(-6px) scale(1.02);
-
-	/* Enhanced shadow on hover */
 	box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18), 0 8px 16px rgba(0, 0, 0, 0.12),
 		inset 0 1px 0 rgba(255, 255, 255, 0.1);
-
-	/* Enhanced hover background - still subtle */
 	background: linear-gradient(
 		145deg,
 		rgba(75, 12, 128, 0.25),
 		rgba(58, 9, 105, 0.35)
 	);
-
 	border-color: rgba(255, 255, 255, 0.25);
 }
 
@@ -153,13 +136,11 @@ body {
 	opacity: 1;
 }
 
-/* Active state for better UX */
 .icon-container:active {
 	transform: translateY(-2px) scale(1.01);
 	transition-duration: 0.1s;
 }
 
-/* Modern focus state for accessibility */
 .icon-container:focus {
 	outline: none;
 	border-color: rgba(232, 174, 39, 0.4);
@@ -176,7 +157,7 @@ a {
 	text-decoration: none;
 }
 
-/* Media Queries for Responsiveness */
+/* Media Queries*/
 
 @media (max-width: 400px) {
 	.main-page {
