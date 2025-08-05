@@ -14,84 +14,181 @@ export async function scrapeGames(url, outputFilename = 'games.json') {
 	console.log(`Scraping from: ${url}`);
 	console.log(response.headers());
 
-	const gameElements = await page.$$('.event-mobile');
+	// Wait for content to load
+	await new Promise((resolve) => setTimeout(resolve, 2000));
+
+	// Look for the main container that holds all game events
+	const gameElements = await page.$$('.xl\\:flex'); // This was working!
+
+	console.log(`Found ${gameElements.length} game elements`);
 
 	for (const gameElement of gameElements) {
 		let game = {};
 
+		// Extract date - looking for the date display elements
+		game.dayOfWeek = await gameElement
+			.$eval('[data-testid*="day-of-week"]', (el) => el.textContent.trim())
+			.catch(() => 'n/a');
+
 		game.date = await gameElement
-			.$eval('[data-event-date]', (el) => el.getAttribute('data-event-date'))
-			.then((text) => text.replace(/\s+/g, ' ').split(', ')[1])
+			.$eval('[data-testid*="month-and-day"]', (el) => el.textContent.trim())
 			.catch(() => 'n/a');
 
+		// Extract time
+		game.time = await gameElement
+			.$eval('[data-testid*="time"]', (el) => el.textContent.trim())
+			.catch(() => 'n/a');
+
+		// Extract opponent name from the event name
 		game.opponent = await gameElement
-			.$eval('.opponent > a', (el) => el.innerText.trim())
-			.catch(async () => {
-				return await gameElement
-					.$eval('.opponent', (el) => el.innerText.trim())
-					.catch(() => 'n/a');
-			});
+			.$eval('[data-testid*="event-name"]', (el) => {
+				const text = el.textContent.trim();
+				// Remove "vs " or "@ " prefix and any trailing "..."
+				return text.replace(/^(vs |@ )/, '').replace(/\.\.\.$/, '');
+			})
+			.catch(() => 'n/a');
 
+		// Extract home/away status
 		game.location = await gameElement
-			.$eval('.home-away', (el) => el.innerText.trim())
+			.$eval('.rounded-full', (el) => el.textContent.trim())
 			.catch(() => 'n/a');
 
+		// Extract venue
+		game.venue = await gameElement
+			.$eval('[data-testid*="venue"]', (el) => el.textContent.trim())
+			.catch(() => 'n/a');
+
+		// Extract sport and level
+		game.sport = await gameElement
+			.$eval('[data-testid*="activity-name"]', (el) => el.textContent.trim())
+			.catch(() => 'n/a');
+
+		game.level = await gameElement
+			.$eval('[data-testid*="gender-level"]', (el) => el.textContent.trim())
+			.catch(() => 'n/a');
+
+		// Look for any score/result information (may not be present for future games)
 		game.result = await gameElement
-			.$eval('.event-score', (el) => el.innerText.trim())
+			.$eval('.event-score, [data-testid*="score"]', (el) =>
+				el.textContent.trim()
+			)
 			.catch(() => 'n/a');
 
-		games.push(game);
+		// Only add games that have meaningful data
+		if (game.opponent !== 'n/a' || game.date !== 'n/a') {
+			games.push(game);
+		}
+	}
+
+	// Alternative approach if the above doesn't work - look for any container with game data
+	if (games.length === 0) {
+		console.log('Trying alternative selector approach...');
+
+		const alternativeElements = await page.$$('[data-testid*="event-"]');
+		console.log(`Found ${alternativeElements.length} alternative elements`);
+
+		// Group elements by event number
+		const eventGroups = {};
+
+		for (const element of alternativeElements) {
+			const testId = await element.evaluate((el) =>
+				el.getAttribute('data-testid')
+			);
+			if (testId) {
+				const eventMatch = testId.match(/event-(\d+)-/);
+				if (eventMatch) {
+					const eventNum = eventMatch[1];
+					if (!eventGroups[eventNum]) {
+						eventGroups[eventNum] = {};
+					}
+
+					const content = await element.evaluate((el) => el.textContent.trim());
+
+					if (testId.includes('day-of-week')) {
+						eventGroups[eventNum].dayOfWeek = content;
+					} else if (testId.includes('month-and-day')) {
+						eventGroups[eventNum].date = content;
+					} else if (testId.includes('time')) {
+						eventGroups[eventNum].time = content;
+					} else if (testId.includes('event-name')) {
+						eventGroups[eventNum].opponent = content
+							.replace(/^(vs |@ )/, '')
+							.replace(/\.\.\.$/, '');
+					} else if (testId.includes('venue')) {
+						eventGroups[eventNum].venue = content;
+					} else if (testId.includes('activity-name')) {
+						eventGroups[eventNum].sport = content;
+					} else if (testId.includes('gender-level')) {
+						eventGroups[eventNum].level = content;
+					}
+				}
+			}
+		}
+
+		// Convert grouped data to games array
+		for (const eventNum in eventGroups) {
+			const eventData = eventGroups[eventNum];
+			if (eventData.opponent || eventData.date) {
+				games.push({
+					dayOfWeek: eventData.dayOfWeek || 'n/a',
+					date: eventData.date || 'n/a',
+					time: eventData.time || 'n/a',
+					opponent: eventData.opponent || 'n/a',
+					venue: eventData.venue || 'n/a',
+					sport: eventData.sport || 'n/a',
+					level: eventData.level || 'n/a',
+					result: 'n/a',
+				});
+			}
+		}
 	}
 
 	await browser.close();
 
+	console.log(`Scraped ${games.length} games before deduplication`);
+
+	// Remove duplicates and empty records
+	const uniqueGames = [];
+	const seenGames = new Set();
+
+	for (const game of games) {
+		// Skip games that are mostly empty
+		if (game.opponent === 'n/a' && game.date === 'n/a') {
+			continue;
+		}
+
+		// Create a unique key for each game
+		const gameKey = `${game.date}-${game.time}-${game.opponent}`;
+
+		// Only add if we haven't seen this game before
+		if (!seenGames.has(gameKey)) {
+			seenGames.add(gameKey);
+			uniqueGames.push(game);
+		}
+	}
+
+	console.log(`${uniqueGames.length} unique games after deduplication`);
+
 	await fs
-		.writeFile(outputFilename, JSON.stringify(games, null, 2))
+		.writeFile(outputFilename, JSON.stringify(uniqueGames, null, 2))
 		.then(() =>
 			console.log(`✅ Games data successfully saved to ${outputFilename}`)
 		)
 		.catch((err) => console.error('❌ Error writing file:', err));
+
+	return uniqueGames;
 }
 
 // Example usage
 const schedulesToScrape = [
 	{
-		url: 'https://concretehslions.com/teams/4531696/boys/basketball/varsity/schedule',
-		output: 'boysBballGames.json',
-	},
-	{
-		url: 'https://concretehslions.com/teams/4531694/boys/football/varsity/schedule',
+		url: 'https://www.concretehslions.com/sports/boys-football/schedule?team=boys-football-5262666&year=2025-2026',
 		output: 'footballGames.json',
 	},
 	{
-		url: 'https://concretehslions.com/teams/4531695/girls/volleyball/varsity/schedule',
-		output: 'volleyballGames.json',
+		url: 'https://www.concretehslions.com/sports/girls-volleyball/schedule?team=girls-volleyball-5262667&year=2025-2026',
+		output: 'volleyballSchedule.json',
 	},
-	{
-		url: 'https://concretehslions.com/teams/4531698/girls/basketball/varsity/schedule',
-		output: 'girlsBballGames.json',
-	},
-	{
-		url: 'https://concretehslions.com/teams/4531705/boys/wrestling/varsity/schedule',
-		output: 'wrestlingGames.json',
-	},
-	{
-		url: 'https://concretehslions.com/teams/4531700/boys/baseball/varsity/schedule',
-		output: 'baseballGames.json',
-	},
-	{
-		url: 'https://concretehslions.com/teams/4531701/girls/fastpitch-softball/varsity/schedule',
-		output: 'softballGames.json',
-	},
-	{
-		url: 'https://concretehslions.com/teams/4531703/coed/track-&-field/varsity/schedule',
-		output: 'trackGames.json',
-	},
-	{
-		url: 'https://concretehslions.com/teams/4531694/boys/football/varsity/schedule',
-		output: 'footballGames.json',
-	},
-	// Add more as needed
 ];
 
 async function scrapeAll() {
@@ -101,7 +198,3 @@ async function scrapeAll() {
 }
 
 scrapeAll();
-
-scrapeGames(
-	'https://concretehslions.com/teams/4531700/boys/baseball/varsity/schedule'
-);

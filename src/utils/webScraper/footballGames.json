@@ -1,56 +1,108 @@
 [
-  {
-    "date": "Sep 6",
-    "opponent": "Tulalip Heritage High School",
-    "location": "Away @ Tulalip Tribes Sports Complex",
-    "result": "Loss 30 - 18"
-  },
-  {
-    "date": "Sep 14",
-    "opponent": "Quilcene High School",
-    "location": "Home @ Concrete High School",
-    "result": "Loss 41 - 6"
-  },
-  {
-    "date": "Sep 20",
-    "opponent": "Crescent High School",
-    "location": "Home @ Concrete High School",
-    "result": "Loss 74 - 54"
-  },
-  {
-    "date": "Sep 27",
-    "opponent": "La Conner High School",
-    "location": "Home @ Concrete High School",
-    "result": "Win 80 - 26"
-  },
-  {
-    "date": "Oct 4",
-    "opponent": "Lummi Nation School",
-    "location": "Away @ Lummi High School",
-    "result": "Win 42 - 16"
-  },
-  {
-    "date": "Oct 12",
-    "opponent": "Charles Wright Academy",
-    "location": "Away @ Charles Wright Academy",
-    "result": "Loss 48 - 40"
-  },
-  {
-    "date": "Oct 18",
-    "opponent": "Muckleshoot Tribal School",
-    "location": "Home @ Concrete High School",
-    "result": "Win 64 - 8"
-  },
-  {
-    "date": "Oct 25",
-    "opponent": "Darrington High School",
-    "location": "Away @ Darrington High School/Community Center Gym",
-    "result": "Loss 42 - 32"
-  },
-  {
-    "date": "Nov 1",
-    "opponent": "Neah Bay High School",
-    "location": "Away @ Neah Bay High School",
-    "result": "Loss 66 - 14"
-  }
+	{
+		"dayOfWeek": "FRI",
+		"date": "Sep 5 2025",
+		"time": "7:00 PM",
+		"opponent": "Tulalip Heritage High",
+		"location": "Home",
+		"venue": "Concrete High School (Concrete, WA)",
+		"sport": "FOOTBALL",
+		"level": "Boys Varsity",
+		"result": "-"
+	},
+
+	{
+		"dayOfWeek": "SAT",
+		"date": "Sep 13 2025",
+		"time": "1:00 PM",
+		"opponent": "at Quilcene High School",
+		"location": "Away",
+		"venue": "Quilcene High School (Quilcene, WA)",
+		"sport": "FOOTBALL",
+		"level": "Boys Varsity",
+		"result": "-"
+	},
+
+	{
+		"dayOfWeek": "SAT",
+		"date": "Sep 20 2025",
+		"time": "1:00 PM",
+		"opponent": "at Crescent High School",
+		"location": "Away",
+		"venue": "Crescent High School (Joyce, WA)",
+		"sport": "FOOTBALL",
+		"level": "Boys Varsity",
+		"result": "-"
+	},
+
+	{
+		"dayOfWeek": "FRI",
+		"date": "Sep 26 2025",
+		"time": "7:00 PM",
+		"opponent": "at La Conner High School",
+		"location": "Away",
+		"venue": "La Conner High School (La Conner, WA)",
+		"sport": "FOOTBALL",
+		"level": "Boys Varsity",
+		"result": "-"
+	},
+
+	{
+		"dayOfWeek": "FRI",
+		"date": "Oct 3 2025",
+		"time": "7:00 PM",
+		"opponent": "Lummi Nation School",
+		"location": "Home",
+		"venue": "Concrete High School (Concrete, WA)",
+		"sport": "FOOTBALL",
+		"level": "Boys Varsity",
+		"result": "-"
+	},
+
+	{
+		"dayOfWeek": "SAT",
+		"date": "Oct 11 2025",
+		"time": "1:00 PM",
+		"opponent": "Charles Wright Academy",
+		"location": "Home",
+		"venue": "Concrete High School (Concrete, WA)",
+		"sport": "FOOTBALL",
+		"level": "Boys Varsity",
+		"result": "-"
+	},
+
+	{
+		"dayOfWeek": "FRI",
+		"date": "Oct 17 2025",
+		"time": "6:00 PM",
+		"opponent": "at Muckleshoot Tribal School",
+		"location": "Away",
+		"venue": "Muckleshoot Tribal School (Auburn, WA)",
+		"sport": "FOOTBALL",
+		"level": "Boys Varsity",
+		"result": "-"
+	},
+	{
+		"dayOfWeek": "SAT",
+		"date": "Oct 25 2025",
+		"time": "6:00 PM",
+		"opponent": "Darrington High School",
+		"location": "Home",
+		"venue": "Concrete High School (Concrete, WA)",
+		"sport": "FOOTBALL",
+		"level": "Boys Varsity",
+		"result": "-"
+	},
+
+	{
+		"dayOfWeek": "FRI",
+		"date": "Oct 31 2025",
+		"time": "5:00 PM",
+		"opponent": "at Neah Bay Senior High",
+		"location": "Away",
+		"venue": "Neah Bay Junior high School (Neah Bay)",
+		"sport": "FOOTBALL",
+		"level": "Boys Varsity",
+		"result": "-"
+	}
 ]

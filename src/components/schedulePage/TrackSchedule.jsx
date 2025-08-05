@@ -22,7 +22,8 @@ function TrackSchedule() {
 			<SideNavBar show={showNav} logo={logo} />
 			<ListGroup>
 				<h2>Track</h2>
-				{games.map((game, index) => (
+				<h3>Schedule Coming Soon!</h3>
+				{/* {games.map((game, index) => (
 					<ListGroupItem key={index} className="game">
 						<div>{game.date}</div>
 						<div>
@@ -31,7 +32,7 @@ function TrackSchedule() {
 						</div>
 						<div>{game.result}</div>
 					</ListGroupItem>
-				))}
+				))} */}
 			</ListGroup>
 		</>
 	);
