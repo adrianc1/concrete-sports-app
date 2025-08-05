@@ -25,7 +25,7 @@ function TrackSchedule() {
 				<h2>Track</h2>
 				<h3 className="coming-soon">Schedule Coming Soon!</h3>
 				<div className="coming-soon-icon">
-					<Trophy size={64} />
+					<Trophy size={100} />
 				</div>
 				{/* {games.map((game, index) => (
 					<ListGroupItem key={index} className="game">
