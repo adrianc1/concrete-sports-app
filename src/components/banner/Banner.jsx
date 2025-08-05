@@ -1,7 +1,7 @@
 import ImageSlider from '../imageSlider/ImageSlider';
 import welcomeBanner from '../../assets/concreteBannerImg.gif';
 import actOneLogo from '../../assets/actonelogo.jpg';
-import kayak from '../../assets/kayak.png';
+import kayak from '../../assets/kayak2.png';
 import uptownAuto from '../../assets/uptown.png';
 import './banner.css';
 function Banner() {

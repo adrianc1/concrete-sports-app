@@ -8,10 +8,9 @@ const ImageSlider = ({ slides }) => {
 		top: '60%',
 		transform: 'translate(0, -50%)',
 		transition: 'all 2s',
-
 		left: '32px',
 		fontSize: '2rem',
-		color: 'rgb(255, 255, 255)',
+		color: 'rgba(255, 255, 255, 0.1)',
 		cursor: 'pointer',
 		zIndex: 2,
 	};
@@ -22,7 +21,7 @@ const ImageSlider = ({ slides }) => {
 		transform: 'translate(0, -50%)',
 		right: '32px',
 		fontSize: '2rem',
-		color: 'rgb(255, 255, 255)',
+		color: 'rgba(255, 255, 255, 0.1)',
 		borderRadius: '10px',
 		padding: '0',
 		cursor: 'pointer',
