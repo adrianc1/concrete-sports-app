@@ -6,6 +6,7 @@ import { IoSchoolOutline } from 'react-icons/io5';
 import { PiUsers } from 'react-icons/pi';
 import { MdOutlineAddBusiness } from 'react-icons/md';
 import { GiLion } from 'react-icons/gi';
+import { Calendar } from 'lucide-react';
 
 function MainPage() {
 	return (
@@ -57,12 +58,12 @@ function MainPage() {
 
 			{/* PLAYER OF THE MONTH */}
 
-			<Link to="/PlayersOfTheMonth" className="icon-container">
+			<Link to="/Schedules" className="icon-container">
 				<div className="icon">
-					<PiUsers />
+					<Calendar size={45} />
 				</div>
 				<div className="icon-title">
-					Players of <br /> the Month
+					Team <br /> Schedules
 				</div>
 			</Link>
 

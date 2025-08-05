@@ -1,6 +1,6 @@
 import App from '../App.jsx';
 import {
-	SchedulePage,
+	BoysBasketballSchedule,
 	GirlsBballSchedule,
 	BaseballSchedule,
 	FootballSchedule,
@@ -18,6 +18,7 @@ import PlayersOfTheMonth from '../components/homePage/PlayersOfTheMonth.jsx';
 import Updates from '../components/homePage/Updates.jsx';
 import IFrame from '../components/iframe/IFrame.jsx';
 import '../index.css';
+import Schedule from '../components/homePage/Schedule.jsx';
 
 const Routes = [
 	{
@@ -27,11 +28,12 @@ const Routes = [
 	{ path: '/Sponsors', element: <Sponsors /> },
 	{ path: '/SchoolDistrict', element: <SchoolDistrict /> },
 	{ path: '/IFrame', element: <IFrame /> },
-	{ path: '/SchedulePage', element: <SchedulePage /> },
+	{ path: '/SchedulePage', element: <BoysBasketballSchedule /> },
 	{ path: '/Contact', element: <Contact /> },
 	{ path: '/PlayersOfTheMonth', element: <PlayersOfTheMonth /> },
 	{ path: '/Updates', element: <Updates /> },
 	{ path: '/Boosters', element: <Boosters /> },
+	{ path: '/Schedules', element: <Schedule /> },
 	{ path: '/GirlsBballSchedule', element: <GirlsBballSchedule /> },
 	{ path: '/FootballSchedule', element: <FootballSchedule /> },
 	{ path: '/BaseballSchedule', element: <BaseballSchedule /> },
