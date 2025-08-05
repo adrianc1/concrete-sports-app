@@ -15,24 +15,6 @@ function Boosters() {
 		console.log(showModal);
 	};
 
-	// EmailClient.init('_LFinvdPQE4j4ldKB');
-
-	const sendEmail = (e) => {
-		e.preventDefault();
-		emailjs
-			.sendForm(
-				'service_o41p86x',
-				'template_ajau399',
-				e.target,
-				'_LFinvdPQE4j4ldKB'
-			)
-			.then((result) => {
-				console.log('success', result.text);
-				modalToggle();
-				e.target.reset();
-			});
-	};
-
 	return (
 		<div>
 			<div className="nav">

@@ -60,7 +60,7 @@ function MainPage() {
 
 			<Link to="/Schedules" className="icon-container">
 				<div className="icon">
-					<Calendar size={45} />
+					<Calendar size={40} />
 				</div>
 				<div className="icon-title">
 					Team <br /> Schedules
