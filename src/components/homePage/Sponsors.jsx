@@ -2,64 +2,58 @@ import { useState } from 'react';
 import Header from '../../layout/Header';
 import logo from '../../assets/Concrete-Logo.png';
 import SideNavBar from '../../layout/SideNavBar';
-import IFrame from '../iframe/IFrame';
+// import IFrame from '../iframe/IFrame';
 import { Link } from 'react-router';
 
 import '../homePage/homePageStyles/sponsors.css';
 function Sponsors() {
 	const [showNav, setShowNav] = useState(false);
 	const [showExitIcon, setShowExitIcon] = useState(false);
-	const [iframeUrl, setIframeUrl] = useState('');
+	// const [iframeUrl, setIframeUrl] = useState('');
 
 	const sponsorList = [
 		{
 			name: 'CHS BOOSTER CLUB',
 			url: '/Boosters',
-			phone: '360-941-0403',
+			contact: '360-941-0403',
 			address: '7830 S Superior Ave, Concrete, WA 98237',
 			isExternal: false,
 		},
 		{
 			name: 'Act One Ice Cream Parlor',
 			url: 'https://concrete-theatre.com/',
-			phone: '360-941-0403',
+			contact: '360-941-0403',
 			address: '45924 Main Street, Concrete, Washington, United States 98237',
 			linkText: 'aicee',
 			isExternal: true,
 		},
 		{
-			name: 'Your Business Here',
-			url: 'https://concrete-theatre.com/',
-			phone: '360-555-1234',
-			address: '1 Main Street, Concrete, Washington, United States 98237',
+			name: 'North Cascade Kayaks',
+			url: 'https://northcascadekayaks.com/',
+			contact: ' info@northcascadekayaks.com',
+			address: '52925 Railroad Ave. Rockport,WA 98283',
 			isExternal: true,
 		},
 		{
-			name: 'Your Business Here',
-			url: 'https://concrete-theatre.com/',
-			phone: '360-555-1234',
-			address: '1 Main Street, Concrete, Washington, United States 98237',
+			name: 'Uptown Auto Repair',
+			url: 'https://share.google/7L2z921YemrBkgsgo',
+			contact: '(360) 436-1445',
+			address: '1090 Darrington St, Darrington, WA 98241',
 			isExternal: true,
 		},
 
 		{
 			name: 'Dreaux Digital',
 			url: 'https://dreauxdigital.com',
-			phone: '-',
-			address: 'adrian@dreauxdigital.com',
+			contact: 'adrian@dreauxdigital.com',
+			address: '',
 			isExternal: true,
 		},
 	];
-	function handleSposorClick(url, isExternal) {
-		if (isExternal) {
-			setIframeUrl(url);
-		} else {
-			console.log(`navigating to ${url}`);
-		}
+	function handleSponsorClick(url) {
+		window.open(url, '_blank');
 	}
-	function handleClick(url) {
-		setIframeUrl(url);
-	}
+
 	return (
 		<div className="sponsor-container">
 			<Header
@@ -78,18 +72,13 @@ function Sponsors() {
 								{sponsor.isExternal ? (
 									<span
 										className="sponsor-name"
-										onClick={() =>
-											handleSposorClick(sponsor.url, sponsor.isExternal)
-										}
+										onClick={() => handleSponsorClick(sponsor.url)}
+										style={{ cursor: 'pointer' }} // Add cursor pointer to indicate it's clickable
 									>
 										{sponsor.name}
 									</span>
 								) : (
-									<Link
-										className="sponsor-name"
-										to={sponsor.url}
-										onClick={handleClick}
-									>
+									<Link className="sponsor-name" to={sponsor.url}>
 										{sponsor.name}
 									</Link>
 								)}
@@ -97,7 +86,9 @@ function Sponsors() {
 								<span className="sponsor-address">
 									Address: {sponsor.address}
 								</span>
-								<span className="sponsor-phone">Phone: {sponsor.phone}</span>
+								<span className="sponsor-phone">
+									Contact: {sponsor.contact}
+								</span>
 							</li>
 						);
 					})}
@@ -107,12 +98,15 @@ function Sponsors() {
 						invaluable resources and opportunities. We&apos;ve witnessed their
 						growth and success t hanks to your belief in them. We are deeply
 						grateful for your partnership.
+						<br />
+						<br />
+						To be a sponsor please contact adrian@dreauxdigital.com
 					</p>
 				</ul>
 
-				{iframeUrl && (
+				{/* {iframeUrl && (
 					<IFrame url={iframeUrl} onClose={() => setIframeUrl('')} />
-				)}
+				)} */}
 			</div>
 		</div>
 	);
