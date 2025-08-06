@@ -21,23 +21,25 @@ export default function Schedule({ show }) {
 			<ul className="schedule-card">
 				<h4>Team Schedules</h4>
 				<li>
+					<Link to="/FootballSchedule">Football</Link>
+				</li>
+				<li>
+					<Link to="/VolleyballSchedule">Volleyball</Link>
+				</li>
+				<li>
 					<Link to="/SchedulePage">Boys Basketball</Link>
 				</li>
 				<li>
 					<Link to="/GirlsBballSchedule">Girls Basketball</Link>
 				</li>
-				<li>
-					<Link to="/FootballSchedule">Football</Link>
-				</li>
+
 				<li>
 					<Link to="/BaseballSchedule">Baseball</Link>
 				</li>
 				<li>
 					<Link to="/SoftballSchedule">Softball</Link>
 				</li>
-				<li>
-					<Link to="/VolleyballSchedule">Volleyball</Link>
-				</li>
+
 				<li>
 					<Link to="/TrackSchedule">Track</Link>
 				</li>
