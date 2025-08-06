@@ -3,14 +3,14 @@ import welcomeBanner from '../../assets/concreteBannerImg.gif';
 import actOneLogo from '../../assets/actonelogo.jpg';
 import kayak from '../../assets/kayak2.png';
 import uptownAuto from '../../assets/uptown2.png';
-import perks from '../../assets/perks.png';
+import perks from '../../assets/1.png';
 import './banner.css';
 function Banner() {
 	const slides = [
-		{ url: welcomeBanner },
-		{ url: actOneLogo },
-		{ url: kayak },
-		{ url: uptownAuto },
+		// { url: welcomeBanner },
+		// { url: actOneLogo },
+		// { url: kayak },
+		// { url: uptownAuto },
 		{ url: perks },
 	];
 
