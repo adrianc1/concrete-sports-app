@@ -14,7 +14,6 @@ import Boosters from '../components/homePage/Boosters.jsx';
 
 import Sponsors from '../components/homePage/Sponsors.jsx';
 import Contact from '../components/homePage/Contact.jsx';
-import PlayersOfTheMonth from '../components/homePage/PlayersOfTheMonth.jsx';
 import Updates from '../components/homePage/Updates.jsx';
 import IFrame from '../components/iframe/IFrame.jsx';
 import '../index.css';
@@ -30,7 +29,6 @@ const Routes = [
 	{ path: '/IFrame', element: <IFrame /> },
 	{ path: '/SchedulePage', element: <BoysBasketballSchedule /> },
 	{ path: '/Contact', element: <Contact /> },
-	{ path: '/PlayersOfTheMonth', element: <PlayersOfTheMonth /> },
 	{ path: '/Updates', element: <Updates /> },
 	{ path: '/Boosters', element: <Boosters /> },
 	{ path: '/Schedules', element: <Schedule /> },
