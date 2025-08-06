@@ -7,10 +7,10 @@ import perks from '../../assets/1.png';
 import './banner.css';
 function Banner() {
 	const slides = [
-		// { url: welcomeBanner },
-		// { url: actOneLogo },
-		// { url: kayak },
-		// { url: uptownAuto },
+		{ url: welcomeBanner },
+		{ url: actOneLogo },
+		{ url: kayak },
+		{ url: uptownAuto },
 		{ url: perks },
 	];
 
