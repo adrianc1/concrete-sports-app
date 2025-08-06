@@ -42,6 +42,9 @@ const ImageSlider = ({ slides }) => {
 		fontSize: '20px',
 		color: 'rgb(255, 255, 255)',
 	};
+	console.log('All slides:', slides);
+	console.log('Current index:', currentIndex);
+	console.log('Current slide URL:', slides[currentIndex]?.url);
 
 	function goToPrevious() {
 		setCurrentIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));

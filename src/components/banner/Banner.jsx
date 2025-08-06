@@ -3,6 +3,7 @@ import welcomeBanner from '../../assets/concreteBannerImg.gif';
 import actOneLogo from '../../assets/actonelogo.jpg';
 import kayak from '../../assets/kayak2.png';
 import uptownAuto from '../../assets/uptown2.png';
+import perks from '../../assets/perks.png';
 import './banner.css';
 function Banner() {
 	const slides = [
@@ -10,6 +11,7 @@ function Banner() {
 		{ url: actOneLogo },
 		{ url: kayak },
 		{ url: uptownAuto },
+		{ url: perks },
 	];
 
 	return (

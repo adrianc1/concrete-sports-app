@@ -41,6 +41,13 @@ function Sponsors() {
 			address: '1090 Darrington St, Darrington, WA 98241',
 			isExternal: true,
 		},
+		{
+			name: "North Cascade's Perks",
+			url: 'https://www.facebook.com/NorthCascadesPerks/',
+			contact: 'northcascadeperks@gmail.com',
+			address: '44586 State Rte 20, Concrete, WA 98237',
+			isExternal: true,
+		},
 
 		{
 			name: 'Dreaux Digital',
