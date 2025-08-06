@@ -54,9 +54,9 @@ function Contact() {
 			coachEmail: 'tmeacham@concrete.k12.wa.us',
 		},
 		{
-			team: 'Athletic Director',
-			coachName: 'Randy Sweeney',
-			coachEmail: 'rsweeney@concrete.k12.wa.us',
+			team: 'Athletic Director/Assistant Principal',
+			coachName: 'David Rodriguez',
+			coachEmail: 'drodriguez@concrete.k12.wa.us',
 		},
 	];
 	return (
