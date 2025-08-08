@@ -44,19 +44,7 @@ function MainPage() {
 					Coach <br /> Connect
 				</div>
 			</Link>
-
-			{/* SCHOOL DISTRICT */}
-
-			<Link to="/SchoolDistrict" className="icon-container">
-				<div className="icon">
-					<IoSchoolOutline />
-				</div>
-				<div className="icon-title">
-					School <br /> District
-				</div>
-			</Link>
-
-			{/* PLAYER OF THE MONTH */}
+			{/* TEAM SCHEDULES */}
 
 			<Link to="/Schedules" className="icon-container">
 				<div className="icon">
@@ -64,6 +52,17 @@ function MainPage() {
 				</div>
 				<div className="icon-title">
 					Team <br /> Schedules
+				</div>
+			</Link>
+
+			{/* PLAYER OF THE MONTH */}
+
+			<Link to="/PlayersOfTheMonth" className="icon-container">
+				<div className="icon">
+					<PiUsers />
+				</div>
+				<div className="icon-title">
+					Players Of <br /> The Month
 				</div>
 			</Link>
 

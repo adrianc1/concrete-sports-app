@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import Header from '../header/Header';
+import Header from '../../layout/Header';
 import logo from '../../assets/Concrete-Logo.png';
-import SideNavBar from '../sideNavBar/SideNavBar';
+import SideNavBar from '../../layout/SideNavBar';
 import player_1 from '../../assets/player_1.jpg';
 import player_2 from '../../assets/player_2.jpg';
 
