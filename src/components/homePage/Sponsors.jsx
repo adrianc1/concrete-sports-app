@@ -35,6 +35,13 @@ function Sponsors() {
 			isExternal: true,
 		},
 		{
+			name: "Annie's Pizza Station",
+			url: 'https://www.anniespizzastation.net/',
+			contact: '360-853-7227',
+			address: '44568 State Route 20 Concrete, WA',
+			isExternal: true,
+		},
+		{
 			name: 'Uptown Auto Repair',
 			url: 'https://share.google/7L2z921YemrBkgsgo',
 			contact: '(360) 436-1445',
