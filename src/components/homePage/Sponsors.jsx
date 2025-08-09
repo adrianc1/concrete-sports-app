@@ -20,14 +20,6 @@ function Sponsors() {
 			isExternal: false,
 		},
 		{
-			name: 'Act One Ice Cream Parlor',
-			url: 'https://concrete-theatre.com/',
-			contact: '360-941-0403',
-			address: '45924 Main Street, Concrete, Washington, United States 98237',
-			linkText: 'aicee',
-			isExternal: true,
-		},
-		{
 			name: 'North Cascade Kayaks',
 			url: 'https://northcascadekayaks.com/',
 			contact: ' info@northcascadekayaks.com',
@@ -39,6 +31,13 @@ function Sponsors() {
 			url: 'https://www.anniespizzastation.net/',
 			contact: '360-853-7227',
 			address: '44568 State Route 20 Concrete, WA',
+			isExternal: true,
+		},
+		{
+			name: 'Cascade Burgers',
+			url: 'https://www.cascadeburgers.net/',
+			contact: '360-853-7580',
+			address: '45292 State Route 20 Concrete, Washington 98237',
 			isExternal: true,
 		},
 		{

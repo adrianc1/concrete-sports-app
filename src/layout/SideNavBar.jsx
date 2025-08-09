@@ -24,9 +24,9 @@ function SideNavBar({ show, logo }) {
 				<li>
 					<Link to="/Updates">Updates</Link>
 				</li>
-				{/* <li>
+				<li>
 					<Link to="/PlayersOfTheMonth">Players Of The Month</Link>
-				</li> */}
+				</li>
 			</ul>
 			<ul className="nav-schedule">
 				<h4>Team Schedules</h4>

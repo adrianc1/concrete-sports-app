@@ -5,15 +5,16 @@ import kayak from '../../assets/kayak2.png';
 import uptownAuto from '../../assets/uptown2.png';
 import perks from '../../assets/perks2.png';
 import annies from '../../assets/anniespizza.png';
+import cascadeBurgers from '../../assets/cascadeburgerbanner.png';
 import './banner.css';
 function Banner() {
 	const slides = [
 		{ url: welcomeBanner },
+		{ url: cascadeBurgers },
+		{ url: annies },
 		{ url: kayak },
 		{ url: uptownAuto },
 		{ url: perks },
-		{ url: annies },
-		{ url: actOneLogo },
 	];
 
 	return (
