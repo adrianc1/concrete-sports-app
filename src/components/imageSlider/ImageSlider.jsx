@@ -16,6 +16,13 @@ const ImageSlider = ({ slides }) => {
 		slides[0], // clone of first slide
 	];
 
+	useEffect(() => {
+		slides.forEach((slide) => {
+			const img = new Image();
+			img.src = slide.url;
+		});
+	}, [slides]);
+
 	function goToNext() {
 		setCurrentIndex((prev) => prev + 1);
 	}
