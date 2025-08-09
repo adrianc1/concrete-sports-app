@@ -1,85 +1,94 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './imageSlider.css';
+
 const ImageSlider = ({ slides }) => {
-	const [currentIndex, setCurrentIndex] = useState(0);
+	// Start at index 1 because index 0 is the duplicate last slide
+	const [currentIndex, setCurrentIndex] = useState(1);
+	const [isTransitioning, setIsTransitioning] = useState(true);
+	const trackRef = useRef(null);
 
-	const leftArrowStyles = {
-		position: 'absolute',
-		top: '60%',
-		transform: 'translate(0, -50%)',
-		transition: 'all 2s',
-		left: '32px',
-		fontSize: '2rem',
-		color: 'rgba(255, 255, 255, 0.1)',
-		cursor: 'pointer',
-		zIndex: 2,
-	};
+	const totalSlides = slides.length;
 
-	const rightArrowStyles = {
-		position: 'absolute',
-		top: '60%',
-		transform: 'translate(0, -50%)',
-		right: '32px',
-		fontSize: '2rem',
-		color: 'rgba(255, 255, 255, 0.1)',
-		borderRadius: '10px',
-		padding: '0',
-		cursor: 'pointer',
-		zIndex: 2,
-	};
-
-	const dotsContainerStyles = {
-		display: 'flex',
-		justifyContent: 'center',
-		position: 'absolute',
-		bottom: '10px',
-		width: '100%',
-	};
-
-	const dotStyles = {
-		margin: '0 5px',
-		cursor: 'pointer',
-		fontSize: '20px',
-		color: 'rgb(255, 255, 255)',
-	};
-	console.log('All slides:', slides);
-	console.log('Current index:', currentIndex);
-	console.log('Current slide URL:', slides[currentIndex]?.url);
-
-	function goToPrevious() {
-		setCurrentIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-	}
+	// Extended array with cloned first & last slides
+	const extendedSlides = [
+		slides[totalSlides - 1], // clone of last slide
+		...slides,
+		slides[0], // clone of first slide
+	];
 
 	function goToNext() {
-		setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+		setCurrentIndex((prev) => prev + 1);
+	}
+
+	function goToPrevious() {
+		setCurrentIndex((prev) => prev - 1);
 	}
 
 	useEffect(() => {
 		const interval = setInterval(() => {
-			setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1)); // Correct way to update state
+			goToNext();
 		}, 3000);
+		return () => clearInterval(interval);
+	}, []);
 
-		return () => clearInterval(interval); // Cleanup function
-	}, []); // Empty dependency array ensures it runs only once
+	// Handle “teleport” effect after sliding into a clone
+	useEffect(() => {
+		if (currentIndex === totalSlides + 1) {
+			// Reached cloned first slide
+			setTimeout(() => {
+				setIsTransitioning(false);
+				setCurrentIndex(1); // jump to real first slide
+			}, 500);
+		}
+		if (currentIndex === 0) {
+			// Reached cloned last slide
+			setTimeout(() => {
+				setIsTransitioning(false);
+				setCurrentIndex(totalSlides); // jump to real last slide
+			}, 500);
+		}
+	}, [currentIndex, totalSlides]);
+
+	// Re-enable transitions after teleport
+	useEffect(() => {
+		if (!isTransitioning) {
+			requestAnimationFrame(() => {
+				setIsTransitioning(true);
+			});
+		}
+	}, [isTransitioning]);
 
 	return (
 		<div className="slider-container">
-			<div style={leftArrowStyles} onClick={goToPrevious}>
+			<div className="arrow left" onClick={goToPrevious}>
 				←
 			</div>
 
-			<img src={slides[currentIndex].url} alt="Slide" className="img-slide" />
+			<div className="slider-wrapper">
+				<div
+					ref={trackRef}
+					className="slider-track"
+					style={{
+						transform: `translateX(-${currentIndex * 100}%)`,
+						transition: isTransitioning ? 'transform 0.5s ease-in-out' : 'none',
+					}}
+				>
+					{extendedSlides.map((slide, index) => (
+						<img key={index} src={slide.url} alt="" className="slide" />
+					))}
+				</div>
+			</div>
 
-			<div style={rightArrowStyles} onClick={goToNext}>
+			<div className="arrow right" onClick={goToNext}>
 				→
 			</div>
 
-			<div style={dotsContainerStyles}>
+			<div className="dots">
 				{slides.map((_, index) => (
 					<span
 						key={index}
-						style={dotStyles}
-						onClick={() => setCurrentIndex(index)}
+						className={index + 1 === currentIndex ? 'dot active' : 'dot'}
+						onClick={() => setCurrentIndex(index + 1)}
 					>
 						•
 					</span>
