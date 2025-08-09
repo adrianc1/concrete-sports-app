@@ -1,9 +1,8 @@
 import ImageSlider from '../imageSlider/ImageSlider';
 import welcomeBanner from '../../assets/concreteBannerImg.gif';
-import actOneLogo from '../../assets/actonelogo.jpg';
 import kayak from '../../assets/kayak2.png';
 import uptownAuto from '../../assets/uptown2.png';
-import perks from '../../assets/perks2.png';
+import perks from '../../assets/perks5.png';
 import annies from '../../assets/anniespizza.png';
 import cascadeBurgers from '../../assets/cascadeburgerbanner.png';
 import './banner.css';
@@ -13,8 +12,8 @@ function Banner() {
 		{ url: cascadeBurgers },
 		{ url: annies },
 		{ url: kayak },
-		{ url: uptownAuto },
 		{ url: perks },
+		{ url: uptownAuto },
 	];
 
 	return (
