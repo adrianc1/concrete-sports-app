@@ -4,10 +4,7 @@ import kayak from '../../assets/kayak2.png';
 import uptownAuto from '../../assets/uptown2.png';
 import perks from '../../assets/perks5.png';
 import annies from '../../assets/anniespizza.png';
-import cascadeBurgers from '../../assets/cascadeburgerbanner.png';
 import cascade1 from '../../assets/cascade1.png';
-import cascade2 from '../../assets/cascade2.png';
-import cascade3 from '../../assets/cascade3.png';
 
 import './banner.css';
 function Banner() {
