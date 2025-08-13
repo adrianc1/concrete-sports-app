@@ -76,7 +76,7 @@
 	.slider-container {
 		aspect-ratio: 16 / 10;
 		width: 100%;
-		height: auto; /* let height adjust automatically */
+		height: auto;
 		max-height: 500px;
 	}
 }
@@ -85,7 +85,7 @@
 	.slider-container {
 		aspect-ratio: 16 / 9;
 		width: 100%;
-		height: auto; /* let height adjust automatically */
+		height: auto;
 		max-height: 700px;
 	}
 }
