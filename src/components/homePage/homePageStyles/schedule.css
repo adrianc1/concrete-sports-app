@@ -23,18 +23,17 @@
 	margin-bottom: 2rem;
 	position: relative;
 	letter-spacing: -0.5px;
+	padding-bottom: 0.5rem; /* 👈 add space below line */
 }
 
 .schedule-card h4::after {
 	content: '';
-	position: absolute;
-	bottom: -10px;
-	left: 50%;
-	transform: translateX(-50%);
-	width: 60px;
+	display: block;
+	width: 80px;
 	height: 3px;
 	background-color: #f7a900;
 	border-radius: 2px;
+	margin: 0.5rem auto 0; /* 👈 controls spacing */
 }
 
 /* List Items */
