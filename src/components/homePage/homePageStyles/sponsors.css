@@ -101,6 +101,29 @@
 	border: 1px solid #e5e7eb;
 }
 
+/* Sponsor Header (Logo + Name) */
+.sponsor-header {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+/* Logo */
+.sponsor-logo {
+	width: 60px; /* fixed width */
+	height: 60px; /* fixed height to make it square */
+	object-fit: cover; /* crops the image to fill square nicely */
+	border-radius: 50%; /* makes it circular */
+	flex-shrink: 0; /* prevents shrinking */
+	border: 2px solid #e5e7eb; /* optional light border for separation */
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+	transition: transform 0.2s ease;
+}
+
+.sponsor-item:hover .sponsor-logo {
+	transform: scale(1.05);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
 	.sponsors-title {

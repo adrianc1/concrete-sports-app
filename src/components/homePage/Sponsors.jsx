@@ -5,11 +5,17 @@ import SideNavBar from '../../layout/SideNavBar';
 // import IFrame from '../iframe/IFrame';
 import { Link } from 'react-router';
 
+import kayak from '../../assets/kayak2.png';
+import uptownAuto from '../../assets/uptown2.png';
+import perks from '../../assets/perks5.png';
+import annies from '../../assets/anniespizza.png';
+import cascade1 from '../../assets/cascade1.png';
+import concreteLogo from '../../assets/Concrete-Logo.png';
+
 import '../homePage/homePageStyles/sponsors.css';
 function Sponsors() {
 	const [showNav, setShowNav] = useState(false);
 	const [showExitIcon, setShowExitIcon] = useState(false);
-	// const [iframeUrl, setIframeUrl] = useState('');
 
 	const sponsorList = [
 		{
@@ -17,42 +23,42 @@ function Sponsors() {
 			url: '/Boosters',
 			contact: '360-941-0403',
 			address: '7830 S Superior Ave, Concrete, WA 98237',
-			isExternal: false,
+			logo: concreteLogo,
 		},
 		{
 			name: 'North Cascade Kayaks',
 			url: 'https://northcascadekayaks.com/',
 			contact: ' info@northcascadekayaks.com',
 			address: '52925 Railroad Ave. Rockport,WA 98283',
-			isExternal: true,
+			logo: kayak,
 		},
 		{
 			name: "Annie's Pizza Station",
 			url: 'https://www.anniespizzastation.net/',
 			contact: '360-853-7227',
 			address: '44568 State Route 20 Concrete, WA',
-			isExternal: true,
+			logo: annies,
 		},
 		{
 			name: 'Cascade Burgers',
 			url: 'https://www.cascadeburgers.net/',
 			contact: '360-853-7580',
 			address: '45292 State Route 20 Concrete, Washington 98237',
-			isExternal: true,
+			logo: cascade1,
 		},
 		{
 			name: 'Uptown Auto Repair',
 			url: 'https://share.google/7L2z921YemrBkgsgo',
 			contact: '(360) 436-1445',
 			address: '1090 Darrington St, Darrington, WA 98241',
-			isExternal: true,
+			logo: uptownAuto,
 		},
 		{
 			name: "North Cascade's Perks",
 			url: 'https://www.facebook.com/NorthCascadesPerks/',
 			contact: 'northcascadeperks@gmail.com',
 			address: '44586 State Rte 20, Concrete, WA 98237',
-			isExternal: true,
+			logo: perks,
 		},
 
 		{
@@ -82,20 +88,28 @@ function Sponsors() {
 					{sponsorList.map((sponsor, index) => {
 						return (
 							<li className="sponsor-item" key={index}>
-								{sponsor.isExternal ? (
-									<span
-										className="sponsor-name"
-										onClick={() => handleSponsorClick(sponsor.url)}
-										style={{ cursor: 'pointer' }}
-									>
-										{sponsor.name}
-									</span>
-								) : (
-									<Link className="sponsor-name" to={sponsor.url}>
-										{sponsor.name}
-									</Link>
-								)}
-
+								<div className="sponsor-header">
+									{sponsor.logo && (
+										<img
+											src={sponsor.logo}
+											alt={sponsor.name + ' logo'}
+											className="sponsor-logo"
+										/>
+									)}
+									{sponsor.isExternal ? (
+										<span
+											className="sponsor-name"
+											onClick={() => handleSponsorClick(sponsor.url)}
+											style={{ cursor: 'pointer' }}
+										>
+											{sponsor.name}
+										</span>
+									) : (
+										<Link className="sponsor-name" to={sponsor.url}>
+											{sponsor.name}
+										</Link>
+									)}
+								</div>
 								<span className="sponsor-address">
 									Address: {sponsor.address}
 								</span>
