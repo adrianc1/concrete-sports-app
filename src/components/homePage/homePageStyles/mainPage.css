@@ -21,7 +21,7 @@ body {
 	font-size: 2.5rem;
 	width: 100%;
 	min-height: calc(100dvh - 250px);
-	background: rgb(240, 240, 240);
+	background: #f9fafb;
 	justify-content: center;
 	align-items: center;
 	color: #333;
