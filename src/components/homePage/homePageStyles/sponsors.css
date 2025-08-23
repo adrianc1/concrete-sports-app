@@ -63,7 +63,7 @@
 }
 
 /* Sponsor Name */
-.sponsor-name {
+/* .sponsor-name {
 	display: block;
 	font-size: 1.5rem;
 	font-weight: 700;
@@ -71,7 +71,7 @@
 	text-decoration: none;
 	margin-bottom: 0.5rem;
 	transition: color 0.2s ease;
-}
+} */
 
 .sponsor-item:hover .sponsor-name {
 	color: #7d00b3;
@@ -112,7 +112,7 @@
 /* Logo */
 .sponsor-logo {
 	width: 100%;
-	height: 120px;
+	height: 150px;
 	object-fit: cover; /* fits entire image without cropping */
 	border-radius: 12px;
 	background-color: #f9fafb; /* optional: fill empty space */
@@ -153,6 +153,6 @@
 	}
 
 	.sponsor-name {
-		font-size: 1.1rem;
+		font-size: 1.3rem;
 	}
 }

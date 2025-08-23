@@ -10,7 +10,8 @@ import uptownAuto from '../../assets/uptown2.png';
 import perks from '../../assets/perks5.png';
 import annies from '../../assets/anniespizza.png';
 import cascade1 from '../../assets/cascade1.png';
-import concreteLogo from '../../assets/Concrete-Logo.png';
+import concreteLogo from '../../assets/boosterbanner.png';
+import dreaux from '../../assets/dreauxdigital.png';
 
 import '../homePage/homePageStyles/sponsors.css';
 function Sponsors() {
@@ -19,7 +20,7 @@ function Sponsors() {
 
 	const sponsorList = [
 		{
-			name: 'CHS BOOSTER CLUB',
+			name: 'CHS Booster Club',
 			url: '/Boosters',
 			contact: '360-941-0403',
 			address: '7830 S Superior Ave, Concrete, WA 98237',
@@ -29,7 +30,7 @@ function Sponsors() {
 			name: 'North Cascade Kayaks',
 			url: 'https://northcascadekayaks.com/',
 			contact: ' info@northcascadekayaks.com',
-			address: '52925 Railroad Ave. Rockport,WA 98283',
+			address: '52925 Railroad Ave. Rockport, WA 98283',
 			logo: kayak,
 		},
 		{
@@ -66,7 +67,7 @@ function Sponsors() {
 			url: 'https://dreauxdigital.com',
 			contact: 'adrian@dreauxdigital.com',
 			address: '',
-			isExternal: true,
+			logo: dreaux,
 		},
 	];
 	function handleSponsorClick(url) {
