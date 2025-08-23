@@ -1,92 +1,138 @@
+/* Contact Page Container */
 .contact-page {
-	padding-top: 1rem;
 	min-height: 100vh;
-	width: 100vw;
-	background-color: rgb(240, 240, 240);
-	overflow-x: hidden;
-}
-
-.page-title {
-	text-align: center;
-	font-size: 2rem;
-	padding-bottom: 1rem;
-}
-
-.coach-list {
-	width: 100vw;
-	display: flex;
-	flex-direction: column;
-	padding: 0;
-	margin: 0 0 0 1rem;
-	list-style: none;
-}
-
-.coach-item {
-	display: flex;
-	font-size: 0.8rem;
-	flex-direction: column;
-	height: 100%;
 	width: 100%;
-	justify-content: space-around;
-	list-style: none;
-	border-bottom: 3px solid #f2bc40;
-	background-color: inherit;
-	padding: 2rem 0;
-	gap: 1rem;
+	padding: 2rem 1rem;
+	background-color: #f9fafb;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		'Helvetica Neue', Arial, sans-serif;
+	color: #1a202c;
 }
 
+/* Page Title */
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 800;
+	color: #4a007b;
+	text-align: center;
+	margin-bottom: 2rem;
+	position: relative;
+	letter-spacing: -0.5px;
+}
+
+.page-title::after {
+	content: '';
+	display: block;
+	width: 80px;
+	height: 3px;
+	background-color: #f7a900;
+	border-radius: 2px;
+	margin: 0.75rem auto 0;
+}
+
+/* Coach List */
+.coach-list {
+	width: 100%;
+	max-width: 900px;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+/* Coach Item */
+.coach-item {
+	background-color: #ffffff;
+	display: flex;
+	flex-direction: column;
+	padding: 1.5rem 2rem;
+	border-radius: 20px;
+	border: 1px solid #e5e7eb;
+	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+	transition: all 0.25s ease-in-out;
+	cursor: pointer;
+}
+
+.coach-item:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 8px 24px rgba(74, 0, 123, 0.15);
+	border-color: #7d00b3;
+}
+
+/* Coach Title (Role, e.g. Head Coach) */
 .coach-title {
 	font-size: 1.5rem;
-	margin-bottom: 0.3rem;
+	font-weight: 700;
 	color: #420a72;
+	margin-bottom: 0.5rem;
 }
 
-.coach-email a {
-	color: rgb(148, 103, 0);
-}
-
-.coach-phone,
+/* Contact Info */
 .coach-name,
+.coach-phone,
 .coach-email {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 1.2rem;
-	font-weight: 600;
+	font-size: 1rem;
+	font-weight: 500;
+	color: #374151;
+	margin-top: 0.3rem;
 }
 
 .coach-name span {
-	font-size: 1rem;
+	font-size: 0.9rem;
+	color: #6b7280;
 }
 
+/* Email Links */
+.coach-email a {
+	color: #7d00b3;
+	text-decoration: none;
+	font-weight: 600;
+	transition: color 0.2s ease;
+}
+
+.coach-email a:hover {
+	color: #f7a900;
+	text-decoration: underline;
+}
+
+/* Responsive */
 @media (min-width: 768px) {
-	.contact-page {
-		padding-top: 4rem;
-	}
 	.page-title {
 		font-size: 3rem;
 	}
+
 	.coach-title {
-		font-size: 2.2rem;
-	}
-	.coach-item {
-		font-size: 1.5rem;
-		letter-spacing: 0.07rem;
-		/* height: 100%;
-		width: 100vw; */
-	}
-	.coach-list {
-		/* margin-left: 1.5rem; */
-		height: 100%;
-		width: 100%;
-		background-color: inherit;
-	}
-	.player-info span {
-		font-size: 2.2rem;
+		font-size: 2rem;
 	}
 
-	.coach-phone,
 	.coach-name,
+	.coach-phone,
 	.coach-email {
-		font-size: 1.8rem;
-		font-weight: 600;
+		font-size: 1.25rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.page-title {
+		font-size: 1.75rem;
+	}
+
+	.coach-item {
+		padding: 1rem 1.25rem;
+	}
+
+	.coach-title {
+		font-size: 1.25rem;
+	}
+
+	.coach-name,
+	.coach-phone,
+	.coach-email {
+		font-size: 1rem;
 	}
 }

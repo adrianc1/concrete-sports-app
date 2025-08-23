@@ -1,75 +1,118 @@
-/* General page setup */
+/* --- Booster Club Page --- */
+
 body {
-	font-family: Roboto, 'Helvetica Neue', Arial, sans-serif;
-	background-color: #f0f2f5;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		'Helvetica Neue', Arial, sans-serif;
+	background-color: #f9fafb;
 	margin: 0;
 	padding: 0;
-	color: #333;
+	color: #1a202c;
 }
 
-/* --- Main Content Section --- */
-
+/* Main Booster Section */
 .boosters-main {
-	max-width: 900px;
-	margin: 40px auto;
-	padding: 30px;
-	background-color: #fff;
-	border-radius: 12px;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	min-height: 100vh;
+	width: 100%;
+	padding: 2rem 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
+/* Page Title */
 .boosters-title {
 	font-size: 2.5rem;
+	font-weight: 800;
 	color: #4a007b;
 	text-align: center;
-	margin-bottom: 10px;
+	margin-bottom: 1rem;
+	position: relative;
+	letter-spacing: -0.5px;
 }
 
+.boosters-title::after {
+	content: '';
+	display: block;
+	width: 80px;
+	height: 3px;
+	background-color: #f7a900;
+	border-radius: 2px;
+	margin: 0.75rem auto 0;
+}
+
+/* Sub-title / Description */
 .booster-sub-title {
 	font-size: 1.2rem;
-	color: #555;
-	text-align: center;
-	margin-bottom: 30px;
+	color: #6b7280;
+	margin: 1rem 0 2rem;
 	font-weight: 400;
+	text-align: center;
+	max-width: 700px;
 }
 
+/* Perks List */
 .booster-club-perks {
+	width: 100%;
+	max-width: 700px;
 	list-style: none;
 	padding: 0;
 	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
 }
 
+/* Individual Perk Item */
 .booster-club-perks li {
-	background-color: #f9f9f9;
-	border: 1px solid #e1e1e1;
-	border-radius: 8px;
-	padding: 15px;
-	margin-bottom: 15px;
-	font-size: 1rem;
-	line-height: 1.5;
-	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	background-color: #ffffff;
+	display: flex;
+	flex-direction: column;
+	padding: 1.5rem 2rem;
+	border-radius: 20px;
+	border: 1px solid #e5e7eb;
+	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+	transition: all 0.25s ease-in-out;
+	cursor: default;
 }
 
 .booster-club-perks li:hover {
-	transform: translateY(-3px);
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	transform: translateY(-4px);
+	box-shadow: 0 8px 24px rgba(74, 0, 123, 0.15);
+	border-color: #7d00b3;
 }
 
+/* Perk Title */
+.perk-title {
+	font-size: 1.25rem;
+	font-weight: 700;
+	color: #420a72;
+	margin-bottom: 0.5rem;
+}
+
+/* Perk Description */
+.perk-description {
+	font-size: 1rem;
+	font-weight: 500;
+	color: #374151;
+	line-height: 1.6;
+}
+
+/* Join Button */
 .button-container {
-	text-align: center;
-	margin-top: 30px;
+	margin-top: 2rem;
 }
 
 .button-container button {
-	padding: 15px 30px;
+	padding: 14px 28px;
 	font-size: 1.1rem;
-	font-weight: bold;
-	color: #fff;
+	font-weight: 600;
+	color: #ffffff;
 	background-color: #4a007b;
 	border: none;
-	border-radius: 25px;
+	border-radius: 9999px;
 	cursor: pointer;
 	transition: background-color 0.3s ease, transform 0.2s ease;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .button-container button:hover {
@@ -77,8 +120,7 @@ body {
 	transform: translateY(-2px);
 }
 
-/* --- Modal Styles (for the sign-up form) --- */
-
+/* --- Modal Styles --- */
 .modal-page {
 	position: fixed;
 	top: 0;
@@ -102,13 +144,25 @@ body {
 
 .modal-container {
 	position: relative;
-	background-color: #fff;
-	padding: 30px;
-	border-radius: 10px;
-	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+	background-color: #ffffff;
+	padding: 2rem;
+	border-radius: 12px;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 	width: 90%;
 	max-width: 500px;
 	z-index: 1001;
+	animation: fadeInUp 0.3s ease;
+}
+
+@keyframes fadeInUp {
+	from {
+		transform: translateY(20px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
 }
 
 .close-modal-button {
@@ -117,27 +171,30 @@ body {
 	right: 15px;
 	font-size: 1.5rem;
 	cursor: pointer;
-	color: #888;
+	color: #9ca3af;
 	transition: color 0.2s ease;
 }
 
 .close-modal-button:hover {
-	color: #333;
+	color: #4a007b;
 }
 
+/* Form Styles */
 .modal-container form {
 	display: flex;
 	flex-direction: column;
+	text-align: left;
 }
 
 .modal-container form div {
-	margin-bottom: 15px;
+	margin-bottom: 1rem;
 }
 
 .modal-container label {
 	display: block;
-	font-weight: bold;
-	margin-bottom: 5px;
+	font-weight: 600;
+	color: #374151;
+	margin-bottom: 0.5rem;
 }
 
 .modal-container input[type='text'],
@@ -145,37 +202,61 @@ body {
 .modal-container input[type='email'] {
 	width: 100%;
 	padding: 12px;
-	border: 1px solid #ccc;
-	border-radius: 5px;
+	border: 1px solid #d1d5db;
+	border-radius: 8px;
 	font-size: 1rem;
+	transition: border-color 0.2s ease;
+}
+
+.modal-container input:focus {
+	outline: none;
+	border-color: #7d00b3;
+	box-shadow: 0 0 0 2px rgba(125, 0, 179, 0.2);
 }
 
 .submit-form-btn {
 	padding: 12px 20px;
 	font-size: 1rem;
-	font-weight: bold;
-	color: #fff;
+	font-weight: 600;
+	color: #ffffff;
 	background-color: #4a007b;
 	border: none;
-	border-radius: 5px;
+	border-radius: 8px;
 	cursor: pointer;
 	transition: background-color 0.3s ease;
-	margin-top: 10px;
+	margin-top: 0.5rem;
 }
 
 .submit-form-btn:hover {
 	background-color: #7d00b3;
 }
 
-/* --- Responsive Design --- */
-@media (max-width: 768px) {
+/* Responsive */
+@media (min-width: 768px) {
+	.boosters-title {
+		font-size: 3rem;
+	}
+
+	.booster-sub-title {
+		font-size: 1.2rem;
+	}
+
+	.perk-title {
+		font-size: 1.5rem;
+	}
+
+	.perk-description {
+		font-size: 1.1rem;
+	}
+}
+
+@media (max-width: 480px) {
 	.boosters-main {
-		margin: 20px;
-		padding: 20px;
+		padding: 1rem;
 	}
 
 	.boosters-title {
-		font-size: 2rem;
+		font-size: 1.75rem;
 	}
 
 	.booster-sub-title {
@@ -183,10 +264,14 @@ body {
 	}
 
 	.booster-club-perks li {
-		padding: 12px;
+		padding: 1rem 1.25rem;
 	}
 
-	.modal-container {
-		padding: 20px;
+	.perk-title {
+		font-size: 1.25rem;
+	}
+
+	.perk-description {
+		font-size: 0.95rem;
 	}
 }

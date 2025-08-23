@@ -86,7 +86,7 @@ function Sponsors() {
 									<span
 										className="sponsor-name"
 										onClick={() => handleSponsorClick(sponsor.url)}
-										style={{ cursor: 'pointer' }} 
+										style={{ cursor: 'pointer' }}
 									>
 										{sponsor.name}
 									</span>
@@ -109,11 +109,17 @@ function Sponsors() {
 						A heartfelt thank you to our sponsors! Your generous support has
 						directly empowered our Concrete athletes, providing them with
 						invaluable resources and opportunities. We&apos;ve witnessed their
-						growth and success t hanks to your belief in them. We are deeply
+						growth and success thanks to your belief in them. We are deeply
 						grateful for your partnership.
 						<br />
 						<br />
-						To be a sponsor please contact adrian@dreauxdigital.com
+						To be a sponsor please contact{' '}
+						<strong>
+							<a href="mailto:adrian@dreauxdigital.com">
+								adrian@dreauxdigital.com
+							</a>
+						</strong>
+						.
 					</p>
 				</ul>
 			</div>

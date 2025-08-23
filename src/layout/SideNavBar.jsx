@@ -10,22 +10,22 @@ function SideNavBar({ show, logo }) {
 					<Link to="/">Home</Link>
 				</li>
 				<li>
-					<Link to="/Boosters">Booster Club</Link>
-				</li>
-				<li>
-					<Link to="/Sponsors">Sponsors</Link>
-				</li>
-				<li>
-					<Link to="/Contact">Coach Connect</Link>
-				</li>
-				<li>
-					<Link to="/SchoolDistrict">School District</Link>
+					<Link to="/Schedules">Schedules</Link>
 				</li>
 				<li>
 					<Link to="/Updates">Updates</Link>
 				</li>
 				<li>
 					<Link to="/PlayersOfTheMonth">Players Of The Month</Link>
+				</li>
+				<li>
+					<Link to="/Sponsors">Sponsors</Link>
+				</li>
+				<li>
+					<Link to="/Boosters">Booster Club</Link>
+				</li>
+				<li>
+					<Link to="/Contact">Coach Connect</Link>
 				</li>
 			</ul>
 			<ul className="nav-schedule">
