@@ -110,6 +110,7 @@ function Sponsors() {
 										</Link>
 									)}
 								</div>
+
 								<span className="sponsor-address">
 									Address: {sponsor.address}
 								</span>
