@@ -1,5 +1,5 @@
 import ImageSlider from '../imageSlider/ImageSlider';
-import welcomeBanner from '../../assets/concreteBannerImg.gif';
+import welcomeBanner from '../../assets/lionsbanner.png';
 import kayak from '../../assets/kayak2.png';
 import uptownAuto from '../../assets/uptown2.png';
 import perks from '../../assets/perks5.png';
