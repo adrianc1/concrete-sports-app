@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import './ScheduleBtn.css';
+import './scheduleBtn.css';
 export default function BackToMainScheduleBtn() {
 	return (
 		<Link to="/Schedules">
