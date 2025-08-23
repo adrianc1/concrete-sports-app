@@ -86,7 +86,7 @@ function Sponsors() {
 									<span
 										className="sponsor-name"
 										onClick={() => handleSponsorClick(sponsor.url)}
-										style={{ cursor: 'pointer' }} // Add cursor pointer to indicate it's clickable
+										style={{ cursor: 'pointer' }} 
 									>
 										{sponsor.name}
 									</span>
@@ -116,10 +116,6 @@ function Sponsors() {
 						To be a sponsor please contact adrian@dreauxdigital.com
 					</p>
 				</ul>
-
-				{/* {iframeUrl && (
-					<IFrame url={iframeUrl} onClose={() => setIframeUrl('')} />
-				)} */}
 			</div>
 		</div>
 	);

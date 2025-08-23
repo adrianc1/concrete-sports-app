@@ -8,9 +8,8 @@
 		"venue": "Concrete High School (Concrete, WA)",
 		"sport": "FOOTBALL",
 		"level": "Boys Varsity",
-		"result": "-"
+		"result": "TBD"
 	},
-
 	{
 		"dayOfWeek": "SAT",
 		"date": "Sep 13 2025",
@@ -20,7 +19,7 @@
 		"venue": "Quilcene High School (Quilcene, WA)",
 		"sport": "FOOTBALL",
 		"level": "Boys Varsity",
-		"result": "-"
+		"result": "TBD"
 	},
 
 	{
@@ -32,7 +31,7 @@
 		"venue": "Crescent High School (Joyce, WA)",
 		"sport": "FOOTBALL",
 		"level": "Boys Varsity",
-		"result": "-"
+		"result": "TBD"
 	},
 
 	{
@@ -44,7 +43,7 @@
 		"venue": "La Conner High School (La Conner, WA)",
 		"sport": "FOOTBALL",
 		"level": "Boys Varsity",
-		"result": "-"
+		"result": "TBD"
 	},
 
 	{
@@ -56,7 +55,7 @@
 		"venue": "Concrete High School (Concrete, WA)",
 		"sport": "FOOTBALL",
 		"level": "Boys Varsity",
-		"result": "-"
+		"result": "TBD"
 	},
 
 	{
@@ -68,7 +67,7 @@
 		"venue": "Concrete High School (Concrete, WA)",
 		"sport": "FOOTBALL",
 		"level": "Boys Varsity",
-		"result": "-"
+		"result": "TBD"
 	},
 
 	{
@@ -80,8 +79,9 @@
 		"venue": "Muckleshoot Tribal School (Auburn, WA)",
 		"sport": "FOOTBALL",
 		"level": "Boys Varsity",
-		"result": "-"
+		"result": "TBD"
 	},
+
 	{
 		"dayOfWeek": "SAT",
 		"date": "Oct 25 2025",
@@ -91,9 +91,8 @@
 		"venue": "Concrete High School (Concrete, WA)",
 		"sport": "FOOTBALL",
 		"level": "Boys Varsity",
-		"result": "-"
+		"result": "TBD"
 	},
-
 	{
 		"dayOfWeek": "FRI",
 		"date": "Oct 31 2025",
@@ -103,6 +102,6 @@
 		"venue": "Neah Bay Junior high School (Neah Bay)",
 		"sport": "FOOTBALL",
 		"level": "Boys Varsity",
-		"result": "-"
+		"result": "TBD"
 	}
 ]

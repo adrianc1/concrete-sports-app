@@ -11,13 +11,14 @@ import { Calendar } from 'lucide-react';
 function MainPage() {
 	return (
 		<div className="main-page">
-			{/* BOOSTER */}
-			<Link to="/Boosters" className="icon-container">
+			{/* TEAM SCHEDULES */}
+
+			<Link to="/Schedules" className="icon-container">
 				<div className="icon">
-					<GiLion />
+					<Calendar size={40} />
 				</div>
 				<div className="icon-title">
-					Booster <br /> Club
+					Team <br /> Schedules
 				</div>
 			</Link>
 
@@ -34,24 +35,25 @@ function MainPage() {
 				</div>
 			</Link>
 
-			{/* COACH CONTACT */}
+			{/* Announcements */}
 
+			<Link to="/Updates" className="icon-container">
+				<div className="icon">
+					<RiMegaphoneLine />
+				</div>
+				<div className="icon-title">
+					Team <br />
+					Updates
+				</div>
+			</Link>
+
+			{/* COACH CONTACT */}
 			<Link to="/Contact" className="icon-container">
 				<div className="icon">
 					<RiContactsLine />
 				</div>
 				<div className="icon-title">
 					Coach <br /> Connect
-				</div>
-			</Link>
-			{/* TEAM SCHEDULES */}
-
-			<Link to="/Schedules" className="icon-container">
-				<div className="icon">
-					<Calendar size={40} />
-				</div>
-				<div className="icon-title">
-					Team <br /> Schedules
 				</div>
 			</Link>
 
@@ -66,15 +68,13 @@ function MainPage() {
 				</div>
 			</Link>
 
-			{/* Announcements */}
-
-			<Link to="/Updates" className="icon-container">
+			{/* BOOSTER */}
+			<Link to="/Boosters" className="icon-container">
 				<div className="icon">
-					<RiMegaphoneLine />
+					<GiLion />
 				</div>
 				<div className="icon-title">
-					Team <br />
-					Updates
+					Booster <br /> Club
 				</div>
 			</Link>
 		</div>

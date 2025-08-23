@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import BackToMainScheduleBtn from './BackToMainScheduleBtn';
 import ListGroup from 'react-bootstrap/ListGroup';
 import games from '../../utils/webScraper/footballGames.json';
 import logo from '../../assets/Concrete-Logo.png';
@@ -21,7 +22,8 @@ function FootballSchedule() {
 			/>
 			<SideNavBar show={showNav} logo={logo} />
 			<ListGroup>
-				<h2>Football</h2>
+				<BackToMainScheduleBtn />
+				<h2 className="sport-title">Football</h2>
 				{games.map((game, index) => (
 					<ListGroupItem key={index} className="game">
 						<div>{game.date}</div>

@@ -1,8 +1,7 @@
 import { useState } from 'react';
+import BackToMainScheduleBtn from './BackToMainScheduleBtn';
 import ListGroup from 'react-bootstrap/ListGroup';
-import games from '../../utils/webScraper/wrestlingGames.json';
 import logo from '../../assets/Concrete-Logo.png';
-import { ListGroupItem } from 'react-bootstrap';
 import Header from '../../layout/Header';
 import SideNavBar from '../../layout/SideNavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -22,7 +21,9 @@ function WrestlingSchedule() {
 			/>
 			<SideNavBar show={showNav} logo={logo} />
 			<ListGroup>
-				<h2>Wrestling</h2>
+				<BackToMainScheduleBtn />
+
+				<h2 className="sport-title">Wrestling</h2>
 				<ComingSoon />
 				{/* {games.map((game, index) => (
 					<ListGroupItem key={index} className="game">

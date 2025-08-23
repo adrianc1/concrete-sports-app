@@ -6,7 +6,7 @@ import logo from '../../assets/Concrete-Logo.png';
 
 import '../homePage/homePageStyles/schedule.css';
 
-export default function Schedule({ show }) {
+export default function Schedule() {
 	const [showNav, setShowNav] = useState(false);
 	const [showExitIcon, setShowExitIcon] = useState(false);
 	return (

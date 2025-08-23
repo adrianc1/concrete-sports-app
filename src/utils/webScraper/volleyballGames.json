@@ -8,7 +8,7 @@
 		"venue": "Concrete High School (Concrete, WA)",
 		"sport": "VOLLEYBALL",
 		"level": "Girls Varsity",
-		"result": "-"
+		"result": "TBD"
 	},
 
 	{
@@ -20,7 +20,7 @@
 		"venue": "Shoreline Christian School (Shoreline, WA)",
 		"sport": "VOLLEYBALL",
 		"level": "Girls Varsity",
-		"result": "-"
+		"result": "TBD"
 	},
 
 	{
@@ -29,10 +29,10 @@
 		"time": "6:30 PM",
 		"opponent": "at La Conner High School",
 		"location": "Away",
-		"venue": "",
+		"venue": "La Conner High School (La Conner, WA)",
 		"sport": "VOLLEYBALL",
 		"level": "Girls Varsity",
-		"result": "-"
+		"result": "TBD"
 	},
 
 	{
@@ -44,7 +44,7 @@
 		"venue": "Darrington Community Center (Darrington, WA)",
 		"sport": "VOLLEYBALL",
 		"level": "Girls Varsity",
-		"result": "-"
+		"result": "TBD"
 	},
 
 	{
@@ -53,10 +53,10 @@
 		"time": "3:45 PM",
 		"opponent": "at Crescent High School",
 		"location": "Away",
-		"venue": "",
+		"venue": "Crescent High School (Joyce, WA)",
 		"sport": "VOLLEYBALL",
 		"level": "Girls Varsity",
-		"result": "-"
+		"result": "TBD"
 	},
 
 	{
@@ -68,7 +68,7 @@
 		"venue": "Orcas Island High School (Eastsound, WA)",
 		"sport": "VOLLEYBALL",
 		"level": "Girls Varsity",
-		"result": "-"
+		"result": "TBD"
 	},
 
 	{
@@ -80,7 +80,7 @@
 		"venue": "Concrete High School (Concrete, WA)",
 		"sport": "VOLLEYBALL",
 		"level": "Girls Varsity",
-		"result": "-"
+		"result": "TBD"
 	},
 
 	{
@@ -92,7 +92,7 @@
 		"venue": "Concrete High School (Concrete, WA)",
 		"sport": "VOLLEYBALL",
 		"level": "Girls Varsity",
-		"result": "-"
+		"result": "TBD"
 	},
 
 	{
@@ -104,7 +104,7 @@
 		"venue": "Concrete High School (Concrete, WA)",
 		"sport": "VOLLEYBALL",
 		"level": "Girls Varsity",
-		"result": "-"
+		"result": "TBD"
 	},
 
 	{
@@ -116,6 +116,6 @@
 		"venue": "Friday Harbor High School (Friday Harbor, WA)",
 		"sport": "VOLLEYBALL",
 		"level": "Girls Varsity",
-		"result": "-"
+		"result": "TBD"
 	}
 ]
