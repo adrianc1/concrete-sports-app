@@ -2,7 +2,12 @@ import './footer.css';
 
 function Footer() {
 	return (
-		<div className="copy">2025 &copy; All Rights Reserved. Dreaux Digital</div>
+		<div className="copyright main">
+			2025 &copy; All Rights Reserved.{' '}
+			<div>
+				<a href="https://dreauxdigital.com">Dreaux Digital</a>
+			</div>
+		</div>
 	);
 }
 

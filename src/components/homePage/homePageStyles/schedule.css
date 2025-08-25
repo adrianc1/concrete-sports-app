@@ -89,7 +89,7 @@
 /* Copyright Styles */
 .copyright {
 	text-align: center;
-	margin-top: 4rem;
+	/* margin-top: 4rem; */
 	color: #6b7280;
 	font-size: 0.9rem;
 }
