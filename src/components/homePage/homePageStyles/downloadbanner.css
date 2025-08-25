@@ -12,8 +12,37 @@
 	background-color: rgb(0, 173, 230);
 	color: #fff;
 	border: none;
+	margin-right: 15px;
 }
 
 .close-banner {
-	padding-left: 5px;
+	padding-left: 15px;
+}
+
+.banner-tagline {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0;
+}
+
+.banner-tagline p,
+h4 {
+	margin: 0;
+}
+
+.banner-tagline-title {
+	font-weight: bold;
+	font-size: 1rem;
+}
+
+.banner-tagline-des {
+	color: rgb(131, 131, 131);
+	font-size: 0.7rem;
+}
+
+.left-banner {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
 }

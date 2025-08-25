@@ -11,10 +11,15 @@ export default function DownloadBanner({ setBannerActive, setShowModal }) {
 
 	return (
 		<div className="banner-container">
-			<div className="close-banner" onClick={closeBanner}>
-				X
+			<div className="left-banner">
+				<div className="close-banner" onClick={closeBanner}>
+					X
+				</div>
+				<div className="banner-tagline">
+					<h4 className="banner-tagline-title">Get the app</h4>
+					<p className="banner-tagline-des">Stay connected with the teams</p>
+				</div>
 			</div>
-			<div className="banner-title">Concrete Sports App</div>
 			<button className="use-app-btn" onClick={displayModal}>
 				Use App
 			</button>

@@ -8,16 +8,9 @@ import './footer.css';
 
 function Footer() {
 	return (
-		<div className="footer">
-			<a href="tel:+1234567890">
-				<LuPhone />
-			</a>
-			<a href="mailto:example@example.com">
-				<MdOutlineEmail />
-			</a>
-			<a href="https://www.concrete.k12.wa.us/">
-				<CiGlobe />
-			</a>
+		<div>
+			2025 &copy; All Rights Reserved.
+			<span>Designed & Developed By Dreaux Digital</span>
 		</div>
 	);
 }

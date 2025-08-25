@@ -28,5 +28,6 @@
 	width: 90%;
 	max-width: 500px;
 	z-index: 1001;
+	top: 20%;
 	animation: fadeInUp 0.3s ease;
 }
