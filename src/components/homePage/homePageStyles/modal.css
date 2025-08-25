@@ -31,3 +31,21 @@
 	top: 20%;
 	animation: fadeInUp 0.3s ease;
 }
+
+.modal-container h2 {
+	text-align: center;
+}
+
+.how-to {
+	list-style-type: none;
+}
+
+.how-to li img {
+	max-width: 100%;
+	height: auto;
+	max-height: 200px;
+	object-fit: contain;
+	border-radius: 8px;
+	margin-top: 10px;
+	display: block;
+}
