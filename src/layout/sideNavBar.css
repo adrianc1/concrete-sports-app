@@ -65,15 +65,6 @@
 	width: 3rem;
 }
 
-.copyright {
-	font-size: 0.7rem;
-	letter-spacing: 0.1rem;
-	position: relative;
-	width: 100%;
-	text-align: center;
-	margin-top: 8rem;
-}
-
 @media (min-width: 768px) {
 	.side-nav {
 		font-size: 1.7rem;
