@@ -6,14 +6,14 @@
 	background-color: rgb(66, 10, 114);
 }
 
-.footer > * {
-	font-size: 2rem;
-	color: #fff;
+.copy {
+	font-size: 0.757rem;
+
 	/* color: rgb(242, 188, 64); */
 }
 
 @media (min-width: 768px) {
-	.footer > * {
+	.copy {
 		font-size: 2.5rem;
 	}
 }

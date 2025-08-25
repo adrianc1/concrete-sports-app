@@ -9,6 +9,7 @@ import logo from './assets/Concrete-Logo.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DownloadModal from './components/homePage/DownloadModal';
 import { Download } from 'lucide-react';
+import Footer from './layout/Footer';
 
 function App() {
 	const [showNav, setShowNav] = useState(false);
@@ -34,7 +35,7 @@ function App() {
 			<SideNavBar show={showNav} logo={logo} />
 			<Banner />
 			<MainPage />
-			{/* <Footer /> */}
+			<Footer />
 		</>
 	);
 }
