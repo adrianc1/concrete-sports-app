@@ -23,7 +23,7 @@
 	margin-bottom: 2rem;
 	position: relative;
 	letter-spacing: -0.5px;
-	padding-bottom: 0.5rem; /* 👈 add space below line */
+	padding-bottom: 0.5rem;
 }
 
 .schedule-card h4::after {
@@ -33,7 +33,7 @@
 	height: 3px;
 	background-color: #f7a900;
 	border-radius: 2px;
-	margin: 0.5rem auto 0; /* 👈 controls spacing */
+	margin: 0.5rem auto 0;
 }
 
 /* List Items */

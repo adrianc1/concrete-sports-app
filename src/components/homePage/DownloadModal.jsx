@@ -10,7 +10,8 @@ export default function DownloadModal({ setShowModal }) {
 		<div className="modal-container">
 			<span onClick={closeModal}>X</span>
 			<h2>Concrete Sports App</h2>
-			<p>Get the app in 5 seconds. No download required.</p>
+			<div>Get the app in 5 seconds.</div>
+			<div>No download required.</div>
 			<ul className="how-to">
 				<li>
 					<p>1. Tap the share button on the bottom of the screen.</p>

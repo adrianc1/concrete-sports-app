@@ -17,15 +17,26 @@ function App() {
 	const [showModal, setShowModal] = useState(false);
 	const [bannerActive, setBannerActive] = useState(true);
 
+	function isPWA() {
+		return (
+			window.matchMedia('(display-mode: standalone)').matches ||
+			window.navigator.standalone === true
+		);
+	}
+
+	const isRunningPWA = isPWA();
+
 	return (
 		<>
-			{bannerActive && (
+			{bannerActive && !isRunningPWA && (
 				<DownloadBanner
 					setBannerActive={setBannerActive}
 					setShowModal={setShowModal}
 				/>
 			)}
-			{showModal && <DownloadModal setShowModal={setShowModal} />}
+			{showModal && !isRunningPWA && (
+				<DownloadModal setShowModal={setShowModal} />
+			)}{' '}
 			<Header
 				toggleNav={() => setShowNav(!showNav)}
 				toggleIcon={() => setShowExitIcon(!showExitIcon)}

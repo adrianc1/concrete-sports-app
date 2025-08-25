@@ -28,12 +28,29 @@
 	width: 90%;
 	max-width: 500px;
 	z-index: 1001;
-	top: 20%;
+	top: 12%;
 	animation: fadeInUp 0.3s ease;
 }
 
 .modal-container h2 {
+	font-size: 1.5rem;
+	font-weight: 800;
+	color: #4a007b;
 	text-align: center;
+	margin-bottom: 1rem;
+	position: relative;
+	letter-spacing: -0.5px;
+	padding-bottom: 0.5rem;
+}
+
+.modal-container h2::after {
+	content: '';
+	display: block;
+	width: 80px;
+	height: 3px;
+	background-color: #f7a900;
+	border-radius: 2px;
+	margin: 0.5rem auto 0;
 }
 
 .how-to {
