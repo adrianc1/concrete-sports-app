@@ -38,8 +38,11 @@
 
 .how-to {
 	list-style-type: none;
+	font-weight: bold;
 }
-
+.how-to li {
+	margin: 2rem 0;
+}
 .how-to li img {
 	max-width: 100%;
 	height: auto;
