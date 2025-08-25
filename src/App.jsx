@@ -4,15 +4,27 @@ import Banner from './components/banner/Banner';
 import MainPage from './components/homePage/MainPage';
 // import Footer from './components/footer/Footer';
 import Header from './layout/Header';
+import DownloadBanner from './components/homePage/DownloadBanner';
 import logo from './assets/Concrete-Logo.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import DownloadModal from './components/homePage/DownloadModal';
+import { Download } from 'lucide-react';
 
 function App() {
 	const [showNav, setShowNav] = useState(false);
 	const [showExitIcon, setShowExitIcon] = useState(false);
+	const [showModal, setShowModal] = useState(false);
+	const [bannerActive, setBannerActive] = useState(true);
 
 	return (
 		<>
+			{bannerActive && (
+				<DownloadBanner
+					setBannerActive={setBannerActive}
+					setShowModal={setShowModal}
+				/>
+			)}
+			{showModal && <DownloadModal setShowModal={setShowModal} />}
 			<Header
 				toggleNav={() => setShowNav(!showNav)}
 				toggleIcon={() => setShowExitIcon(!showExitIcon)}

@@ -3,6 +3,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdClose } from 'react-icons/md';
 
 import './header.css';
+import { Download } from 'lucide-react';
 
 function Header({ toggleNav, logo, toggleIcon, display }) {
 	const handleBothToggles = () => {
