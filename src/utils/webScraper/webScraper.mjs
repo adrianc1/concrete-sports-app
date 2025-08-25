@@ -25,6 +25,10 @@ export async function scrapeGames(url, outputFilename = 'games.json') {
 	for (const gameElement of gameElements) {
 		let game = {};
 
+		game.watchLink = await gameElement
+			.$eval('[data-testid*="watch-live"]', (el) => el.href)
+			.catch(() => 'n/a');
+
 		// Extract date - looking for the date display elements
 		game.dayOfWeek = await gameElement
 			.$eval('[data-testid*="day-of-week"]', (el) => el.textContent.trim())
