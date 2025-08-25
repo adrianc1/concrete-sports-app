@@ -1,63 +1,102 @@
+/* Container for the entire list */
 .list-group {
 	padding-top: 1rem;
 	width: 100%;
-	background-color: rgb(255, 255, 255);
+	background-color: #f9f9f9; /* light modern background */
+	font-family: 'Arial', sans-serif;
 }
+
+/* Sport title styling */
 .sport-title {
 	text-align: center;
-	font-size: 2.4rem;
+	font-size: 2.8rem;
 	font-weight: 900;
 	color: rgb(66, 10, 114);
-	margin: 0.2rem 0 1rem 0;
-	letter-spacing: 0.025em;
+	margin: 1rem 0 2rem 0;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+	border-bottom: 3px solid rgb(147, 51, 234);
+	padding-bottom: 0.5rem;
 }
 
-.coming-soon {
-	margin: 2rem auto;
-	color: rgb(66, 10, 114);
-}
-.coming-soon-icon {
-	margin: 1rem auto;
-	color: rgb(242, 188, 64);
-}
+/* Individual game card */
 .list-group-item.game {
-	font-size: 0.8rem;
-	padding: 1rem;
-	color: black;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: space-between; /* pushes the button to the bottom */
+	align-items: flex-start;
+	padding: 1rem 1.5rem;
+	margin: 0.5rem auto;
+	border-radius: 12px;
+	background: #fff;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+	transition: all 0.2s ease-in-out;
+	min-height: 120px; /* ensures all cards have same minimum height */
+}
+
+.list-group-item.game:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Row for date, opponent, and result */
+.list-group-item.game .game-info {
+	display: flex;
+	width: 100%;
 	justify-content: space-between;
 	align-items: center;
-	display: flex;
-	height: 100%;
-	width: 100%;
-	border-bottom: 1px solid black;
-	margin: auto 0;
-	text-align: left;
-	align-items: start;
+	margin-bottom: 0.5rem;
 }
 
-.list-group .list-group-item > div:first-child {
-	flex: 2;
-	text-align: left;
-}
-
-.list-group .list-group-item > div:nth-child(2) {
-	flex: 3;
-	text-align: left;
-}
-.list-group .list-group-item > div:last-child {
+.list-group-item.game .game-info > div {
 	flex: 1;
-	text-align: right;
+	text-align: left;
 	padding-right: 1rem;
+	font-size: 0.95rem;
 }
 
+/* Highlight opponent */
+.list-group-item.game .game-info > div:nth-child(2) {
+	font-weight: 700;
+	color: rgb(33, 33, 33);
+}
+
+/* Watch button styling */
+.watch-button {
+	display: inline-block;
+	margin-top: 0.3rem;
+	padding: 8px 22px;
+	border-radius: 14px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	text-decoration: none;
+	color: #fff;
+	background: linear-gradient(90deg, rgb(66, 10, 114), rgb(147, 51, 234));
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+	transition: all 0.25s ease-in-out;
+}
+
+.watch-button:hover {
+	background: linear-gradient(90deg, rgb(50, 8, 90), rgb(126, 34, 206));
+	box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
+	transform: translateY(-2px);
+}
+
+.list-group-item.game .watch-button {
+	margin: auto auto 0 auto;
+}
+
+/* Responsive adjustments */
 @media (min-width: 768px) {
-	.list-group {
-		padding-top: 1rem;
-		font-family: Arial, Helvetica, sans-serif;
-		font-weight: 400;
+	.list-group-item.game {
+		font-size: 1.1rem;
+		padding: 1.2rem 2rem;
 	}
 
-	.list-group-item.game {
-		font-size: 1.5rem;
+	.list-group-item.game .game-info > div {
+		font-size: 1rem;
 	}
 }

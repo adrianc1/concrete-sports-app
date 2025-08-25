@@ -14,6 +14,10 @@ export async function scrapeGames(url, outputFilename = 'games.json') {
 	console.log(`Scraping from: ${url}`);
 	console.log(response.headers());
 
+	function normalize(text) {
+		return text.toLowerCase().replace(/\s+/g, ' ').trim();
+	}
+
 	// Wait for content to load
 	await new Promise((resolve) => setTimeout(resolve, 2000));
 
@@ -79,7 +83,7 @@ export async function scrapeGames(url, outputFilename = 'games.json') {
 			.catch(() => 'n/a');
 
 		// Only add games that have meaningful data
-		if (game.opponent !== 'n/a' || game.date !== 'n/a') {
+		if (game.opponent !== 'n/a' && game.date !== 'n/a' && game.time !== 'n/a') {
 			games.push(game);
 		}
 	}
@@ -162,7 +166,9 @@ export async function scrapeGames(url, outputFilename = 'games.json') {
 		}
 
 		// Create a unique key for each game
-		const gameKey = `${game.date}-${game.time}-${game.opponent}`;
+		const gameKey = `${normalize(game.date)}-${normalize(
+			game.time
+		)}-${normalize(game.opponent)}`;
 
 		// Only add if we haven't seen this game before
 		if (!seenGames.has(gameKey)) {
