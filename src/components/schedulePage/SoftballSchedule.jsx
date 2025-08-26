@@ -1,4 +1,4 @@
-import games from '../../utils/webScraper/boysbballgames.json';
+import games from '../../utils/webScraper/softballGames.json';
 import logo from '../../assets/Concrete-Logo.png';
 import SchedulePage from './SchedulePage';
 import './schedulePage.css';
