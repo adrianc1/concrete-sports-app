@@ -1,55 +1,8 @@
-import { useState } from 'react';
-import BackToMainScheduleBtn from './BackToMainScheduleBtn';
-import ListGroup from 'react-bootstrap/ListGroup';
-import games from '../../utils/webScraper/volleyballGames.json';
+import games from '../../utils/webScraper/boysbballgames.json';
 import logo from '../../assets/Concrete-Logo.png';
-import { ListGroupItem } from 'react-bootstrap';
-import Header from '../../layout/Header';
-import SideNavBar from '../../layout/SideNavBar';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import SchedulePage from './SchedulePage';
 import './schedulePage.css';
 
-export default function GirlsBballSchedule() {
-	const [showNav, setShowNav] = useState(false);
-	const [showExitIcon, setShowExitIcon] = useState(false);
-	return (
-		<>
-			<Header
-				toggleNav={() => setShowNav(!showNav)}
-				toggleIcon={() => setShowExitIcon(!showExitIcon)}
-				logo={logo}
-				display={showExitIcon}
-			/>
-			<SideNavBar show={showNav} logo={logo} />
-			<ListGroup>
-				<BackToMainScheduleBtn />
-
-				<h2 className="sport-title">Volleyball</h2>
-				{games.map((game, index) => (
-					<ListGroupItem key={index} className="game">
-						<div className="game-info">
-							<div className="gametimes">
-								<div>{game.date}</div>
-								<div>{game.time}</div>
-							</div>
-							<div>
-								{game.location.includes('Away') ? '@' : ''} {game.opponent}
-							</div>
-							<div>{game.result}</div>
-						</div>
-						{game.watchLink !== 'n/a' && (
-							<a
-								href={game.watchLink}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="watch-button"
-							>
-								🎥 Watch Live
-							</a>
-						)}
-					</ListGroupItem>
-				))}
-			</ListGroup>
-		</>
-	);
+export default function VolleyballSchedule() {
+	return <SchedulePage sportName="Volleyball" games={games} logo={logo} />;
 }

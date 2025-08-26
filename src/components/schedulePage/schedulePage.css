@@ -62,13 +62,6 @@
 	margin-bottom: 0.5rem;
 }
 
-/* .list-group-item.game .game-info > div {
-	flex: 1;
-	text-align: left;
-	padding-right: 1rem;
-	font-size: 0.95rem;
-} */
-
 /* Highlight opponent */
 .list-group-item.game .game-info > div:nth-child(2) {
 	font-weight: 700;

@@ -56,7 +56,7 @@ function SideNavBar({ show, logo }) {
 				</li>
 			</ul>
 			<p className="copyright">
-				<a href="https://dreauxdigital.com">Dreaux Digital</a> 2025&copy;
+				<a href="https://dreauxdigital.com">Dreaux Digital </a> 2025&copy;
 			</p>
 		</nav>
 	);
