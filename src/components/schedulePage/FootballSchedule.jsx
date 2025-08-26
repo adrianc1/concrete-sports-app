@@ -27,7 +27,10 @@ function FootballSchedule() {
 				{games.map((game, index) => (
 					<ListGroupItem key={index} className="game">
 						<div className="game-info">
-							<div>{game.date}</div>
+							<div className="">
+								<div>{game.date}</div>
+								<div>{game.time}</div>
+							</div>
 							<div>
 								{game.location.includes('Away') ? '@' : ''} {game.opponent}
 							</div>

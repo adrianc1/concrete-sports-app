@@ -62,17 +62,6 @@
 	border-color: #7d00b3;
 }
 
-/* Sponsor Name */
-/* .sponsor-name {
-	display: block;
-	font-size: 1.5rem;
-	font-weight: 700;
-	color: #420a72;
-	text-decoration: none;
-	margin-bottom: 0.5rem;
-	transition: color 0.2s ease;
-} */
-
 .sponsor-item:hover .sponsor-name {
 	color: #7d00b3;
 }

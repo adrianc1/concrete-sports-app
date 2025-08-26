@@ -27,12 +27,26 @@ export default function GirlsBballSchedule() {
 				<h2 className="sport-title">Volleyball</h2>
 				{games.map((game, index) => (
 					<ListGroupItem key={index} className="game">
-						<div>{game.date}</div>
-						<div>
-							{game.location.includes('Away') ? '@' : ''} {'  '}
-							{game.opponent}
+						<div className="game-info">
+							<div className="gametimes">
+								<div>{game.date}</div>
+								<div>{game.time}</div>
+							</div>
+							<div>
+								{game.location.includes('Away') ? '@' : ''} {game.opponent}
+							</div>
+							<div>{game.result}</div>
 						</div>
-						<div>{game.result}</div>
+						{game.watchLink !== 'n/a' && (
+							<a
+								href={game.watchLink}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="watch-button"
+							>
+								🎥 Watch Live
+							</a>
+						)}
 					</ListGroupItem>
 				))}
 			</ListGroup>
