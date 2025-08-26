@@ -1,4 +1,4 @@
-import games from '../../utils/webScraper/girlsBballgames.json';
+import games from '../../utils/webScraper/girlsBballGames.json';
 import logo from '../../assets/Concrete-Logo.png';
 import SchedulePage from './SchedulePage';
 import './schedulePage.css';
