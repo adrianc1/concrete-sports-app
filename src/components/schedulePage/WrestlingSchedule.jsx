@@ -4,5 +4,5 @@ import SchedulePage from './SchedulePage';
 import './schedulePage.css';
 
 export default function WrestlingSchedule() {
-	return <SchedulePage sportName="Wrassling" games={games} logo={logo} />;
+	return <SchedulePage sportName="Wrestling" games={games} logo={logo} />;
 }
