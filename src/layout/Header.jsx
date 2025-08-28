@@ -4,18 +4,20 @@ import { MdClose } from 'react-icons/md';
 
 import './header.css';
 
-function Header({ toggleNav, logo, display }) {
+export default function Header({ toggleNav, logo, display }) {
 	const handleToggle = () => {
 		toggleNav();
 	};
 
 	return (
 		<header className="topNavBar">
-			<Link to="/">
-				<img src={logo} alt="Logo" className="nav-logo" />
-			</Link>
-
-			<h1 className="school-name">Concrete Lions Sports</h1>
+			{/* Group logo and school name */}
+			<div className="logo-group">
+				<Link to="/">
+					<img src={logo} alt="Logo" className="nav-logo" />
+				</Link>
+				<h1 className="school-name">Concrete Lions Sports</h1>
+			</div>
 
 			{/* Desktop Links */}
 			<nav className="desktop-nav">
@@ -36,5 +38,3 @@ function Header({ toggleNav, logo, display }) {
 		</header>
 	);
 }
-
-export default Header;

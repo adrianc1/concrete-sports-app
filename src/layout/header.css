@@ -6,9 +6,15 @@
 	z-index: 5;
 	padding: 1rem;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between; /* Changed from space-around */
 	align-items: center;
 	background-color: rgb(66, 10, 114);
+}
+
+.logo-group {
+	display: flex;
+	align-items: center;
+	gap: 1rem; /* Adjust this to control spacing between logo and name */
 }
 
 .nav-logo {
@@ -22,6 +28,7 @@
 	font-size: 1.2rem;
 	letter-spacing: 0.1rem;
 	font-family: 'Anton', sans-serif;
+	margin: 0; /* Remove default margin */
 }
 
 .menu-bars,
@@ -29,10 +36,9 @@
 	font-size: 1.5rem;
 	color: #fff;
 	cursor: pointer;
-	display: block; /* shown by default on mobile */
+	display: block;
 }
 
-/* Desktop nav hidden on mobile */
 .desktop-nav {
 	display: none;
 }
@@ -41,6 +47,11 @@
 @media (min-width: 768px) {
 	.topNavBar {
 		padding: 1.5rem 2rem;
+		justify-content: space-between; /* Keep space-between on desktop too */
+	}
+
+	.logo-group {
+		gap: 1.5rem; /* Slightly more space on desktop if desired */
 	}
 
 	.nav-logo {
@@ -52,7 +63,6 @@
 		letter-spacing: 0.2rem;
 	}
 
-	/* Show desktop nav links */
 	.desktop-nav {
 		display: flex;
 		gap: 2rem;
@@ -69,7 +79,6 @@
 		color: rgb(242, 188, 64);
 	}
 
-	/* Hide mobile icons on desktop */
 	.menu-bars,
 	.close-icon {
 		display: none;

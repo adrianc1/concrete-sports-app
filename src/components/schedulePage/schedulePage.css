@@ -36,7 +36,7 @@
 .list-group-item.game {
 	display: flex;
 	flex-direction: column;
-	width: 100%;
+	width: 95%;
 	justify-content: space-between; /* pushes the button to the bottom */
 	align-items: flex-start;
 	padding: 1rem 1.5rem;
