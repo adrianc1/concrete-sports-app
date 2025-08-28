@@ -24,6 +24,7 @@ function Sponsors() {
 			contact: '360-941-0403',
 			address: '7830 S Superior Ave, Concrete, WA 98237',
 			logo: concreteLogo,
+			isExternal: false,
 		},
 		{
 			name: 'North Cascade Kayaks',
@@ -31,6 +32,7 @@ function Sponsors() {
 			contact: ' info@northcascadekayaks.com',
 			address: '52925 Railroad Ave, Rockport, WA 98283',
 			logo: kayak,
+			isExternal: true,
 		},
 		{
 			name: "Annie's Pizza Station",
@@ -38,6 +40,7 @@ function Sponsors() {
 			contact: '360-853-7227',
 			address: '44568 State Route 20 Concrete, WA 98237',
 			logo: annies,
+			isExternal: true,
 		},
 		{
 			name: 'Cascade Burgers',
@@ -45,6 +48,7 @@ function Sponsors() {
 			contact: '360-853-7580',
 			address: '45292 State Route 20 Concrete, WA 98237',
 			logo: cascade1,
+			isExternal: true,
 		},
 		{
 			name: 'Uptown Auto Repair',
@@ -52,6 +56,7 @@ function Sponsors() {
 			contact: '(360) 436-1445',
 			address: '1090 Darrington St, Darrington, WA 98241',
 			logo: uptownAuto,
+			isExternal: true,
 		},
 		{
 			name: "North Cascade's Perks",
@@ -59,6 +64,7 @@ function Sponsors() {
 			contact: 'northcascadeperks@gmail.com',
 			address: '44586 State Rte 20, Concrete, WA 98237',
 			logo: perks,
+			isExternal: true,
 		},
 
 		{
@@ -67,6 +73,7 @@ function Sponsors() {
 			contact: 'adrian@dreauxdigital.com',
 			address: '',
 			logo: dreaux,
+			isExternal: true,
 		},
 	];
 	function handleSponsorClick(url) {
@@ -91,13 +98,24 @@ function Sponsors() {
 						return (
 							<li className="sponsor-item" key={index}>
 								<div className="sponsor-header">
-									{sponsor.logo && (
-										<img
-											src={sponsor.logo}
-											alt={sponsor.name + ' logo'}
-											className="sponsor-logo"
-										/>
-									)}
+									{sponsor.logo &&
+										(sponsor.isExternal ? (
+											<img
+												src={sponsor.logo}
+												alt={`${sponsor.name} logo`}
+												className="sponsor-logo"
+												onClick={() => window.open(sponsor.url, '_blank')}
+												style={{ cursor: 'pointer' }}
+											/>
+										) : (
+											<Link to={sponsor.url}>
+												<img
+													src={sponsor.logo}
+													alt={`${sponsor.name} logo`}
+													className="sponsor-logo"
+												/>
+											</Link>
+										))}
 									{sponsor.isExternal ? (
 										<span
 											className="sponsor-name"
