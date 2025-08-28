@@ -7,13 +7,16 @@ import { PiUsers } from 'react-icons/pi';
 import { MdOutlineAddBusiness } from 'react-icons/md';
 import { GiLion } from 'react-icons/gi';
 import { Calendar } from 'lucide-react';
+import ScrollToTop from '../../layout/ScrollToTop';
 
 function MainPage() {
 	return (
 		<div className="main-page">
+			<ScrollToTop />
+
 			{/* TEAM SCHEDULES */}
 
-			<Link to="/Schedules" className="icon-container">
+			<Link to="/schedules" className="icon-container">
 				<div className="icon">
 					<Calendar size={40} />
 				</div>
@@ -24,7 +27,7 @@ function MainPage() {
 
 			{/* SPONSERS */}
 
-			<Link to="/Sponsors" className="icon-container">
+			<Link to="/sponsors" className="icon-container">
 				<div className="icon">
 					<MdOutlineAddBusiness />
 				</div>
@@ -37,7 +40,7 @@ function MainPage() {
 
 			{/* Announcements */}
 
-			<Link to="/Updates" className="icon-container">
+			<Link to="/updates" className="icon-container">
 				<div className="icon">
 					<RiMegaphoneLine />
 				</div>
@@ -48,7 +51,7 @@ function MainPage() {
 			</Link>
 
 			{/* COACH CONTACT */}
-			<Link to="/Contact" className="icon-container">
+			<Link to="/contact" className="icon-container">
 				<div className="icon">
 					<RiContactsLine />
 				</div>
@@ -59,7 +62,7 @@ function MainPage() {
 
 			{/* PLAYER OF THE MONTH */}
 
-			<Link to="/PlayersOfTheMonth" className="icon-container">
+			<Link to="/playersOfTheMonth" className="icon-container">
 				<div className="icon">
 					<PiUsers />
 				</div>
@@ -69,7 +72,7 @@ function MainPage() {
 			</Link>
 
 			{/* BOOSTER */}
-			<Link to="/Boosters" className="icon-container">
+			<Link to="/boosters" className="icon-container">
 				<div className="icon">
 					<GiLion />
 				</div>

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Header from '../../layout/Header';
 import SideNavBar from '../../layout/SideNavBar';
 import logo from '../../assets/Concrete-Logo.png';
-
+import ScrollToTop from '../../layout/ScrollToTop';
 import '../homePage/homePageStyles/schedule.css';
 
 export default function Schedule() {
@@ -11,6 +11,8 @@ export default function Schedule() {
 	const [showExitIcon, setShowExitIcon] = useState(false);
 	return (
 		<div className="">
+			<ScrollToTop />
+
 			<Header
 				toggleNav={() => setShowNav(!showNav)}
 				toggleIcon={() => setShowExitIcon(!showExitIcon)}
@@ -21,30 +23,30 @@ export default function Schedule() {
 			<ul className="schedule-card">
 				<h4>Team Schedules</h4>
 				<li>
-					<Link to="/FootballSchedule">Football</Link>
+					<Link to="/footballSchedule">Football</Link>
 				</li>
 				<li>
-					<Link to="/VolleyballSchedule">Volleyball</Link>
+					<Link to="/volleyballSchedule">Volleyball</Link>
 				</li>
 				<li>
-					<Link to="/SchedulePage">Boys Basketball</Link>
+					<Link to="/schedulePage">Boys Basketball</Link>
 				</li>
 				<li>
-					<Link to="/GirlsBballSchedule">Girls Basketball</Link>
-				</li>
-
-				<li>
-					<Link to="/BaseballSchedule">Baseball</Link>
-				</li>
-				<li>
-					<Link to="/SoftballSchedule">Softball</Link>
+					<Link to="/girlsBballSchedule">Girls Basketball</Link>
 				</li>
 
 				<li>
-					<Link to="/TrackSchedule">Track</Link>
+					<Link to="/baseballSchedule">Baseball</Link>
 				</li>
 				<li>
-					<Link to="/WrestlingSchedule">Wrestling</Link>
+					<Link to="/softballSchedule">Softball</Link>
+				</li>
+
+				<li>
+					<Link to="/trackSchedule">Track</Link>
+				</li>
+				<li>
+					<Link to="/wrestlingSchedule">Wrestling</Link>
 				</li>
 			</ul>
 			<p className="copyright">

@@ -4,6 +4,7 @@ import logo from '../../assets/Concrete-Logo.png';
 import SideNavBar from '../../layout/SideNavBar';
 import player_1 from '../../assets/player_1.jpg';
 import player_2 from '../../assets/player_2.jpg';
+import ScrollToTop from '../../layout/ScrollToTop';
 
 import '../homePage/homePageStyles/player.css';
 
@@ -12,6 +13,7 @@ function PlayersOfTheMonth() {
 	const [showExitIcon, setShowExitIcon] = useState(false);
 	return (
 		<div>
+			<ScrollToTop />
 			<Header
 				toggleNav={() => setShowNav(!showNav)}
 				toggleIcon={() => setShowExitIcon(!showExitIcon)}

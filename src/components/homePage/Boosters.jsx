@@ -2,7 +2,6 @@ import { useState } from 'react';
 import Header from '../../layout/Header';
 import SideNavBar from '../../layout/SideNavBar';
 import logo from '../../assets/Concrete-Logo.png';
-import emailjs from '@emailjs/browser';
 import '../homePage/homePageStyles/boosters.css';
 
 function Boosters() {

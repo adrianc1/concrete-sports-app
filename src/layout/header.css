@@ -4,16 +4,14 @@
 	top: 0;
 	left: 0;
 	z-index: 5;
-	padding: 1rem 0;
+	padding: 1rem;
 	display: flex;
 	justify-content: space-around;
-	background-color: rgb(66, 10, 114);
 	align-items: center;
+	background-color: rgb(66, 10, 114);
 }
 
 .nav-logo {
-	margin: 0;
-	padding: 0;
 	width: 3rem;
 	height: auto;
 }
@@ -25,36 +23,55 @@
 	letter-spacing: 0.1rem;
 	font-family: 'Anton', sans-serif;
 }
-.nav-icons {
-	font-size: 1.3rem;
-	margin-right: 0.5rem;
-	align-self: center;
+
+.menu-bars,
+.close-icon {
+	font-size: 1.5rem;
 	color: #fff;
-}
-.menu-bars {
-	align-self: center;
-	color: white;
+	cursor: pointer;
+	display: block; /* shown by default on mobile */
 }
 
+/* Desktop nav hidden on mobile */
+.desktop-nav {
+	display: none;
+}
+
+/* Desktop styles */
 @media (min-width: 768px) {
 	.topNavBar {
-		position: sticky;
-		top: 0;
-		padding: 1.5rem 0;
-	}
-	.school-name {
-		color: rgb(242, 188, 64);
-		font-weight: 400;
-		font-size: 2rem;
-		letter-spacing: 0.2rem;
-	}
-	.nav-icons {
-		font-size: 2rem;
-		margin-right: 0.5rem;
-		align-self: center;
+		padding: 1.5rem 2rem;
 	}
 
 	.nav-logo {
 		width: 5rem;
+	}
+
+	.school-name {
+		font-size: 2rem;
+		letter-spacing: 0.2rem;
+	}
+
+	/* Show desktop nav links */
+	.desktop-nav {
+		display: flex;
+		gap: 2rem;
+	}
+
+	.desktop-nav a {
+		color: #fff;
+		text-decoration: none;
+		font-weight: 500;
+		transition: color 0.2s;
+	}
+
+	.desktop-nav a:hover {
+		color: rgb(242, 188, 64);
+	}
+
+	/* Hide mobile icons on desktop */
+	.menu-bars,
+	.close-icon {
+		display: none;
 	}
 }

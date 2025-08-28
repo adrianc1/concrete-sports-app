@@ -1,29 +1,22 @@
-.footer {
-	width: 100%;
-	padding: 0.5rem 0;
+.copyright {
 	display: flex;
-	justify-content: space-around;
-	background-color: rgb(66, 10, 114);
+	flex-direction: column;
+	align-items: center; /* center text horizontally */
+	gap: 0.5rem;
+	padding: 1rem 0;
+	font-size: 0.9rem;
+	color: #fff; /* assuming your footer background is dark */
 }
 
-.copy {
-	width: 100%;
-	justify-content: center;
-	color: #4a007b;
+.copyright a {
+	color: #f2bc40; /* gold accent */
 	text-decoration: none;
 	font-weight: 600;
 	transition: color 0.2s ease;
-	position: relative;
-	padding-bottom: 2px;
-	display: flex;
-	/* color: rgb(242, 188, 64); */
 }
 
-.copyright {
-	margin: 0;
-	padding-bottom: 1rem;
-	display: flex;
-	justify-content: center;
+.copyright a:hover {
+	color: #fff;
 }
 
 @media (min-width: 768px) {

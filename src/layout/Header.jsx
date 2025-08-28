@@ -3,12 +3,10 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdClose } from 'react-icons/md';
 
 import './header.css';
-import { Download } from 'lucide-react';
 
-function Header({ toggleNav, logo, toggleIcon, display }) {
-	const handleBothToggles = () => {
+function Header({ toggleNav, logo, display }) {
+	const handleToggle = () => {
 		toggleNav();
-		toggleIcon();
 	};
 
 	return (
@@ -18,17 +16,23 @@ function Header({ toggleNav, logo, toggleIcon, display }) {
 			</Link>
 
 			<h1 className="school-name">Concrete Lions Sports</h1>
-			<GiHamburgerMenu
-				className={
-					display ? 'menu-bars nav-icons hidden' : 'menu-bars nav-icons active'
-				}
-				onClick={handleBothToggles}
-			/>
 
-			<MdClose
-				className={display ? 'nav-icons active' : 'side-nav hidden'}
-				onClick={handleBothToggles}
-			/>
+			{/* Desktop Links */}
+			<nav className="desktop-nav">
+				<Link to="/schedules">Schedules</Link>
+				<Link to="/updates">Updates</Link>
+				<Link to="/sponsors">Sponsors</Link>
+				<Link to="/boosters">Booster Club</Link>
+				<Link to="/contact">Coach Connect</Link>
+			</nav>
+
+			{/* Mobile Hamburger - show when nav is closed */}
+			{!display && (
+				<GiHamburgerMenu className="menu-bars" onClick={handleToggle} />
+			)}
+
+			{/* Mobile Close Icon - show when nav is open */}
+			{display && <MdClose className="close-icon" onClick={handleToggle} />}
 		</header>
 	);
 }

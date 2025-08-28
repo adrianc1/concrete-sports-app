@@ -10,54 +10,58 @@ function SideNavBar({ show, logo }) {
 					<Link to="/">Home</Link>
 				</li>
 				<li>
-					<Link to="/Schedules">Schedules</Link>
+					<Link to="/schedules">Schedules</Link>
 				</li>
 				<li>
-					<Link to="/Updates">Updates</Link>
+					<Link to="/updates">Updates</Link>
 				</li>
 				<li>
-					<Link to="/PlayersOfTheMonth">Players Of The Month</Link>
+					<Link to="/playersOfTheMonth">Players Of The Month</Link>
 				</li>
 				<li>
-					<Link to="/Sponsors">Sponsors</Link>
+					<Link to="/sponsors">Sponsors</Link>
 				</li>
 				<li>
-					<Link to="/Boosters">Booster Club</Link>
+					<Link to="/boosters">Booster Club</Link>
 				</li>
 				<li>
-					<Link to="/Contact">Coach Connect</Link>
+					<Link to="/contact">Coach Connect</Link>
 				</li>
 			</ul>
 			<ul className="nav-schedule">
 				<h4>Team Schedules</h4>
 				<li>
-					<Link to="/SchedulePage">Boys Basketball</Link>
+					<Link to="schedulePage">Boys Basketball</Link>
 				</li>
 				<li>
-					<Link to="/GirlsBballSchedule">Girls Basketball</Link>
+					<Link to="/girlsBballSchedule">Girls Basketball</Link>
 				</li>
 				<li>
-					<Link to="/FootballSchedule">Football</Link>
+					<Link to="/footballSchedule">Football</Link>
 				</li>
 				<li>
-					<Link to="/BaseballSchedule">Baseball</Link>
+					<Link to="/baseballSchedule">Baseball</Link>
 				</li>
 				<li>
-					<Link to="/SoftballSchedule">Softball</Link>
+					<Link to="/softballSchedule">Softball</Link>
 				</li>
 				<li>
-					<Link to="/VolleyballSchedule">Volleyball</Link>
+					<Link to="/volleyballSchedule">Volleyball</Link>
 				</li>
 				<li>
-					<Link to="/TrackSchedule">Track</Link>
+					<Link to="/trackSchedule">Track</Link>
 				</li>
 				<li>
-					<Link to="/WrestlingSchedule">Wrestling</Link>
+					<Link to="/wrestlingSchedule">Wrestling</Link>
 				</li>
 			</ul>
-			<p className="copyright">
-				<a href="https://dreauxdigital.com">Dreaux Digital </a> 2025&copy;
-			</p>
+			<div className="copyright">
+				<div className="top">
+					<span>
+						© 2025 <a href="https://dreauxdigital.com/">Dreaux Digital</a>.
+					</span>
+				</div>
+			</div>
 		</nav>
 	);
 }

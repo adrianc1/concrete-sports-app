@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Header from '../../layout/Header';
 import logo from '../../assets/Concrete-Logo.png';
 import SideNavBar from '../../layout/SideNavBar';
+import ScrollToTop from '../../layout/ScrollToTop';
 import '../homePage/homePageStyles/updates.css';
 
 function Updates() {
@@ -9,6 +10,8 @@ function Updates() {
 	const [showExitIcon, setShowExitIcon] = useState(false);
 	return (
 		<div>
+			<ScrollToTop />
+
 			<Header
 				toggleNav={() => setShowNav(!showNav)}
 				toggleIcon={() => setShowExitIcon(!showExitIcon)}

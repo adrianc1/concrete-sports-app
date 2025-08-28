@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Header from '../../layout/Header';
 import logo from '../../assets/Concrete-Logo.png';
 import SideNavBar from '../../layout/SideNavBar';
+import ScrollToTop from '../../layout/ScrollToTop';
 import '../homePage/homePageStyles/contact.css';
 function Contact() {
 	const [showNav, setShowNav] = useState(false);
@@ -61,6 +62,8 @@ function Contact() {
 	];
 	return (
 		<div className="contact-container">
+			<ScrollToTop />
+
 			<Header
 				toggleNav={() => setShowNav(!showNav)}
 				toggleIcon={() => setShowExitIcon(!showExitIcon)}

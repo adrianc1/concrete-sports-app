@@ -2,7 +2,7 @@ import { Link } from 'react-router';
 import './scheduleBtn.css';
 export default function BackToMainScheduleBtn() {
 	return (
-		<Link to="/Schedules">
+		<Link to="/schedules">
 			<button className="schedule-btn">← Schedules</button>
 		</Link>
 	);
