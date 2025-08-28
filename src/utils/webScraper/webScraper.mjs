@@ -197,7 +197,7 @@ const schedulesToScrape = [
 	},
 	{
 		url: 'https://www.concretehslions.com/sports/girls-volleyball/schedule?team=girls-volleyball-5262667&year=2025-2026',
-		output: 'volleyballSchedule.json',
+		output: 'volleyballGames.json',
 	},
 ];
 
