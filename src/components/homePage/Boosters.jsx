@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Header from '../../layout/Header';
 import SideNavBar from '../../layout/SideNavBar';
 import logo from '../../assets/Concrete-Logo.png';
+import ScrollToTop from '../../layout/ScrollToTop';
 import '../homePage/homePageStyles/boosters.css';
 
 function Boosters() {
@@ -16,6 +17,8 @@ function Boosters() {
 
 	return (
 		<div>
+			<ScrollToTop />
+
 			<div className="nav">
 				<Header
 					toggleNav={() => setShowNav(!showNav)}
