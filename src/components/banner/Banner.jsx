@@ -13,8 +13,8 @@ function Banner() {
 	const slides = [
 		{ url: welcomeBanner },
 		{ url: cascade1 },
-		{ url: annies },
 		{ url: cascadelodge },
+		{ url: annies },
 		{ url: perks },
 		{ url: kayak },
 		{ url: uptownAuto },
