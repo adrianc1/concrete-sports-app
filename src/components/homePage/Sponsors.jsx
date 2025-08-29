@@ -12,7 +12,7 @@ import concreteLogo from '../../assets/boosterbanner.png';
 import dreaux from '../../assets/dreauxdigital.png';
 import cascadeMountainLodge from '../../assets/cascademountainlodgeBanner.png';
 import ScrollToTop from '../../layout/ScrollToTop';
-import cascadebar from '../../assets/cascadebar.png';
+import cascadebar from '../../assets/indiancuisine.png';
 
 import '../homePage/homePageStyles/sponsors.css';
 function Sponsors() {

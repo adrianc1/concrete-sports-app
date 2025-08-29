@@ -6,7 +6,7 @@ import perks from '../../assets/perks5.png';
 import annies from '../../assets/anniespizza.png';
 import cascade1 from '../../assets/cascade1.png';
 import cascadelodge from '../../assets/cascademountainlodgeBanner.png';
-import cascadebar from '../../assets/cascadebar.png';
+import cascadebar from '../../assets/indiancuisine.png';
 
 import './banner.css';
 function Banner() {
