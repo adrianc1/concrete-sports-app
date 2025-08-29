@@ -27,6 +27,14 @@ function Sponsors() {
 			isExternal: false,
 		},
 		{
+			name: 'Cascade Mountain Lodge',
+			url: 'https://cascademountainlodgewa.com/',
+			contact: 'cascademountainlodge@gmail.com',
+			address: '44618 State Rte 20 Concrete, WA 98237',
+			logo: perks,
+			isExternal: true,
+		},
+		{
 			name: 'North Cascade Kayaks',
 			url: 'https://northcascadekayaks.com/',
 			contact: ' info@northcascadekayaks.com',

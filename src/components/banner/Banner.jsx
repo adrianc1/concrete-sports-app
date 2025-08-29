@@ -5,6 +5,8 @@ import uptownAuto from '../../assets/uptown2.png';
 import perks from '../../assets/perks5.png';
 import annies from '../../assets/anniespizza.png';
 import cascade1 from '../../assets/cascade1.png';
+import cascadelodge from '../../assets/cascademountainlodgeBanner.png';
+import cascadebar from '../../assets/cascademountainbar.png';
 
 import './banner.css';
 function Banner() {
@@ -12,6 +14,7 @@ function Banner() {
 		{ url: welcomeBanner },
 		{ url: cascade1 },
 		{ url: annies },
+		{ url: cascadelodge },
 		{ url: perks },
 		{ url: kayak },
 		{ url: uptownAuto },
