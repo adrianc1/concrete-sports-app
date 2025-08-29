@@ -10,6 +10,7 @@ import annies from '../../assets/anniespizza.png';
 import cascade1 from '../../assets/cascade1.png';
 import concreteLogo from '../../assets/boosterbanner.png';
 import dreaux from '../../assets/dreauxdigital.png';
+import cascadeMountainLodge from '../../assets/cascademountainlodgeBanner.png';
 import ScrollToTop from '../../layout/ScrollToTop';
 
 import '../homePage/homePageStyles/sponsors.css';
@@ -31,7 +32,7 @@ function Sponsors() {
 			url: 'https://cascademountainlodgewa.com/',
 			contact: 'cascademountainlodge@gmail.com',
 			address: '44618 State Rte 20 Concrete, WA 98237',
-			logo: perks,
+			logo: cascadeMountainLodge,
 			isExternal: true,
 		},
 		{
