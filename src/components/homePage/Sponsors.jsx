@@ -12,6 +12,7 @@ import concreteLogo from '../../assets/boosterbanner.png';
 import dreaux from '../../assets/dreauxdigital.png';
 import cascadeMountainLodge from '../../assets/cascademountainlodgeBanner.png';
 import ScrollToTop from '../../layout/ScrollToTop';
+import cascadebar from '../../assets/cascadebar.png';
 
 import '../homePage/homePageStyles/sponsors.css';
 function Sponsors() {
@@ -49,6 +50,14 @@ function Sponsors() {
 			contact: '360-853-7227',
 			address: '44568 State Route 20 Concrete, WA 98237',
 			logo: annies,
+			isExternal: true,
+		},
+		{
+			name: 'Cascade Mountain Restaurant & Bar',
+			url: 'https://share.google/twDLgvym8siHwIyt2',
+			contact: 'cascademountainlodge@gmail.com',
+			address: '44618 State Rte 20, Concrete, WA 98237',
+			logo: cascadebar,
 			isExternal: true,
 		},
 		{
