@@ -15,7 +15,6 @@ import Boosters from '../components/homePage/Boosters.jsx';
 import Sponsors from '../components/homePage/Sponsors.jsx';
 import Contact from '../components/homePage/Contact.jsx';
 import Updates from '../components/homePage/Updates.jsx';
-import IFrame from '../components/iframe/IFrame.jsx';
 import '../index.css';
 import Schedule from '../components/homePage/Schedule.jsx';
 import PlayersOfTheMonth from '../components/homePage/PlayersOfTheMonth.jsx';
