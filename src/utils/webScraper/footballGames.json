@@ -1,16 +1,16 @@
 [
-	{
-		"watchLink": "http://www.nfhsnetwork.com/events/concrete-high-school-concrete-wa/gamb2d9860329?utm_campaign=PlayOn_Sites",
-		"dayOfWeek": "FRI",
-		"date": "Sep 5 2025",
-		"time": "7:00 PM",
-		"opponent": "Tulalip Heritage High",
-		"location": "Home",
-		"venue": "Concrete High School (Concrete, WA)",
-		"sport": "FOOTBALL",
-		"level": "Boys Varsity",
-		"result": "TBD"
-	},
+	// {
+	// 	"watchLink": "http://www.nfhsnetwork.com/events/concrete-high-school-concrete-wa/gamb2d9860329?utm_campaign=PlayOn_Sites",
+	// 	"dayOfWeek": "FRI",
+	// 	"date": "Sep 5 2025",
+	// 	"time": "CANCELED",
+	// 	"opponent": "Tulalip Heritage High",
+	// 	"location": "Home",
+	// 	"venue": "Concrete High School (Concrete, WA)",
+	// 	"sport": "FOOTBALL",
+	// 	"level": "Boys Varsity",
+	// 	"result": "TBD"
+	// },
 	{
 		"watchLink": "n/a",
 		"dayOfWeek": "SAT",
