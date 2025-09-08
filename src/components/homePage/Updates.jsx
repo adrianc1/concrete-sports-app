@@ -31,18 +31,18 @@ function Updates() {
 					<span className="start-time">4:30pm - 6:00pm</span>
 				</li> */}
 
-				<li>
+				{/* <li>
 					<span className="event-info">
 						Football game vs. Tulalip Heritage has been
 						<strong> canceled</strong>
 						<span className="start-date">September 5, 2025</span>
 					</span>
 					<span className="start-time">Canceled</span>
-				</li>
+				</li> */}
 
 				<li>
 					<span className="event-info">
-						Girls Volleyball Season Begins
+						Girls Volleyball Season Begins Today!
 						<span className="start-date">September 8, 2025</span>
 					</span>
 					<span className="start-time">4:00pm</span>
