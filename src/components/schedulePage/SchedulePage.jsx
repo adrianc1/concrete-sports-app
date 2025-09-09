@@ -39,7 +39,17 @@ function SchedulePage({ sportName, games, logo }) {
 								<div>
 									{game.location?.includes('Away') ? '@' : ''} {game.opponent}
 								</div>
-								<div>{game.result}</div>
+								<div
+									style={{
+										color: game.result?.includes('W')
+											? 'green'
+											: game.result?.includes('L')
+											? 'red'
+											: 'black',
+									}}
+								>
+									{game.result}
+								</div>
 							</div>
 							{game.watchLink !== 'n/a' && (
 								<a
