@@ -33,19 +33,19 @@ function Updates() {
 
 				<li>
 					<span className="event-info">
-						Football Game at Quilcene High This Saturday
+						Football Game at Quilcene High Saturday
 						<span className="start-date">September 5, 2025</span>
 					</span>
 					<span className="start-time">1:00 PM</span>
 				</li>
 
-				{/* <li>
+				<li>
 					<span className="event-info">
-						Girls Volleyball Season Begins Today!
-						<span className="start-date">September 8, 2025</span>
+						Volleyball Game at La Conner High Tuesday
+						<span className="start-date">September 16, 2025</span>
 					</span>
-					<span className="start-time">4:00pm</span>
-				</li> */}
+					<span className="start-time">6:30pm</span>
+				</li>
 			</ul>
 		</div>
 	);
