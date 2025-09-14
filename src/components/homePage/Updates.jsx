@@ -33,8 +33,8 @@ function Updates() {
 
 				<li>
 					<span className="event-info">
-						Football Game at Quilcene High Saturday
-						<span className="start-date">September 5, 2025</span>
+						Lions Win! 42 - 8
+						<span className="start-date">September 13, 2025</span>
 					</span>
 					<span className="start-time">1:00 PM</span>
 				</li>
