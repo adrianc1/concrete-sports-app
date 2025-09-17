@@ -6,16 +6,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Routes from './routes/Routes.jsx';
 
 const updateSW = registerSW({
-	onNeedRefresh() {
-		const shouldUpdate = confirm(
-			'A new version of the app is available. Reload to update?'
-		);
-		if (shouldUpdate) {
-			updateSW(true);
-		}
-	},
+	immediate: true,
 	onOfflineReady() {
 		console.log('App is ready to use offline!');
+	},
+	onRegisteredSW(swUrl, r) {
+		console.log('SW registered:', swUrl);
+		// Force check for updates on registration
+		r && r.update();
+	},
+	onRegisterError(error) {
+		console.log('SW registration error', error);
 	},
 });
 

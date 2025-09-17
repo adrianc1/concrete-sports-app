@@ -31,18 +31,18 @@ function Updates() {
 					<span className="start-time">4:30pm - 6:00pm</span>
 				</li> */}
 
-				<li>
+				{/* <li>
 					<span className="event-info">
 						Lions Win! 42 - 8
 						<span className="start-date">September 13, 2025</span>
 					</span>
 					<span className="start-time">1:00 PM</span>
-				</li>
+				</li> */}
 
 				<li>
 					<span className="event-info">
-						Volleyball Game at La Conner High Tuesday
-						<span className="start-date">September 16, 2025</span>
+						Volleyball Game at Darrington
+						<span className="start-date">September 18, 2025</span>
 					</span>
 					<span className="start-time">6:30pm</span>
 				</li>
