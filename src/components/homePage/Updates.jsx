@@ -39,13 +39,13 @@ function Updates() {
 					<span className="start-time">1:00 PM</span>
 				</li> */}
 
-				<li>
+				{/* <li>
 					<span className="event-info">
 						Volleyball Game at Crescent
 						<span className="start-date">September 20, 2025</span>
 					</span>
 					<span className="start-time">3:45pm</span>
-				</li>
+				</li> */}
 				<li>
 					<span className="event-info">
 						Football Homecoming Game <br /> vs. Lummi
