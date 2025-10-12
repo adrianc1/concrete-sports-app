@@ -38,20 +38,20 @@ function Updates() {
 					</span>
 					<span className="start-time">1:00 PM</span>
 				</li> */}
+				<li>
+					<span className="event-info">
+						Volleyball Game @ Friday Harbor
+						<span className="start-date">October 14, 2025</span>
+					</span>
+					<span className="start-time">4:00pm</span>
+				</li>
 
 				<li>
 					<span className="event-info">
-						Football Game vs. Charles Wright
-						<span className="start-date">October 11, 2025</span>
+						Football Game @ Muckleshoot
+						<span className="start-date">October 17, 2025</span>
 					</span>
-					<span className="start-time">1:00pm</span>
-				</li>
-				<li>
-					<span className="event-info">
-						Volleyball Game <br /> vs. Darrington
-						<span className="start-date">October 7, 2025</span>
-					</span>
-					<span className="start-time">6:30pm</span>
+					<span className="start-time">6:00pm</span>
 				</li>
 			</ul>
 		</div>
