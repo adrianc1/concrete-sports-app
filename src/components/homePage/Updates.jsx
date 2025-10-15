@@ -40,10 +40,10 @@ function Updates() {
 				</li> */}
 				<li>
 					<span className="event-info">
-						Volleyball Game @ Friday Harbor
-						<span className="start-date">October 14, 2025</span>
+						Volleyball Game vs Grace Academy
+						<span className="start-date">October 16, 2025</span>
 					</span>
-					<span className="start-time">4:00pm</span>
+					<span className="start-time">6:30pm</span>
 				</li>
 
 				<li>
