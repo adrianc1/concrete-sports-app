@@ -141,6 +141,30 @@
 		"venue": "",
 		"sport": "VOLLEYBALL",
 		"level": "Girls Varsity",
+		"result": "1 - 3 L "
+	},
+	{
+		"watchLink": "",
+		"dayOfWeek": "TUE",
+		"date": "Oct 16 2025",
+		"time": "6:30 PM",
+		"opponent": "Grace Academy",
+		"location": "Home",
+		"venue": "",
+		"sport": "VOLLEYBALL",
+		"level": "Girls Varsity",
 		"result": "TBD"
+	},
+	{
+		"watchLink": "http://www.nfhsnetwork.com/events/friday-harbor-high-school-friday-harbor-wa/gam66cf2ac7c9?utm_campaign=PlayOn_Sites",
+		"dayOfWeek": "TUE",
+		"date": "Oct 17 2025",
+		"time": "6:30 PM",
+		"opponent": "at Cedar Park Christian",
+		"location": "Away",
+		"venue": "",
+		"sport": "VOLLEYBALL",
+		"level": "Girls Varsity",
+		"result": "TBD "
 	}
 ]
