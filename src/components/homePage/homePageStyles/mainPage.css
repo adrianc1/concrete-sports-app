@@ -36,18 +36,24 @@ body {
 }
 
 .recent-games {
-  width: 70vw;
-  /* gap: 24px; */
+  width: 100%;
+  max-width: 1600px;
+  padding: 0 20px;
+  gap: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 .game-card {
   border: 1px solid #4a007b;
   border-radius: 8px;
   height: 275px;
-  width: 250px;
+  width: 100%;
+  max-width: 350px;
+  flex: 1;
 }
 
 .game-info {
@@ -63,6 +69,7 @@ body {
 
 .score-container {
   margin-top: 20px;
+  margin-bottom: 16px;
   padding: 0 12px;
   height: 100%;
   width: 100%;
@@ -96,7 +103,8 @@ body {
   border: none;
   border-radius: 12px;
   padding: 0.5rem 1rem;
-  font-size: 1rem;
+  margin-bottom: 12px;
+  font-size: 0.8rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
