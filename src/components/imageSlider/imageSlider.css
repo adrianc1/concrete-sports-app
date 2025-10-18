@@ -1,7 +1,7 @@
 .slider-container {
   width: 100%;
-  aspect-ratio: 16 / 9;
-  max-height: 250px;
+  aspect-ratio: 2 / 1;
+  max-height: 200px;
   position: relative;
   overflow: hidden;
 }
@@ -86,7 +86,7 @@
 
 @media (min-width: 1200px) {
   .slider-container {
-    aspect-ratio: 3.5 / 1;
+    aspect-ratio: 4 / 1;
     max-height: 400px;
   }
 }
