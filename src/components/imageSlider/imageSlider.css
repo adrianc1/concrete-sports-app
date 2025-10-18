@@ -74,8 +74,8 @@
 
 @media (min-width: 768px) {
   .slider-container {
-    aspect-ratio: 4 / 1;
-    max-height: 200px;
+    aspect-ratio: 3 / 1;
+    max-height: 400px;
     width: 100%;
   }
   .slide {
