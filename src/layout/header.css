@@ -28,7 +28,7 @@
   font-size: 1.2rem;
   letter-spacing: 0.1rem;
   font-family: "Anton", sans-serif;
-  margin: 0; /* Remove default margin */
+  margin: 0;
 }
 
 .menu-bars,
@@ -46,7 +46,7 @@
 /* Desktop styles */
 @media (min-width: 768px) {
   .topNavBar {
-    padding: 1.5rem 2rem;
+    padding: 1.5rem 3rem;
     justify-content: space-between;
   }
 
