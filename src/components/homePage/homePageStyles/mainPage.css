@@ -10,10 +10,54 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
+.recent-scores-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #4a007b;
+  text-align: center;
+  margin: 2rem 0 1.5rem;
+  position: relative;
+  letter-spacing: -0.5px;
+}
+
+.recent-scores-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #f7a900;
+  border-radius: 2px;
+  margin: 0.75rem auto 0;
+}
+
+.recent-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.recent-games {
+  width: 75vw;
+  /* gap: 24px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+.game-card {
+  border: 1px solid black;
+  border-radius: 8px;
+  height: 300px;
+  width: 275px;
+}
+
+.team-container {
+  display: flex;
+}
+
 .main-page {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(3, minmax(200px, 1fr)); /* Add this line */
+  grid-template-rows: repeat(3, minmax(200px, 1fr));
   row-gap: 4px;
   column-gap: 10px;
   padding: 20px;
