@@ -5,13 +5,10 @@ A Progressive Web App designed to support underserved high school athletic progr
 ## Mission
 This app empowers small communities by:
 
-Raising funds for athletic programs and sports teams
-
-Providing affordable advertising opportunities for local businesses
-
-Creating a centralized hub for sports news, schedules, and team information
-
-Strengthening the connection between schools and their communities
+* Raising funds for athletic programs and sports teams
+* Providing affordable advertising opportunities for local businesses
+* Creating a centralized hub for sports news, schedules, and team information
+* Strengthening the connection between schools and their communities
 
 ## Tech Stack
 
