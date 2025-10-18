@@ -21,13 +21,16 @@ function MainPage() {
               <div className="game-date">SAT Oct 17</div>
               <div className="sport-name">Boys Football</div>
             </div>
-            <div className="team-container">
-              <div className="home-team-name">Concrete</div>
-              <div className="home-team-score">24 </div>
-            </div>
-            <div className="team-container">
-              <div className="away-team-name">Charles Wright</div>
-              <div className="away-team-score">48</div>
+            <div className="score-container">
+              <div className="team-container">
+                <div className="team-name">Concrete</div>
+                <div className="team-score">24 </div>
+              </div>
+              <div className="team-container">
+                <div className="team-name">Charles Wright</div>
+                <div className="team-score">48</div>
+              </div>
+              <button className="see-schedule">Schedule</button>
             </div>
           </div>
           <div className="game-card game-2">
@@ -35,13 +38,16 @@ function MainPage() {
               <div className="game-date">SAT Oct 17</div>
               <div className="sport-name">Boys Football</div>
             </div>
-            <div className="team-container">
-              <div className="home-team-name">Concrete</div>
-              <div className="home-team-score">24 </div>
-            </div>
-            <div className="team-container">
-              <div className="away-team-name">Charles Wright</div>
-              <div className="away-team-score">48</div>
+            <div className="score-container">
+              <div className="team-container">
+                <div className="team-name">Concrete</div>
+                <div className="team-score">24 </div>
+              </div>
+              <div className="team-container">
+                <div className="team-name">Charles Wright</div>
+                <div className="team-score">48</div>
+              </div>
+              <button className="see-schedule">Schedule</button>
             </div>
           </div>
           <div className="game-card game-3">
@@ -49,13 +55,16 @@ function MainPage() {
               <div className="game-date">SAT Oct 17</div>
               <div className="sport-name">Boys Football</div>
             </div>
-            <div className="team-container">
-              <div className="home-team-name">Concrete</div>
-              <div className="home-team-score">24 </div>
-            </div>
-            <div className="team-container">
-              <div className="away-team-name">Charles Wright</div>
-              <div className="away-team-score">48</div>
+            <div className="score-container">
+              <div className="team-container">
+                <div className="team-name">Concrete</div>
+                <div className="team-score">24 </div>
+              </div>
+              <div className="team-container">
+                <div className="team-name">Charles Wright</div>
+                <div className="team-score">48</div>
+              </div>
+              <button className="see-schedule">Schedule</button>
             </div>
           </div>
           <div className="game-card game-4">
@@ -63,13 +72,16 @@ function MainPage() {
               <div className="game-date">SAT Oct 17</div>
               <div className="sport-name">Boys Football</div>
             </div>
-            <div className="team-container">
-              <div className="home-team-name">Concrete</div>
-              <div className="home-team-score">24 </div>
-            </div>
-            <div className="team-container">
-              <div className="away-team-name">Charles Wright</div>
-              <div className="away-team-score">48</div>
+            <div className="score-container">
+              <div className="team-container">
+                <div className="team-name">Concrete</div>
+                <div className="team-score">24 </div>
+              </div>
+              <div className="team-container">
+                <div className="team-name">Charles Wright</div>
+                <div className="team-score">48</div>
+              </div>
+              <button className="see-schedule">Schedule</button>
             </div>
           </div>
         </div>
