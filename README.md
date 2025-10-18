@@ -13,6 +13,9 @@ This app empowers small communities by:
 ## Tech Stack
 
 Frontend: React
+
 Styling: CSS
+
 Architecture: Progressive Web App (PWA)
+
 Installation: Can be installed on mobile devices and desktops for native app experience
