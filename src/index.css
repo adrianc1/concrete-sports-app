@@ -6,6 +6,12 @@ body,
   margin: 0;
   padding: 0;
 }
+
+/* #root {
+  background-image: url("./assets/sportsbg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
 body {
   font-family: Arial, serif;
   overflow-x: hidden;
@@ -13,6 +19,7 @@ body {
   width: 100vw;
   margin: 0;
   padding: 0;
+  background-size: cover;
   /* color: rgb(255, 255, 255); */
 }
 
