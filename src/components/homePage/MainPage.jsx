@@ -18,8 +18,8 @@ function MainPage() {
         <div className="recent-games">
           <div className="game-card game-1">
             <div className="game-info">
-              <div className="game-date">SAT Oct 17</div>
-              <div className="sport-name">Boys Football</div>
+              <div className="game-date">FRI Oct 17</div>
+              <div className="sport-name">Boys Varsity Football</div>
             </div>
             <div className="score-container">
               <div className="team-container">
@@ -27,7 +27,7 @@ function MainPage() {
                 <div className="team-score">24 </div>
               </div>
               <div className="team-container">
-                <div className="team-name">Charles Wright</div>
+                <div className="team-name">Muckleshoot</div>
                 <div className="team-score">48</div>
               </div>
               <button className="see-schedule">Schedule</button>
@@ -35,51 +35,51 @@ function MainPage() {
           </div>
           <div className="game-card game-2">
             <div className="game-info">
-              <div className="game-date">SAT Oct 17</div>
-              <div className="sport-name">Boys Football</div>
+              <div className="game-date">FRI Oct 17</div>
+              <div className="sport-name">Girls Varsity Volleyball</div>
             </div>
             <div className="score-container">
               <div className="team-container">
                 <div className="team-name">Concrete</div>
-                <div className="team-score">24 </div>
+                <div className="team-score">3 </div>
               </div>
               <div className="team-container">
-                <div className="team-name">Charles Wright</div>
-                <div className="team-score">48</div>
+                <div className="team-name">Cedar Park Christian</div>
+                <div className="team-score">0</div>
               </div>
               <button className="see-schedule">Schedule</button>
             </div>
           </div>
           <div className="game-card game-3">
             <div className="game-info">
-              <div className="game-date">SAT Oct 17</div>
-              <div className="sport-name">Boys Football</div>
+              <div className="game-date">THU Oct 16</div>
+              <div className="sport-name">Girls Varsity Volleyball</div>
             </div>
             <div className="score-container">
               <div className="team-container">
                 <div className="team-name">Concrete</div>
-                <div className="team-score">24 </div>
+                <div className="team-score">3 </div>
               </div>
               <div className="team-container">
-                <div className="team-name">Charles Wright</div>
-                <div className="team-score">48</div>
+                <div className="team-name">Grace Academy</div>
+                <div className="team-score">1</div>
               </div>
               <button className="see-schedule">Schedule</button>
             </div>
           </div>
           <div className="game-card game-4">
             <div className="game-info">
-              <div className="game-date">SAT Oct 17</div>
-              <div className="sport-name">Boys Football</div>
+              <div className="game-date">TUE Oct 14</div>
+              <div className="sport-name">Girls Varsity Volleyball</div>
             </div>
             <div className="score-container">
               <div className="team-container">
                 <div className="team-name">Concrete</div>
-                <div className="team-score">24 </div>
+                <div className="team-score">1 </div>
               </div>
               <div className="team-container">
-                <div className="team-name">Charles Wright</div>
-                <div className="team-score">48</div>
+                <div className="team-name">Friday Harbor</div>
+                <div className="team-score">3</div>
               </div>
               <button className="see-schedule">Schedule</button>
             </div>
