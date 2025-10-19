@@ -30,7 +30,9 @@ function MainPage() {
                 <div className="team-name">Muckleshoot</div>
                 <div className="team-score">48</div>
               </div>
-              <button className="see-schedule">Schedule</button>
+              <Link to="/footballSchedule">
+                <button className="see-schedule">Schedule</button>
+              </Link>
             </div>
           </div>
           <div className="game-card game-2">
@@ -47,7 +49,10 @@ function MainPage() {
                 <div className="team-name">Cedar Park Christian</div>
                 <div className="team-score">0</div>
               </div>
-              <button className="see-schedule">Schedule</button>
+
+              <Link to="/volleyballSchedule">
+                <button className="see-schedule">Schedule</button>
+              </Link>
             </div>
           </div>
           <div className="game-card game-3">
@@ -64,7 +69,9 @@ function MainPage() {
                 <div className="team-name">Grace Academy</div>
                 <div className="team-score">1</div>
               </div>
-              <button className="see-schedule">Schedule</button>
+              <Link to="/volleyballSchedule">
+                <button className="see-schedule">Schedule</button>
+              </Link>
             </div>
           </div>
           <div className="game-card game-4">
@@ -81,7 +88,9 @@ function MainPage() {
                 <div className="team-name">Friday Harbor</div>
                 <div className="team-score">3</div>
               </div>
-              <button className="see-schedule">Schedule</button>
+              <Link to="/volleyballSchedule">
+                <button className="see-schedule">Schedule</button>
+              </Link>
             </div>
           </div>
         </div>
