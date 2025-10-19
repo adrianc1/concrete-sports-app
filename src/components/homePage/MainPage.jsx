@@ -17,9 +17,9 @@ function MainPage() {
       <div className="recent-container">
         <div className="recent-games">
           <div className="game-card game-1">
-            <div className="game-info">
+            <div className="game-info-card">
               <div className="game-date">FRI Oct 17</div>
-              <div className="sport-name">Boys Varsity Football</div>
+              <div className="sport-name">Varsity Football</div>
             </div>
             <div className="score-container">
               <div className="team-container">
@@ -34,9 +34,9 @@ function MainPage() {
             </div>
           </div>
           <div className="game-card game-2">
-            <div className="game-info">
+            <div className="game-info-card">
               <div className="game-date">FRI Oct 17</div>
-              <div className="sport-name">Girls Varsity Volleyball</div>
+              <div className="sport-name">Varsity Volleyball</div>
             </div>
             <div className="score-container">
               <div className="team-container">
@@ -51,9 +51,9 @@ function MainPage() {
             </div>
           </div>
           <div className="game-card game-3">
-            <div className="game-info">
+            <div className="game-info-card">
               <div className="game-date">THU Oct 16</div>
-              <div className="sport-name">Girls Varsity Volleyball</div>
+              <div className="sport-name">Varsity Volleyball</div>
             </div>
             <div className="score-container">
               <div className="team-container">
@@ -68,9 +68,9 @@ function MainPage() {
             </div>
           </div>
           <div className="game-card game-4">
-            <div className="game-info">
+            <div className="game-info-card">
               <div className="game-date">TUE Oct 14</div>
-              <div className="sport-name">Girls Varsity Volleyball</div>
+              <div className="sport-name">Varsity Volleyball</div>
             </div>
             <div className="score-container">
               <div className="team-container">
