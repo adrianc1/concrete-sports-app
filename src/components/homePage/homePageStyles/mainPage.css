@@ -78,6 +78,11 @@ body {
   justify-content: flex-start;
 }
 
+.score-container a {
+  align-self: center;
+  text-decoration: none;
+}
+
 .team-container {
   display: flex;
   justify-content: space-between;
@@ -118,6 +123,7 @@ body {
   overflow: hidden;
   box-shadow: 0 4px 14px 0 rgba(242, 188, 64, 0.25);
   backdrop-filter: blur(10px);
+  align-self: center;
 }
 
 .main-page {
