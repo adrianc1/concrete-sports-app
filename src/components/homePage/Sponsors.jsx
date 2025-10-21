@@ -6,7 +6,7 @@ import { Link } from 'react-router';
 import kayak from '../../assets/kayak2.png';
 import uptownAuto from '../../assets/uptown2.png';
 import perks from '../../assets/perks5.png';
-import annies from '../../assets/anniespizza.png';
+import annies from '../../assets/annies.png';
 import cascade1 from '../../assets/cascade1.png';
 import concreteLogo from '../../assets/boosterbanner.png';
 import dreaux from '../../assets/dreauxdigital.png';
