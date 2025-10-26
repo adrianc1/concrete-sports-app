@@ -183,12 +183,36 @@
 		"watchLink": "",
 		"dayOfWeek": "FRI",
 		"date": "Oct 24 2025",
-		"time": "6:30 PM",
-		"opponent": "TBD",
-		"location": "Away",
+		"time": "5:00 PM",
+		"opponent": "Evangelical Classical",
+		"location": "Home",
 		"venue": "",
 		"sport": "VOLLEYBALL",
 		"level": "Girls Varsity",
 		"result": "3 - 0 W"
+	},
+	{
+		"watchLink": "",
+		"dayOfWeek": "FRI",
+		"date": "Oct 27 2025",
+		"time": "TBD",
+		"opponent": "Darrington",
+		"location": "Away",
+		"venue": "",
+		"sport": "VOLLEYBALL",
+		"level": "Girls Varsity",
+		"result": "TBD"
+	},
+	{
+		"watchLink": "",
+		"dayOfWeek": "FRI",
+		"date": "Oct 29 2025",
+		"time": "TBD",
+		"opponent": "Evangel Classical",
+		"location": "Away",
+		"venue": "Darrington",
+		"sport": "VOLLEYBALL",
+		"level": "Girls Varsity",
+		"result": "TBD"
 	}
 ]

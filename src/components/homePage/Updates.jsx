@@ -41,17 +41,24 @@ function Updates() {
 
 				<li>
 					<span className="event-info">
-						Volleyball Game vs. Coupeville
-						<span className="start-date">October 23, 2025</span>
+						Volleyball Game vs. Darrington
+						<span className="start-date">October 27, 2025</span>
 					</span>
-					<span className="start-time">6:30pm</span>
+					<span className="start-time">TBD</span>
 				</li>
 				<li>
 					<span className="event-info">
-						Football Game vs. Darrington
-						<span className="start-date">October 25, 2025</span>
+						Volleyball First Round Playoffs @ Darrington vs. Evangel Classical
+						<span className="start-date">October 29, 2025</span>
 					</span>
-					<span className="start-time">6:00pm</span>
+					<span className="start-time">TBD</span>
+				</li>
+				<li>
+					<span className="event-info">
+						Football Game vs. Neah Bay
+						<span className="start-date">November 1, 2025</span>
+					</span>
+					<span className="start-time">1:00pm</span>
 				</li>
 			</ul>
 		</div>
