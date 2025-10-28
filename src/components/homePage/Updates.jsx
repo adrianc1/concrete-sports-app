@@ -38,14 +38,14 @@ function Updates() {
 					</span>
 					<span className="start-time">1:00 PM</span>
 				</li> */}
-
+				{/* 
 				<li>
 					<span className="event-info">
 						Volleyball Game vs. Darrington
 						<span className="start-date">October 27, 2025</span>
 					</span>
 					<span className="start-time">TBD</span>
-				</li>
+				</li> */}
 				<li>
 					<span className="event-info">
 						Volleyball First Round Playoffs @ Darrington vs. Evangel Classical
