@@ -22,7 +22,7 @@ export async function scrapeGames(url, outputFilename = 'games.json') {
 	await new Promise((resolve) => setTimeout(resolve, 2000));
 
 	// Look for the main container that holds all game events
-	const gameElements = await page.$$('.xl\\:flex'); // This was working!
+	const gameElements = await page.$$('.xl\\:flex');
 
 	console.log(`Found ${gameElements.length} game elements`);
 
@@ -33,7 +33,7 @@ export async function scrapeGames(url, outputFilename = 'games.json') {
 			.$eval('[data-testid*="watch-live"]', (el) => el.href)
 			.catch(() => 'n/a');
 
-		// Extract date - looking for the date display elements
+		// Extract date
 		game.dayOfWeek = await gameElement
 			.$eval('[data-testid*="day-of-week"]', (el) => el.textContent.trim())
 			.catch(() => 'n/a');
@@ -66,7 +66,7 @@ export async function scrapeGames(url, outputFilename = 'games.json') {
 			.$eval('[data-testid*="venue"]', (el) => el.textContent.trim())
 			.catch(() => 'n/a');
 
-		// Extract sport and level
+		// Extract sport
 		game.sport = await gameElement
 			.$eval('[data-testid*="activity-name"]', (el) => el.textContent.trim())
 			.catch(() => 'n/a');
