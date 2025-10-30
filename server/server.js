@@ -1,9 +1,11 @@
 import express from 'express';
 import { MongoClient } from 'mongodb';
 import dotenv from 'dotenv';
+import cors from 'cors';
 dotenv.config();
 
 const app = express();
+app.use(cors());
 
 const uri =
 	process.env.MONGODB_URI ||
@@ -23,9 +25,10 @@ async function connectDB() {
 	}
 }
 
-app.get('/data', async (req, res) => {
+app.get('/data/:sport', async (req, res) => {
 	try {
-		const collection = db.collection('volleyball');
+		const sport = req.params.sport;
+		const collection = db.collection(sport);
 		const results = await collection.find({}).toArray();
 		res.json(results);
 	} catch (error) {
