@@ -226,5 +226,17 @@
 		"sport": "VOLLEYBALL",
 		"level": "Girls Varsity",
 		"result": "0 - 3 L"
+	},
+	{
+		"watchLink": "",
+		"dayOfWeek": "SAT",
+		"date": "Nov 1 2025",
+		"time": "TBD",
+		"opponent": "Lopez Island @ Lummi HS",
+		"location": "Away",
+		"venue": "Lummi High School",
+		"sport": "VOLLEYBALL",
+		"level": "Girls Varsity",
+		"result": "TBD"
 	}
 ]
