@@ -5,6 +5,7 @@ import cors from 'cors';
 dotenv.config();
 
 const app = express();
+const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri);
 let db;
 
@@ -18,8 +19,6 @@ app.use(
 		credentials: true,
 	})
 );
-
-const uri = process.env.MONGODB_URI;
 
 if (!uri) {
 	console.log('ERROR MONGODB URL IS NOT SET!');
