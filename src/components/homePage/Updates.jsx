@@ -46,13 +46,13 @@ function Updates() {
 					</span>
 					<span className="start-time">TBD</span>
 				</li> */}
-				{/* <li>
+				<li>
 					<span className="event-info">
-						Volleyball First Round Playoffs @ Darrington vs. Evangel Classical
-						<span className="start-date">October 29, 2025</span>
+						Volleyball Postseason vs. Lopez Island @ Lummi HS on Saturday
+						<span className="start-date">November 1, 2025</span>
 					</span>
-					<span className="start-time">TBD</span>
-				</li> */}
+					<span className="start-time">10:00 AM</span>
+				</li>
 				<li>
 					<span className="event-info">
 						Football Game vs. Neah Bay
