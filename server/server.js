@@ -11,12 +11,7 @@ let db;
 
 app.use(
 	cors({
-		origin: [
-			'http://localhost:5173',
-			'https://concretesports.app',
-			'https://www.concretesports.app',
-		],
-		credentials: true,
+		origin: '*',
 	})
 );
 
