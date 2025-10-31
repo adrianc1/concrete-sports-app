@@ -7,9 +7,12 @@ dotenv.config();
 const app = express();
 app.use(cors());
 
-const uri =
-	process.env.MONGODB_URI ||
-	'mongodb+srv://concrete:concrete@sports-app-cluster.be8tahc.mongodb.net/?retryWrites=true&w=majority';
+const uri = process.env.MONGODB_URI;
+
+if (!uri) {
+	console.log('ERROR MONGODB URL IS NOT SET!');
+	process.exit(1);
+}
 
 const client = new MongoClient(uri);
 let db;
