@@ -5,36 +5,43 @@ import cors from 'cors';
 dotenv.config();
 
 const app = express();
+app.use(express.json());
+
+// Enable CORS for your domains
+app.use(
+	cors({
+		origin: [
+			'http://localhost:5173',
+			'https://concretesports.app',
+			'https://www.concretesports.app',
+		],
+		credentials: true,
+	})
+);
+
 const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri);
 let db;
 
-app.use(
-	cors({
-		origin: '*',
-	})
-);
-
-if (!uri) {
-	console.log('ERROR MONGODB URL IS NOT SET!');
-	process.exit(1);
-}
-
-async function connectDB() {
-	try {
+// Lazy DB connection
+async function getDB() {
+	if (!db) {
 		await client.connect();
 		db = client.db('schedules');
 		console.log('connected to database');
-	} catch (error) {
-		console.error(error);
-		process.exit(1);
 	}
+	return db;
 }
 
+// Health route
+app.get('/', (req, res) => res.send('Backend is running ✅'));
+
+// Main data route
 app.get('/data/:sport', async (req, res) => {
 	try {
 		const sport = req.params.sport;
-		const collection = db.collection(sport);
+		const database = await getDB();
+		const collection = database.collection(sport);
 		const results = await collection.find({}).toArray();
 		res.json(results);
 	} catch (error) {
@@ -43,6 +50,7 @@ app.get('/data/:sport', async (req, res) => {
 	}
 });
 
+// Graceful shutdown
 process.on('SIGINT', async () => {
 	console.log('Closing MongoDB connection...');
 	await client.close();
@@ -51,8 +59,7 @@ process.on('SIGINT', async () => {
 
 const PORT = process.env.PORT || 3030;
 
-connectDB().then(() => {
-	app.listen(PORT, () => {
-		console.log(`Server running on port ${PORT}`);
-	});
+// Start server immediately
+app.listen(PORT, () => {
+	console.log(`Server running on port ${PORT}`);
 });
