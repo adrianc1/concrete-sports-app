@@ -5,6 +5,9 @@ import cors from 'cors';
 dotenv.config();
 
 const app = express();
+const client = new MongoClient(uri);
+let db;
+
 app.use(
 	cors({
 		origin: [
@@ -22,9 +25,6 @@ if (!uri) {
 	console.log('ERROR MONGODB URL IS NOT SET!');
 	process.exit(1);
 }
-
-const client = new MongoClient(uri);
-let db;
 
 async function connectDB() {
 	try {
