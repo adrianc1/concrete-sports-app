@@ -29,40 +29,46 @@ function SchedulePage({ sportName, games, logo }) {
 				{!games || games.length === 0 ? (
 					<ComingSoon />
 				) : (
-					games.map((game, index) => (
-						<ListGroupItem key={index} className="game">
-							<div className="game-info">
-								<div>
-									<div>{game.date}</div>
-									<div>{game.time}</div>
+					games
+						.sort((a, b) => {
+							const dateA = new Date(a.date);
+							const dateB = new Date(b.date);
+							return dateB.getTime() - dateA.getTime();
+						})
+						.map((game, index) => (
+							<ListGroupItem key={index} className="game">
+								<div className="game-info">
+									<div>
+										<div>{game.date}</div>
+										<div>{game.time}</div>
+									</div>
+									<div>
+										{game.location?.includes('Away') ? '@' : ''} {game.opponent}
+									</div>
+									<div
+										style={{
+											color: game.result?.includes('W')
+												? 'green'
+												: game.result?.includes('L')
+												? 'red'
+												: 'black',
+										}}
+									>
+										{game.result}
+									</div>
 								</div>
-								<div>
-									{game.location?.includes('Away') ? '@' : ''} {game.opponent}
-								</div>
-								<div
-									style={{
-										color: game.result?.includes('W')
-											? 'green'
-											: game.result?.includes('L')
-											? 'red'
-											: 'black',
-									}}
-								>
-									{game.result}
-								</div>
-							</div>
-							{game.watchLink !== 'n/a' && (
-								<a
-									href={game.watchLink}
-									target="_blank"
-									rel="noopener noreferrer"
-									className="watch-button"
-								>
-									🎥 Watch Live
-								</a>
-							)}
-						</ListGroupItem>
-					))
+								{game.watchLink !== 'n/a' && (
+									<a
+										href={game.watchLink}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="watch-button"
+									>
+										🎥 Watch Live
+									</a>
+								)}
+							</ListGroupItem>
+						))
 				)}
 			</ListGroup>
 		</>

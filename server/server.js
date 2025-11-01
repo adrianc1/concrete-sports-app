@@ -31,6 +31,25 @@ async function connectDB() {
 	}
 }
 
+// GET request to get all games
+app.get('/data/all', async (req, res) => {
+	const sports = ['football', 'volleyball'];
+	let allGames = [];
+
+	try {
+		for (const s of sports) {
+			const collection = db.collection(s);
+			const results = await collection.find({}).toArray();
+			allGames.push(...results);
+		}
+		res.json(allGames);
+	} catch (error) {
+		console.error('Error fetching data:', error);
+		res.status(500).json({ error: error.message });
+	}
+});
+
+// GET request to get specific sport schedule
 app.get('/data/:sport', async (req, res) => {
 	try {
 		const sport = req.params.sport;

@@ -13,3 +13,16 @@ export async function fetchSchedules(sport) {
 		throw error;
 	}
 }
+
+export async function fetchUpcomingGames() {
+	try {
+		const response = await fetch(`${API_URL}/data/all`);
+		if (!response.ok) {
+			throw new Error('Failed to fetch recent games:');
+		}
+		return await response.json();
+	} catch (error) {
+		console.error('Error fetching schedules:', error);
+		throw error;
+	}
+}

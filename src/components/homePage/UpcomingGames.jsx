@@ -1,50 +1,68 @@
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router';
 import './homePageStyles/upcomingGames.css';
+import { fetchUpcomingGames } from '../../utils/api';
+
 export default function UpcomingGames() {
-	const upcomingGames = [
-		{
-			sport: 'Varsity Football',
-			date: 'Nov 5',
-			time: '7:00 PM',
-			opponent: 'Lincoln High',
-			location: 'Home',
-		},
-		{
-			sport: 'JV Basketball',
-			date: 'Nov 6',
-			time: '5:30 PM',
-			opponent: 'Roosevelt',
-			location: 'Away',
-		},
-	];
+	const [upcomingGames, setUpcomingGames] = useState([]);
+	const [loading, setLoading] = useState(false);
+
+	useEffect(() => {
+		async function loadUpcomingGames() {
+			try {
+				setLoading(true);
+				const data = await fetchUpcomingGames();
+				setUpcomingGames(data);
+			} catch (error) {
+				console.log(error, 'cannot fetch upcoming games!');
+			} finally {
+				setLoading(false);
+			}
+		}
+		loadUpcomingGames();
+	}, []);
+
+	// upcomingGames.sort((a, b) => {
+	// 	const dateA = new Date(a.date);
+	// 	const dateB = new Date(b.date);
+	// 	return dateB.getTime() - dateA.getTime();
+	// });
+
 	return (
 		<div className="upcoming-schedules">
-			<>
-				<h3 className="recent-scores-title">Team Schedules</h3>
+			<h3 className="recent-scores-title team-schedule-title">
+				Upcoming Games
+			</h3>
 
-				<div className="upcoming-schedules-section">
-					<h2 className="section-title">Upcoming Games</h2>
-
-					<div className="games-grid">
-						{upcomingGames.map((game, index) => (
-							<div key={index} className="game-card">
-								<div className="game-sport">{game.sport}</div>
-								<div className="game-details">
-									<div className="game-date">
-										{game.date} • {game.time}
-									</div>
-									<div className="game-matchup">
-										{game.location === 'Away' ? '@' : 'vs'} {game.opponent}
+			<div className="upcoming-schedules-section">
+				<div className="upcoming-games-grid">
+					{upcomingGames
+						.filter((game) => game.result === 'TBD')
+						.sort((a, b) => {
+							const dateA = new Date(a.date);
+							const dateB = new Date(b.date);
+							return dateA.getTime() - dateB.getTime();
+						})
+						.map((game, index) => {
+							return (
+								<div key={index} className="upcoming-game-card">
+									<div className="game-sport">{game.sport}</div>
+									<div className="game-details">
+										<div className="game-date">
+											{game.date} • {game.time}
+										</div>
+										<div className="game-matchup">
+											{game.location === 'Away' ? '@' : 'vs'} {game.opponent}
+										</div>
+										<Link to={`${game.sport}Schedule`}>
+											<button className="see-schedule">Schedule</button>
+										</Link>
 									</div>
 								</div>
-							</div>
-						))}
-					</div>
-
-					{/* <div to="/schedules" className="view-all-link">
-							View Full Schedule →
-						</div> */}
+							);
+						})}
 				</div>
-			</>
+			</div>
 		</div>
 	);
 }
