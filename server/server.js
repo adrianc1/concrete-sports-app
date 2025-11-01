@@ -35,7 +35,7 @@ app.get('/data/:sport', async (req, res) => {
 	try {
 		const sport = req.params.sport;
 		const collection = db.collection(sport);
-		const results = await collection.find({}).toArray();
+		const results = await collection.find({}).sort({ date: 1 }).toArray();
 		res.json(results);
 	} catch (error) {
 		console.error('Error fetching data:', error);
