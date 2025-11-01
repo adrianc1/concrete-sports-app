@@ -39,11 +39,11 @@ export default function UpcomingGames() {
 					{upcomingGames
 						.filter((game) => game.result === 'TBD')
 
-						.sort((a, b) => {
-							const dateA = new Date(a.date);
-							const dateB = new Date(b.date);
-							return dateA.getTime() - dateB.getTime();
-						})
+						// .sort((a, b) => {
+						// 	const dateA = new Date(a.date);
+						// 	const dateB = new Date(b.date);
+						// 	return dateA.getTime() - dateB.getTime();
+						// })
 						.map((game, index) => {
 							return (
 								<div key={index} className="upcoming-game-card">
