@@ -8,11 +8,13 @@ import { GiLion } from 'react-icons/gi';
 import { Calendar } from 'lucide-react';
 import ScrollToTop from '../../layout/ScrollToTop';
 import RecentGames from '../../layout/RecentGames.jsx';
+import UpcomingGames from './UpcomingGames.jsx';
 
 function MainPage() {
 	return (
 		<>
 			<RecentGames />
+			<UpcomingGames />
 
 			<div className="main-page">
 				<ScrollToTop />
