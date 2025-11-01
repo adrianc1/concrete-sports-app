@@ -1,0 +1,64 @@
+.upcoming-schedules {
+	width: 95%;
+	margin: 0 auto;
+}
+/* .upcoming-schedules-section {
+	width: 100%;
+	margin: 0 auto;
+} */
+.upcoming-games-grid {
+	width: 100%;
+	max-width: 1600px;
+	padding: 0 20px;
+	gap: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 auto;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+
+.upcoming-game-card {
+	border: 1px solid #4a007b;
+	border-radius: 8px;
+	height: 275px;
+	width: 100%;
+	max-width: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.upcoming-game-card a {
+	align-self: center;
+	text-decoration: none;
+}
+
+.game-sport {
+	padding-top: 12px;
+	font-weight: 600;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	padding-left: 12px;
+	box-shadow: 0px 12px 24px #4a007b5b;
+}
+
+.game-details {
+	margin-top: 20px;
+	/* margin-bottom: 16px; */
+	padding: 0 12px;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	justify-content: flex-start;
+	font-size: 1.1rem;
+	font-weight: 600;
+	flex: 1;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
