@@ -1,36 +1,57 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import './homePageStyles/upcomingGames.css';
+import { fetchUpcomingGames } from '../../utils/api';
+
 export default function UpcomingGames() {
-	const upcomingGames = [
-		{
-			sport: 'Football',
-			date: 'Nov 5',
-			time: '7:00 PM',
-			opponent: 'Lincoln High',
-			location: 'Home',
-		},
-		{
-			sport: 'Volleyball',
-			date: 'Nov 6',
-			time: '5:30 PM',
-			opponent: 'Roosevelt',
-			location: 'Away',
-		},
-		{
-			sport: 'Wrestling',
-			date: 'Nov 5',
-			time: '7:00 PM',
-			opponent: 'Edison High',
-			location: 'Home',
-		},
-		{
-			sport: 'Volleyball',
-			date: 'Nov 9',
-			time: '4:30 PM',
-			opponent: 'Change',
-			location: 'Away',
-		},
-	];
+	const [upcomingGames, setUpcomingGames] = useState([]);
+	const [loading, setLoading] = useState(false);
+	// const upcomingGames = [
+	// 	{
+	// 		sport: 'Football',
+	// 		date: 'Nov 5',
+	// 		time: '7:00 PM',
+	// 		opponent: 'Lincoln High',
+	// 		location: 'Home',
+	// 	},
+	// 	{
+	// 		sport: 'Volleyball',
+	// 		date: 'Nov 6',
+	// 		time: '5:30 PM',
+	// 		opponent: 'Roosevelt',
+	// 		location: 'Away',
+	// 	},
+	// 	{
+	// 		sport: 'Wrestling',
+	// 		date: 'Nov 5',
+	// 		time: '7:00 PM',
+	// 		opponent: 'Edison High',
+	// 		location: 'Home',
+	// 	},
+	// 	{
+	// 		sport: 'Volleyball',
+	// 		date: 'Nov 9',
+	// 		time: '4:30 PM',
+	// 		opponent: 'Change',
+	// 		location: 'Away',
+	// 	},
+	// ];
+
+	useEffect(() => {
+		async function loadUpcomingGames() {
+			try {
+				setLoading(true);
+				const data = await fetchUpcomingGames();
+				setUpcomingGames(data);
+			} catch (error) {
+				console.log(error, 'cannot fetch upcoming games!');
+			} finally {
+				setLoading(false);
+			}
+		}
+		loadUpcomingGames();
+	}, []);
+
 	return (
 		<div className="upcoming-schedules">
 			<h3 className="recent-scores-title team-schedule-title">
