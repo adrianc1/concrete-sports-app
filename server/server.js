@@ -39,7 +39,7 @@ app.get('/data/all', async (req, res) => {
 	try {
 		for (const s of sports) {
 			const collection = db.collection(s);
-			const results = await collection.find({}).toArray();
+			const results = await collection.find({}).sort({ date: 1 }).toArray();
 			allGames.push(...results);
 		}
 		res.json(allGames);
