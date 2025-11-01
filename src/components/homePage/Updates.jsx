@@ -48,10 +48,12 @@ function Updates() {
 				</li> */}
 				<li>
 					<span className="event-info">
-						Volleyball Postseason vs. Lopez Island @ Lummi HS on Saturday
+						Volleyball Lions WIN!!! <br />
+						Defeating Lopez Island 3 - 1 <br />
+						Next Game vs Grace Academy
 						<span className="start-date">November 1, 2025</span>
 					</span>
-					<span className="start-time">10:00 AM</span>
+					<span className="start-time">2:00 PM</span>
 				</li>
 				<li>
 					<span className="event-info">
