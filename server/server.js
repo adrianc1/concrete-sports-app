@@ -30,6 +30,22 @@ async function connectDB() {
 		process.exit(1);
 	}
 }
+app.get('/data/all', async (req, res) => {
+	const sports = ['football', 'volleyball'];
+	let allGames = [];
+
+	try {
+		for (const s of sports) {
+			const collection = db.collection(s);
+			const results = await collection.find({}).toArray();
+			allGames.push(...results);
+		}
+		res.json(allGames);
+	} catch (error) {
+		console.error('Error fetching data:', error);
+		res.status(500).json({ error: error.message });
+	}
+});
 
 app.get('/data/:sport', async (req, res) => {
 	try {
