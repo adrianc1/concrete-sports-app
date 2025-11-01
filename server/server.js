@@ -30,6 +30,8 @@ async function connectDB() {
 		process.exit(1);
 	}
 }
+
+// GET request to get all games
 app.get('/data/all', async (req, res) => {
 	const sports = ['football', 'volleyball'];
 	let allGames = [];
@@ -47,11 +49,12 @@ app.get('/data/all', async (req, res) => {
 	}
 });
 
+// GET request to get specific sport schedule
 app.get('/data/:sport', async (req, res) => {
 	try {
 		const sport = req.params.sport;
 		const collection = db.collection(sport);
-		const results = await collection.find({}).toArray();
+		const results = await collection.find({}).sort({ date: 1 }).toArray();
 		res.json(results);
 	} catch (error) {
 		console.error('Error fetching data:', error);

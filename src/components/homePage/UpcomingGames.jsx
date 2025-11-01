@@ -6,36 +6,6 @@ import { fetchUpcomingGames } from '../../utils/api';
 export default function UpcomingGames() {
 	const [upcomingGames, setUpcomingGames] = useState([]);
 	const [loading, setLoading] = useState(false);
-	// const upcomingGames = [
-	// 	{
-	// 		sport: 'Football',
-	// 		date: 'Nov 5',
-	// 		time: '7:00 PM',
-	// 		opponent: 'Lincoln High',
-	// 		location: 'Home',
-	// 	},
-	// 	{
-	// 		sport: 'Volleyball',
-	// 		date: 'Nov 6',
-	// 		time: '5:30 PM',
-	// 		opponent: 'Roosevelt',
-	// 		location: 'Away',
-	// 	},
-	// 	{
-	// 		sport: 'Wrestling',
-	// 		date: 'Nov 5',
-	// 		time: '7:00 PM',
-	// 		opponent: 'Edison High',
-	// 		location: 'Home',
-	// 	},
-	// 	{
-	// 		sport: 'Volleyball',
-	// 		date: 'Nov 9',
-	// 		time: '4:30 PM',
-	// 		opponent: 'Change',
-	// 		location: 'Away',
-	// 	},
-	// ];
 
 	useEffect(() => {
 		async function loadUpcomingGames() {
@@ -52,6 +22,12 @@ export default function UpcomingGames() {
 		loadUpcomingGames();
 	}, []);
 
+	// upcomingGames.sort((a, b) => {
+	// 	const dateA = new Date(a.date);
+	// 	const dateB = new Date(b.date);
+	// 	return dateB.getTime() - dateA.getTime();
+	// });
+
 	return (
 		<div className="upcoming-schedules">
 			<h3 className="recent-scores-title team-schedule-title">
@@ -60,27 +36,33 @@ export default function UpcomingGames() {
 
 			<div className="upcoming-schedules-section">
 				<div className="upcoming-games-grid">
-					{upcomingGames.map((game, index) => (
-						<div key={index} className="upcoming-game-card">
-							<div className="game-sport">{game.sport}</div>
-							<div className="game-details">
-								<div className="game-date">
-									{game.date} • {game.time}
-								</div>
-								<div className="game-matchup">
-									{game.location === 'Away' ? '@' : 'vs'} {game.opponent}
-								</div>
-								<Link to={`${game.sport}Schedule`}>
-									<button className="see-schedule">Schedule</button>
-								</Link>
-							</div>
-						</div>
-					))}
-				</div>
+					{upcomingGames
+						.filter((game) => game.result === 'TBD')
 
-				{/* <div to="/schedules" className="view-all-link">
-							View Full Schedule →
-						</div> */}
+						.sort((a, b) => {
+							const dateA = new Date(a.date);
+							const dateB = new Date(b.date);
+							return dateA.getTime() - dateB.getTime();
+						})
+						.map((game, index) => {
+							return (
+								<div key={index} className="upcoming-game-card">
+									<div className="game-sport">{game.sport}</div>
+									<div className="game-details">
+										<div className="game-date">
+											{game.date} • {game.time}
+										</div>
+										<div className="game-matchup">
+											{game.location === 'Away' ? '@' : 'vs'} {game.opponent}
+										</div>
+										<Link to={`${game.sport}Schedule`}>
+											<button className="see-schedule">Schedule</button>
+										</Link>
+									</div>
+								</div>
+							);
+						})}
+				</div>
 			</div>
 		</div>
 	);
