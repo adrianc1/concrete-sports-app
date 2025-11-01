@@ -3,14 +3,14 @@ import './homePageStyles/upcomingGames.css';
 export default function UpcomingGames() {
 	const upcomingGames = [
 		{
-			sport: 'football',
+			sport: 'Football',
 			date: 'Nov 5',
 			time: '7:00 PM',
 			opponent: 'Lincoln High',
 			location: 'Home',
 		},
 		{
-			sport: 'volleyball',
+			sport: 'Volleyball',
 			date: 'Nov 6',
 			time: '5:30 PM',
 			opponent: 'Roosevelt',
@@ -38,8 +38,6 @@ export default function UpcomingGames() {
 			</h3>
 
 			<div className="upcoming-schedules-section">
-				{/* <h2 className="section-title">Upcoming Games</h2> */}
-
 				<div className="upcoming-games-grid">
 					{upcomingGames.map((game, index) => (
 						<div key={index} className="upcoming-game-card">

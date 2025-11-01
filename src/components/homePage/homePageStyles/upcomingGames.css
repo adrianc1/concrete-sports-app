@@ -1,11 +1,9 @@
 .upcoming-schedules {
 	width: 95%;
 	margin: 0 auto;
+	display: none;
 }
-/* .upcoming-schedules-section {
-	width: 100%;
-	margin: 0 auto;
-} */
+
 .upcoming-games-grid {
 	width: 100%;
 	max-width: 1600px;
@@ -31,6 +29,7 @@
 }
 
 .upcoming-game-card a {
+	margin-top: 2rem;
 	align-self: center;
 	text-decoration: none;
 }
@@ -61,4 +60,10 @@
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	overflow: hidden;
+}
+
+@media (min-width: 767px) {
+	.upcoming-schedules {
+		display: block;
+	}
 }
