@@ -48,7 +48,7 @@ function Updates() {
 				</li> */}
 				<li>
 					<span className="event-info">
-						Volleyball Lions WIN!!! <br />
+						🏐 Volleyball Lions WIN!!! <br />
 						Defeating Lopez Island 3 - 1 <br />
 						Next Game vs Grace Academy
 						<span className="start-date">November 1, 2025</span>
@@ -57,7 +57,7 @@ function Updates() {
 				</li>
 				<li>
 					<span className="event-info">
-						Football Game vs. Neah Bay
+						🏈 Football Game vs. Neah Bay
 						<span className="start-date">November 1, 2025</span>
 					</span>
 					<span className="start-time">1:00pm</span>

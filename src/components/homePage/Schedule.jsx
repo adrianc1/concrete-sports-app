@@ -9,6 +9,16 @@ import '../homePage/homePageStyles/schedule.css';
 export default function Schedule() {
 	const [showNav, setShowNav] = useState(false);
 	const [showExitIcon, setShowExitIcon] = useState(false);
+	const sportEmojis = {
+		VOLLEYBALL: '🏐',
+		FOOTBALL: '🏈',
+		BASKETBALL: '🏀',
+		SOCCER: '⚽',
+		BASEBALL: '⚾',
+		SOFTBALL: '🥎',
+		TRACK: '🏃',
+		WRESTLING: '🤼',
+	};
 	return (
 		<div className="">
 			<ScrollToTop />
@@ -23,30 +33,30 @@ export default function Schedule() {
 			<ul className="schedule-card">
 				<h4>Team Schedules</h4>
 				<li>
-					<Link to="/footballSchedule">Football</Link>
+					<Link to="/footballSchedule">🏈 Football</Link>
 				</li>
 				<li>
-					<Link to="/volleyballSchedule">Volleyball</Link>
+					<Link to="/volleyballSchedule">🏐 Volleyball</Link>
 				</li>
 				<li>
-					<Link to="/schedulePage">Boys Basketball</Link>
+					<Link to="/schedulePage">🏀 Boys Basketball</Link>
 				</li>
 				<li>
-					<Link to="/girlsBballSchedule">Girls Basketball</Link>
-				</li>
-
-				<li>
-					<Link to="/baseballSchedule">Baseball</Link>
-				</li>
-				<li>
-					<Link to="/softballSchedule">Softball</Link>
+					<Link to="/girlsBballSchedule">🏀 Girls Basketball</Link>
 				</li>
 
 				<li>
-					<Link to="/trackSchedule">Track</Link>
+					<Link to="/baseballSchedule">⚾ Baseball</Link>
 				</li>
 				<li>
-					<Link to="/wrestlingSchedule">Wrestling</Link>
+					<Link to="/softballSchedule">🥎 Softball</Link>
+				</li>
+
+				<li>
+					<Link to="/trackSchedule">🏃 Track</Link>
+				</li>
+				<li>
+					<Link to="/wrestlingSchedule">🤼 Wrestling</Link>
 				</li>
 			</ul>
 			<p className="copyright">

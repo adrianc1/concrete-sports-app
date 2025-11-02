@@ -61,6 +61,13 @@
 	overflow: hidden;
 }
 
+.game-matchup {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	max-width: 120px;
+	overflow: hidden;
+}
+
 /* @media (min-width: 767px) {
 	.upcoming-schedules {
 		display: block;
