@@ -22,11 +22,16 @@ export default function UpcomingGames() {
 		loadUpcomingGames();
 	}, []);
 
-	// upcomingGames.sort((a, b) => {
-	// 	const dateA = new Date(a.date);
-	// 	const dateB = new Date(b.date);
-	// 	return dateB.getTime() - dateA.getTime();
-	// });
+	const sportEmojis = {
+		VOLLEYBALL: '🏐',
+		FOOTBALL: '🏈',
+		BASKETBALL: '🏀',
+		SOCCER: '⚽',
+		BASEBALL: '⚾',
+		SOFTBALL: '🥎',
+		TRACK: '🏃',
+		WRESTLING: '🤼',
+	};
 
 	return (
 		<div className="upcoming-schedules">
@@ -43,10 +48,13 @@ export default function UpcomingGames() {
 							const dateB = new Date(b.date);
 							return dateA.getTime() - dateB.getTime();
 						})
+						.slice(0, 4)
 						.map((game, index) => {
 							return (
 								<div key={index} className="upcoming-game-card">
-									<div className="game-sport">{game.sport}</div>
+									<div className="game-sport">
+										{sportEmojis[game.sport.toUpperCase()] || '🏆'} {game.sport}
+									</div>
 									<div className="game-details">
 										<div className="game-date">
 											{game.date} • {game.time}

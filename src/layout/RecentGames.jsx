@@ -4,6 +4,17 @@ import { fetchUpcomingGames } from '../utils/api';
 const RecentGames = () => {
 	const [upcomingGames, setUpcomingGames] = useState([]);
 	const [loading, setLoading] = useState(false);
+	const sportEmojis = {
+		VOLLEYBALL: '🏐',
+		FOOTBALL: '🏈',
+		BASKETBALL: '🏀',
+		SOCCER: '⚽',
+		BASEBALL: '⚾',
+		SOFTBALL: '🥎',
+		TRACK: '🏃',
+		WRESTLING: '🤼',
+		SWIMMING: '🏊',
+	};
 
 	useEffect(() => {
 		async function loadUpcomingGames() {
@@ -44,7 +55,10 @@ const RecentGames = () => {
 									<div className="game-card game-1">
 										<div className="game-info-card">
 											<div className="game-date">{game.date}</div>
-											<div className="sport-name">{game.sport}</div>
+											<div className="sport-name">
+												{sportEmojis[game.sport.toUpperCase()] || '🏆'}{' '}
+												{game.sport}
+											</div>
 										</div>
 										<div className="score-container">
 											<div className="team-container">
