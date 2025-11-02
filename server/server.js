@@ -2,9 +2,11 @@ import express from 'express';
 import { MongoClient } from 'mongodb';
 import dotenv from 'dotenv';
 import cors from 'cors';
+import { gamesRouter } from './routes/games.js';
 dotenv.config();
 
 const app = express();
+const PORT = process.env.PORT || 3030;
 const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri);
 let db;
@@ -14,6 +16,7 @@ app.use(
 		origin: '*',
 	})
 );
+app.use(express.json());
 
 if (!uri) {
 	console.log('ERROR MONGODB URL IS NOT SET!');
@@ -31,46 +34,14 @@ async function connectDB() {
 	}
 }
 
-// GET request to get all games
-app.get('/api/all', async (req, res) => {
-	const sports = ['football', 'volleyball'];
-	let allGames = [];
-
-	try {
-		for (const s of sports) {
-			const collection = db.collection(s);
-			const results = await collection.find({}).toArray();
-			allGames.push(...results);
-		}
-		res.json(allGames);
-	} catch (error) {
-		console.error('Error fetching data:', error);
-		res.status(500).json({ error: error.message });
-	}
-});
-
-// GET request to get specific sport schedule
-app.get('/api/:sport', async (req, res) => {
-	try {
-		const sport = req.params.sport;
-		const collection = db.collection(sport);
-		const results = await collection.find({}).sort({ date: 1 }).toArray();
-		res.json(results);
-	} catch (error) {
-		console.error('Error fetching data:', error);
-		res.status(500).json({ error: error.message });
-	}
-});
-
 process.on('SIGINT', async () => {
 	console.log('Closing MongoDB connection...');
 	await client.close();
 	process.exit(0);
 });
 
-const PORT = process.env.PORT || 3030;
-
 connectDB().then(() => {
+	app.use('/api/games', gamesRouter(db));
 	app.listen(PORT, () => {
 		console.log(`Server running on port ${PORT}`);
 	});

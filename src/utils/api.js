@@ -2,7 +2,7 @@ const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3030';
 
 export async function fetchSchedules(sport) {
 	try {
-		const response = await fetch(`${API_URL}/api/${sport}`);
+		const response = await fetch(`${API_URL}/api/games/${sport}`);
 
 		if (!response.ok) {
 			throw new Error(`Failed to fetch ${sport} schedule`);
@@ -16,7 +16,7 @@ export async function fetchSchedules(sport) {
 
 export async function fetchUpcomingGames() {
 	try {
-		const response = await fetch(`${API_URL}/api/all`);
+		const response = await fetch(`${API_URL}/api/games/all`);
 		if (!response.ok) {
 			throw new Error('Failed to fetch recent games:');
 		}
