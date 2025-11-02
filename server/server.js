@@ -32,7 +32,7 @@ async function connectDB() {
 }
 
 // GET request to get all games
-app.get('/data/all', async (req, res) => {
+app.get('/api/all', async (req, res) => {
 	const sports = ['football', 'volleyball'];
 	let allGames = [];
 
@@ -50,7 +50,7 @@ app.get('/data/all', async (req, res) => {
 });
 
 // GET request to get specific sport schedule
-app.get('/data/:sport', async (req, res) => {
+app.get('/api/:sport', async (req, res) => {
 	try {
 		const sport = req.params.sport;
 		const collection = db.collection(sport);
