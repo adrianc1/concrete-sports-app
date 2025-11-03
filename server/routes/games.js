@@ -10,8 +10,6 @@ gamesRouter.get('/all', async (req, res) => {
 	try {
 		for (const sport of sports) {
 			const SportModel = getSportModel(sport);
-			console.log(`Sport: ${sport}, Collection: ${SportModel.collection.name}`);
-
 			const results = await SportModel.find({}).sort({ date: 1 });
 			allGames.push(...results);
 		}
@@ -34,11 +32,13 @@ gamesRouter.get('/:sport', async (req, res) => {
 	}
 });
 
-// router.post('/add', async (req, res) => {
-// 	try {
-// 		const schedule = await ScheduleSchemaModel.create(req.body);
-// 		res.status(200).json(schedule);
-// 	} catch (error) {
-// 		res.status(500).json({ message: error.message });
-// 	}
-// });
+gamesRouter.post('/add', async (req, res) => {
+	try {
+		const { sport } = req.body;
+		const SportModel = getSportModel(sport);
+		const newGame = await SportModel.create(req.body);
+		res.status(200).json(newGame);
+	} catch (error) {
+		res.status(500).json({ message: error.message });
+	}
+});

@@ -22,7 +22,6 @@ if (!uri) {
 }
 
 mongoose.connect(uri, { dbName: 'schedules' }).then(() => {
-	console.log('connectd!');
 	app.use('/api/games', gamesRouter);
 	app.listen(PORT, () => {
 		console.log(`Server running on port ${PORT}`);

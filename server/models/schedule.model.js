@@ -17,5 +17,9 @@ const ScheduleSchema = mongoose.Schema(
 );
 
 export const getSportModel = (sport) => {
-	return mongoose.models[sport] || mongoose.model(sport, ScheduleSchema, sport);
+	const collectionName = sport.toLowerCase();
+	return (
+		mongoose.models[sport] ||
+		mongoose.model(sport, ScheduleSchema, collectionName)
+	);
 };
