@@ -75,6 +75,7 @@ export default function UpcomingGames() {
 										<div key={index} className="upcoming-game-card">
 											<div className="game-sport">
 												{sportEmojis[game.sport.toUpperCase()] || '🏆'}{' '}
+												{game.level.includes('Boys') ? 'BOYS' : 'GIRLS'}{' '}
 												{game.sport}
 											</div>
 											<div className="game-details">
