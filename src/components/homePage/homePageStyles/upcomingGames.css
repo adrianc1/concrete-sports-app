@@ -66,6 +66,6 @@
 .game-matchup {
 	white-space: nowrap;
 	text-overflow: ellipsis;
-	max-width: 120px;
+	max-width: 150px;
 	overflow: hidden;
 }
