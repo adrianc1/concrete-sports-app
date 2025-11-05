@@ -33,13 +33,18 @@ async function connectDB() {
 
 // GET request to get all games
 app.get('/api/all', async (req, res) => {
-	const sports = ['football', 'volleyball, girls-basketball, boys-basketball'];
+	const sports = [
+		'football',
+		'volleyball',
+		'girls-basketball',
+		'boys-basketball',
+	];
 	let allGames = [];
 
 	try {
 		for (const s of sports) {
 			const collection = db.collection(s);
-			const results = await collection.find({}).toArray();
+			const results = await collection.find({}).sort({ date: 1 }).toArray();
 			allGames.push(...results);
 		}
 		res.json(allGames);

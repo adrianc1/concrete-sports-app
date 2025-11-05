@@ -170,7 +170,7 @@ export async function scrapeGames(url, outputFilename = 'games.json') {
 			game.time
 		)}-${normalize(game.opponent)}`;
 
-		// Only add if we haven't seen this game before
+		// Only add if game hasn't been added before
 		if (!seenGames.has(gameKey)) {
 			seenGames.add(gameKey);
 			uniqueGames.push(game);
@@ -189,12 +189,11 @@ export async function scrapeGames(url, outputFilename = 'games.json') {
 	return uniqueGames;
 }
 
-// Example usage
 const schedulesToScrape = [
-	// {
-	// 	url: 'https://www.concretehslions.com/sports/boys-basketball/schedule?team=boys-basketball-5262668&year=2025-2026',
-	// 	output: 'boys-basketball.json',
-	// },
+	{
+		url: 'https://www.concretehslions.com/sports/boys-basketball/schedule?team=boys-basketball-5262668&year=2025-2026',
+		output: 'boys-basketball.json',
+	},
 	{
 		url: 'https://www.concretehslions.com/sports/girls-basketball/schedule?team=girls-basketball-5262670&year=2025-2026',
 		output: 'girls-basketball.json',
