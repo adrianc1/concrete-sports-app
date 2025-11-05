@@ -191,13 +191,13 @@ export async function scrapeGames(url, outputFilename = 'games.json') {
 
 // Example usage
 const schedulesToScrape = [
+	// {
+	// 	url: 'https://www.concretehslions.com/sports/boys-basketball/schedule?team=boys-basketball-5262668&year=2025-2026',
+	// 	output: 'boys-basketball.json',
+	// },
 	{
-		url: 'https://www.concretehslions.com/sports/boys-football/schedule?team=boys-football-5262666&year=2025-2026',
-		output: 'footballGames.json',
-	},
-	{
-		url: 'https://www.concretehslions.com/sports/girls-volleyball/schedule?team=girls-volleyball-5262667&year=2025-2026',
-		output: 'volleyballGames.json',
+		url: 'https://www.concretehslions.com/sports/girls-basketball/schedule?team=girls-basketball-5262670&year=2025-2026',
+		output: 'girls-basketball.json',
 	},
 ];
 
