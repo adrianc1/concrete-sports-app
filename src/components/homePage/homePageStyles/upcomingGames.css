@@ -1,10 +1,12 @@
 .upcoming-schedules {
 	width: 95%;
+	height: 100%;
 	margin: 0 auto;
 }
 
 .upcoming-games-grid {
 	width: 100%;
+	height: 100%;
 	max-width: 1600px;
 	padding: 0 20px;
 	gap: 20px;
@@ -21,7 +23,7 @@
 	border-radius: 8px;
 	height: 275px;
 	width: 100%;
-	max-width: 300px;
+	max-width: 250px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -67,9 +69,3 @@
 	max-width: 120px;
 	overflow: hidden;
 }
-
-/* @media (min-width: 767px) {
-	.upcoming-schedules {
-		display: block;
-	}
-} */
