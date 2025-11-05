@@ -33,7 +33,7 @@ async function connectDB() {
 
 // GET request to get all games
 app.get('/api/all', async (req, res) => {
-	const sports = ['football', 'volleyball'];
+	const sports = ['football', 'volleyball, girls-basketball, boys-basketball'];
 	let allGames = [];
 
 	try {
