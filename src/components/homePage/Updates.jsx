@@ -48,10 +48,10 @@ function Updates() {
 				</li> */}
 				<li>
 					<span className="event-info">
-						🏐 Volleyball Postseason Game vs. Crescent @ Northwest Christian
-						<span className="start-date">November 4, 2025</span>
+						🏀 Boys and Girls Basketball Season Begins
+						<span className="start-date">December 10, 2025</span>
 					</span>
-					<span className="start-time">3:00 PM</span>
+					<span className="start-time">7:00 PM</span>
 				</li>
 				{/* <li>
 					<span className="event-info">
