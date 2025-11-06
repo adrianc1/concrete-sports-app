@@ -86,7 +86,11 @@ export default function UpcomingGames() {
 													{game.location === 'Away' ? '@' : 'vs'}{' '}
 													{game.opponent}
 												</div>
-												<Link to={`${game.sport}Schedule`}>
+												<Link
+													to={`${
+														game.level.includes('Boys') ? 'BOYS' : 'GIRLS'
+													}-${game.sport}Schedule`}
+												>
 													<button className="see-schedule">Schedule</button>
 												</Link>
 											</div>
