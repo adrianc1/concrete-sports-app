@@ -39,10 +39,10 @@ export default function Schedule() {
 					<Link to="/volleyballSchedule">🏐 Volleyball</Link>
 				</li>
 				<li>
-					<Link to="/schedulePage">🏀 Boys Basketball</Link>
+					<Link to="/BOYS-BASKETBALLSchedule">🏀 Boys Basketball</Link>
 				</li>
 				<li>
-					<Link to="/girlsBballSchedule">🏀 Girls Basketball</Link>
+					<Link to="/GIRLS-BASKETBALLSchedule">🏀 Girls Basketball</Link>
 				</li>
 
 				<li>
