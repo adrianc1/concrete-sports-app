@@ -14,6 +14,10 @@ This app empowers small communities by:
 
 Frontend: React
 
+Backend: Node.js/Express.js
+
+Database: MongoDB
+
 Styling: CSS
 
 Architecture: Progressive Web App (PWA)
