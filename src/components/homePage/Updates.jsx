@@ -23,29 +23,6 @@ function Updates() {
 				<h2 className="annoucenment-title">Team Updates</h2>
 			</div>
 			<ul className="team-updates-list">
-				{/* <li>
-					<span className="event-info">
-						Back to School Night
-						<span className="start-date">August 28, 2025</span>
-					</span>
-					<span className="start-time">4:30pm - 6:00pm</span>
-				</li> */}
-
-				{/* <li>
-					<span className="event-info">
-						Lions Win! 42 - 8
-						<span className="start-date">September 13, 2025</span>
-					</span>
-					<span className="start-time">1:00 PM</span>
-				</li> */}
-				{/* 
-				<li>
-					<span className="event-info">
-						Volleyball Game vs. Darrington
-						<span className="start-date">October 27, 2025</span>
-					</span>
-					<span className="start-time">TBD</span>
-				</li> */}
 				<li>
 					<span className="event-info">
 						🏀 Boys and Girls Basketball Season Begins
@@ -53,13 +30,6 @@ function Updates() {
 					</span>
 					<span className="start-time">7:00 PM</span>
 				</li>
-				{/* <li>
-					<span className="event-info">
-						🏈 Football Game vs. Neah Bay
-						<span className="start-date">November 1, 2025</span>
-					</span>
-					<span className="start-time">1:00pm</span>
-				</li> */}
 			</ul>
 		</div>
 	);
