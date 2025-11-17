@@ -1,19 +1,20 @@
 import express from 'express';
-import { MongoClient } from 'mongodb';
+import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
+import scheduleRouter from './routes/scheduleRoutes.js';
+
 dotenv.config();
 
 const app = express();
 const uri = process.env.MONGODB_URI;
-const client = new MongoClient(uri);
-let db;
 
 app.use(
 	cors({
 		origin: '*',
 	})
 );
+app.use(express.json());
 
 if (!uri) {
 	console.log('ERROR MONGODB URL IS NOT SET!');
@@ -22,37 +23,16 @@ if (!uri) {
 
 async function connectDB() {
 	try {
-		await client.connect();
-		db = client.db('schedules');
-		console.log('connected to database');
+		await mongoose.connect(uri);
+		console.log('Connected to MongoDB via Mongoose');
 	} catch (error) {
-		console.error(error);
+		console.error('MongoDB Connection Error:', error);
 		process.exit(1);
 	}
 }
 
 // GET request to get all games
-app.get('/api/all', async (req, res) => {
-	const sports = [
-		'football',
-		'volleyball',
-		'girls-basketball',
-		'boys-basketball',
-	];
-	let allGames = [];
-
-	try {
-		for (const s of sports) {
-			const collection = db.collection(s);
-			const results = await collection.find({}).sort({ date: 1 }).toArray();
-			allGames.push(...results);
-		}
-		res.json(allGames);
-	} catch (error) {
-		console.error('Error fetching data:', error);
-		res.status(500).json({ error: error.message });
-	}
-});
+app.get('/api/all', scheduleRouter);
 
 // GET request to get specific sport schedule
 app.get('/api/:sport', async (req, res) => {
@@ -65,12 +45,6 @@ app.get('/api/:sport', async (req, res) => {
 		console.error('Error fetching data:', error);
 		res.status(500).json({ error: error.message });
 	}
-});
-
-process.on('SIGINT', async () => {
-	console.log('Closing MongoDB connection...');
-	await client.close();
-	process.exit(0);
 });
 
 const PORT = process.env.PORT || 3030;

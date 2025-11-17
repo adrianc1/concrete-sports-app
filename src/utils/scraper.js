@@ -12,7 +12,7 @@ import * as cheerio from 'cheerio';
 // ];
 
 async function fetchAndExtractSchedules(sources) {
-	const allGames = [];
+	const rawGames = [];
 
 	const fetchPromises = sources.map(async (source) => {
 		const { url, sportId } = source;
@@ -50,7 +50,7 @@ async function fetchAndExtractSchedules(sources) {
 					location: row.find('.col_group3 .event_location').text().trim(),
 				};
 
-				allGames.push(game);
+				rawGames.push(game);
 			});
 		} catch {
 			return null;
@@ -61,11 +61,11 @@ async function fetchAndExtractSchedules(sources) {
 
 	results.forEach((gameArray) => {
 		if (gameArray) {
-			allGames.push(...gameArray);
+			rawGames.push(...gameArray);
 		}
 	});
 
-	return allGames;
+	return rawGames;
 }
 
 export default fetchAndExtractSchedules;
