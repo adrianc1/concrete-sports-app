@@ -1,54 +1,72 @@
 import * as cheerio from 'cheerio';
 
-async function scheduleScraper(url) {
-	const games = [];
-	try {
-		const response = await fetch(url);
-		if (!response.ok) {
-			throw new Error(`'not good!' ${response.status}`);
+const SPORTS_MAP = [
+	{
+		sportId: 'Volleyball',
+		url: 'https://www.wpanetwork.com/widgets/widget-wiaa-event-list.php?sport_id=10&school_year=2025-26&classification=1B&school_id=43&date_range_kword=season&include_styles=1&output_mode=plain&utm_source=WA_wiaa',
+	},
+	{
+		sportId: 'Boys Basketball',
+		url: 'https://www.wpanetwork.com/widgets/widget-wiaa-event-list.php?sport_id=3&school_year=2025-26&classification=1B&school_id=43&date_range_kword=season&include_styles=1&output_mode=plain&utm_source=WA_wiaa',
+	},
+];
+
+async function fetchAndExtractSchedules(sources) {
+	const allGames = [];
+
+	const results = await Promise.all(
+		sources.map(async (source) => {
+			const { url, sportId } = source;
+			try {
+				const response = await fetch(url);
+				if (!response.ok) {
+					throw new Error(`'not good!' ${response.status}`);
+				}
+
+				const htmlContent = await response.text();
+				const $ = cheerio.load(htmlContent);
+
+				$('.events .event_row').each((i, element) => {
+					const row = $(element);
+					const game = {
+						sport: sportId,
+						date: row.find('.col_group1 .event_date_desktop').text().trim(),
+						time: row.find('.col_group1 .event_time').text().trim(),
+						home_team: row
+							.find('.col_group2 .event_team:nth-child(2) .event_team_name a')
+							.text()
+							.trim(),
+						home_score: row
+							.find('.col_group2 .event_team:nth-child(2) .event_team_score')
+							.text()
+							.trim(),
+						away_team: row
+							.find('.col_group2 .event_team:nth-child(1) .event_team_name a')
+							.text()
+							.trim(),
+						away_score: row
+							.find('.col_group2 .event_team:nth-child(1) .event_team_score')
+							.text()
+							.trim(),
+						location: row.find('.col_group3 .event_location').text().trim(),
+					};
+
+					allGames.push(game);
+				});
+			} catch (err) {
+				console.log(err);
+			}
+		})
+	);
+	results.forEach((gameArray) => {
+		if (gameArray) {
+			allGames.push(...gameArray);
 		}
+	});
 
-		const htmlContent = await response.text();
-		const $ = cheerio.load(htmlContent);
-		$('.events .event_row').each((i, element) => {
-			const row = $(element);
-			const date = row.find('.col_group1 .event_date_desktop').text().trim();
-			const time = row.find('.col_group1 .event_time').text().trim();
-			const home_team = row
-				.find('.col_group2 .event_team:nth-child(2) .event_team_name a')
-				.text()
-				.trim();
-			const home_score = row
-				.find('.col_group2 .event_team:nth-child(2) .event_team_score')
-				.text()
-				.trim();
-			const away_team = row
-				.find('.col_group2 .event_team:nth-child(1) .event_team_name a')
-				.text()
-				.trim();
-			const away_score = row
-				.find('.col_group2 .event_team:nth-child(1) .event_team_score')
-				.text()
-				.trim();
-			const location = row.find('.col_group3 .event_location').text().trim();
-			const concat_id = date + time + home_team;
-			const game_id = concat_id.replaceAll(' ', '');
-
-			games.push({
-				game_id,
-				date,
-				time,
-				home_team,
-				home_score,
-				away_team,
-				away_score,
-				location,
-			});
-		});
-	} catch (err) {
-		console.log(err);
-	}
-	return games;
+	console.log(allGames);
 }
 
-export default scheduleScraper;
+fetchAndExtractSchedules(SPORTS_MAP);
+
+export default fetchAndExtractSchedules;
