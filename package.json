@@ -8,11 +8,13 @@
 		"build": "vite build",
 		"lint": "eslint .",
 		"preview": "vite preview",
-		"start": "vite"
+		"start": "vite",
+		"scrape": "node src/utils/scheduleScraper.js"
 	},
 	"dependencies": {
 		"@emailjs/browser": "^4.4.1",
 		"bootstrap": "^5.3.3",
+		"cheerio": "^1.1.2",
 		"cors": "^2.8.5",
 		"dotenv": "^17.2.3",
 		"express": "^5.1.0",
