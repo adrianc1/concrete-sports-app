@@ -73,30 +73,28 @@ const RecentGames = () => {
 									const opponentScore = parts[2];
 									const outcome = parts[4];
 									return (
-										<>
-											<div className="game-card game-1">
-												<div className="game-info-card">
-													<div className="game-date">{game.date}</div>
-													<div className="sport-name">
-														{sportEmojis[game.sport.toUpperCase()] || '🏆'}{' '}
-														{game.sport}
-													</div>
-												</div>
-												<div className="score-container">
-													<div className="team-container">
-														<div className="team-name">Concrete</div>
-														<div className="team-score">{concreteScore}</div>
-													</div>
-													<div className="team-container">
-														<div className="team-name">{game.opponent}</div>
-														<div className="team-score">{opponentScore}</div>
-													</div>
-													<Link to={`${game.sport}Schedule`}>
-														<button className="see-schedule">Schedule</button>
-													</Link>
+										<div key={game._id} className="game-card game-1">
+											<div className="game-info-card">
+												<div className="game-date">{game.date}</div>
+												<div className="sport-name">
+													{sportEmojis[game.sport.toUpperCase()] || '🏆'}{' '}
+													{game.sport}
 												</div>
 											</div>
-										</>
+											<div className="score-container">
+												<div className="team-container">
+													<div className="team-name">Concrete</div>
+													<div className="team-score">{concreteScore}</div>
+												</div>
+												<div className="team-container">
+													<div className="team-name">{game.opponent}</div>
+													<div className="team-score">{opponentScore}</div>
+												</div>
+												<Link to={`${game.sport}Schedule`}>
+													<button className="see-schedule">Schedule</button>
+												</Link>
+											</div>
+										</div>
 									);
 								})}
 				</div>

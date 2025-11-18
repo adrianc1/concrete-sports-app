@@ -34,8 +34,6 @@ async function connectDB() {
 // GET request to get all games
 app.use('/api', scheduleRouter);
 
-// GET request to get specific sport schedule
-
 const PORT = process.env.PORT || 3030;
 
 connectDB().then(() => {

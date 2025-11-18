@@ -12,19 +12,21 @@ const SCHEDULE_SOURCES = [
 	},
 ];
 const getAllGames = async (req, res) => {
+	const sports = [
+		'volleyball',
+		'football',
+		'boys-basketball',
+		'girls-basketball',
+	];
+	const allGames = [];
 	try {
-		const db = mongoose.connection.db;
-		const collections = await db.listCollections().toArray();
-		console.log(
-			'Available collections:',
-			collections.map((c) => c.name)
-		);
-
-		const volleyball = db.collection('volleyball');
-		const docs = await volleyball.find({}).toArray();
-		console.log('Direct query found:', docs.length, 'documents');
-
-		res.json(docs);
+		for (const s of sports) {
+			const db = mongoose.connection.db;
+			const sport = db.collection(s);
+			const docs = await sport.find({}).toArray();
+			allGames.push(...docs);
+		}
+		res.json(allGames);
 	} catch (error) {
 		console.error('Error:', error);
 		res.status(500).json({ error: error.message });
