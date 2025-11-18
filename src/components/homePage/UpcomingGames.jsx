@@ -25,14 +25,16 @@ export default function UpcomingGames() {
 	}, []);
 
 	const sportEmojis = {
-		VOLLEYBALL: '🏐',
-		FOOTBALL: '🏈',
-		BASKETBALL: '🏀',
-		SOCCER: '⚽',
-		BASEBALL: '⚾',
-		SOFTBALL: '🥎',
-		TRACK: '🏃',
-		WRESTLING: '🤼',
+		volleyball: '🏐',
+		football: '🏈',
+		'boys-basketball': '🏀',
+		'girls-basketball': '🏀',
+		soccer: '⚽',
+		baseball: '⚾',
+		softball: '🥎',
+		track: '🏃',
+		wrestling: '🤼',
+		swimming: '🏊',
 	};
 
 	return (
@@ -71,12 +73,12 @@ export default function UpcomingGames() {
 								})
 								.slice(0, 4)
 								.map((game, index) => {
+									// console.log('Game sport:', game.sport);
+
 									return (
 										<div key={index} className="upcoming-game-card">
 											<div className="game-sport">
-												{sportEmojis[game.sport.toUpperCase()] || '🏆'}{' '}
-												{game.level.includes('Boys') ? 'BOYS' : 'GIRLS'}{' '}
-												{game.sport}
+												{sportEmojis[game.sport] || '🏆'} {game.sport}
 											</div>
 											<div className="game-details">
 												<div className="game-date">
@@ -86,11 +88,7 @@ export default function UpcomingGames() {
 													{game.location === 'Away' ? '@' : 'vs'}{' '}
 													{game.opponent}
 												</div>
-												<Link
-													to={`${
-														game.level.includes('Boys') ? 'BOYS' : 'GIRLS'
-													}-${game.sport}Schedule`}
-												>
+												<Link to={`${game.sport}Schedule`}>
 													<button className="see-schedule">Schedule</button>
 												</Link>
 											</div>

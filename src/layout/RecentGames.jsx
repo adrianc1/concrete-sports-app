@@ -8,15 +8,16 @@ const RecentGames = () => {
 	const [upcomingGames, setUpcomingGames] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const sportEmojis = {
-		VOLLEYBALL: '🏐',
-		FOOTBALL: '🏈',
-		BASKETBALL: '🏀',
-		SOCCER: '⚽',
-		BASEBALL: '⚾',
-		SOFTBALL: '🥎',
-		TRACK: '🏃',
-		WRESTLING: '🤼',
-		SWIMMING: '🏊',
+		volleyball: '🏐',
+		football: '🏈',
+		'boys-basketball': '🏀',
+		'girls-basketball': '🏀',
+		soccer: '⚽',
+		baseball: '⚾',
+		softball: '🥎',
+		track: '🏃',
+		wrestling: '🤼',
+		swimming: '🏊',
 	};
 
 	useEffect(() => {
@@ -25,6 +26,7 @@ const RecentGames = () => {
 				setLoading(true);
 				const data = await fetchUpcomingGames();
 				setUpcomingGames(data);
+				console.log(data);
 			} catch (error) {
 				console.log(error, 'cannot fetch upcoming games!');
 			} finally {
@@ -68,27 +70,31 @@ const RecentGames = () => {
 								})
 								.slice(0, 4)
 								.map((game, index) => {
-									const parts = game.result.split(' ');
-									const concreteScore = parts[0];
-									const opponentScore = parts[2];
-									const outcome = parts[4];
+									console.log('recent gamesport:', game.sport);
+									// const parts = game.result.split(' ');
+									// const concreteScore = parts[0];
+									// const opponentScore = parts[2];
+									// const outcome = parts[4];
 									return (
 										<div key={game._id} className="game-card game-1">
 											<div className="game-info-card">
 												<div className="game-date">{game.date}</div>
 												<div className="sport-name">
-													{sportEmojis[game.sport.toUpperCase()] || '🏆'}{' '}
-													{game.sport}
+													{sportEmojis[game.sport] || '🏆'} {game.sport}
 												</div>
 											</div>
 											<div className="score-container">
 												<div className="team-container">
 													<div className="team-name">Concrete</div>
-													<div className="team-score">{concreteScore}</div>
+													<div className="team-score">
+														{game.concrete_score}
+													</div>
 												</div>
 												<div className="team-container">
 													<div className="team-name">{game.opponent}</div>
-													<div className="team-score">{opponentScore}</div>
+													<div className="team-score">
+														{game.opponent_score}
+													</div>
 												</div>
 												<Link to={`${game.sport}Schedule`}>
 													<button className="see-schedule">Schedule</button>

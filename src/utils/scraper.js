@@ -1,21 +1,10 @@
 import * as cheerio from 'cheerio';
 
-// const SPORTS_MAP = [
-// 	{
-// 		sportId: 'Volleyball',
-// 		url: 'https://www.wpanetwork.com/widgets/widget-wiaa-event-list.php?sport_id=10&school_year=2025-26&classification=1B&school_id=43&date_range_kword=season&include_styles=1&output_mode=plain&utm_source=WA_wiaa',
-// 	},
-// 	{
-// 		sportId: 'Boys Basketball',
-// 		url: 'https://www.wpanetwork.com/widgets/widget-wiaa-event-list.php?sport_id=3&school_year=2025-26&classification=1B&school_id=43&date_range_kword=season&include_styles=1&output_mode=plain&utm_source=WA_wiaa',
-// 	},
-// ];
-
 async function fetchAndExtractSchedules(sources) {
 	const rawGames = [];
 
 	const fetchPromises = sources.map(async (source) => {
-		const { url, sportId } = source;
+		const { url, sport } = source;
 		try {
 			const response = await fetch(url);
 			if (!response.ok) {
@@ -28,7 +17,7 @@ async function fetchAndExtractSchedules(sources) {
 			$('.events .event_row').each((i, element) => {
 				const row = $(element);
 				const game = {
-					sport: sportId,
+					sport: sport,
 					date: row.find('.col_group1 .event_date_desktop').text().trim(),
 					time: row.find('.col_group1 .event_time').text().trim(),
 					home_team: row
@@ -57,13 +46,7 @@ async function fetchAndExtractSchedules(sources) {
 		}
 	});
 
-	const results = await Promise.all(fetchPromises);
-
-	results.forEach((gameArray) => {
-		if (gameArray) {
-			rawGames.push(...gameArray);
-		}
-	});
+	await Promise.all(fetchPromises);
 
 	return rawGames;
 }
