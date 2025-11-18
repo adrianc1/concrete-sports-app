@@ -21,7 +21,7 @@
 		"lucide": "^0.536.0",
 		"lucide-react": "^0.536.0",
 		"mongodb": "^6.20.0",
-		"mongoose": "^8.19.4",
+		"mongoose": "^8.20.0",
 		"puppeteer": "^24.2.1",
 		"react": "^19.0.0",
 		"react-bootstrap": "^2.10.9",
