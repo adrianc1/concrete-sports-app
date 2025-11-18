@@ -33,25 +33,27 @@ const getAllGames = async (req, res) => {
 	}
 };
 
+async function getSportSchedule(req, res) {
+	try {
+		const db = mongoose.connection.db;
+		const sport = req.params.sport;
+		const collection = db.collection(sport);
+		const results = await collection.find({}).sort({ date: 1 }).toArray();
+		res.json(results);
+	} catch (error) {
+		console.error('Error fetching data:', error);
+		res.status(500).json({ error: error.message });
+	}
+}
+
 async function syncSchedules() {
 	// Scrape data (get rawGames)
 	// const rawGames = await fetchAndExtractSchedules(SCHEDULE_SOURCES);
 	// Step 3: Implement the grouping and Mongoose upsert logic (Model.bulkWrite)
 }
 
-// async function getSportSchedule(req, res) {
-// 	try {
-// 		const sport = req.params.sport;
-// 		const collection = sport.find();
-// 		const results = await collection.find({}).sort({ date: 1 }).toArray();
-// 		res.json(results);
-// 	} catch (error) {
-// 		console.error('Error fetching data:', error);
-// 		res.status(500).json({ error: error.message });
-// 	}
-// }
-
 export default {
 	getAllGames,
 	syncSchedules,
+	getSportSchedule,
 };
