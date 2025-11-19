@@ -11,6 +11,9 @@
 	"author": "",
 	"license": "ISC",
 	"type": "module",
+	"imports": {
+		"#utils/*": "./src/utils/*.js"
+	},
 	"dependencies": {
 		"cors": "^2.8.5",
 		"dotenv": "^17.2.3",
