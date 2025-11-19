@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
 import fetchAndExtractSchedules from '../utils/scraper.js';
 import transformGame from '../utils/transformGame.js';
-import { RiArrowGoForwardFill } from 'react-icons/ri';
 
 const SCHEDULE_SOURCES = [
 	{
