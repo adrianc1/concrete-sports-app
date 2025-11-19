@@ -29,10 +29,14 @@ const getAllGames = async (req, res) => {
 	];
 	const allGames = [];
 	try {
+		console.log('Fetching from sports:', sports); //debug
+
 		for (const s of sports) {
 			const db = mongoose.connection.db;
 			const sport = db.collection(s);
 			const docs = await sport.find({}).toArray();
+			console.log(`Found ${docs.length} docs in ${s}`); //debug
+
 			allGames.push(...docs);
 		}
 		res.json(allGames);
