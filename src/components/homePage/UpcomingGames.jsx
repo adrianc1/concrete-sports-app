@@ -37,6 +37,18 @@ export default function UpcomingGames() {
 		swimming: '🏊',
 	};
 
+	const transformSport = {
+		volleyball: 'Volleyball',
+		football: 'Football',
+		'boys-basketball': 'Boys Basketball',
+		'girls-basketball': 'Girls Basketball',
+		soccer: 'Soccer',
+		baseball: 'Baseball',
+		softball: 'Softball',
+		track: 'Track',
+		wrestling: 'Wrestling',
+	};
+
 	return (
 		<div className="upcoming-schedules">
 			<h3 className="recent-scores-title team-schedule-title">
@@ -78,7 +90,8 @@ export default function UpcomingGames() {
 									return (
 										<div key={index} className="upcoming-game-card">
 											<div className="game-sport">
-												{sportEmojis[game.sport] || '🏆'} {game.sport}
+												{sportEmojis[game.sport] || '🏆'}{' '}
+												{transformSport[game.sport]}
 											</div>
 											<div className="game-details">
 												<div className="game-date">

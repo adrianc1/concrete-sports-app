@@ -94,7 +94,7 @@ body {
 	flex: 1;
 	white-space: nowrap;
 	text-overflow: ellipsis;
-	max-width: 140px;
+	max-width: 120px;
 	overflow: hidden;
 }
 
@@ -326,6 +326,10 @@ a {
 
 	.see-schedule {
 		font-size: 0.9rem;
+	}
+
+	.team-name {
+		max-width: 140px;
 	}
 }
 

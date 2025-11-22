@@ -17,7 +17,17 @@ const RecentGames = () => {
 		softball: '🥎',
 		track: '🏃',
 		wrestling: '🤼',
-		swimming: '🏊',
+	};
+	const transformSport = {
+		volleyball: 'Volleyball',
+		football: 'Football',
+		'boys-basketball': 'Boys Basketball',
+		'girls-basketball': 'Girls Basketball',
+		soccer: 'Soccer',
+		baseball: 'Baseball',
+		softball: 'Softball',
+		track: 'Track',
+		wrestling: 'Wrestling',
 	};
 
 	useEffect(() => {
@@ -80,7 +90,8 @@ const RecentGames = () => {
 											<div className="game-info-card">
 												<div className="game-date">{game.date}</div>
 												<div className="sport-name">
-													{sportEmojis[game.sport] || '🏆'} {game.sport}
+													{sportEmojis[game.sport] || '🏆'}{' '}
+													{transformSport[game.sport]}
 												</div>
 											</div>
 											<div className="score-container">
