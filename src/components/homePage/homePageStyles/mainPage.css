@@ -11,7 +11,7 @@ body {
 }
 
 .recent-scores-title {
-	font-size: 2.25rem;
+	font-size: 2rem;
 	font-weight: 800;
 	color: #4a007b;
 	text-align: center;
@@ -50,9 +50,9 @@ body {
 .game-card {
 	border: 1px solid #4a007b;
 	border-radius: 8px;
-	height: 275px;
+	height: 230px;
 	width: 100%;
-	max-width: 300px;
+	max-width: 275px;
 	flex: 1;
 }
 
@@ -61,7 +61,7 @@ body {
 	font-weight: 600;
 	display: flex;
 	flex-direction: column;
-	gap: 12px;
+	gap: 8px;
 	padding-left: 12px;
 	box-shadow: 0px 12px 24px #4a007b5b;
 }
@@ -74,7 +74,7 @@ body {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
+	gap: 12px;
 	justify-content: flex-start;
 }
 
@@ -90,11 +90,11 @@ body {
 
 .team-name {
 	font-size: 1.1rem;
-	font-weight: 600;
+	font-weight: 400;
 	flex: 1;
 	white-space: nowrap;
 	text-overflow: ellipsis;
-	max-width: 120px;
+	max-width: 140px;
 	overflow: hidden;
 }
 
@@ -344,6 +344,9 @@ a {
 	.icon-container {
 		width: 90%;
 		height: 18rem;
+	}
+	.recent-games {
+		justify-content: center;
 	}
 }
 

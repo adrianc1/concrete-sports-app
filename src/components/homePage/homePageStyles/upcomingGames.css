@@ -21,9 +21,9 @@
 .upcoming-game-card {
 	border: 1px solid #4a007b;
 	border-radius: 8px;
-	height: 275px;
+	height: 225px;
 	width: 100%;
-	max-width: 300px;
+	max-width: 275px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -47,16 +47,15 @@
 
 .game-details {
 	margin-top: 20px;
-	/* margin-bottom: 16px; */
 	padding: 0 12px;
 	height: 100%;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
+	gap: 10px;
 	justify-content: flex-start;
 	font-size: 1.1rem;
-	font-weight: 600;
+	font-weight: 400;
 	flex: 1;
 	white-space: nowrap;
 	text-overflow: ellipsis;
@@ -68,4 +67,10 @@
 	text-overflow: ellipsis;
 	max-width: 150px;
 	overflow: hidden;
+}
+
+@media (min-width: 767px) {
+	.upcoming-games-grid {
+		justify-content: center;
+	}
 }

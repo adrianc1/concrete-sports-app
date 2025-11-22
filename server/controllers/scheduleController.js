@@ -29,13 +29,10 @@ const getAllGames = async (req, res) => {
 	];
 	const allGames = [];
 	try {
-		console.log('Fetching from sports:', sports); //debug
-
 		for (const s of sports) {
 			const db = mongoose.connection.db;
 			const sport = db.collection(s);
 			const docs = await sport.find({}).toArray();
-			console.log(`Found ${docs.length} docs in ${s}`); //debug
 
 			allGames.push(...docs);
 		}
@@ -60,11 +57,11 @@ async function getSportSchedule(req, res) {
 }
 
 async function syncSchedules(req, res) {
-	// Scrape data (get rawGames)
 	console.log('sync starting...');
 	try {
 		console.log('fetching...');
 
+		// Scrape data (get rawGames)
 		const rawGames = await fetchAndExtractSchedules(SCHEDULE_SOURCES);
 
 		// group games by sport
@@ -79,9 +76,8 @@ async function syncSchedules(req, res) {
 			gamesBySport[rawGame.sport].push(transformedGame);
 		});
 
-		console.log('games so far: ', gamesBySport);
-
 		for (const [sport, games] of Object.entries(gamesBySport)) {
+			console.log(gamesBySport);
 			const db = mongoose.connection.db;
 			const collection = db.collection(sport);
 			const bulkOps = games.map((game) => ({
