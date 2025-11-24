@@ -56,7 +56,7 @@ async function getSportSchedule(req, res) {
 	}
 }
 
-async function syncSchedules(req, res) {
+async function syncSchedules() {
 	console.log('sync starting...');
 	try {
 		console.log('fetching...');
@@ -76,6 +76,7 @@ async function syncSchedules(req, res) {
 			gamesBySport[rawGame.sport].push(transformedGame);
 		});
 
+		// upsert games in to schedule database
 		for (const [sport, games] of Object.entries(gamesBySport)) {
 			const db = mongoose.connection.db;
 			const collection = db.collection(sport);
@@ -98,7 +99,6 @@ async function syncSchedules(req, res) {
 			}
 		}
 		console.log('Schedule sync complete');
-		res.json({ success: true, message: 'Schedules synced successfully' });
 	} catch (error) {
 		console.error('Error syncing schedules:', error);
 		throw error;
