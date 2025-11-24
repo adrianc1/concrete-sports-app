@@ -1,4 +1,5 @@
 const transformGame = (rawGame) => {
+	// Find is Concrete is home or away team
 	const isConcreteHome = rawGame.home_team === 'Concrete';
 	const concreteScore = isConcreteHome
 		? rawGame.home_score
@@ -23,8 +24,22 @@ const transformGame = (rawGame) => {
 		result = `${concreteScoreNum} - ${opponentScoreNum} ${outcome}`;
 	}
 
+	// Add year to game data
+	let sportYear = 2025;
+	let gameDateString = rawGame.date.replace(/,/g, '');
+	let gameDateArray = gameDateString.split(' ');
+	const gameMonthStr = gameDateArray[1];
+	const gameDay = parseInt(gameDateArray[2]);
+
+	const monthIndex = new Date(Date.parse(gameMonthStr + ' 1')).getMonth();
+
+	if (monthIndex < 6) {
+		sportYear += 1;
+	}
+	const transformedDate = `${gameMonthStr} ${gameDay} ${sportYear}`;
+
 	return {
-		date: rawGame.date,
+		date: transformedDate,
 		time: rawGame.time,
 		opponent: isConcreteHome
 			? rawGame.away_team.trim()

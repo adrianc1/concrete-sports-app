@@ -77,7 +77,6 @@ async function syncSchedules(req, res) {
 		});
 
 		for (const [sport, games] of Object.entries(gamesBySport)) {
-			console.log(gamesBySport);
 			const db = mongoose.connection.db;
 			const collection = db.collection(sport);
 			const bulkOps = games.map((game) => ({
