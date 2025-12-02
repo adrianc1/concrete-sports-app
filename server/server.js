@@ -33,7 +33,7 @@ async function connectDB() {
 	}
 }
 
-// GET request to get all games
+// GET request to get games
 app.use('/api', scheduleRouter);
 
 const PORT = process.env.PORT || 3030;
