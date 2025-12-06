@@ -1,7 +1,7 @@
 import cron from 'node-cron';
 import scheduleController from '../controllers/scheduleController.js';
 
-cron.schedule('0 6 * * *', () => {
+cron.schedule('0 23 * * *', () => {
 	scheduleController.syncSchedules();
 });
 

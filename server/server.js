@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import scheduleRouter from './routes/scheduleRoutes.js';
+import './utils/cron-scraper.js';
 
 dotenv.config();
 
