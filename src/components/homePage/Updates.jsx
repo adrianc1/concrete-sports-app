@@ -26,9 +26,9 @@ function Updates() {
 				<li>
 					<span className="event-info">
 						🏀 Boys and Girls Basketball Season Begins
-						<span className="start-date">December 6, 2025</span>
+						<span className="start-date">December 5, 2025</span>
 					</span>
-					<span className="start-time">1:00 PM</span>
+					<span className="start-time">4:30 PM</span>
 				</li>
 			</ul>
 		</div>
