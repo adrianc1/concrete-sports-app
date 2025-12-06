@@ -31,10 +31,10 @@ function SideNavBar({ show, logo }) {
 			<ul className="nav-schedule">
 				<h4>Team Schedules</h4>
 				<li>
-					<Link to="schedulePage">Boys Basketball</Link>
+					<Link to="/BOYS-BASKETBALLSchedule">Boys Basketball</Link>
 				</li>
 				<li>
-					<Link to="/girlsBballSchedule">Girls Basketball</Link>
+					<Link to="/GIRLS-BASKETBALLSchedule">Girls Basketball</Link>
 				</li>
 				<li>
 					<Link to="/footballSchedule">Football</Link>
