@@ -76,10 +76,16 @@ async function syncSchedules() {
 			gamesBySport[rawGame.sport].push(transformedGame);
 		});
 
-		// upsert games in to schedule database
+		const db = mongoose.connection.db;
+
 		for (const [sport, games] of Object.entries(gamesBySport)) {
-			const db = mongoose.connection.db;
 			const collection = db.collection(sport);
+
+			// Build composite keys for all scraped games
+			const scrapedGameKeys = games.map(
+				(g) => `${g.date}|${g.time}|${g.away_team}|${g.home_team}`
+			);
+
 			const bulkOps = games.map((game) => ({
 				updateOne: {
 					filter: {
@@ -93,11 +99,41 @@ async function syncSchedules() {
 				},
 			}));
 
+			// Upsert operations
 			if (bulkOps.length > 0) {
 				await collection.bulkWrite(bulkOps);
 				console.log(`Synced ${games.length} games for ${sport}`);
 			}
+
+			// Delete games that are no longer in the scraped data
+			const deleteResult = await collection.deleteMany({
+				$expr: {
+					$not: {
+						$in: [
+							{
+								$concat: [
+									{ $toString: '$date' },
+									'|',
+									{ $toString: '$time' },
+									'|',
+									'$away_team',
+									'|',
+									'$home_team',
+								],
+							},
+							scrapedGameKeys,
+						],
+					},
+				},
+			});
+
+			if (deleteResult.deletedCount > 0) {
+				console.log(
+					`Removed ${deleteResult.deletedCount} old games from ${sport}`
+				);
+			}
 		}
+
 		console.log('Schedule sync complete');
 	} catch (error) {
 		console.error('Error syncing schedules:', error);
