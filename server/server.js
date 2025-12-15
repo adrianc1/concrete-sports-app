@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import scheduleRouter from './routes/scheduleRoutes.js';
-// import scheduleController from '../server/controllers/scheduleController.js';
+import scheduleController from '../server/controllers/scheduleController.js';
 import './utils/cron-scraper.js';
 
 dotenv.config();
@@ -40,7 +40,7 @@ app.use('/api', scheduleRouter);
 
 const PORT = process.env.PORT || 3030;
 
-// scheduleController.syncSchedules();
+scheduleController.syncSchedules();
 
 connectDB().then(() => {
 	app.listen(PORT, () => {
