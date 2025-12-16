@@ -30,13 +30,13 @@ const BottomNav = () => {
 					</Link>
 				</li>
 				<li className="bottom-nav-list-item">
-					<Link to="playersOfTheMonth" className="nav-link">
+					<Link to="/playersOfTheMonth" className="nav-link">
 						<PiUsers />
 						<span>Spotlight</span>
 					</Link>
 				</li>
 				<li className="bottom-nav-list-item">
-					<Link to="boosters" className="nav-link">
+					<Link to="/boosters" className="nav-link">
 						<GiLion />
 						<span>Booster</span>
 					</Link>

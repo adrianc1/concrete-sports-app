@@ -2,6 +2,7 @@
 
 /* Main Container */
 .schedule-card {
+	width: 100vw;
 	max-width: 800px;
 	margin: 2rem auto;
 	padding: 2.5rem;

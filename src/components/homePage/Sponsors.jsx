@@ -102,12 +102,12 @@ function Sponsors() {
 		<div className="sponsor-container">
 			<ScrollToTop />
 
-			<Header
+			{/* <Header
 				toggleNav={() => setShowNav(!showNav)}
 				toggleIcon={() => setShowExitIcon(!showExitIcon)}
 				logo={logo}
 				display={showExitIcon}
-			/>
+			/> */}
 			<SideNavBar show={showNav} logo={logo} />
 			<div className="sponsors-content">
 				<h2 className="sponsors-title">Sponsors</h2>
