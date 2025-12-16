@@ -23,4 +23,7 @@
 	.copy {
 		font-size: 1rem;
 	}
+	.copyright {
+		padding-bottom: 1rem;
+	}
 }
