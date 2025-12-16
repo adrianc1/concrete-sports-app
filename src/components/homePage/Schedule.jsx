@@ -23,12 +23,6 @@ export default function Schedule() {
 		<div className="">
 			<ScrollToTop />
 
-			<Header
-				toggleNav={() => setShowNav(!showNav)}
-				toggleIcon={() => setShowExitIcon(!showExitIcon)}
-				logo={logo}
-				display={showExitIcon}
-			/>
 			<SideNavBar show={showNav} logo={logo} />
 			<ul className="schedule-card">
 				<h4>Team Schedules</h4>

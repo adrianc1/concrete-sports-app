@@ -10,16 +10,10 @@ import '../homePage/homePageStyles/player.css';
 
 function PlayersOfTheMonth() {
 	const [showNav, setShowNav] = useState(false);
-	const [showExitIcon, setShowExitIcon] = useState(false);
 	return (
 		<div>
 			<ScrollToTop />
-			<Header
-				toggleNav={() => setShowNav(!showNav)}
-				toggleIcon={() => setShowExitIcon(!showExitIcon)}
-				logo={logo}
-				display={showExitIcon}
-			/>
+
 			<SideNavBar show={showNav} logo={logo} />
 			<div className="player-of-the-month-page">
 				<h1 className="player-title">Athletes of the Month</h1>

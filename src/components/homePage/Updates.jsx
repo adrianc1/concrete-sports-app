@@ -12,12 +12,6 @@ function Updates() {
 		<div>
 			<ScrollToTop />
 
-			<Header
-				toggleNav={() => setShowNav(!showNav)}
-				toggleIcon={() => setShowExitIcon(!showExitIcon)}
-				logo={logo}
-				display={showExitIcon}
-			/>
 			<SideNavBar show={showNav} logo={logo} />
 			<div className="announcements-container">
 				<h2 className="annoucenment-title">Team Updates</h2>

@@ -64,12 +64,12 @@ function Contact() {
 		<div className="contact-container">
 			<ScrollToTop />
 
-			<Header
+			{/* <Header
 				toggleNav={() => setShowNav(!showNav)}
 				toggleIcon={() => setShowExitIcon(!showExitIcon)}
 				logo={logo}
 				display={showExitIcon}
-			/>
+			/> */}
 			<SideNavBar show={showNav} logo={logo} />
 
 			<div className="contact-page">

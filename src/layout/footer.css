@@ -5,11 +5,11 @@
 	gap: 0.5rem;
 	padding: 1rem 0 5rem 0;
 	font-size: 0.9rem;
-	color: #fff;
+	color: #000000;
 }
 
 .copyright a {
-	color: #f2bc40;
+	color: rgb(66, 10, 114);
 	text-decoration: none;
 	font-weight: 600;
 	transition: color 0.2s ease;
