@@ -1,0 +1,110 @@
+.schedule-section {
+	display: none;
+	width: 100%;
+}
+
+@media (min-width: 768px) {
+	.schedule-section {
+		display: block;
+		max-width: 1200px;
+		margin: 40px auto;
+		padding: 0 20px;
+	}
+}
+
+.schedule-header {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.schedule-header h2 {
+	font-size: 2rem;
+	font-weight: 800;
+	color: #4a007b;
+	text-align: center;
+	margin: 2rem 0 1.5rem;
+	position: relative;
+	letter-spacing: -0.5px;
+}
+
+.schedule-header h2::after {
+	content: '';
+	display: block;
+	width: 80px;
+	height: 3px;
+	background-color: #f7a900;
+	border-radius: 2px;
+	margin: 0.75rem auto 0;
+}
+
+.schedule-header p {
+	font-size: 1.1em;
+	color: #666;
+}
+
+.sports-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 24px;
+	margin-bottom: 40px;
+}
+
+.sport-card {
+	background: white;
+	border-radius: 12px;
+	padding: 30px;
+	text-align: center;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease;
+	cursor: pointer;
+	border: 3px solid transparent;
+}
+
+.sport-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 16px rgba(107, 44, 145, 0.2);
+	border-color: #6b2c91;
+}
+
+.sport-icon {
+	font-size: 3em;
+	margin-bottom: 15px;
+	filter: grayscale(20%);
+}
+
+.sport-name {
+	font-size: 1.5em;
+	font-weight: 700;
+	color: #6b2c91;
+	margin-bottom: 8px;
+}
+
+.sport-season {
+	display: inline-block;
+	background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+	color: #6b2c91;
+	padding: 6px 16px;
+	border-radius: 20px;
+	font-size: 0.85em;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.lions-footer {
+	text-align: center;
+	padding: 30px;
+	background: linear-gradient(135deg, #6b2c91 0%, #8b3daf 100%);
+	border-radius: 12px;
+	color: white;
+}
+
+.lions-footer h3 {
+	font-size: 1.8em;
+	margin-bottom: 10px;
+}
+
+.lions-footer p {
+	font-size: 1.1em;
+	opacity: 0.95;
+}

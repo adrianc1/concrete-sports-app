@@ -81,10 +81,7 @@ const RecentGames = () => {
 								.slice(0, 4)
 								.map((game, index) => {
 									console.log('recent gamesport:', game.sport);
-									// const parts = game.result.split(' ');
-									// const concreteScore = parts[0];
-									// const opponentScore = parts[2];
-									// const outcome = parts[4];
+
 									return (
 										<div key={game._id} className="game-card game-1">
 											<div className="game-info-card">
