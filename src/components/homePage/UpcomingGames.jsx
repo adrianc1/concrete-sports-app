@@ -92,15 +92,14 @@ export default function UpcomingGames() {
 											<div className="game-sport">
 												{sportEmojis[game.sport] || '🏆'}{' '}
 												{transformSport[game.sport]}
-											</div>
-											<div className="game-details">
 												<div className="game-date">
 													{game.date} • {game.time}
 												</div>
-												<div className="game-matchup">
-													{game.location === 'Away' ? '@' : 'vs'}{' '}
-													{game.opponent}
-												</div>
+											</div>
+											<div className="game-matchup">
+												{game.location === 'Away' ? '@' : 'vs'} {game.opponent}
+											</div>
+											<div className="game-details">
 												<Link to={`${game.sport}Schedule`}>
 													<button className="see-schedule">Schedule</button>
 												</Link>
