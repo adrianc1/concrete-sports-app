@@ -56,18 +56,14 @@ const RecentGames = () => {
 						? Array(4)
 								.fill(0)
 								.map((_, index) => (
-									<div key={index} className="upcoming-game-card">
-										<div className="game-sport">
+									<div key={index} className="game-card">
+										<div className="game-info-card">
 											<Skeleton height={20} width={150} />
 										</div>
-										<div className="game-details">
-											<div className="game-date">
-												<Skeleton height={16} width={180} />
-											</div>
-											<div className="game-matchup">
-												<Skeleton height={16} width={140} />
-											</div>
-											<Skeleton height={36} width={100} borderRadius={4} />
+										<div className="score-container">
+											<Skeleton height={40} width="100%" />
+											<Skeleton height={40} width="100%" />
+											<Skeleton height={36} width="100%" borderRadius={20} />
 										</div>
 									</div>
 								))
@@ -80,13 +76,11 @@ const RecentGames = () => {
 								})
 								.slice(0, 4)
 								.map((game, index) => {
-									console.log('recent gamesport:', game.sport);
-
 									return (
-										<div key={game._id} className="game-card game-1">
+										<div key={game._id} className="game-card">
 											<div className="game-info-card">
 												<div className="game-date">{game.date}</div>
-												<div className="sport-name">
+												<div className="game-sport">
 													{sportEmojis[game.sport] || '🏆'}{' '}
 													{transformSport[game.sport]}
 												</div>

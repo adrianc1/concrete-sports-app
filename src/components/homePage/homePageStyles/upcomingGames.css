@@ -1,4 +1,4 @@
-.upcoming-schedules {
+/* .upcoming-schedules {
 	width: 95%;
 	height: 100%;
 	margin: 0 auto;
@@ -73,4 +73,153 @@
 	.upcoming-games-grid {
 		justify-content: center;
 	}
+} */
+
+.upcoming-schedules {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.upcoming-schedules-section {
+	width: 95%;
+	margin: 0 auto;
+}
+
+.upcoming-games-grid,
+.score-container {
+	width: 100%;
+	max-width: 1600px;
+	height: 255px;
+	padding: 0 20px;
+	gap: 20px;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	margin: 0 auto;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+
+.score-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.team-container {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.upcoming-game-card,
+.game-card {
+	background: white;
+	border-radius: 12px;
+	min-width: 240px;
+	max-width: 240px;
+	height: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease;
+	cursor: pointer;
+	border: 3px solid transparent;
+	overflow: hidden;
+	flex-shrink: 0;
+	padding: 12px 0;
+}
+
+@media (min-width: 480px) {
+	.upcoming-game-card {
+		min-width: 280px;
+		max-width: 280px;
+	}
+}
+
+/* .upcoming-game-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 16px rgba(107, 44, 145, 0.2);
+	border-color: #6b2c91;
+} */
+
+.game-sport-header {
+	background: linear-gradient(135deg, #6b2c91 0%, #8b3daf 100%);
+	color: white;
+	padding: 12px 16px;
+	font-weight: 700;
+	font-size: 1rem;
+	text-align: center;
+	letter-spacing: 0.5px;
+}
+
+.game-content {
+	padding: 24px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 16px;
+	flex: 1;
+}
+
+.game-icon-large {
+	font-size: 3.5em;
+	filter: grayscale(20%);
+	margin-bottom: 8px;
+}
+
+.game-info {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	width: 100%;
+	text-align: center;
+}
+
+.game-date {
+	font-size: 0.95rem;
+	color: #666;
+	font-weight: 500;
+}
+
+.game-matchup {
+	font-size: 1.1rem;
+	font-weight: 700;
+	color: #6b2c91;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.upcoming-game-card a {
+	text-decoration: none;
+	width: 100%;
+}
+
+.game-details {
+	text-align: center;
+	padding-bottom: 0.5rem;
+}
+
+.see-schedule {
+	align-self: center;
+	width: 90%;
+	margin: 0 auto;
+	background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+	color: #6b2c91;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 20px;
+	font-size: 0.9rem;
+	font-weight: 700;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.see-schedule:hover {
+	transform: scale(1.02);
+	box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
 }
