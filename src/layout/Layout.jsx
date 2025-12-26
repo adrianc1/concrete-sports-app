@@ -61,7 +61,7 @@ function Layout({ children }) {
 
 			{children}
 
-			<ScheduleSection />
+			{/* <ScheduleSection /> */}
 			<Footer />
 			<BottomNav />
 		</>

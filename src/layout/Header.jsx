@@ -22,7 +22,7 @@ export default function Header({ toggleNav, logo, display }) {
 			{/* Desktop Links */}
 			<nav className="desktop-nav">
 				<Link to="/schedules">Schedules</Link>
-				<Link to="/updates">Updates</Link>
+				{/* <Link to="/updates">Updates</Link> */}
 				<Link to="/sponsors">Sponsors</Link>
 				<Link to="/boosters">Booster Club</Link>
 				<Link to="/contact">Coach Connect</Link>
