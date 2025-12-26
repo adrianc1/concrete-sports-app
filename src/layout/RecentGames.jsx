@@ -100,9 +100,9 @@ const RecentGames = () => {
 														{game.opponent_score}
 													</div>
 												</div>
-												<Link to={`${game.sport}Schedule`}>
+												{/* <Link to={`${game.sport}Schedule`}>
 													<button className="see-schedule">Schedule</button>
-												</Link>
+												</Link> */}
 											</div>
 										</div>
 									);
