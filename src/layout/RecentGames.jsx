@@ -80,8 +80,10 @@ const RecentGames = () => {
 									return (
 										<div key={game._id} className="game-card">
 											<div className="game-sport">
-												{sportEmojis[game.sport] || '🏆'}{' '}
-												{transformSport[game.sport]}
+												<Link to={`${game.sport}Schedule`}>
+													{sportEmojis[game.sport] || '🏆'}{' '}
+													{transformSport[game.sport]}
+												</Link>
 												<div className="game-date game-date-final">
 													{game.date} • Final
 												</div>
@@ -100,9 +102,6 @@ const RecentGames = () => {
 														{game.opponent_score}
 													</div>
 												</div>
-												{/* <Link to={`${game.sport}Schedule`}>
-													<button className="see-schedule">Schedule</button>
-												</Link> */}
 											</div>
 										</div>
 									);
