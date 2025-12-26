@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Header from '../../layout/Header';
-import logo from '../../assets/Concrete-Logo.webp';
+import logo from '../../assets/Concrete-Logo.png';
 import SideNavBar from '../../layout/SideNavBar';
 import { Link } from 'react-router';
 import kayak from '../../assets/kayak2.webp';
@@ -8,7 +8,7 @@ import uptownAuto from '../../assets/uptown2.webp';
 import perks from '../../assets/perks5.webp';
 import annies from '../../assets/annies.webp';
 import cascade1 from '../../assets/cascade1.webp';
-import concreteLogo from '../../assets/boosterbanner.png';
+import concreteLogo from '../../assets/boosterbanner.webp';
 import dreaux from '../../assets/dreauxdigital.webp';
 import cascadeMountainLodge from '../../assets/cascademountainlodgeBanner.webp';
 import ScrollToTop from '../../layout/ScrollToTop';
