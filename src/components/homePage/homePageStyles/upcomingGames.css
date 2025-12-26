@@ -85,7 +85,6 @@
 	justify-content: space-between;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	transition: all 0.3s ease;
-	cursor: pointer;
 	border: 3px solid transparent;
 	overflow: hidden;
 	flex-shrink: 0;
