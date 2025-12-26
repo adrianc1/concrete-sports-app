@@ -1,15 +1,13 @@
-import { useState } from 'react';
-import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import ImageSlider from '../imageSlider/ImageSlider';
-import welcomeBanner from '../../assets/lionsbanner.png';
-import kayak from '../../assets/kayak2.png';
-import uptownAuto from '../../assets/uptown2.png';
-import perks from '../../assets/perks5.png';
-import annies from '../../assets/annies.png';
-import cascade1 from '../../assets/cascade1.png';
-import cascadelodge from '../../assets/cascademountainlodgeBanner.png';
-import cascadebar from '../../assets/indiancuisine.png';
+import welcomeBanner from '../../assets/lionsbanner.webp';
+import kayak from '../../assets/kayak2.webp';
+import uptownAuto from '../../assets/uptown2.webp';
+import perks from '../../assets/perks5.webp';
+import annies from '../../assets/annies.webp';
+import cascade1 from '../../assets/cascade1.webp';
+import cascadelodge from '../../assets/cascademountainlodgeBanner.webp';
+import cascadebar from '../../assets/indiancuisine.webp';
 import './banner.css';
 
 function Banner() {
