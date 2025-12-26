@@ -8,7 +8,7 @@ import uptownAuto from '../../assets/uptown2.webp';
 import perks from '../../assets/perks5.webp';
 import annies from '../../assets/annies.webp';
 import cascade1 from '../../assets/cascade1.webp';
-import concreteLogo from '../../assets/boosterbanner.webp';
+import concreteLogo from '../../assets/boosterbanner.png';
 import dreaux from '../../assets/dreauxdigital.webp';
 import cascadeMountainLodge from '../../assets/cascademountainlodgeBanner.webp';
 import ScrollToTop from '../../layout/ScrollToTop';
