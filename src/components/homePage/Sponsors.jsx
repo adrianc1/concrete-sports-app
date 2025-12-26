@@ -1,23 +1,22 @@
 import { useState } from 'react';
 import Header from '../../layout/Header';
-import logo from '../../assets/Concrete-Logo.png';
+import logo from '../../assets/Concrete-Logo.webp';
 import SideNavBar from '../../layout/SideNavBar';
 import { Link } from 'react-router';
-import kayak from '../../assets/kayak2.png';
-import uptownAuto from '../../assets/uptown2.png';
-import perks from '../../assets/perks5.png';
-import annies from '../../assets/annies.png';
-import cascade1 from '../../assets/cascade1.png';
-import concreteLogo from '../../assets/boosterbanner.png';
-import dreaux from '../../assets/dreauxdigital.png';
-import cascadeMountainLodge from '../../assets/cascademountainlodgeBanner.png';
+import kayak from '../../assets/kayak2.webp';
+import uptownAuto from '../../assets/uptown2.webp';
+import perks from '../../assets/perks5.webp';
+import annies from '../../assets/annies.webp';
+import cascade1 from '../../assets/cascade1.webp';
+import concreteLogo from '../../assets/boosterbanner.webp';
+import dreaux from '../../assets/dreauxdigital.webp';
+import cascadeMountainLodge from '../../assets/cascademountainlodgeBanner.webp';
 import ScrollToTop from '../../layout/ScrollToTop';
-import cascadebar from '../../assets/indiancuisine.png';
+import cascadebar from '../../assets/indiancuisine.webp';
 
 import '../homePage/homePageStyles/sponsors.css';
 function Sponsors() {
 	const [showNav, setShowNav] = useState(false);
-	const [showExitIcon, setShowExitIcon] = useState(false);
 
 	const sponsorList = [
 		{
