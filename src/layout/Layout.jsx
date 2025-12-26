@@ -8,7 +8,7 @@ import DownloadBanner from '../components/homePage/DownloadBanner';
 import DownloadModal from '../components/homePage/DownloadModal';
 import logo from '../assets/Concrete-Logo.png';
 import '../index.css';
-import ScheduleSection from './scheduleSection';
+// import ScheduleSection from './scheduleSection';
 
 function Layout({ children }) {
 	const [showNav, setShowNav] = useState(false);
