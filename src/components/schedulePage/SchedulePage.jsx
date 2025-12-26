@@ -57,7 +57,7 @@ function SchedulePage({ sportName, games, logo }) {
 										{game.result}
 									</div>
 								</div>
-								{game.watchLink !== 'n/a' && (
+								{/* {game.watchLink !== 'n/a' && (
 									<a
 										href={game.watchLink}
 										target="_blank"
@@ -66,7 +66,7 @@ function SchedulePage({ sportName, games, logo }) {
 									>
 										🎥 Watch Live
 									</a>
-								)}
+								)} */}
 							</ListGroupItem>
 						))
 				)}
