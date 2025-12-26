@@ -43,7 +43,8 @@ function SchedulePage({ sportName, games, logo }) {
 										<div>{game.time}</div>
 									</div>
 									<div>
-										{game.location?.includes('Away') ? '@' : ''} {game.opponent}
+										{game.home_away?.includes('Away') ? '@' : ''}{' '}
+										{game.opponent}
 									</div>
 									<div
 										style={{
