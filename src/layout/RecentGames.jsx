@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { fetchUpcomingGames } from '../utils/api';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
+import '../components/homePage/homePageStyles/upcomingGames.css';
 
 const RecentGames = () => {
 	const [upcomingGames, setUpcomingGames] = useState([]);
@@ -78,13 +79,14 @@ const RecentGames = () => {
 								.map((game, index) => {
 									return (
 										<div key={game._id} className="game-card">
-											<div className="game-info-card">
-												<div className="game-date">{game.date}</div>
-												<div className="game-sport">
-													{sportEmojis[game.sport] || '🏆'}{' '}
-													{transformSport[game.sport]}
+											<div className="game-sport">
+												{sportEmojis[game.sport] || '🏆'}{' '}
+												{transformSport[game.sport]}
+												<div className="game-date game-date-final">
+													{game.date} • Final
 												</div>
 											</div>
+
 											<div className="score-container">
 												<div className="team-container">
 													<div className="team-name">Concrete</div>
