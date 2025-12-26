@@ -1,16 +1,17 @@
 .banner {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 1rem;
 }
 
 .image-container {
-  width: 100%;
+	width: 100%;
 }
 
 @media (min-width: 768px) {
-  .banner {
-    width: 90vw;
-  }
+	.banner {
+		width: 90vw;
+	}
 }

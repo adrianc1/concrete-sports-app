@@ -3,19 +3,13 @@ import { Link } from 'react-router-dom';
 import './imageSlider.css';
 
 const ImageSlider = ({ slides }) => {
-	// Start at index 1 because index 0 is the duplicate last slide
 	const [currentIndex, setCurrentIndex] = useState(1);
 	const [isTransitioning, setIsTransitioning] = useState(true);
 	const trackRef = useRef(null);
 
 	const totalSlides = slides.length;
 
-	// Extended array with cloned first & last slides
-	const extendedSlides = [
-		slides[totalSlides - 1], // clone of last slide
-		...slides,
-		slides[0], // clone of first slide
-	];
+	const extendedSlides = [slides[totalSlides - 1], ...slides, slides[0]];
 
 	useEffect(() => {
 		slides.forEach((slide) => {
@@ -39,25 +33,21 @@ const ImageSlider = ({ slides }) => {
 		return () => clearInterval(interval);
 	}, []);
 
-	// Handle effect after sliding into a clone
 	useEffect(() => {
 		if (currentIndex === totalSlides + 1) {
-			// Reached cloned first slide
 			setTimeout(() => {
 				setIsTransitioning(false);
-				setCurrentIndex(1); // jump to real first slide
+				setCurrentIndex(1);
 			}, 500);
 		}
 		if (currentIndex === 0) {
-			// Reached cloned last slide
 			setTimeout(() => {
 				setIsTransitioning(false);
-				setCurrentIndex(totalSlides); // jump to real last slide
+				setCurrentIndex(totalSlides);
 			}, 500);
 		}
 	}, [currentIndex, totalSlides]);
 
-	// Re-enable transitions after extension
 	useEffect(() => {
 		if (!isTransitioning) {
 			requestAnimationFrame(() => {

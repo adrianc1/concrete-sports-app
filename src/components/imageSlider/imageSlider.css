@@ -1,92 +1,92 @@
 .slider-container {
-  width: 100%;
-  aspect-ratio: 2 / 1;
-  max-height: 200px;
-  position: relative;
-  overflow: hidden;
+	width: 100%;
+	aspect-ratio: 2 / 1;
+	max-height: 200px;
+	position: relative;
+	overflow: hidden;
 }
 
 .slider-wrapper {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
 }
 
 .slider-track {
-  display: flex;
-  height: 100%;
-  transition: transform 0.3s ease-in-out;
+	display: flex;
+	height: 100%;
+	transition: transform 0.3s ease-in-out;
 }
 
 .slide {
-  width: 100%;
-  flex: 0 0 100%;
-  height: 100%;
-  object-fit: contain;
+	width: 100%;
+	flex: 0 0 100%;
+	height: 100%;
+	object-fit: contain;
 }
 
 .arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2rem;
-  color: white;
-  cursor: pointer;
-  z-index: 2;
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 50%;
-  padding: 0.5rem;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 2rem;
+	color: white;
+	cursor: pointer;
+	z-index: 2;
+	background: rgba(0, 0, 0, 0.3);
+	border-radius: 50%;
+	padding: 0.5rem;
 
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .arrow.left {
-  left: 10px;
+	left: 10px;
 }
 
 .arrow.right {
-  right: 20px;
+	right: 20px;
 }
 
 .dots {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  bottom: 10px;
-  width: 100%;
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
 }
 
 .dot {
-  margin: 0 5px;
-  cursor: pointer;
-  font-size: 20px;
-  color: white;
-  opacity: 0.5;
+	margin: 0 5px;
+	cursor: pointer;
+	font-size: 20px;
+	color: white;
+	opacity: 0.5;
 }
 
 .dot.active {
-  opacity: 1;
+	opacity: 1;
 }
 
 @media (min-width: 768px) {
-  .slider-container {
-    aspect-ratio: 3 / 1;
-    max-height: 400px;
-    width: 100%;
-  }
-  .slide {
-    margin-top: 1rem;
-    object-fit: cover;
-  }
+	.slider-container {
+		aspect-ratio: 3 / 1;
+		max-height: 400px;
+		width: 100%;
+	}
+	.slide {
+		margin-top: 1rem;
+		object-fit: cover;
+	}
 }
 
 @media (min-width: 1200px) {
-  .slider-container {
-    aspect-ratio: 4 / 1;
-    max-height: 400px;
-  }
+	.slider-container {
+		aspect-ratio: 4 / 1;
+		max-height: 400px;
+	}
 }
