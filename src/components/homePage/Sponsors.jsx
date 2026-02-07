@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Header from '../../layout/Header';
 import logo from '../../assets/Concrete-Logo.png';
 import SideNavBar from '../../layout/SideNavBar';
 import { Link } from 'react-router';
@@ -101,12 +100,6 @@ function Sponsors() {
 		<div className="sponsor-container">
 			<ScrollToTop />
 
-			{/* <Header
-				toggleNav={() => setShowNav(!showNav)}
-				toggleIcon={() => setShowExitIcon(!showExitIcon)}
-				logo={logo}
-				display={showExitIcon}
-			/> */}
 			<SideNavBar show={showNav} logo={logo} />
 			<div className="sponsors-content">
 				<h2 className="sponsors-title">Sponsors</h2>

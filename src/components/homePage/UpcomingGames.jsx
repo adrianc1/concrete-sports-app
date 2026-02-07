@@ -85,8 +85,6 @@ export default function UpcomingGames() {
 								})
 								.slice(0, 4)
 								.map((game, index) => {
-									// console.log('Game sport:', game.sport);
-
 									return (
 										<div key={index} className="upcoming-game-card">
 											<div className="game-sport">
