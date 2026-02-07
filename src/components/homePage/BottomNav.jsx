@@ -1,6 +1,5 @@
 import { Link } from 'react-router';
 import { RiContactsLine } from 'react-icons/ri';
-import { RiMegaphoneLine } from 'react-icons/ri';
 import { PiUsers } from 'react-icons/pi';
 import { MdOutlineAddBusiness } from 'react-icons/md';
 import { GiLion } from 'react-icons/gi';

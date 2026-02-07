@@ -1,12 +1,10 @@
 import { useState } from 'react';
-import Header from '../../layout/Header';
 import logo from '../../assets/Concrete-Logo.png';
 import SideNavBar from '../../layout/SideNavBar';
 import ScrollToTop from '../../layout/ScrollToTop';
 import '../homePage/homePageStyles/contact.css';
 function Contact() {
 	const [showNav, setShowNav] = useState(false);
-	const [showExitIcon, setShowExitIcon] = useState(false);
 
 	const coachList = [
 		{
@@ -63,13 +61,6 @@ function Contact() {
 	return (
 		<div className="contact-container">
 			<ScrollToTop />
-
-			{/* <Header
-				toggleNav={() => setShowNav(!showNav)}
-				toggleIcon={() => setShowExitIcon(!showExitIcon)}
-				logo={logo}
-				display={showExitIcon}
-			/> */}
 			<SideNavBar show={showNav} logo={logo} />
 
 			<div className="contact-page">
@@ -85,7 +76,9 @@ function Contact() {
 								</span>
 								<span className="coach-email">
 									Email:{' '}
-									<a href={'mailto:' + coach.coachEmail}>{coach.coachEmail}</a>{' '}
+									<a href={'mailto:' + coach.coachEmail}>
+										{coach.coachEmail}
+									</a>{' '}
 								</span>
 							</li>
 						);

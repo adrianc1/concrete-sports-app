@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import '../homePage/homePageStyles/downloadbanner.css';
 export default function DownloadBanner({ setBannerActive, setShowModal }) {
 	function closeBanner() {

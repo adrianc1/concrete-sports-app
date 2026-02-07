@@ -20,12 +20,6 @@ function Boosters() {
 			<ScrollToTop />
 
 			<div className="nav">
-				{/* <Header
-					toggleNav={() => setShowNav(!showNav)}
-					toggleIcon={() => setShowExitIcon(!showExitIcon)}
-					logo={logo}
-					display={showExitIcon}
-				/> */}
 				<SideNavBar show={showNav} logo={logo} />
 			</div>
 
