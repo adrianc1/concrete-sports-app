@@ -17,7 +17,7 @@ export default function ScheduleSection() {
 			season: 'Winter',
 			icon: '🏀',
 		},
-		{ name: 'Wrestling', sport: 'wrestling', season: 'Winter', icon: '🤼' },
+		// { name: 'Wrestling', sport: 'wrestling', season: 'Winter', icon: '🤼' },
 		{ name: 'Baseball', sport: 'baseball', season: 'Spring', icon: '⚾' },
 		{ name: 'Softball', sport: 'softball', season: 'Spring', icon: '🥎' },
 		{ name: 'Track & Field', sport: 'track', season: 'Spring', icon: '🏃' },

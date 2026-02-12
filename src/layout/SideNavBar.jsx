@@ -51,9 +51,9 @@ function SideNavBar({ show, logo }) {
 				<li>
 					<Link to="/trackSchedule">Track</Link>
 				</li>
-				<li>
+				{/* <li>
 					<Link to="/wrestlingSchedule">Wrestling</Link>
-				</li>
+				</li> */}
 			</ul>
 			<div className="copyright">
 				<div className="top">
