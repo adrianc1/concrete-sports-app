@@ -7,7 +7,7 @@ import ComingSoon from '../../layout/ComingSoon';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './schedulePage.css';
 
-function SchedulePage({ sportName, games, logo }) {
+function SchedulePage({ sportName, games, logo, record }) {
 	const [showNav, setShowNav] = useState(false);
 
 	return (
@@ -16,6 +16,7 @@ function SchedulePage({ sportName, games, logo }) {
 			<ListGroup>
 				<BackToMainScheduleBtn />
 				<h2 className="sport-title">{sportName}</h2>
+				<h5 className="sport-record">Record: {record}</h5>
 
 				{/* If no games, show ComingSoon */}
 				{!games || games.length === 0 ? (

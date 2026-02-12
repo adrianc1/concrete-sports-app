@@ -111,6 +111,10 @@
 	margin: auto auto 0 auto;
 }
 
+.sport-record {
+	text-align: center;
+}
+
 @media (min-width: 768px) {
 	.list-group-item.game {
 		font-size: 1.1rem;
