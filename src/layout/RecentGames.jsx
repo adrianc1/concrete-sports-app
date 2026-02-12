@@ -37,7 +37,6 @@ const RecentGames = () => {
 				setLoading(true);
 				const data = await fetchUpcomingGames();
 				setUpcomingGames(data);
-				console.log(data);
 			} catch (error) {
 				console.log(error, 'cannot fetch upcoming games!');
 			} finally {
