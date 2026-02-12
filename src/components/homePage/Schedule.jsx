@@ -37,13 +37,10 @@ export default function Schedule() {
 				<li>
 					<Link to="/trackSchedule">🏃 Track</Link>
 				</li>
-				<li>
+				{/* <li>
 					<Link to="/wrestlingSchedule">🤼 Wrestling</Link>
-				</li>
+				</li> */}
 			</ul>
-			<p className="copyright">
-				<a href="https://dreauxdigital.com">Dreaux Digital</a> 2025&copy;
-			</p>
 		</div>
 	);
 }
