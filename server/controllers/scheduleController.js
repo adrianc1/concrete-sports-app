@@ -19,6 +19,14 @@ const SCHEDULE_SOURCES = [
 		sport: 'football',
 		url: 'https://www.wpanetwork.com/widgets/widget-wiaa-event-list.php?sport_id=1&school_year=2025-26&classification=1B&school_id=43&date_range_kword=season&include_styles=1&output_mode=plain&utm_source=WA_wiaa',
 	},
+	{
+		sport: 'softball',
+		url: 'https://www.wpanetwork.com/widgets/widget-wiaa-event-list.php?sport_id=15&school_year=2025-26&classification=1B&school_id=43&date_range_kword=season&include_styles=1&output_mode=plain&utm_source=WA_wiaa',
+	},
+	{
+		sport: 'baseball',
+		url: 'https://www.wpanetwork.com/widgets/widget-wiaa-event-list.php?sport_id=6&school_year=2025-26&classification=1B&school_id=43&date_range_kword=season&include_styles=1&output_mode=plain&utm_source=WA_wiaa',
+	},
 ];
 const getAllGames = async (req, res) => {
 	const sports = [
@@ -26,6 +34,8 @@ const getAllGames = async (req, res) => {
 		'girls-basketball',
 		'volleyball',
 		'football',
+		'softball',
+		'baseball',
 	];
 	const allGames = [];
 	try {

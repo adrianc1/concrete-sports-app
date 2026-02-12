@@ -1,5 +1,4 @@
 import puppeteer from 'puppeteer';
-import fs from 'fs/promises';
 
 export async function scrapeGames(url, outputFilename = 'games.json') {
 	let games = [];
