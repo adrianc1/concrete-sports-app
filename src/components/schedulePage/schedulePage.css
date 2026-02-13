@@ -124,6 +124,9 @@
 	.list-group-item.game .game-info > div {
 		font-size: 1rem;
 	}
+	.list-group {
+		width: 100%;
+	}
 }
 
 @media (min-width: 1100px) {
@@ -140,6 +143,12 @@
 	}
 
 	.list-group-item.game .game-info > div:nth-child(2) {
+		font-size: 1.5rem;
+	}
+	.list-group {
+		width: 75%;
+	}
+	.sport-record {
 		font-size: 1.5rem;
 	}
 }
