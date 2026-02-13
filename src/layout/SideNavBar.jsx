@@ -12,9 +12,9 @@ function SideNavBar({ show, logo }) {
 				<li>
 					<Link to="/schedules">Schedules</Link>
 				</li>
-				<li>
+				{/* <li>
 					<Link to="/updates">Updates</Link>
-				</li>
+				</li> */}
 				<li>
 					<Link to="/playersOfTheMonth">Players Of The Month</Link>
 				</li>

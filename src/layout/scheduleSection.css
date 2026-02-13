@@ -94,7 +94,7 @@
 .lions-footer {
 	text-align: center;
 	padding: 30px;
-	background: linear-gradient(135deg, #6b2c91 0%, #8b3daf 100%);
+	background: linear-gradient(5deg, rgb(66, 10, 114) 0%, #8b3daf 100%);
 	border-radius: 12px;
 	color: white;
 }

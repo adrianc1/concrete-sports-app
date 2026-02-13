@@ -55,10 +55,12 @@ export default function ScheduleSection() {
 				))}
 			</div>
 
-			<div className="lions-footer">
-				<h3>Go Lions! 💜💛</h3>
-				<p>Supporting our athletes all year long</p>
-			</div>
+			<Link to="/sponsors">
+				<div className="lions-footer">
+					<h3>Go Lions!</h3>
+					<p>Supporting our athletes all year long</p>
+				</div>
+			</Link>
 		</div>
 	);
 }
