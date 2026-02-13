@@ -55,6 +55,85 @@ function PlayersOfTheMonth() {
 						<div className="player-sport">🏈 Football</div>
 					</div>
 				</div>
+
+				<div className="player-profile">
+					<div className="month">November</div>
+					<div className="player-card">
+						<div className="player-info">
+							<div>
+								<span className="player-name">Maddy Norris</span> <br />
+							</div>
+						</div>
+						<div className="player-sport">🏐 Volleyball</div>
+					</div>
+
+					<div className="player-card">
+						<div className="player-info">
+							<div>
+								<span className="player-name">Zack Richter</span> <br />
+							</div>
+						</div>
+						<div className="player-sport">🏈 Football</div>
+					</div>
+				</div>
+
+				<div className="player-profile">
+					<div className="month">December</div>
+					<div className="player-card">
+						<div className="player-info">
+							<div>
+								<span className="player-name">Riley O’Neil</span> <br />
+							</div>
+						</div>
+						<div className="player-sport">🤼 Wrestling</div>
+					</div>
+
+					<div className="player-card">
+						<div className="player-info">
+							<div>
+								<span className="player-name">Kylie Selin</span> <br />
+							</div>
+						</div>
+						<div className="player-sport">🏀 Girls Basketball</div>
+					</div>
+					<div className="player-card">
+						<div className="player-info">
+							<div>
+								<span className="player-name">Tait Bosa</span> <br />
+							</div>
+						</div>
+						<div className="player-sport">🏈 Football</div>
+					</div>
+				</div>
+
+				<div className="player-profile">
+					<div className="month">January</div>
+					<div className="player-card">
+						<div className="player-info">
+							<div>
+								<span className="player-name">Brodie Nick</span> <br />
+							</div>
+						</div>
+						<div className="player-sport">🤼 Wrestling</div>
+					</div>
+
+					<div className="player-card">
+						<div className="player-info">
+							<div>
+								<span className="player-name">Alexa Dalton</span> <br />
+							</div>
+						</div>
+						<div className="player-sport">🏀 Girls Basketball</div>
+					</div>
+					<div className="player-card">
+						<div className="player-info">
+							<div>
+								<span className="player-name">Lincoln Stibbs</span> <br />
+							</div>
+						</div>
+						<div className="player-sport">🏀 Boys Basketball</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	);
