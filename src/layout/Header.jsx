@@ -24,7 +24,8 @@ export default function Header({ toggleNav, logo, display }) {
 				<Link to="/schedules">Schedules</Link>
 				{/* <Link to="/updates">Updates</Link> */}
 				<Link to="/sponsors">Sponsors</Link>
-				<Link to="/boosters">Booster Club</Link>
+				<Link to="/playersOfTheMonth">Spotlight</Link>
+				{/* <Link to="/boosters">Booster Club</Link> */}
 				<Link to="/contact">Coach Connect</Link>
 			</nav>
 
