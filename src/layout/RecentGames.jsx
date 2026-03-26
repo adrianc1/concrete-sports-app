@@ -8,6 +8,7 @@ import { FaFootballBall, FaVolleyballBall, FaBasketballBall, FaBaseballBall, FaR
 import { GiSoccerBall } from 'react-icons/gi';
 import { Card, CardContent } from '../components/ui/card';
 import { getTeamLogo } from '../utils/teamLogos';
+import { MapPin } from 'lucide-react';
 
 const sportIcons = {
 	volleyball: <FaVolleyballBall />,
@@ -68,9 +69,8 @@ const RecentGames = () => {
 
 	return (
 		<>
-			<h3 className="recent-scores-title">Recent Scores</h3>
-
 			<div className="recent-container">
+				<h3 className="recent-scores-title">Recent Scores</h3>
 				<div className="recent-games">
 					{loading
 						? Array(4)
@@ -90,6 +90,7 @@ const RecentGames = () => {
 								.slice(0, 4)
 								.map((game) => {
 									const concreteWon = game.concrete_score > game.opponent_score;
+									const opponentName = game.opponent?.replace(/\s*\([^)]*\)\s*/g, '').trim();
 									return (
 										<Card key={game._id} className="min-w-72 max-w-72 shrink-0 py-0">
 											<CardContent className="flex flex-col gap-2.5 p-3">
@@ -110,14 +111,23 @@ const RecentGames = () => {
 
 												{/* Teams + scores */}
 												<div className="flex flex-col gap-1.5 border-t border-border pt-2">
+													{game.location && (
+														<span className="inline-flex items-center gap-1 text-[10px] text-muted-foreground pb-1">
+															<MapPin size={10} />
+															{game.location}
+														</span>
+													)}
 													<div className="flex items-center justify-between gap-2">
 														<div className="flex items-center gap-2 min-w-0">
 															{getTeamLogo('concrete') && (
 																<img src={getTeamLogo('concrete')} alt="Concrete" className="w-6 h-6 object-contain shrink-0 rounded-full bg-gray-100 p-0.5" />
 															)}
-															<span className={`truncate text-sm ${concreteWon ? 'font-bold text-foreground' : 'text-muted-foreground'}`}>
-																Concrete
-															</span>
+															<div className="flex flex-col min-w-0">
+																<span className={`truncate text-sm ${concreteWon ? 'font-bold text-foreground' : 'text-muted-foreground'}`}>
+																	Concrete
+																</span>
+																<span className="text-[10px] text-muted-foreground">{game.home_away?.includes('Away') ? 'Away' : 'Home'}</span>
+															</div>
 														</div>
 														<span className={`text-lg tabular-nums shrink-0 ${concreteWon ? 'font-black text-foreground' : 'font-normal text-muted-foreground'}`}>
 															{game.concrete_score}
@@ -126,11 +136,14 @@ const RecentGames = () => {
 													<div className="flex items-center justify-between gap-2">
 														<div className="flex items-center gap-2 min-w-0">
 															{getTeamLogo(game.opponent) && (
-																<img src={getTeamLogo(game.opponent)} alt={game.opponent} className="w-6 h-6 object-contain shrink-0 rounded-full bg-gray-100 p-0.5" />
+																<img src={getTeamLogo(game.opponent)} alt={opponentName} className="w-6 h-6 object-contain shrink-0 rounded-full bg-gray-100 p-0.5" />
 															)}
-															<span className={`truncate text-sm ${!concreteWon ? 'font-bold text-foreground' : 'text-muted-foreground'}`}>
-																{game.opponent}
-															</span>
+															<div className="flex flex-col min-w-0">
+																<span className={`truncate text-sm ${!concreteWon ? 'font-bold text-foreground' : 'text-muted-foreground'}`}>
+																	{opponentName}
+																</span>
+																<span className="text-[10px] text-muted-foreground">{game.home_away?.includes('Away') ? 'Home' : 'Away'}</span>
+															</div>
 														</div>
 														<span className={`text-lg tabular-nums shrink-0 ${!concreteWon ? 'font-black text-foreground' : 'font-normal text-muted-foreground'}`}>
 															{game.opponent_score}

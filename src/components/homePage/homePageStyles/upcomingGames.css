@@ -2,8 +2,9 @@
 	font-size: 2rem;
 	font-weight: 800;
 	color: #4a007b;
-	text-align: center;
+	text-align: left;
 	margin: 2rem 0 1rem;
+	padding-left: 20px;
 	position: relative;
 	letter-spacing: -0.5px;
 }
@@ -15,8 +16,9 @@
 	height: 3px;
 	background-color: #f7a900;
 	border-radius: 2px;
-	margin: 0.75rem auto 0;
+	margin: 0.75rem 0 0;
 }
+
 
 .upcoming-schedules {
 	width: 100%;
@@ -48,6 +50,22 @@
 	margin: 0 auto;
 	overflow-x: auto;
 	overflow-y: visible;
+}
+
+@media (min-width: 1400px) {
+	.upcoming-games-grid,
+	.recent-games {
+		justify-content: center;
+	}
+
+	.recent-scores-title {
+		text-align: center;
+		padding-left: 0;
+	}
+
+	.recent-scores-title::after {
+		margin: 0.75rem auto 0;
+	}
 }
 
 .upcoming-game-card {
@@ -86,12 +104,6 @@
 	}
 }
 
-@media (min-width: 1400px) {
-	.upcoming-games-grid,
-	.recent-games {
-		justify-content: center;
-	}
-}
 
 .game-sport-header {
 	background: linear-gradient(135deg, #6b2c91 0%, #8b3daf 100%);

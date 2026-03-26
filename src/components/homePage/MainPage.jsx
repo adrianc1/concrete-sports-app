@@ -1,6 +1,7 @@
 import '../homePage/homePageStyles/mainPage.css';
 import RecentGames from '../../layout/RecentGames.jsx';
 import UpcomingGames from './UpcomingGames.jsx';
+import SpotlightBanner from './SpotlightBanner.jsx';
 import ScheduleSection from '../../layout/ScheduleSection.jsx';
 
 function MainPage() {
@@ -8,6 +9,7 @@ function MainPage() {
 		<>
 			<RecentGames />
 			<UpcomingGames />
+			<SpotlightBanner />
 			<ScheduleSection />
 		</>
 	);

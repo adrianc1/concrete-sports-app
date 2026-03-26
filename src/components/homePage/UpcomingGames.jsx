@@ -7,6 +7,7 @@ import { fetchUpcomingGames } from '../../utils/api';
 import { FaFootballBall, FaVolleyballBall, FaBasketballBall, FaBaseballBall, FaRunning, FaHandRock, FaSwimmer, FaTrophy } from 'react-icons/fa';
 import { GiSoccerBall } from 'react-icons/gi';
 import { Card, CardContent } from '../ui/card';
+import { MapPin } from 'lucide-react';
 
 const sportIcons = {
 	volleyball: <FaVolleyballBall />,
@@ -67,9 +68,8 @@ export default function UpcomingGames() {
 
 	return (
 		<div className="upcoming-schedules">
-			<h3 className="recent-scores-title">Upcoming Games</h3>
-
 			<div className="upcoming-schedules-section">
+				<h3 className="recent-scores-title">Upcoming Games</h3>
 				<div className="upcoming-games-grid">
 					{loading
 						? Array(4)
@@ -87,8 +87,10 @@ export default function UpcomingGames() {
 								.filter((game) => game.result === 'TBD')
 								.sort((a, b) => new Date(a.date) - new Date(b.date))
 								.slice(0, 4)
-								.map((game, index) => (
-									<Card key={index} className="min-w-72 max-w-72 shrink-0 py-0">
+								.map((game, index) => {
+									const opponentName = game.opponent?.replace(/\s*\([^)]*\)\s*/g, '').trim();
+									return (
+										<Card key={index} className="min-w-72 max-w-72 shrink-0 py-0">
 										<CardContent className="flex flex-col gap-2.5 p-3">
 											{/* Sport + date on one row */}
 											<div className="flex items-center justify-between">
@@ -108,10 +110,16 @@ export default function UpcomingGames() {
 											{/* Matchup + time */}
 											<div className="flex flex-col gap-1 border-t border-border pt-2">
 												<span className="text-sm font-bold text-foreground">
-													{game.location === 'Away' ? '@ ' : 'vs '}{game.opponent}
+													{game.home_away?.includes('Away') ? '@ ' : 'vs '}{opponentName}
 												</span>
 												{game.time && (
 													<span className="text-[11px] text-muted-foreground">{game.time}</span>
+												)}
+												{game.location && (
+													<span className="inline-flex items-center gap-1 text-[11px] text-muted-foreground">
+														<MapPin size={10} />
+														{game.location}
+													</span>
 												)}
 											</div>
 
@@ -127,7 +135,8 @@ export default function UpcomingGames() {
 											</Link>
 										</CardContent>
 									</Card>
-								))}
+								);
+								})}
 				</div>
 			</div>
 		</div>
