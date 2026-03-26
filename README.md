@@ -19,7 +19,7 @@ Built as a real client engagement, the app serves students, families, coaches, a
 - **Live Scores & Records** — Recent game results with final scores, opponent, location, and W/L record per sport
 - **Upcoming Games** — Automatically surfaced from the pipeline; transitions to "Recent" post-game
 - **Team Schedules** — Season-organized by Fall, Winter, and Spring across all varsity sports (Football, Volleyball, Boys/Girls Basketball, Wrestling, Baseball, Softball)
-- **Athlete Spotlight** — Monthly athlete recognition section managed through the CMS
+- **Athlete Spotlight** — Monthly athlete recognition section automatically updated once voted on by the Booster Club. 
 - **Sponsor Directory** — Local business listings with outbound links to sponsor websites, creating a community fundraising loop
 - **Coach Connect** — Contact directory for coaching staff and booster club information
 - **PWA** — Installable on iOS and Android for a native app experience; no App Store required
@@ -33,9 +33,9 @@ The core backend feature is a scheduled ETL pipeline that keeps all game data cu
 **How it works:**
 
 1. A Node.js cron job runs daily and hits the **WIAA/WPA Network API** (Washington Interscholastic Activities Association), the official state athletic data source
-2. The raw response is transformed and normalized — cleaning inconsistencies in sport names, dates, scores, and opponent data
+2. The raw response is transformed and normalized - cleaning inconsistencies in sport names, dates, scores, and opponent data
 3. Processed records are **upserted into MongoDB**, preventing duplicates while keeping data current
-4. The React frontend reads game state and automatically routes records to the correct UI section — upcoming games surface in the "Upcoming" feed; completed games move to "Recent Scores"
+4. The React frontend reads game state and automatically routes records to the correct UI section, upcoming games surface in the "Upcoming" feed; completed games move to "Recent Scores"
 
 This means the school never manually enters a score.
 
@@ -46,7 +46,7 @@ This means the school never manually enters a score.
 | Layer         | Technology                                                        |
 | ------------- | ----------------------------------------------------------------- |
 | Frontend      | React, Vite, Tailwind CSS, shadcn/ui                              |
-| Backend       | Node.js, Express — REST API (`GET /api/:sport`, `POST /api/sync`) |
+| Backend       | Node.js, Express - REST API (`GET /api/:sport`, `POST /api/sync`) |
 | Database      | MongoDB                                                           |
 | Scraping      | Cheerio + native fetch                                            |
 | Scheduling    | node-cron (daily ETL)                                             |
