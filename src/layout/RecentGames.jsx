@@ -4,8 +4,7 @@ import { fetchUpcomingGames } from '../utils/api';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import '../components/homePage/homePageStyles/upcomingGames.css';
-import { FaFootballBall, FaVolleyballBall, FaBasketballBall, FaBaseballBall, FaRunning, FaHandRock, FaSwimmer, FaTrophy } from 'react-icons/fa';
-import { GiSoccerBall } from 'react-icons/gi';
+import { FaFootballBall, FaVolleyballBall, FaBasketballBall, FaBaseballBall, FaRunning, FaHandRock, FaTrophy } from 'react-icons/fa';
 import { Card, CardContent } from '../components/ui/card';
 import { getTeamLogo } from '../utils/teamLogos';
 import { MapPin } from 'lucide-react';
@@ -15,12 +14,10 @@ const sportIcons = {
 	football: <FaFootballBall />,
 	'boys-basketball': <FaBasketballBall />,
 	'girls-basketball': <FaBasketballBall />,
-	soccer: <GiSoccerBall />,
 	baseball: <FaBaseballBall />,
 	softball: <FaBaseballBall />,
 	track: <FaRunning />,
 	wrestling: <FaHandRock />,
-	swimming: <FaSwimmer />,
 };
 
 const sportColors = {
@@ -28,12 +25,10 @@ const sportColors = {
 	football: '#854d0e',         // brown
 	'boys-basketball': '#f59e0b', // amber
 	'girls-basketball': '#f59e0b',
-	soccer: '#22c55e',           // green
 	baseball: '#3b82f6',         // blue
-	softball: '#ec4899',         // pink
+	softball: '#84cc16',         // lime green
 	track: '#ef4444',            // red
 	wrestling: '#8b5cf6',        // violet
-	swimming: '#06b6d4',         // cyan
 };
 
 const transformSport = {
@@ -41,7 +36,6 @@ const transformSport = {
 	football: 'Football',
 	'boys-basketball': 'Boys Basketball',
 	'girls-basketball': 'Girls Basketball',
-	soccer: 'Soccer',
 	baseball: 'Baseball',
 	softball: 'Softball',
 	track: 'Track',
