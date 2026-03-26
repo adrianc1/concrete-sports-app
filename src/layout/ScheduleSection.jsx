@@ -1,31 +1,32 @@
 import './scheduleSection.css';
 import { Link } from 'react-router';
+import { FaFootballBall, FaVolleyballBall, FaBasketballBall, FaBaseballBall, FaRunning, FaCalendarAlt } from 'react-icons/fa';
 
 export default function ScheduleSection() {
 	const sports = [
-		{ name: 'Football', sport: 'football', season: 'Fall', icon: '🏈' },
-		{ name: 'Volleyball', sport: 'volleyball', season: 'Fall', icon: '🏐' },
+		{ name: 'Football', sport: 'football', season: 'Fall', icon: <FaFootballBall /> },
+		{ name: 'Volleyball', sport: 'volleyball', season: 'Fall', icon: <FaVolleyballBall /> },
 		{
 			name: 'Boys Basketball',
 			sport: 'boys-basketball',
 			season: 'Winter',
-			icon: '🏀',
+			icon: <FaBasketballBall />,
 		},
 		{
 			name: 'Girls Basketball',
 			sport: 'girls-basketball',
 			season: 'Winter',
-			icon: '🏀',
+			icon: <FaBasketballBall />,
 		},
-		// { name: 'Wrestling', sport: 'wrestling', season: 'Winter', icon: '🤼' },
-		{ name: 'Baseball', sport: 'baseball', season: 'Spring', icon: '⚾' },
-		{ name: 'Softball', sport: 'softball', season: 'Spring', icon: '🥎' },
-		{ name: 'Track & Field', sport: 'track', season: 'Spring', icon: '🏃' },
+		// { name: 'Wrestling', sport: 'wrestling', season: 'Winter', icon: <FaHandRock /> },
+		{ name: 'Baseball', sport: 'baseball', season: 'Spring', icon: <FaBaseballBall /> },
+		{ name: 'Softball', sport: 'softball', season: 'Spring', icon: <FaBaseballBall /> },
+		{ name: 'Track & Field', sport: 'track', season: 'Spring', icon: <FaRunning /> },
 		{
 			name: 'View All Schedules',
 			sport: 'schedules',
 			season: 'All',
-			icon: '📅',
+			icon: <FaCalendarAlt />,
 		},
 	];
 

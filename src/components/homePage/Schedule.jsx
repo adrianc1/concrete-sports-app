@@ -4,6 +4,7 @@ import SideNavBar from '../../layout/SideNavBar';
 import logo from '../../assets/Concrete-Logo.png';
 import ScrollToTop from '../../layout/ScrollToTop';
 import '../homePage/homePageStyles/schedule.css';
+import { FaFootballBall, FaVolleyballBall, FaBasketballBall, FaBaseballBall, FaRunning } from 'react-icons/fa';
 
 export default function Schedule() {
 	const [showNav, setShowNav] = useState(false);
@@ -15,30 +16,30 @@ export default function Schedule() {
 			<ul className="schedule-card">
 				<h4>Team Schedules</h4>
 				<li>
-					<Link to="/footballSchedule">🏈 Football</Link>
+					<Link to="/footballSchedule"><FaFootballBall /> Football</Link>
 				</li>
 				<li>
-					<Link to="/volleyballSchedule">🏐 Volleyball</Link>
+					<Link to="/volleyballSchedule"><FaVolleyballBall /> Volleyball</Link>
 				</li>
 				<li>
-					<Link to="/BOYS-BASKETBALLSchedule">🏀 Boys Basketball</Link>
+					<Link to="/BOYS-BASKETBALLSchedule"><FaBasketballBall /> Boys Basketball</Link>
 				</li>
 				<li>
-					<Link to="/GIRLS-BASKETBALLSchedule">🏀 Girls Basketball</Link>
-				</li>
-
-				<li>
-					<Link to="/baseballSchedule">⚾ Baseball</Link>
-				</li>
-				<li>
-					<Link to="/softballSchedule">🥎 Softball</Link>
+					<Link to="/GIRLS-BASKETBALLSchedule"><FaBasketballBall /> Girls Basketball</Link>
 				</li>
 
 				<li>
-					<Link to="/trackSchedule">🏃 Track</Link>
+					<Link to="/baseballSchedule"><FaBaseballBall /> Baseball</Link>
+				</li>
+				<li>
+					<Link to="/softballSchedule"><FaBaseballBall /> Softball</Link>
+				</li>
+
+				<li>
+					<Link to="/trackSchedule"><FaRunning /> Track</Link>
 				</li>
 				{/* <li>
-					<Link to="/wrestlingSchedule">🤼 Wrestling</Link>
+					<Link to="/wrestlingSchedule"><FaHandRock /> Wrestling</Link>
 				</li> */}
 			</ul>
 		</div>

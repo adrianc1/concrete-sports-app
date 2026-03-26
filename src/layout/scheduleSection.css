@@ -67,9 +67,12 @@
 }
 
 .sport-icon {
-	font-size: 3em;
+	font-size: 2.5em;
 	margin-bottom: 15px;
-	filter: grayscale(20%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #6b2c91;
 }
 
 .sport-name {

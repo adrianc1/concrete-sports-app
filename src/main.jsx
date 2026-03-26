@@ -2,7 +2,6 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router';
 import { registerSW } from 'virtual:pwa-register';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Routes from './routes/Routes.jsx';
 
 const updateSW = registerSW({
