@@ -3,6 +3,7 @@ import logo from '../../assets/Concrete-Logo.png';
 import SideNavBar from '../../layout/SideNavBar';
 import ScrollToTop from '../../layout/ScrollToTop';
 import '../homePage/homePageStyles/updates.css';
+import { FaBasketballBall } from 'react-icons/fa';
 
 function Updates() {
 	const [showNav, setShowNav] = useState(false);
@@ -17,7 +18,7 @@ function Updates() {
 			<ul className="team-updates-list">
 				<li>
 					<span className="event-info">
-						🏀 Boys and Girls Basketball Season Begins
+						<FaBasketballBall /> Boys and Girls Basketball Season Begins
 						<span className="start-date">December 5, 2025</span>
 					</span>
 					<span className="start-time">4:30 PM</span>
