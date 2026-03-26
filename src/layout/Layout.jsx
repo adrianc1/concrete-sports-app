@@ -56,7 +56,7 @@ function Layout({ children }) {
 				logo={logo}
 				display={showNav}
 			/>
-			<SideNavBar show={showNav} logo={logo} />
+			<SideNavBar show={showNav} logo={logo} onClose={() => setShowNav(false)} />
 
 			{children}
 

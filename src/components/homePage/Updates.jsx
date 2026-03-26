@@ -1,17 +1,12 @@
-import { useState } from 'react';
-import logo from '../../assets/Concrete-Logo.png';
-import SideNavBar from '../../layout/SideNavBar';
 import ScrollToTop from '../../layout/ScrollToTop';
 import '../homePage/homePageStyles/updates.css';
 import { FaBasketballBall } from 'react-icons/fa';
 
 function Updates() {
-	const [showNav, setShowNav] = useState(false);
 	return (
 		<div>
 			<ScrollToTop />
 
-			<SideNavBar show={showNav} logo={logo} />
 			<div className="announcements-container">
 				<h2 className="annoucenment-title">Team Updates</h2>
 			</div>

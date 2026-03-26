@@ -1,10 +1,8 @@
 import { useState } from 'react';
 import Header from '../../layout/Header';
 import logo from '../../assets/Concrete-Logo.png';
-import SideNavBar from '../../layout/SideNavBar';
 
 function SchoolDistrict() {
-	const [showNav, setShowNav] = useState(false);
 	const [showExitIcon, setShowExitIcon] = useState(false);
 	return (
 		<div>
@@ -14,7 +12,6 @@ function SchoolDistrict() {
 				logo={logo}
 				display={showExitIcon}
 			/>
-			<SideNavBar show={showNav} logo={logo} />
 			<iframe
 				src="https://www.concrete.k12.wa.us/"
 				title="Announcements"

@@ -10,7 +10,7 @@ export default function Header({ toggleNav, logo, display }) {
 					<img src={logo} alt="Logo" className="w-12 md:w-20 h-auto" />
 				</Link>
 				<h1
-					className="font-normal text-lg md:text-2xl tracking-widest m-0"
+					className="font-normal text-sm md:text-base tracking-widest m-0"
 					style={{ fontFamily: "'Anton', sans-serif", color: '#f2bc40' }}
 				>
 					Concrete Lions Sports
@@ -18,7 +18,7 @@ export default function Header({ toggleNav, logo, display }) {
 			</div>
 
 			{/* Desktop nav */}
-			<nav className="max-sm:hidden flex gap-10 items-center">
+			<nav className="max-md:hidden flex gap-10 items-center">
 				<Link
 					to="/schedules"
 					style={{ color: 'white', textDecoration: 'none', fontWeight: 600 }}

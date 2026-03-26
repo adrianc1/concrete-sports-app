@@ -1,6 +1,3 @@
-import { useState } from 'react';
-import logo from '../../assets/Concrete-Logo.png';
-import SideNavBar from '../../layout/SideNavBar';
 import ScrollToTop from '../../layout/ScrollToTop';
 import { Mail } from 'lucide-react';
 
@@ -22,12 +19,10 @@ const coachList = [
 ];
 
 function Contact() {
-	const [showNav, setShowNav] = useState(false);
 
 	return (
 		<div className="w-full flex flex-col items-center px-4" style={{ paddingBottom: '8rem' }}>
 			<ScrollToTop />
-			<SideNavBar show={showNav} logo={logo} />
 
 			<div className="w-full max-w-2xl mt-8">
 				{/* Title */}

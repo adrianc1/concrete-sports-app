@@ -1,6 +1,4 @@
-import { useState } from 'react';
 import logo from '../../assets/Concrete-Logo.png';
-import SideNavBar from '../../layout/SideNavBar';
 import { Link } from 'react-router';
 import kayak from '../../assets/kayak2.webp';
 import uptownAuto from '../../assets/uptown2.webp';
@@ -13,7 +11,6 @@ import cascadeMountainLodge from '../../assets/cascademountainlodgeBanner.webp';
 import ScrollToTop from '../../layout/ScrollToTop';
 import cascadebar from '../../assets/indiancuisine.webp';
 function Sponsors() {
-	const [showNav, setShowNav] = useState(false);
 
 	const sponsorList = [
 		{
@@ -93,7 +90,6 @@ function Sponsors() {
 	return (
 		<div className="w-full flex flex-col items-center px-4 pb-32 md:pb-24">
 			<ScrollToTop />
-			<SideNavBar show={showNav} logo={logo} />
 
 			<h2
 				className="font-black"

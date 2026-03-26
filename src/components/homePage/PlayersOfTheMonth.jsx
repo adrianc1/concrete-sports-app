@@ -1,6 +1,3 @@
-import { useState } from 'react';
-import logo from '../../assets/Concrete-Logo.png';
-import SideNavBar from '../../layout/SideNavBar';
 import ScrollToTop from '../../layout/ScrollToTop';
 import { Star } from 'lucide-react';
 
@@ -46,7 +43,6 @@ const months = [
 ];
 
 function PlayersOfTheMonth() {
-	const [showNav, setShowNav] = useState(false);
 
 	return (
 		<div
@@ -54,7 +50,6 @@ function PlayersOfTheMonth() {
 			style={{ paddingBottom: '8rem' }}
 		>
 			<ScrollToTop />
-			<SideNavBar show={showNav} logo={logo} />
 
 			<div className="w-full max-w-2xl mt-8">
 				{/* Title */}
