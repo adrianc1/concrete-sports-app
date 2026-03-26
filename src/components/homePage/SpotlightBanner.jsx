@@ -13,11 +13,10 @@ const month = 'January';
 
 export default function SpotlightBanner() {
 	return (
+		<div className="px-4 md:px-0">
 		<div
-			className="relative w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] mx-auto my-6 rounded-2xl overflow-hidden"
-			style={{ minHeight: '420px' }}
+			className="relative w-full md:w-[90vw] mx-auto my-6 rounded-2xl overflow-hidden min-h-70 md:min-h-105"
 		>
-			{/* Background image */}
 			<img
 				src={spotlightBanner}
 				alt="Lions banner"
@@ -83,6 +82,7 @@ export default function SpotlightBanner() {
 					<ArrowRight size={16} strokeWidth={2.5} />
 				</Link>
 			</div>
+		</div>
 		</div>
 	);
 }

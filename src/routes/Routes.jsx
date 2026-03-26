@@ -18,6 +18,7 @@ import '../index.css';
 import Schedule from '../components/homePage/Schedule.jsx';
 import PlayersOfTheMonth from '../components/homePage/PlayersOfTheMonth.jsx';
 import Layout from '../layout/Layout.jsx';
+import NotFound from '../components/homePage/NotFound.jsx';
 
 const Routes = [
 	{
@@ -145,6 +146,14 @@ const Routes = [
 		element: (
 			<Layout>
 				<VolleyballSchedule />
+			</Layout>
+		),
+	},
+	{
+		path: '*',
+		element: (
+			<Layout>
+				<NotFound />
 			</Layout>
 		),
 	},
