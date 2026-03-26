@@ -49,7 +49,10 @@ function PlayersOfTheMonth() {
 	const [showNav, setShowNav] = useState(false);
 
 	return (
-		<div className="w-full flex flex-col items-center px-4" style={{ paddingBottom: '8rem' }}>
+		<div
+			className="w-full flex flex-col items-center px-4"
+			style={{ paddingBottom: '8rem' }}
+		>
 			<ScrollToTop />
 			<SideNavBar show={showNav} logo={logo} />
 
@@ -57,12 +60,25 @@ function PlayersOfTheMonth() {
 				{/* Title */}
 				<h2
 					className="font-black mb-10"
-					style={{ fontSize: '2.25rem', letterSpacing: '-0.5px', color: '#420a72', textAlign: 'center' }}
+					style={{
+						fontSize: '2.25rem',
+						fontWeight: 900,
+						letterSpacing: '-0.5px',
+						color: '#420a72',
+						textAlign: 'center',
+						marginTop: '2rem',
+						fontFamily: 'inherit',
+					}}
 				>
 					Athlete Spotlight
 					<span
-						className="block rounded-full mt-3"
-						style={{ width: 80, height: 3, background: '#f2bc40', margin: '0.75rem auto 0' }}
+						className="block rounded-full mt-3 mb-8"
+						style={{
+							width: 80,
+							height: 3,
+							background: '#f2bc40',
+							margin: '0.75rem auto 2rem',
+						}}
 					/>
 				</h2>
 
@@ -79,14 +95,21 @@ function PlayersOfTheMonth() {
 								</h3>
 								{current && (
 									<span
-										className="inline-flex items-center gap-1 rounded-full font-black uppercase tracking-widest px-2.5 py-0.5"
-										style={{ background: '#f2bc40', color: '#1a0033', fontSize: '0.6rem' }}
+										className="inline-flex items-center gap-1 rounded-full font-black uppercase tracking-widest px-3 py-1"
+										style={{
+											background: '#f2bc40',
+											color: '#1a0033',
+											fontSize: '0.6rem',
+										}}
 									>
 										<Star size={8} fill="currentColor" />
 										Current
 									</span>
 								)}
-								<span className="flex-1" style={{ height: 1, background: '#f0f0f0' }} />
+								<span
+									className="flex-1"
+									style={{ height: 1, background: '#f0f0f0' }}
+								/>
 							</div>
 
 							{/* Player rows */}
@@ -94,7 +117,7 @@ function PlayersOfTheMonth() {
 								{players.map((player, i) => (
 									<div
 										key={i}
-										className="flex items-center justify-between px-4 py-3.5 rounded-xl"
+										className="flex items-center justify-between px-4 py-3.5 rounded"
 										style={{
 											borderLeft: `4px solid ${current ? '#f2bc40' : '#420a72'}`,
 											background: current ? '#fffbf0' : '#faf8fd',
@@ -108,7 +131,11 @@ function PlayersOfTheMonth() {
 										</span>
 										<span
 											className="font-bold uppercase tracking-widest"
-											style={{ fontSize: '0.65rem', color: '#420a72', opacity: 0.6 }}
+											style={{
+												fontSize: '0.65rem',
+												color: '#420a72',
+												opacity: 0.6,
+											}}
 										>
 											{player.sport}
 										</span>

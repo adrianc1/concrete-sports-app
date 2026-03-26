@@ -39,6 +39,12 @@
 	list-style-type: none;
 }
 
+.nav-list li a.active,
+.nav-schedule li a.active {
+	color: #f2bc40;
+	font-weight: 900;
+}
+
 .nav-list {
 	border-bottom: 10px double #420a72;
 	padding-bottom: 1rem;

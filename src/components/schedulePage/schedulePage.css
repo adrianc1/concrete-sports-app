@@ -25,13 +25,13 @@
 }
 
 .sport-title {
-	font-size: 2.5rem;
+	font-size: 2.25rem;
 	font-weight: 900;
 	color: #420a72;
 	letter-spacing: -0.5px;
-	margin: 0 0 0.75rem;
+	margin: 2rem 0 0.75rem;
 	position: relative;
-	text-align: left;
+	text-align: center;
 }
 
 .sport-title::after {

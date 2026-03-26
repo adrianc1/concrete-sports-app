@@ -63,7 +63,7 @@ export function getTeamLogo(teamName) {
 	if (!teamName) return null;
 	const normalized = teamName
 		.toLowerCase()
-		.replace(/\s*\([^)]*\)\s*/g, '') // remove "(2B)", "(1A)", "(Lynnwood)", etc.
+		.replace(/\s*\([^)]*\)\s*/g, '') // normalize text and remove "(2B)", "(1A)"
 		.trim();
 	return TEAM_LOGOS[normalized] ?? null;
 }

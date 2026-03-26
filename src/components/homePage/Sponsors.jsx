@@ -97,7 +97,7 @@ function Sponsors() {
 
 			<h2
 				className="font-black"
-				style={{ fontSize: '2.25rem', letterSpacing: '-0.5px', color: '#420a72', textAlign: 'center', marginTop: '1.5rem', marginBottom: '2rem' }}
+				style={{ fontSize: '2.25rem', fontWeight: 900, letterSpacing: '-0.5px', color: '#420a72', textAlign: 'center', marginTop: '2rem', marginBottom: '2rem' }}
 			>
 				Sponsors
 				<span
@@ -150,7 +150,7 @@ function Sponsors() {
 				<br />
 				<br />
 				To be a sponsor please contact{' '}
-				<a href="mailto:adrian@dreauxdigital.com" className="font-bold text-[#420a72]">
+				<a href="mailto:adrian@dreauxdigital.com" className="font-bold" style={{ color: '#420a72', textDecoration: 'none' }}>
 					adrian@dreauxdigital.com
 				</a>
 				.

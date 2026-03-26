@@ -33,12 +33,12 @@ function Contact() {
 				{/* Title */}
 				<h2
 					className="font-black mb-8"
-					style={{ fontSize: '2.25rem', letterSpacing: '-0.5px', color: '#420a72', textAlign: 'center' }}
+					style={{ fontSize: '2.25rem', fontWeight: 900, letterSpacing: '-0.5px', color: '#420a72', textAlign: 'center', marginTop: '2rem', fontFamily: 'inherit' }}
 				>
 					Coach Connect
 					<span
 						className="block rounded-full mt-3"
-						style={{ width: 80, height: 3, background: '#f2bc40', margin: '0.75rem auto 0' }}
+						style={{ width: 80, height: 3, background: '#f2bc40', margin: '0.75rem auto 2rem' }}
 					/>
 				</h2>
 
@@ -47,7 +47,7 @@ function Contact() {
 					{coachList.map((coach, index) => (
 						<div
 							key={index}
-							className="flex items-center gap-4 px-4 py-4 rounded-xl transition-colors"
+							className="flex items-center gap-4 px-4 py-4 rounded transition-colors"
 							style={{ borderLeft: '4px solid #420a72', background: '#faf8fd' }}
 						>
 							<div className="flex flex-col gap-0.5 flex-1 min-w-0">
@@ -71,7 +71,6 @@ function Contact() {
 							>
 								<Mail size={13} />
 								<span className="hidden md:inline">{coach.coachEmail}</span>
-								<span className="md:hidden">Email</span>
 							</a>
 						</div>
 					))}

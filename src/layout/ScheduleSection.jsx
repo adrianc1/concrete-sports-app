@@ -23,7 +23,11 @@ const seasons = [
 		label: 'Winter',
 		sports: [
 			{ name: 'Boys Basketball', sport: 'boys-basketball', img: basketballImg },
-			{ name: 'Girls Basketball', sport: 'girls-basketball', img: basketballImg },
+			{
+				name: 'Girls Basketball',
+				sport: 'girls-basketball',
+				img: basketballImg,
+			},
 			{ name: 'Wrestling', sport: 'wrestling', img: wrestlingImg },
 		],
 	},
@@ -55,14 +59,14 @@ export default function ScheduleSection() {
 								</h3>
 								<span className="h-0.5 w-10 bg-[#f2bc40] rounded-full inline-block" />
 							</div>
-							<Link
+							{/* <Link
 								to="/schedules"
 								className="inline-flex items-center gap-1 text-[12px] font-bold uppercase tracking-wide text-[#420a72] hover:text-[#f2bc40] transition-colors"
 								style={{ textDecoration: 'none' }}
 							>
 								View All Schedules
 								<ArrowRight size={13} strokeWidth={2.5} />
-							</Link>
+							</Link> */}
 						</div>
 
 						{/* Sport cards */}
@@ -83,7 +87,10 @@ export default function ScheduleSection() {
 										{/* Dark overlay */}
 										<div
 											className="absolute inset-0"
-											style={{ background: 'linear-gradient(160deg, rgba(26,0,51,0.82) 0%, rgba(66,10,114,0.65) 100%)' }}
+											style={{
+												background:
+													'linear-gradient(160deg, rgba(26,0,51,0.82) 0%, rgba(66,10,114,0.65) 100%)',
+											}}
 										/>
 										{/* Text */}
 										<div className="relative z-10 flex flex-col justify-end h-full p-3 gap-0.5">
@@ -101,7 +108,6 @@ export default function ScheduleSection() {
 					</div>
 				))}
 			</div>
-
 		</div>
 	);
 }
