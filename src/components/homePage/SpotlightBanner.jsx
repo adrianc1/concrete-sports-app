@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
 import { ArrowRight, Star } from 'lucide-react';
-import spotlightBanner from '../../assets/spotlight-banner.jpg';
+import spotlightBanner from '../../assets/spotlight-banner.webp';
 
 // Most recent athletes — update each month
 const featuredAthletes = [

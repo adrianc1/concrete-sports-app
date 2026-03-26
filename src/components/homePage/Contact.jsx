@@ -70,7 +70,7 @@ function Contact() {
 								style={{ textDecoration: 'none', color: '#420a72', fontSize: '0.8rem', fontWeight: 600 }}
 							>
 								<Mail size={13} />
-								<span className="hidden md:inline">{coach.coachEmail}</span>
+								<span className="max-md:hidden">{coach.coachEmail}</span>
 							</a>
 						</div>
 					))}

@@ -41,14 +41,17 @@
 	height: 3px;
 	background-color: #f2bc40;
 	border-radius: 2px;
-	margin: 0.75rem 0 0;
+	margin: 0.75rem auto 0;
 }
 
 .record-badge {
-	display: inline-flex;
+	display: flex;
 	align-items: center;
 	gap: 0.5rem;
 	background: #f5f0fa;
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
 	border: 1px solid #e2d4f0;
 	border-radius: 999px;
 	padding: 0.3rem 0.9rem;

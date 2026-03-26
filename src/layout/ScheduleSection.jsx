@@ -3,13 +3,13 @@ import { Link } from 'react-router';
 import { Card } from '../components/ui/card';
 import { ArrowRight } from 'lucide-react';
 
-import footballImg from '../assets/sports/football.jpg';
-import volleyballImg from '../assets/sports/volleyball.jpg';
-import basketballImg from '../assets/sports/basketball.jpg';
-import wrestlingImg from '../assets/sports/wrestling.jpg';
-import baseballImg from '../assets/sports/baseball.jpg';
-import softballImg from '../assets/sports/softball.jpg';
-import trackImg from '../assets/sports/track.jpg';
+import footballImg from '../assets/sports/football.webp';
+import volleyballImg from '../assets/sports/volleyball.webp';
+import basketballImg from '../assets/sports/basketball.webp';
+import wrestlingImg from '../assets/sports/wrestling.webp';
+import baseballImg from '../assets/sports/baseball.webp';
+import softballImg from '../assets/sports/softball.webp';
+import trackImg from '../assets/sports/track.webp';
 
 const seasons = [
 	{
@@ -83,6 +83,8 @@ export default function ScheduleSection() {
 											src={sport.img}
 											alt={sport.name}
 											className="absolute inset-0 w-full h-full object-cover"
+											loading="lazy"
+											decoding="async"
 										/>
 										{/* Dark overlay */}
 										<div
