@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import SideNavBar from '../../layout/SideNavBar';
 import logo from '../../assets/Concrete-Logo.png';
 import ScrollToTop from '../../layout/ScrollToTop';
 import { Check } from 'lucide-react';
@@ -16,7 +15,6 @@ const perks = [
 ];
 
 function Boosters() {
-	const [showNav, setShowNav] = useState(false);
 	const [showModal, setShowModal] = useState(false);
 
 	const modalToggle = () => {
@@ -29,7 +27,6 @@ function Boosters() {
 			style={{ minHeight: '100vh', paddingBottom: '6rem' }}
 		>
 			<ScrollToTop />
-			<SideNavBar show={showNav} logo={logo} />
 
 			<div className="w-full max-w-2xl mt-8 flex flex-col flex-1">
 				{/* Title */}
