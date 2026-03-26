@@ -1,38 +1,38 @@
 import './scheduleSection.css';
 import { Link } from 'react-router';
-import {
-	FaFootballBall,
-	FaVolleyballBall,
-	FaBasketballBall,
-	FaBaseballBall,
-	FaRunning,
-	FaHandRock,
-} from 'react-icons/fa';
-import { Card, CardContent } from '../components/ui/card';
+import { Card } from '../components/ui/card';
 import { ArrowRight } from 'lucide-react';
+
+import footballImg from '../assets/sports/football.jpg';
+import volleyballImg from '../assets/sports/volleyball.jpg';
+import basketballImg from '../assets/sports/basketball.jpg';
+import wrestlingImg from '../assets/sports/wrestling.jpg';
+import baseballImg from '../assets/sports/baseball.jpg';
+import softballImg from '../assets/sports/softball.jpg';
+import trackImg from '../assets/sports/track.jpg';
 
 const seasons = [
 	{
 		label: 'Fall',
 		sports: [
-			{ name: 'Football', sport: 'football', icon: <FaFootballBall />, color: '#854d0e' },
-			{ name: 'Volleyball', sport: 'volleyball', icon: <FaVolleyballBall />, color: '#f97316' },
+			{ name: 'Football', sport: 'football', img: footballImg },
+			{ name: 'Volleyball', sport: 'volleyball', img: volleyballImg },
 		],
 	},
 	{
 		label: 'Winter',
 		sports: [
-			{ name: 'Boys Basketball', sport: 'boys-basketball', icon: <FaBasketballBall />, color: '#f59e0b' },
-			{ name: 'Girls Basketball', sport: 'girls-basketball', icon: <FaBasketballBall />, color: '#f59e0b' },
-			{ name: 'Wrestling', sport: 'wrestling', icon: <FaHandRock />, color: '#8b5cf6' },
+			{ name: 'Boys Basketball', sport: 'boys-basketball', img: basketballImg },
+			{ name: 'Girls Basketball', sport: 'girls-basketball', img: basketballImg },
+			{ name: 'Wrestling', sport: 'wrestling', img: wrestlingImg },
 		],
 	},
 	{
 		label: 'Spring',
 		sports: [
-			{ name: 'Baseball', sport: 'baseball', icon: <FaBaseballBall />, color: '#3b82f6' },
-			{ name: 'Softball', sport: 'softball', icon: <FaBaseballBall />, color: '#84cc16' },
-			{ name: 'Track & Field', sport: 'track', icon: <FaRunning />, color: '#ef4444' },
+			{ name: 'Baseball', sport: 'baseball', img: baseballImg },
+			{ name: 'Softball', sport: 'softball', img: softballImg },
+			{ name: 'Track & Field', sport: 'track', img: trackImg },
 		],
 	},
 ];
@@ -74,18 +74,27 @@ export default function ScheduleSection() {
 									style={{ textDecoration: 'none' }}
 									className="flex-1 min-w-40 max-w-55"
 								>
-									<Card className="py-0 h-full hover:shadow-md hover:border-[#6b2c91] border-transparent border-2 transition-all cursor-pointer">
-										<CardContent className="flex flex-col gap-2 p-4">
-											<span style={{ color: sport.color }} className="text-2xl">
-												{sport.icon}
-											</span>
-											<span className="font-bold text-sm text-[#420a72] leading-tight">
+									<Card className="py-0 h-32 overflow-hidden relative border-0 hover:scale-[1.02] hover:shadow-lg transition-all cursor-pointer">
+										{/* Background image */}
+										<img
+											src={sport.img}
+											alt={sport.name}
+											className="absolute inset-0 w-full h-full object-cover"
+										/>
+										{/* Dark overlay */}
+										<div
+											className="absolute inset-0"
+											style={{ background: 'linear-gradient(160deg, rgba(26,0,51,0.82) 0%, rgba(66,10,114,0.65) 100%)' }}
+										/>
+										{/* Text */}
+										<div className="relative z-10 flex flex-col justify-end h-full p-3 gap-0.5">
+											<span className="font-black text-sm text-white leading-tight">
 												{sport.name}
 											</span>
-											<span className="text-[11px] text-muted-foreground uppercase tracking-wide font-semibold">
+											<span className="text-[10px] text-white/60 uppercase tracking-widest font-semibold">
 												{season.label} Season
 											</span>
-										</CardContent>
+										</div>
 									</Card>
 								</Link>
 							))}
