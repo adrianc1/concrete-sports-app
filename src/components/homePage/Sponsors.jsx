@@ -12,8 +12,6 @@ import dreaux from '../../assets/dreauxdigital.webp';
 import cascadeMountainLodge from '../../assets/cascademountainlodgeBanner.webp';
 import ScrollToTop from '../../layout/ScrollToTop';
 import cascadebar from '../../assets/indiancuisine.webp';
-
-import '../homePage/homePageStyles/sponsors.css';
 function Sponsors() {
 	const [showNav, setShowNav] = useState(false);
 
@@ -37,7 +35,7 @@ function Sponsors() {
 		{
 			name: 'North Cascade Kayaks',
 			url: 'https://northcascadekayaks.com/',
-			contact: ' info@northcascadekayaks.com',
+			contact: 'info@northcascadekayaks.com',
 			address: '52925 Railroad Ave, Rockport, WA 98283',
 			logo: kayak,
 			isExternal: true,
@@ -82,7 +80,6 @@ function Sponsors() {
 			logo: perks,
 			isExternal: true,
 		},
-
 		{
 			name: 'Dreaux Digital',
 			url: 'https://dreauxdigital.com',
@@ -92,81 +89,71 @@ function Sponsors() {
 			isExternal: true,
 		},
 	];
-	function handleSponsorClick(url) {
-		window.open(url, '_blank');
-	}
 
 	return (
-		<div className="sponsor-container">
+		<div className="w-full flex flex-col items-center px-4 pb-32 md:pb-24">
 			<ScrollToTop />
-
 			<SideNavBar show={showNav} logo={logo} />
-			<div className="sponsors-content">
-				<h2 className="sponsors-title">Sponsors</h2>
-				<ul className="sponsor-list">
-					{sponsorList.map((sponsor, index) => {
-						return (
-							<li className="sponsor-item" key={index}>
-								<div className="sponsor-header">
-									{sponsor.logo &&
-										(sponsor.isExternal ? (
-											<img
-												src={sponsor.logo}
-												alt={`${sponsor.name} logo`}
-												className="sponsor-logo"
-												onClick={() => window.open(sponsor.url, '_blank')}
-												style={{ cursor: 'pointer' }}
-											/>
-										) : (
-											<Link to={sponsor.url}>
-												<img
-													src={sponsor.logo}
-													alt={`${sponsor.name} logo`}
-													className="sponsor-logo"
-												/>
-											</Link>
-										))}
-									{sponsor.isExternal ? (
-										<span
-											className="sponsor-name"
-											onClick={() => handleSponsorClick(sponsor.url)}
-											style={{ cursor: 'pointer' }}
-										>
-											{sponsor.name}
-										</span>
-									) : (
-										<Link className="sponsor-name" to={sponsor.url}>
-											{sponsor.name}
-										</Link>
-									)}
-								</div>
 
-								<span className="sponsor-address">
-									Address: {sponsor.address}
-								</span>
-								<span className="sponsor-phone">
-									Contact: {sponsor.contact}
-								</span>
-							</li>
-						);
-					})}
-					<p className="sponsor-message">
-						A heartfelt thank you to our sponsors! Your generous support has
-						directly empowered our Concrete athletes, providing them with
-						invaluable resources and opportunities. We&apos;ve witnessed their
-						growth and success thanks to your belief in them. We are deeply
-						grateful for your partnership.
-						<br />
-						<br />
-						To be a sponsor please contact{' '}
-						<strong>
-							<a href="mailto:adrian@dreauxdigital.com">
-								adrian@dreauxdigital.com
-							</a>
-						</strong>
-						.
-					</p>
-				</ul>
+			<h2
+				className="font-black"
+				style={{ fontSize: '2.25rem', fontWeight: 900, letterSpacing: '-0.5px', color: '#420a72', textAlign: 'center', marginTop: '2rem', marginBottom: '2rem' }}
+			>
+				Sponsors
+				<span
+					className="block rounded-full"
+					style={{ width: 80, height: 3, background: '#f2bc40', margin: '0.75rem auto 0' }}
+				/>
+			</h2>
+
+			<div className="grid grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-4xl">
+				{sponsorList.map((sponsor, index) => {
+					const inner = (
+						<div className="group flex flex-col gap-2 cursor-pointer">
+							<div className="relative overflow-hidden rounded-xl">
+								<img
+									src={sponsor.logo}
+									alt={`${sponsor.name} logo`}
+									className="w-full h-36 md:h-44 object-cover"
+								/>
+								<div className="absolute inset-0 bg-[#420a72]/0 group-hover:bg-[#420a72]/20 transition-colors duration-200 rounded-xl" />
+							</div>
+							<span className="font-bold leading-tight" style={{ fontSize: '0.875rem', color: '#420a72' }}>
+								{sponsor.name}
+							</span>
+						</div>
+					);
+
+					return sponsor.isExternal ? (
+						<a
+							key={index}
+							href={sponsor.url}
+							target="_blank"
+							rel="noreferrer"
+							style={{ textDecoration: 'none' }}
+						>
+							{inner}
+						</a>
+					) : (
+						<Link key={index} to={sponsor.url} style={{ textDecoration: 'none' }}>
+							{inner}
+						</Link>
+					);
+				})}
+			</div>
+
+			<div className="w-full max-w-4xl mt-12 text-sm text-gray-500 leading-relaxed">
+				A heartfelt thank you to our sponsors! Your generous support has directly
+				empowered our Concrete athletes, providing them with invaluable resources and
+				opportunities. We&apos;ve witnessed their growth and success thanks to your
+				belief in them. We are deeply grateful for your partnership.
+				<br />
+				<br />
+				To be a sponsor please contact{' '}
+				<a href="mailto:adrian@dreauxdigital.com" className="font-bold" style={{ color: '#420a72', textDecoration: 'none' }}>
+					adrian@dreauxdigital.com
+				</a>
+				.
 			</div>
 		</div>
 	);

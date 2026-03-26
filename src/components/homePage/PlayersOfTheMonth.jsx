@@ -2,137 +2,148 @@ import { useState } from 'react';
 import logo from '../../assets/Concrete-Logo.png';
 import SideNavBar from '../../layout/SideNavBar';
 import ScrollToTop from '../../layout/ScrollToTop';
+import { Star } from 'lucide-react';
 
-import '../homePage/homePageStyles/player.css';
+const months = [
+	{
+		month: 'January',
+		current: true,
+		players: [
+			{ name: 'Brodie Nick', sport: 'Wrestling' },
+			{ name: 'Alexa Dalton', sport: 'Girls Basketball' },
+			{ name: 'Lincoln Stibbs', sport: 'Boys Basketball' },
+		],
+	},
+	{
+		month: 'December',
+		players: [
+			{ name: "Riley O'Neil", sport: 'Wrestling' },
+			{ name: 'Kylie Selin', sport: 'Girls Basketball' },
+			{ name: 'Tait Bosa', sport: 'Football' },
+		],
+	},
+	{
+		month: 'November',
+		players: [
+			{ name: 'Maddy Norris', sport: 'Volleyball' },
+			{ name: 'Zack Richter', sport: 'Football' },
+		],
+	},
+	{
+		month: 'October',
+		players: [
+			{ name: 'Lily Falconer', sport: 'Volleyball' },
+			{ name: 'Alex Olson', sport: 'Football' },
+		],
+	},
+	{
+		month: 'September',
+		players: [
+			{ name: 'Avery Collins', sport: 'Volleyball' },
+			{ name: 'Zach Richter', sport: 'Football' },
+		],
+	},
+];
 
 function PlayersOfTheMonth() {
 	const [showNav, setShowNav] = useState(false);
+
 	return (
-		<div>
+		<div
+			className="w-full flex flex-col items-center px-4"
+			style={{ paddingBottom: '8rem' }}
+		>
 			<ScrollToTop />
-
 			<SideNavBar show={showNav} logo={logo} />
-			<div className="player-of-the-month-page">
-				<h1 className="player-title">Athletes of the Month</h1>
-				<div className="player-profile">
-					<div className="month">September</div>
-					<div className="player-card">
-						<div className="player-info">
-							<div>
-								<span className="player-name">Avery Collins</span> <br />
-							</div>
-						</div>
-						<div className="player-sport">🏐 Volleyball</div>
-					</div>
 
-					<div className="player-card">
-						<div className="player-info">
-							<div>
-								<span className="player-name">Zach Richter</span> <br />
-							</div>
-						</div>
-						<div className="player-sport">🏈 Football</div>
-					</div>
-				</div>
+			<div className="w-full max-w-2xl mt-8">
+				{/* Title */}
+				<h2
+					className="font-black mb-10"
+					style={{
+						fontSize: '2.25rem',
+						fontWeight: 900,
+						letterSpacing: '-0.5px',
+						color: '#420a72',
+						textAlign: 'center',
+						marginTop: '2rem',
+						fontFamily: 'inherit',
+					}}
+				>
+					Athlete Spotlight
+					<span
+						className="block rounded-full mt-3 mb-8"
+						style={{
+							width: 80,
+							height: 3,
+							background: '#f2bc40',
+							margin: '0.75rem auto 2rem',
+						}}
+					/>
+				</h2>
 
-				<div className="player-profile">
-					<div className="month">October</div>
-					<div className="player-card">
-						<div className="player-info">
-							<div>
-								<span className="player-name">Lily Falconer</span> <br />
+				<div className="flex flex-col gap-8">
+					{months.map(({ month, current, players }) => (
+						<div key={month}>
+							{/* Month header */}
+							<div className="flex items-center gap-3 mb-3">
+								<h3
+									className="font-black uppercase tracking-wide m-0"
+									style={{ fontSize: '1rem', color: '#420a72' }}
+								>
+									{month}
+								</h3>
+								{current && (
+									<span
+										className="inline-flex items-center gap-1 rounded-full font-black uppercase tracking-widest px-3 py-1"
+										style={{
+											background: '#f2bc40',
+											color: '#1a0033',
+											fontSize: '0.6rem',
+										}}
+									>
+										<Star size={8} fill="currentColor" />
+										Current
+									</span>
+								)}
+								<span
+									className="flex-1"
+									style={{ height: 1, background: '#f0f0f0' }}
+								/>
 							</div>
-						</div>
-						<div className="player-sport">🏐 Volleyball</div>
-					</div>
 
-					<div className="player-card">
-						<div className="player-info">
-							<div>
-								<span className="player-name">Alex Olson </span> <br />
+							{/* Player rows */}
+							<div className="flex flex-col gap-2">
+								{players.map((player, i) => (
+									<div
+										key={i}
+										className="flex items-center justify-between px-4 py-3.5 rounded"
+										style={{
+											borderLeft: `4px solid ${current ? '#f2bc40' : '#420a72'}`,
+											background: current ? '#fffbf0' : '#faf8fd',
+										}}
+									>
+										<span
+											className="font-black"
+											style={{ fontSize: '1.05rem', color: '#1a0033' }}
+										>
+											{player.name}
+										</span>
+										<span
+											className="font-bold uppercase tracking-widest"
+											style={{
+												fontSize: '0.65rem',
+												color: '#420a72',
+												opacity: 0.6,
+											}}
+										>
+											{player.sport}
+										</span>
+									</div>
+								))}
 							</div>
 						</div>
-						<div className="player-sport">🏈 Football</div>
-					</div>
-				</div>
-
-				<div className="player-profile">
-					<div className="month">November</div>
-					<div className="player-card">
-						<div className="player-info">
-							<div>
-								<span className="player-name">Maddy Norris</span> <br />
-							</div>
-						</div>
-						<div className="player-sport">🏐 Volleyball</div>
-					</div>
-
-					<div className="player-card">
-						<div className="player-info">
-							<div>
-								<span className="player-name">Zack Richter</span> <br />
-							</div>
-						</div>
-						<div className="player-sport">🏈 Football</div>
-					</div>
-				</div>
-
-				<div className="player-profile">
-					<div className="month">December</div>
-					<div className="player-card">
-						<div className="player-info">
-							<div>
-								<span className="player-name">Riley O’Neil</span> <br />
-							</div>
-						</div>
-						<div className="player-sport">🤼 Wrestling</div>
-					</div>
-
-					<div className="player-card">
-						<div className="player-info">
-							<div>
-								<span className="player-name">Kylie Selin</span> <br />
-							</div>
-						</div>
-						<div className="player-sport">🏀 Girls Basketball</div>
-					</div>
-					<div className="player-card">
-						<div className="player-info">
-							<div>
-								<span className="player-name">Tait Bosa</span> <br />
-							</div>
-						</div>
-						<div className="player-sport">🏈 Football</div>
-					</div>
-				</div>
-
-				<div className="player-profile">
-					<div className="month">January</div>
-					<div className="player-card">
-						<div className="player-info">
-							<div>
-								<span className="player-name">Brodie Nick</span> <br />
-							</div>
-						</div>
-						<div className="player-sport">🤼 Wrestling</div>
-					</div>
-
-					<div className="player-card">
-						<div className="player-info">
-							<div>
-								<span className="player-name">Alexa Dalton</span> <br />
-							</div>
-						</div>
-						<div className="player-sport">🏀 Girls Basketball</div>
-					</div>
-					<div className="player-card">
-						<div className="player-info">
-							<div>
-								<span className="player-name">Lincoln Stibbs</span> <br />
-							</div>
-						</div>
-						<div className="player-sport">🏀 Boys Basketball</div>
-					</div>
+					))}
 				</div>
 			</div>
 		</div>

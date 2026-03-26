@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './imageSlider.css';
+import { ChevronLeft, ChevronRight, Circle } from 'lucide-react';
 
 const ImageSlider = ({ slides }) => {
 	const [currentIndex, setCurrentIndex] = useState(1);
@@ -66,7 +67,7 @@ const ImageSlider = ({ slides }) => {
 						goToPrevious();
 					}}
 				>
-					←
+					<ChevronLeft size={20} />
 				</div>
 
 				<div className="slider-wrapper">
@@ -93,7 +94,7 @@ const ImageSlider = ({ slides }) => {
 						goToNext();
 					}}
 				>
-					→
+					<ChevronRight size={20} />
 				</div>
 
 				<div className="dots">
@@ -103,7 +104,7 @@ const ImageSlider = ({ slides }) => {
 							className={index + 1 === currentIndex ? 'dot active' : 'dot'}
 							onClick={() => setCurrentIndex(index + 1)}
 						>
-							•
+							<Circle size={8} fill={index + 1 === currentIndex ? 'currentColor' : 'none'} />
 						</span>
 					))}
 				</div>

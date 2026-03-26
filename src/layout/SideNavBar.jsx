@@ -1,4 +1,4 @@
-import { Link } from 'react-router';
+import { NavLink } from 'react-router';
 import './sideNavBar.css';
 
 function SideNavBar({ show, logo }) {
@@ -7,52 +7,52 @@ function SideNavBar({ show, logo }) {
 			<ul className="nav-list">
 				<img src={logo} alt="Logo" className="logo" />
 				<li>
-					<Link to="/">Home</Link>
+					<NavLink to="/" end>Home</NavLink>
 				</li>
 				<li>
-					<Link to="/schedules">Schedules</Link>
+					<NavLink to="/schedules">Schedules</NavLink>
 				</li>
 				{/* <li>
-					<Link to="/updates">Updates</Link>
+					<NavLink to="/updates">Updates</NavLink>
 				</li> */}
 				<li>
-					<Link to="/playersOfTheMonth">Players Of The Month</Link>
+					<NavLink to="/playersOfTheMonth">Players Of The Month</NavLink>
 				</li>
 				<li>
-					<Link to="/sponsors">Sponsors</Link>
+					<NavLink to="/sponsors">Sponsors</NavLink>
 				</li>
 				<li>
-					<Link to="/boosters">Booster Club</Link>
+					<NavLink to="/boosters">Booster Club</NavLink>
 				</li>
 				<li>
-					<Link to="/contact">Coach Connect</Link>
+					<NavLink to="/contact">Coach Connect</NavLink>
 				</li>
 			</ul>
 			<ul className="nav-schedule">
 				<h4>Team Schedules</h4>
 				<li>
-					<Link to="/BOYS-BASKETBALLSchedule">Boys Basketball</Link>
+					<NavLink to="/BOYS-BASKETBALLSchedule">Boys Basketball</NavLink>
 				</li>
 				<li>
-					<Link to="/GIRLS-BASKETBALLSchedule">Girls Basketball</Link>
+					<NavLink to="/GIRLS-BASKETBALLSchedule">Girls Basketball</NavLink>
 				</li>
 				<li>
-					<Link to="/footballSchedule">Football</Link>
+					<NavLink to="/footballSchedule">Football</NavLink>
 				</li>
 				<li>
-					<Link to="/baseballSchedule">Baseball</Link>
+					<NavLink to="/baseballSchedule">Baseball</NavLink>
 				</li>
 				<li>
-					<Link to="/softballSchedule">Softball</Link>
+					<NavLink to="/softballSchedule">Softball</NavLink>
 				</li>
 				<li>
-					<Link to="/volleyballSchedule">Volleyball</Link>
+					<NavLink to="/volleyballSchedule">Volleyball</NavLink>
 				</li>
 				<li>
-					<Link to="/trackSchedule">Track</Link>
+					<NavLink to="/trackSchedule">Track</NavLink>
 				</li>
 				{/* <li>
-					<Link to="/wrestlingSchedule">Wrestling</Link>
+					<NavLink to="/wrestlingSchedule">Wrestling</NavLink>
 				</li> */}
 			</ul>
 			<div className="copyright">
