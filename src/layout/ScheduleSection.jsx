@@ -56,7 +56,7 @@ export default function ScheduleSection() {
 								<span className="h-0.5 w-10 bg-[#f2bc40] rounded-full inline-block" />
 							</div>
 							<Link
-								to="schedules"
+								to="/schedules"
 								className="inline-flex items-center gap-1 text-[12px] font-bold uppercase tracking-wide text-[#420a72] hover:text-[#f2bc40] transition-colors"
 								style={{ textDecoration: 'none' }}
 							>
@@ -66,13 +66,12 @@ export default function ScheduleSection() {
 						</div>
 
 						{/* Sport cards */}
-						<div className="flex flex-wrap gap-4">
+						<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 							{season.sports.map((sport) => (
 								<Link
 									key={sport.sport}
-									to={`${sport.sport}Schedule`}
+									to={`/${sport.sport}Schedule`}
 									style={{ textDecoration: 'none' }}
-									className="flex-1 min-w-40 max-w-55"
 								>
 									<Card className="py-0 h-32 overflow-hidden relative border-0 hover:scale-[1.02] hover:shadow-lg transition-all cursor-pointer">
 										{/* Background image */}
