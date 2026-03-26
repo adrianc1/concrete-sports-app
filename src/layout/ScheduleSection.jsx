@@ -73,7 +73,7 @@ export default function ScheduleSection() {
 									to={`/${sport.sport}Schedule`}
 									style={{ textDecoration: 'none' }}
 								>
-									<Card className="py-0 h-32 overflow-hidden relative border-0 hover:scale-[1.02] hover:shadow-lg transition-all cursor-pointer">
+									<Card className="py-0 h-32 md:h-44 overflow-hidden relative border-0 hover:scale-[1.02] hover:shadow-lg transition-all cursor-pointer">
 										{/* Background image */}
 										<img
 											src={sport.img}
