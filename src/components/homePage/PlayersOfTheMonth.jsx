@@ -4,6 +4,7 @@ import { Star } from 'lucide-react';
 const months = [
 	{
 		month: 'February',
+		current: true,
 		players: [
 			{ name: 'Stellah Nick', sport: 'Girls Basketball' },
 			{ name: 'Zach Richter', sport: 'Boys Basketball' },
@@ -11,7 +12,6 @@ const months = [
 	},
 	{
 		month: 'January',
-		current: true,
 		players: [
 			{ name: 'Brodie Nick', sport: 'Wrestling' },
 			{ name: 'Alexa Dalton', sport: 'Girls Basketball' },
