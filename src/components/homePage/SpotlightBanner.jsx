@@ -1,15 +1,11 @@
 import { Link } from 'react-router';
 import { ArrowRight, Star } from 'lucide-react';
 import spotlightBanner from '../../assets/spotlight-banner.webp';
+import { months } from '../../data/playersOfTheMonth';
 
-// Most recent athletes — update each month
-const featuredAthletes = [
-	{ name: 'Brodie Nick', sport: 'Wrestling' },
-	{ name: 'Alexa Dalton', sport: 'Girls Basketball' },
-	{ name: 'Lincoln Stibbs', sport: 'Boys Basketball' },
-];
-
-const month = 'February';
+const current = months.find((m) => m.current);
+const featuredAthletes = current?.players ?? [];
+const month = current?.month ?? '';
 
 export default function SpotlightBanner() {
 	return (
