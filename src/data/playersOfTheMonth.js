@@ -1,7 +1,21 @@
 export const months = [
 	{
-		month: 'February',
+		month: 'April',
 		current: true,
+		players: [
+			{ name: 'Avery Collins', sport: 'Softbal' },
+			{ name: 'Zach Richter', sport: 'Baseball' },
+		],
+	},
+	{
+		month: 'March',
+		players: [
+			{ name: 'Kylie Selin', sport: 'Softball' },
+			{ name: 'Alex Olson', sport: 'Baseball' },
+		],
+	},
+	{
+		month: 'February',
 		players: [
 			{ name: 'Stellah Nick', sport: 'Girls Basketball' },
 			{ name: 'Zach Richter', sport: 'Boys Basketball' },
