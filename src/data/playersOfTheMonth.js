@@ -1,14 +1,22 @@
 export const months = [
 	{
+		month: 'May',
+		current: true,
+		players: [
+			{ name: 'Jackie Daniels', sport: 'Fast Pitch' },
+			{ name: ' Elijah Rider ', sport: 'Boys Track & Field' },
+		],
+	},
+	{
 		month: 'April',
 		players: [
-			{ name: 'Avery Collins', sport: 'Softbal' },
-			{ name: 'Zach Richter', sport: 'Baseball' },
+			{ name: 'Olive Huntley', sport: 'Fast Pitch' },
+			{ name: ' Aurora Palmer', sport: 'Girls Track & Field' },
+			{ name: ' Zack Richter', sport: 'Boys Track & Field' },
 		],
 	},
 	{
 		month: 'March',
-		current: true,
 		players: [
 			{ name: 'Grace Petosa', sport: 'Track' },
 			{ name: 'Jonathan Guzman', sport: 'Track' },
