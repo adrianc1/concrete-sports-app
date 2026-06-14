@@ -6,7 +6,6 @@ import { months } from '../../data/playersOfTheMonth';
 const current = months.find((m) => m.current);
 const featuredAthletes = current?.players ?? [];
 const month = current?.month ?? '';
-
 export default function SpotlightBanner() {
 	return (
 		<div className="px-4 md:px-0">
@@ -51,7 +50,7 @@ export default function SpotlightBanner() {
 								letterSpacing: '-0.5px',
 							}}
 						>
-							{month} Athletes of the Month
+							{current?.year ? month : `${month} Athletes of the Month`}
 						</h2>
 						<p
 							className="text-white/60 m-0"

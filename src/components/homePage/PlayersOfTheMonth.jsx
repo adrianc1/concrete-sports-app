@@ -37,6 +37,16 @@ function PlayersOfTheMonth() {
 				</h2>
 
 				<div className="flex flex-col gap-8">
+					{months.year && (
+						<div className="flex items-center gap-3 mb-3">
+							<h3
+								className="font-black uppercase tracking-wide m-0"
+								style={{ fontSize: '1rem', color: '#420a72' }}
+							>
+								Athletes of the Year
+							</h3>
+						</div>
+					)}
 					{months.map(({ month, current, players }) => (
 						<div key={month}>
 							{/* Month header */}

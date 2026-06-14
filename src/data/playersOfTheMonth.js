@@ -1,7 +1,15 @@
 export const months = [
 	{
-		month: 'May',
+		month: 'Athletes of the Year: 2025 - 2026 Season',
 		current: true,
+		year: true,
+		players: [
+			{ name: 'Alexa Dalton', sport: 'Female AOTY' },
+			{ name: ' Zack Richter ', sport: 'Male AOTY' },
+		],
+	},
+	{
+		month: 'May',
 		players: [
 			{ name: 'Jackie Daniels', sport: 'Fast Pitch' },
 			{ name: ' Elijah Rider ', sport: 'Boys Track & Field' },
