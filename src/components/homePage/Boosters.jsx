@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import logo from '../../assets/Concrete-Logo.png';
 import ScrollToTop from '../../layout/ScrollToTop';
 import { Check } from 'lucide-react';
 
 const perks = [
-	'Attend meetings every second Wednesday of each month at 7:30pm in the high school cafeteria.',
+	'Attend meetings every second Wednesday of each month from 6:30pm to 7:30pm in the high school cafeteria from September to May.',
 	'Help on fundraising committees.',
 	'Vote on Athlete of the Month and other decisions made by the Booster Club.',
 	'Nominate student-athletes for Athlete of the Year.',
