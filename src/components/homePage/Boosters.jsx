@@ -74,11 +74,11 @@ function Boosters() {
 				</div>
 
 				{/* Perks */}
-				<div className="flex flex-col flex-1 justify-between">
+				<div className="flex flex-col flex-1 gap-3">
 					{perks.map((perk, i) => (
 						<div
 							key={i}
-							className="flex items-start gap-3 px-4 py-3.5 rounded-xl"
+							className="flex flex-1 items-center gap-3 px-4 py-3.5 rounded-sm"
 							style={{ borderLeft: '4px solid #420a72', background: '#faf8fd' }}
 						>
 							<Check
