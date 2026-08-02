@@ -56,6 +56,34 @@ This means the school never manually enters a score.
 
 ---
 
+## In Progress: Python + PostgreSQL Migration
+
+The backend is being rebuilt in Python with PostgreSQL replacing MongoDB. This is a
+deliberate re-platform, not a rewrite for its own sake — the data turned out to be
+relational, and the schemaless store was hiding that.
+
+**Why Postgres:**
+
+- Games, schools, sports, and seasons are entities with real relationships. Under MongoDB
+  each sport lived in its own collection, so `GET /api/all` meant six queries and a
+  concatenation in application code. In SQL it's one query.
+- Constraints move correctness into the database. A composite foreign key makes a
+  cross-sport matchup (baseball vs. football) structurally impossible rather than
+  something the ingest code has to remember not to do.
+- Scraped opponent names arrive inconsistently (`La Conner (2B)`, `Charles Wright Acad. (1A)`,
+  and one truncated `Cedar Park Christian (Lynnwood`). A `school_aliases` lookup table
+  resolves these at ingest, replacing string cleanup that had leaked into the React
+  components.
+
+**Target stack:** FastAPI · SQLAlchemy 2.0 · Alembic · Pydantic v2 · pytest · uv
+
+**Approach:** The existing API responses were captured as JSON fixtures before any code was
+written. The React frontend is unchanged, so those fixtures define the contract the Python
+implementation has to satisfy; any difference in the payload is either an intentional,
+coordinated change or a bug. The Express service stays running until parity is verified.
+
+---
+
 ## Architecture Notes
 
 - **Upsert pattern** — MongoDB `bulkWrite` with `updateOne + upsert: true` — batch upserts prevent duplication across daily cron runs while keeping writes efficient
