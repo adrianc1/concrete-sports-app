@@ -19,7 +19,7 @@ INSERT INTO sports (name, slug) VALUES
 -- ---------------------------------------------------------------------------
 -- schools       id 1 = Concrete (the home school), 2..4 = opponents
 -- ---------------------------------------------------------------------------
-INSERT INTO schools (name, slug, city, state, is_home) VALUES
+INSERT INTO schools (name, slug, city, state, is_our_school) VALUES
     ('Concrete High School',   'concrete',             'Concrete',   'WA', true),
     ('La Conner High School',  'la-conner',            'La Conner',  'WA', false),
     ('Darrington High School', 'darrington',           'Darrington', 'WA', false),

@@ -13,7 +13,7 @@ CREATE TABLE schools (
     slug TEXT NOT NULL UNIQUE, -- /concrete-lions
     city TEXT, -- Concrete
     state CHAR(2), -- WA
-    is_home BOOLEAN NOT NULL DEFAULT false -- T/F
+    is_our_school BOOLEAN NOT NULL DEFAULT false -- school's app
 );
 
 CREATE TABLE seasons (
@@ -56,3 +56,5 @@ FOREIGN KEY (away_team_id, sport_id) REFERENCES teams (id, sport_id),
 CHECK(home_team_id <> away_team_id),
 UNIQUE(home_team_id, away_team_id, starts_at)
 );
+
+CREATE UNIQUE INDEX one_home_school ON schools (is_our_school) WHERE is_our_school;
