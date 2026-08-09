@@ -4,7 +4,20 @@ import './homePageStyles/upcomingGames.css';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import { fetchUpcomingGames } from '../../utils/api';
-import { FaFootballBall, FaVolleyballBall, FaBasketballBall, FaBaseballBall, FaRunning, FaHandRock, FaTrophy } from 'react-icons/fa';
+import {
+	formatGameDate,
+	formatGameTime,
+	byStartsAtAsc,
+} from '../../utils/formatGame';
+import {
+	FaFootballBall,
+	FaVolleyballBall,
+	FaBasketballBall,
+	FaBaseballBall,
+	FaRunning,
+	FaHandRock,
+	FaTrophy,
+} from 'react-icons/fa';
 import { Card, CardContent } from '../ui/card';
 import { MapPin } from 'lucide-react';
 
@@ -78,58 +91,75 @@ export default function UpcomingGames() {
 									</Card>
 								))
 						: upcomingGames
-								.filter((game) => game.result === 'TBD')
-								.sort((a, b) => new Date(a.date) - new Date(b.date))
+								.filter(
+									(game) =>
+										game.status === 'scheduled' || game.status === 'postponed',
+								)
+								.sort(byStartsAtAsc)
 								.slice(0, 4)
 								.map((game, index) => {
-									const opponentName = game.opponent?.replace(/\s*\([^)]*\)\s*/g, '').trim();
+									const opponentName = game.opponent
+										?.replace(/\s*\([^)]*\)\s*/g, '')
+										.trim();
 									return (
-										<Card key={index} className="min-w-72 max-w-72 shrink-0 py-0">
-										<CardContent className="flex flex-col gap-2.5 p-3">
-											{/* Sport + date on one row */}
-											<div className="flex items-center justify-between">
+										<Card
+											key={index}
+											className="min-w-72 max-w-72 shrink-0 py-0"
+										>
+											<CardContent className="flex flex-col gap-2.5 p-3">
+												{/* Sport + date on one row */}
+												<div className="flex items-center justify-between">
+													<Link
+														to={`${game.sport}Schedule`}
+														style={{ textDecoration: 'none', color: '#420a72' }}
+														className="inline-flex items-center gap-1.5 hover:text-[#f2bc40] transition-colors font-bold text-sm"
+													>
+														<span
+															style={{
+																color: sportColors[game.sport] || '#420a72',
+															}}
+														>
+															{sportIcons[game.sport] || <FaTrophy />}
+														</span>
+														{transformSport[game.sport]}
+													</Link>
+													<span className="text-[11px] text-muted-foreground">
+														{formatGameDate(game.starts_at)}
+													</span>
+												</div>
+
+												{/* Matchup + time */}
+												<div className="flex flex-col gap-1 border-t border-border pt-2">
+													<span className="text-sm font-bold text-foreground">
+														{game.home_away?.includes('Away') ? '@ ' : 'vs '}
+														{opponentName}
+													</span>
+													{game.starts_at && (
+														<span className="text-[11px] text-muted-foreground">
+															{formatGameTime(game.starts_at)}
+														</span>
+													)}
+													{game.location && (
+														<span className="inline-flex items-center gap-1 text-[11px] text-muted-foreground">
+															<MapPin size={10} />
+															{game.location}
+														</span>
+													)}
+												</div>
+
+												{/* See schedule button */}
 												<Link
 													to={`${game.sport}Schedule`}
-													style={{ textDecoration: 'none', color: '#420a72' }}
-													className="inline-flex items-center gap-1.5 hover:text-[#f2bc40] transition-colors font-bold text-sm"
+													style={{ textDecoration: 'none' }}
+													className="block border-t border-border pt-2"
 												>
-													<span style={{ color: sportColors[game.sport] || '#420a72' }}>
-														{sportIcons[game.sport] || <FaTrophy />}
-													</span>
-													{transformSport[game.sport]}
+													<button className="w-full text-[11px] font-bold py-2 rounded-full tracking-wide uppercase bg-linear-to-r from-[#420a72] to-[#6b2c91] text-white hover:from-[#6b2c91] hover:to-[#420a72] hover:shadow-md transition-all cursor-pointer">
+														See Schedule
+													</button>
 												</Link>
-												<span className="text-[11px] text-muted-foreground">{game.date}</span>
-											</div>
-
-											{/* Matchup + time */}
-											<div className="flex flex-col gap-1 border-t border-border pt-2">
-												<span className="text-sm font-bold text-foreground">
-													{game.home_away?.includes('Away') ? '@ ' : 'vs '}{opponentName}
-												</span>
-												{game.time && (
-													<span className="text-[11px] text-muted-foreground">{game.time}</span>
-												)}
-												{game.location && (
-													<span className="inline-flex items-center gap-1 text-[11px] text-muted-foreground">
-														<MapPin size={10} />
-														{game.location}
-													</span>
-												)}
-											</div>
-
-											{/* See schedule button */}
-											<Link
-												to={`${game.sport}Schedule`}
-												style={{ textDecoration: 'none' }}
-												className="block border-t border-border pt-2"
-											>
-												<button className="w-full text-[11px] font-bold py-2 rounded-full tracking-wide uppercase bg-linear-to-r from-[#420a72] to-[#6b2c91] text-white hover:from-[#6b2c91] hover:to-[#420a72] hover:shadow-md transition-all cursor-pointer">
-													See Schedule
-												</button>
-											</Link>
-										</CardContent>
-									</Card>
-								);
+											</CardContent>
+										</Card>
+									);
 								})}
 				</div>
 			</div>
