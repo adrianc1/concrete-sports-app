@@ -13,5 +13,5 @@ JOIN teams at ON at.id = g.away_team_id
 JOIN schools hs ON hs.id = ht.school_id
 JOIN schools as_ ON as_.id = at.school_id   
 JOIN sports sp ON sp.id = g.sport_id
-WHERE sp.id = 1
+WHERE sp.slug = :sport
 ORDER BY starts_at DESC;

@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from sqlalchemy import text
-
+from app.schemas import Game
 from app.database import engine
 
 app = FastAPI()
@@ -26,15 +26,16 @@ _GAMES_BASE = """
 
 ALL_GAMES = text(_GAMES_BASE + " ORDER BY g.starts_at DESC")
 
-GET_SPORT = text(_GAMES_BASE + " WHERE sp.slug = :sport ORDER BY g.starts_at DESC")
+GET_SPORT = text(_GAMES_BASE + " WHERE sp.slug = :sport ORDER BY g.starts_at DESC");
 
-@app.get("/api/all")
+
+@app.get("/api/all", response_model=list[Game])
 def get_all_games():
     with engine.connect() as conn:
         result = conn.execute(ALL_GAMES)
         return [dict(row) for row in result.mappings()]
 
-@app.get("/api/{sport}")
+@app.get("/api/{sport}", response_model=list[Game])
 def get_sport(sport: str):
     with engine.connect() as conn:
         result = conn.execute(GET_SPORT, {"sport": sport})
