@@ -61,7 +61,23 @@ function Layout({ children }) {
 			/>
 			<SideNavBar show={showNav} logo={logo} onClose={() => setShowNav(false)} />
 
-			<main id="main-content" tabIndex={-1}>
+			{/* Before this landmark existed, page sections were direct flex items
+			    of #root (column, centered). Wrapping them in a plain block <main>
+			    put them in a different formatting context and changed how every
+			    section sized itself. Mirroring #root's flex layout here keeps the
+			    children laid out exactly as they were. */}
+			<main
+				id="main-content"
+				tabIndex={-1}
+				style={{
+					width: '100%',
+					maxWidth: '100%',
+					minWidth: 0,
+					display: 'flex',
+					flexDirection: 'column',
+					alignItems: 'center',
+				}}
+			>
 				{children}
 			</main>
 

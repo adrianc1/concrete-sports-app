@@ -8,8 +8,8 @@ const featuredAthletes = current?.players ?? [];
 const month = current?.month ?? '';
 export default function SpotlightBanner() {
 	return (
-		<div className="px-4 md:px-0">
-			<div className="relative w-full md:w-[90vw] mx-auto my-6 rounded-2xl overflow-hidden min-h-70 md:min-h-105">
+		<div className="w-full px-4 md:px-8">
+			<div className="relative w-full max-w-6xl mx-auto my-8 rounded-2xl overflow-hidden min-h-70 md:min-h-105">
 				<img
 					src={spotlightBanner}
 					alt="Lions banner"

@@ -30,6 +30,7 @@
 	width: calc(100% - 2rem);
 	margin: 0 auto;
 	padding-bottom: 2rem;
+	min-width: 0;
 }
 
 @media (min-width: 768px) {
@@ -51,6 +52,9 @@
 	margin: 0 auto;
 	overflow-x: auto;
 	overflow-y: visible;
+	/* Flex items default to min-width:auto, so this row could not shrink below
+	   its 288px cards and overflowed the page instead of scrolling. */
+	min-width: 0;
 }
 
 @media (min-width: 1400px) {

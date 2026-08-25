@@ -21,7 +21,9 @@ body {
 	font-family: Arial, serif;
 	overflow-x: hidden;
 	height: 100%;
-	width: 100vw;
+	/* 100vw includes the scrollbar, making body wider than the space actually
+	   available and forcing horizontal overflow. */
+	width: 100%;
 	margin: 0;
 	padding: 0;
 	background-size: cover;
