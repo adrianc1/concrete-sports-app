@@ -8,40 +8,40 @@ import '../homePage/homePageStyles/bottomNav.css';
 
 const BottomNav = () => {
 	return (
-		<div className="bottom-nav-container">
+		<nav aria-label="Quick links" className="bottom-nav-container">
 			<ul className="bottom-nav-list">
 				<li className="bottom-nav-list-item">
 					<Link to="/schedules" className="nav-link">
-						<Calendar />
+						<Calendar aria-hidden="true" />
 						<span>Schedules</span>
 					</Link>
 				</li>
 				<li className="bottom-nav-list-item">
 					<Link to="/sponsors" className="nav-link">
-						<MdOutlineAddBusiness />
+						<MdOutlineAddBusiness aria-hidden="true" />
 						<span>Sponsors</span>
 					</Link>
 				</li>
 				<li className="bottom-nav-list-item">
 					<Link to="/contact" className="nav-link">
-						<RiContactsLine />
+						<RiContactsLine aria-hidden="true" />
 						<span>Coaches</span>
 					</Link>
 				</li>
 				<li className="bottom-nav-list-item">
 					<Link to="/playersOfTheMonth" className="nav-link">
-						<PiUsers />
+						<PiUsers aria-hidden="true" />
 						<span>Spotlight</span>
 					</Link>
 				</li>
 				<li className="bottom-nav-list-item">
 					<Link to="/boosters" className="nav-link">
-						<GiLion />
+						<GiLion aria-hidden="true" />
 						<span>Booster</span>
 					</Link>
 				</li>
 			</ul>
-		</div>
+		</nav>
 	);
 };
 

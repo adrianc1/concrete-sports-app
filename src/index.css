@@ -99,7 +99,9 @@ body {
 	--secondary: oklch(0.97 0 0);
 	--secondary-foreground: oklch(0.205 0 0);
 	--muted: oklch(0.97 0 0);
-	--muted-foreground: oklch(0.556 0 0);
+	/* 0.556 gave 3.45:1 on white, which fails WCAG AA for the 10-11px labels
+	   used throughout the game cards. 0.44 clears 4.5:1. */
+	--muted-foreground: oklch(0.44 0 0);
 	--accent: oklch(0.97 0 0);
 	--accent-foreground: oklch(0.205 0 0);
 	--destructive: oklch(0.577 0.245 27.325);
@@ -166,4 +168,37 @@ body {
 	html {
 		@apply font-sans;
 	}
+
+	/* Visible focus ring for keyboard users on every interactive element.
+	   :focus-visible only fires for keyboard/AT focus, not mouse clicks. */
+	a:focus-visible,
+	button:focus-visible,
+	[role='button']:focus-visible,
+	input:focus-visible,
+	select:focus-visible,
+	textarea:focus-visible {
+		outline: 3px solid #f2bc40;
+		outline-offset: 2px;
+		border-radius: 2px;
+	}
+}
+
+/* Skip link: hidden until focused, then pinned to the top-left so a keyboard
+   user can jump past the header and nav straight to page content. */
+.skip-link {
+	position: absolute;
+	left: -9999px;
+	top: 0;
+	z-index: 100;
+}
+
+.skip-link:focus {
+	left: 0.5rem;
+	top: 0.5rem;
+	padding: 0.75rem 1rem;
+	background: #ffffff;
+	color: #420a72;
+	font-weight: 700;
+	border-radius: 0.25rem;
+	box-shadow: 0 2px 8px rgb(0 0 0 / 0.3);
 }

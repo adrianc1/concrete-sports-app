@@ -9,6 +9,7 @@
 .use-app-btn {
 	border-radius: 20px;
 	padding: 4px 10px;
+	min-height: 48px;
 	background-color: rgb(0, 173, 230);
 	color: #fff;
 	border: none;
@@ -17,6 +18,15 @@
 
 .close-banner {
 	padding-left: 15px;
+	/* Was a <div>; as a real button it needs the UA defaults cleared and a
+	   48px touch target. */
+	background: transparent;
+	border: none;
+	color: inherit;
+	font: inherit;
+	cursor: pointer;
+	min-width: 48px;
+	min-height: 48px;
 }
 
 .banner-tagline {

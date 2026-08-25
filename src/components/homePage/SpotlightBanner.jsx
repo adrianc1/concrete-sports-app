@@ -72,7 +72,7 @@ export default function SpotlightBanner() {
 						}}
 					>
 						View Spotlight
-						<ArrowRight size={16} strokeWidth={2.5} />
+						<ArrowRight size={16} strokeWidth={2.5} aria-hidden="true" />
 					</Link>
 				</div>
 			</div>
