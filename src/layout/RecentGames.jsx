@@ -63,7 +63,7 @@ const RecentGames = () => {
 
 	return (
 		<>
-			<div className="recent-container">
+			<div className="recent-container page-container">
 				<h3 className="recent-scores-title">Recent Scores</h3>
 				<div className="recent-games">
 					{loading
