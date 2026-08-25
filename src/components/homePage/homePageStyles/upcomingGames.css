@@ -4,7 +4,6 @@
 	color: #4a007b;
 	text-align: left;
 	margin: 2rem 0 1rem;
-	padding-left: 20px;
 	position: relative;
 	letter-spacing: -0.5px;
 }
@@ -27,24 +26,15 @@
 
 .upcoming-schedules-section,
 .recent-container {
-	width: calc(100% - 2rem);
-	margin: 0 auto;
 	padding-bottom: 2rem;
 	min-width: 0;
-}
-
-@media (min-width: 768px) {
-	.upcoming-schedules-section,
-	.recent-container {
-		width: calc(100% - 4rem);
-	}
 }
 
 .upcoming-games-grid,
 .recent-games {
 	width: 100%;
-	max-width: 1600px;
-	padding: 16px 20px;
+	max-width: 100%;
+	padding: 16px 0;
 	gap: 20px;
 	display: flex;
 	justify-content: flex-start;
@@ -58,9 +48,15 @@
 }
 
 @media (min-width: 1400px) {
-	.upcoming-games-grid,
-	.recent-games {
-		justify-content: center;
+	/* Centring a row of fixed-width cards left it inset from every other section
+	   on the page. At this width the row no longer scrolls, so let the cards grow
+	   to fill it instead and the row lines up with the page gutter. The cards are
+	   shadcn <Card>s carrying Tailwind's max-w-72/shrink-0, hence the child
+	   selector rather than a class of our own. */
+	.upcoming-games-grid > *,
+	.recent-games > * {
+		max-width: none;
+		flex: 1 1 0;
 	}
 
 	.recent-scores-title {

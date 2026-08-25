@@ -23,7 +23,7 @@ function Banner() {
 	];
 
 	return (
-		<div className="banner">
+		<div className="banner page-container">
 			<div className="img-container">
 				{/* {' '} */}
 				<ImageSlider slides={slides} />

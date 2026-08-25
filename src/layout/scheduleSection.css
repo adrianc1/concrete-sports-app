@@ -1,14 +1,6 @@
 .schedule-section {
 	display: block;
-	width: calc(100% - 2rem);
-	margin: 40px auto 100px;
-	padding: 0 20px;
-}
-
-@media (min-width: 768px) {
-	.schedule-section {
-		width: calc(100% - 4rem);
-	}
+	margin-block: 40px 100px;
 }
 
 .schedule-header h2 {

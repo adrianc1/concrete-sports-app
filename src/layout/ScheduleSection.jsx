@@ -43,7 +43,7 @@ const seasons = [
 
 export default function ScheduleSection() {
 	return (
-		<div className="schedule-section">
+		<div className="schedule-section page-container">
 			<div className="schedule-header">
 				<h2>Team Schedules</h2>
 			</div>

@@ -1,8 +1,8 @@
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
+/* The global reset that used to live here sat OUTSIDE any cascade layer, so it
+   beat every Tailwind utility in "@layer utilities" and silently zeroed out the
+   padding and margin utilities across the whole site. index.css already resets
+   these inside "@layer base", where utilities can still override them.
+   Do not reintroduce an unlayered universal reset here. */
 
 body {
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
