@@ -15,6 +15,13 @@
 
 			gtag('config', 'G-P71N1GLJ09');
 		</script>
+		<!-- The games API is on a separate origin and sits in the critical request
+		     chain, so the DNS + TLS handshake was happening cold. -->
+		<link
+			rel="preconnect"
+			href="https://concrete-sports-app-production.up.railway.app"
+			crossorigin
+		/>
 		<meta charset="UTF-8" />
 		<link rel="icon" type="image/svg+xml" href="icons/icon-144.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />

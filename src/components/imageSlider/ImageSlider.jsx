@@ -12,12 +12,9 @@ const ImageSlider = ({ slides }) => {
 
 	const extendedSlides = [slides[totalSlides - 1], ...slides, slides[0]];
 
-	useEffect(() => {
-		slides.forEach((slide) => {
-			const img = new Image();
-			img.src = slide.url;
-		});
-	}, [slides]);
+	// This used to eagerly `new Image()` every slide on mount, pulling ~224KB and
+	// starving the one slide actually on screen. The browser fetches the rest as
+	// the track scrolls them in.
 
 	function goToNext() {
 		setCurrentIndex((prev) => prev + 1);
@@ -83,9 +80,24 @@ const ImageSlider = ({ slides }) => {
 								: 'none',
 						}}
 					>
-						{extendedSlides.map((slide, index) => (
-							<img key={index} src={slide.url} alt="" width={1200} height={600} className="slide" />
-						))}
+						{extendedSlides.map((slide, index) => {
+							// extendedSlides is [last, ...slides, first], so index 1 is the
+							// slide painted first and the LCP candidate.
+							const isFirstPainted = index === 1;
+							return (
+								<img
+									key={index}
+									src={slide.url}
+									alt=""
+									width={1200}
+									height={600}
+									className="slide"
+									loading={isFirstPainted ? 'eager' : 'lazy'}
+									fetchPriority={isFirstPainted ? 'high' : 'low'}
+									decoding={isFirstPainted ? 'sync' : 'async'}
+								/>
+							);
+						})}
 					</div>
 				</div>
 
