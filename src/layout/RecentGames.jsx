@@ -70,8 +70,8 @@ const RecentGames = () => {
 						? Array(4)
 								.fill(0)
 								.map((_, index) => (
-									<Card key={index} className="min-w-72 max-w-72 shrink-0 py-0">
-										<CardContent className="flex flex-col gap-2.5 p-3">
+									<Card key={index} className="min-w-72 max-w-72 min-h-38 shrink-0 py-0">
+										<CardContent className="flex flex-col gap-2.5 p-4">
 											<Skeleton height={16} width={120} />
 											<Skeleton height={20} width="100%" />
 											<Skeleton height={20} width="100%" />
@@ -86,8 +86,8 @@ const RecentGames = () => {
 									const concreteWon = game.concrete_score > game.opponent_score;
 									const opponentName = game.opponent?.replace(/\s*\([^)]*\)\s*/g, '').trim();
 									return (
-										<Card key={game._id} className="min-w-72 max-w-72 shrink-0 py-0">
-											<CardContent className="flex flex-col gap-2.5 p-3">
+										<Card key={game._id} className="min-w-72 max-w-72 min-h-38 shrink-0 py-0">
+											<CardContent className="flex flex-col gap-2.5 p-4">
 												{/* Sport + Final · date on one row */}
 												<div className="flex items-center justify-between">
 													<Link

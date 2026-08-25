@@ -95,7 +95,7 @@ export default function ScheduleSection() {
 											}}
 										/>
 										{/* Text */}
-										<div className="relative z-10 flex flex-col justify-end h-full p-3 gap-0.5">
+										<div className="relative z-10 flex flex-col justify-end h-full p-4 gap-0.5">
 											<span className="font-black text-sm text-white leading-tight">
 												{sport.name}
 											</span>

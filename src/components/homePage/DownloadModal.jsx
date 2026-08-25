@@ -1,5 +1,5 @@
 import '../homePage/homePageStyles/modal.css';
-import step1 from '../../assets/step1.png';
+import step1 from '../../assets/step1.webp';
 import step2 from '../../assets/step2.webp';
 
 export default function DownloadModal({ setShowModal }) {

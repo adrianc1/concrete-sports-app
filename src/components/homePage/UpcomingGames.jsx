@@ -43,7 +43,10 @@ const transformSport = {
 
 export default function UpcomingGames() {
 	const [upcomingGames, setUpcomingGames] = useState([]);
-	const [loading, setLoading] = useState(false);
+	// Starts true so the skeletons render on first paint and reserve the grid's
+	// height. Starting false rendered an empty grid, then shoved the page down
+	// when the fetch resolved — the largest single source of layout shift.
+	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		async function loadUpcomingGames() {
@@ -69,8 +72,8 @@ export default function UpcomingGames() {
 						? Array(4)
 								.fill(0)
 								.map((_, index) => (
-									<Card key={index} className="min-w-72 max-w-72 shrink-0 py-0">
-										<CardContent className="flex flex-col gap-2.5 p-3">
+									<Card key={index} className="min-w-72 max-w-72 min-h-44 shrink-0 py-0">
+										<CardContent className="flex flex-col gap-2.5 p-4">
 											<Skeleton height={16} width={120} />
 											<Skeleton height={16} width={160} />
 											<Skeleton height={16} width={100} />
@@ -84,8 +87,8 @@ export default function UpcomingGames() {
 								.map((game, index) => {
 									const opponentName = game.opponent?.replace(/\s*\([^)]*\)\s*/g, '').trim();
 									return (
-										<Card key={index} className="min-w-72 max-w-72 shrink-0 py-0">
-										<CardContent className="flex flex-col gap-2.5 p-3">
+										<Card key={index} className="min-w-72 max-w-72 min-h-44 shrink-0 py-0">
+										<CardContent className="flex flex-col gap-2.5 p-4">
 											{/* Sport + date on one row */}
 											<div className="flex items-center justify-between">
 												<Link

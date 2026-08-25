@@ -84,7 +84,7 @@ const ImageSlider = ({ slides }) => {
 						}}
 					>
 						{extendedSlides.map((slide, index) => (
-							<img key={index} src={slide.url} alt="" className="slide" />
+							<img key={index} src={slide.url} alt="" width={1200} height={600} className="slide" />
 						))}
 					</div>
 				</div>

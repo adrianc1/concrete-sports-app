@@ -41,7 +41,7 @@ function SideNavBar({ show, logo, onClose }) {
 			>
 				{/* Logo */}
 				<div style={{ padding: '2rem 1.5rem 1.5rem', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
-					<img src={logo} alt="" style={{ width: '3rem' }} />
+					<img src={logo} alt="" width={200} height={138} style={{ width: '3rem', height: 'auto' }} />
 				</div>
 
 				{/* Main links */}

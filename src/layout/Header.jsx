@@ -7,7 +7,7 @@ export default function Header({ toggleNav, logo, display }) {
 			{/* Logo + school name */}
 			<div className="flex items-center gap-4 md:gap-6">
 				<Link to="/" aria-label="Concrete Lions Sports, home">
-					<img src={logo} alt="" className="w-12 md:w-20 h-auto" />
+					<img src={logo} alt="" width={200} height={138} className="w-12 md:w-20 h-auto" />
 				</Link>
 				<h1
 					className="font-normal text-sm md:text-base tracking-widest m-0"
