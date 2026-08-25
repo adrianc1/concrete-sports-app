@@ -1,4 +1,4 @@
-import logo from '../../assets/Concrete-Logo.png';
+import logo from '../../assets/Concrete-Logo.webp';
 import { Link } from 'react-router';
 import kayak from '../../assets/kayak2.webp';
 import uptownAuto from '../../assets/uptown2.webp';
