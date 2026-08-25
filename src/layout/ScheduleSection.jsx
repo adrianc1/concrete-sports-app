@@ -65,7 +65,7 @@ export default function ScheduleSection() {
 								style={{ textDecoration: 'none' }}
 							>
 								View All Schedules
-								<ArrowRight size={13} strokeWidth={2.5} />
+								<ArrowRight size={13} strokeWidth={2.5} aria-hidden="true" />
 							</Link> */}
 						</div>
 

@@ -42,6 +42,9 @@ function Layout({ children }) {
 
 	return (
 		<>
+			<a href="#main-content" className="skip-link">
+				Skip to main content
+			</a>
 			{bannerActive && !isRunningPWA && !isDesktop && (
 				<DownloadBanner
 					setBannerActive={setBannerActive}
@@ -58,7 +61,9 @@ function Layout({ children }) {
 			/>
 			<SideNavBar show={showNav} logo={logo} onClose={() => setShowNav(false)} />
 
-			{children}
+			<main id="main-content" tabIndex={-1}>
+				{children}
+			</main>
 
 			{/* <ScheduleSection /> */}
 			<Footer />

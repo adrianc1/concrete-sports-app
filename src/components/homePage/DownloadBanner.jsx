@@ -11,9 +11,14 @@ export default function DownloadBanner({ setBannerActive, setShowModal }) {
 	return (
 		<div className="banner-container">
 			<div className="left-banner">
-				<div className="close-banner" onClick={closeBanner}>
+				<button
+					type="button"
+					className="close-banner"
+					onClick={closeBanner}
+					aria-label="Dismiss app banner"
+				>
 					X
-				</div>
+				</button>
 				<div className="banner-tagline">
 					<h4 className="banner-tagline-title">Get the app</h4>
 					<p className="banner-tagline-des">Stay connected with the teams</p>

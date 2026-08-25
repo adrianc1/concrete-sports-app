@@ -60,15 +60,17 @@ const ImageSlider = ({ slides }) => {
 	return (
 		<Link to="/sponsors">
 			<div className="slider-container">
-				<div
+				<button
+					type="button"
 					className="arrow left"
+					aria-label="Previous sponsor"
 					onClick={(e) => {
 						e.preventDefault();
 						goToPrevious();
 					}}
 				>
-					<ChevronLeft size={20} />
-				</div>
+					<ChevronLeft size={20} aria-hidden="true" />
+				</button>
 
 				<div className="slider-wrapper">
 					<div
@@ -87,22 +89,25 @@ const ImageSlider = ({ slides }) => {
 					</div>
 				</div>
 
-				<div
+				<button
+					type="button"
 					className="arrow right"
+					aria-label="Next sponsor"
 					onClick={(e) => {
 						e.preventDefault();
 						goToNext();
 					}}
 				>
-					<ChevronRight size={20} />
-				</div>
+					<ChevronRight size={20} aria-hidden="true" />
+				</button>
 
-				<div className="dots">
+				{/* Position indicators only. Not interactive, so they are hidden from
+				    assistive tech and are not measured as tap targets. */}
+				<div className="dots" aria-hidden="true">
 					{slides.map((_, index) => (
 						<span
 							key={index}
 							className={index + 1 === currentIndex ? 'dot active' : 'dot'}
-							onClick={() => setCurrentIndex(index + 1)}
 						>
 							<Circle size={8} fill={index + 1 === currentIndex ? 'currentColor' : 'none'} />
 						</span>

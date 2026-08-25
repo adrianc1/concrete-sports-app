@@ -141,6 +141,12 @@ body {
 	cursor: pointer;
 	color: #9ca3af;
 	transition: color 0.2s ease;
+	/* Was a <span>; clear UA button defaults and meet the 48px touch target. */
+	background: transparent;
+	border: none;
+	line-height: 1;
+	min-width: 48px;
+	min-height: 48px;
 }
 
 .close-modal-button:hover {

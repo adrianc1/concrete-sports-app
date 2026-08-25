@@ -91,9 +91,9 @@ export default function UpcomingGames() {
 												<Link
 													to={`${game.sport}Schedule`}
 													style={{ textDecoration: 'none', color: '#420a72' }}
-													className="inline-flex items-center gap-1.5 hover:text-[#f2bc40] transition-colors font-bold text-sm"
+													className="inline-flex items-center gap-1.5 hover:underline focus-visible:underline transition-colors font-bold text-sm"
 												>
-													<span style={{ color: sportColors[game.sport] || '#420a72' }}>
+													<span aria-hidden="true" style={{ color: sportColors[game.sport] || '#420a72' }}>
 														{sportIcons[game.sport] || <FaTrophy />}
 													</span>
 													{transformSport[game.sport]}
@@ -111,22 +111,22 @@ export default function UpcomingGames() {
 												)}
 												{game.location && (
 													<span className="inline-flex items-center gap-1 text-[11px] text-muted-foreground">
-														<MapPin size={10} />
+														<MapPin size={10} aria-hidden="true" />
 														{game.location}
 													</span>
 												)}
 											</div>
 
 											{/* See schedule button */}
-											<Link
-												to={`${game.sport}Schedule`}
-												style={{ textDecoration: 'none' }}
-												className="block border-t border-border pt-2"
-											>
-												<button className="w-full text-[11px] font-bold py-2 rounded-full tracking-wide uppercase bg-linear-to-r from-[#420a72] to-[#6b2c91] text-white hover:from-[#6b2c91] hover:to-[#420a72] hover:shadow-md transition-all cursor-pointer">
-													See Schedule
-												</button>
-											</Link>
+											<div className="border-t border-border pt-2">
+												<Link
+													to={`${game.sport}Schedule`}
+													style={{ textDecoration: 'none' }}
+													className="block w-full text-center text-[11px] font-bold py-2 rounded-full tracking-wide uppercase bg-linear-to-r from-[#420a72] to-[#6b2c91] text-white hover:from-[#6b2c91] hover:to-[#420a72] hover:shadow-md transition-all cursor-pointer"
+												>
+													See {transformSport[game.sport]} Schedule
+												</Link>
+											</div>
 										</CardContent>
 									</Card>
 								);

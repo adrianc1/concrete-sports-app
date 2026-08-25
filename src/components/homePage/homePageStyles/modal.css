@@ -32,6 +32,25 @@
 	animation: fadeInUp 0.3s ease;
 }
 
+.modal-close {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	background: transparent;
+	border: none;
+	font-size: 1.25rem;
+	line-height: 1;
+	color: #6b7280;
+	cursor: pointer;
+	/* 48px touch target */
+	min-width: 48px;
+	min-height: 48px;
+}
+
+.modal-close:hover {
+	color: #4a007b;
+}
+
 .modal-container h2 {
 	font-size: 1.5rem;
 	font-weight: 800;
