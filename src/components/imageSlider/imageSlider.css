@@ -1,5 +1,8 @@
 .slider-container {
-	width: calc(100% - 2rem);
+	/* The gutter is owned by .page-container on the .banner wrapper. This used to
+	   subtract its own 2rem/4rem on top of that, insetting the carousel further
+	   than every other section on the page. */
+	width: 100%;
 	margin: 0 auto;
 	aspect-ratio: 2 / 1;
 	max-height: 200px;
@@ -84,7 +87,6 @@
 	.slider-container {
 		aspect-ratio: 3 / 1;
 		max-height: 400px;
-		width: calc(100% - 4rem);
 	}
 	.slide {
 		object-fit: cover;

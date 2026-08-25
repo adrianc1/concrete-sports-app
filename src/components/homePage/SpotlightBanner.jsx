@@ -14,6 +14,10 @@ export default function SpotlightBanner() {
 					src={spotlightBanner}
 					alt="Lions banner"
 					className="absolute inset-0 w-full h-full object-cover object-center"
+					width={1152}
+					height={768}
+					fetchPriority="high"
+					decoding="async"
 				/>
 
 				{/* Dark purple overlay */}

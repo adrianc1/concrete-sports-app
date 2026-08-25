@@ -5,8 +5,14 @@
 	margin-top: 1rem;
 }
 
-.image-container {
+/* This selector read .image-container while Banner.jsx renders .img-container,
+   so width:100% never applied. As a flex child it collapsed to zero width,
+   .slider-container's aspect-ratio then resolved to zero height, and the
+   carousel popped to 163px once the images laid out — shoving the whole page
+   down and accounting for ~96% of the site's CLS. */
+.img-container {
 	width: 100%;
+	min-width: 0;
 }
 
 /* .banner used to be 90vw here. vw units include the scrollbar, so it was both
