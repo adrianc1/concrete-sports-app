@@ -2,7 +2,6 @@ import { Link } from 'react-router';
 import { MapPin, ChevronLeft } from 'lucide-react';
 import ScrollToTop from '../../layout/ScrollToTop';
 import ComingSoon from '../../layout/ComingSoon';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './schedulePage.css';
 
 function SchedulePage({ sportName, games, record }) {
