@@ -3,7 +3,8 @@ from fastapi import APIRouter
 from sqlalchemy import text
 
 from app.database import engine
-from app.schemas import Game
+from app.schemas import GameRead
+from backend.app.models import Game
 router = APIRouter(prefix="/api", tags=["games"])
 
 _GAMES_BASE = """
@@ -29,13 +30,13 @@ ALL_GAMES = text(_GAMES_BASE + " ORDER BY g.starts_at DESC")
 
 GET_SPORT = text(_GAMES_BASE + " WHERE sp.slug = :sport ORDER BY g.starts_at DESC");
 
-@router.get("/all", response_model=list[Game])
+@router.get("/all", response_model=list[GameRead])
 def get_all_games():
     with engine.connect() as conn:
         result = conn.execute(ALL_GAMES)
         return [dict(row) for row in result.mappings()]
 
-@router.get("/{sport}", response_model=list[Game])
+@router.get("/{sport}", response_model=list[GameRead])
 def get_sport(sport:str):
     with engine.connect() as conn:
         result = conn.execute(GET_SPORT, {"sport": sport})

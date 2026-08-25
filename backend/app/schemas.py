@@ -4,7 +4,7 @@ from datetime import datetime
 from pydantic import BaseModel
 
 
-class Game(BaseModel):
+class GameRead(BaseModel):
     id: int
     sport: str
     location: str | None 
