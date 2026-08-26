@@ -15,16 +15,35 @@
 
 			gtag('config', 'G-P71N1GLJ09');
 		</script>
-		<meta charset="UTF-8" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<!-- The games API is on a separate origin and sits in the critical request
+		     chain, so the DNS + TLS handshake was happening cold. -->
 		<link
-			href="https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-			rel="stylesheet"
+			rel="preconnect"
+			href="https://concrete-sports-app-production.up.railway.app"
+			crossorigin
 		/>
+		<meta charset="UTF-8" />
 		<link rel="icon" type="image/svg+xml" href="icons/icon-144.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Concrete Sports App</title>
+		<title>Concrete Lions Sports | Concrete High School Athletics</title>
+		<meta
+			name="description"
+			content="Live scores, schedules, and team news for Concrete High School athletics in Concrete, WA. Football, basketball, volleyball, baseball, softball, and more."
+		/>
+		<link rel="canonical" href="https://concretesports.app/" />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Concrete Lions Sports" />
+		<meta
+			property="og:title"
+			content="Concrete Lions Sports | Concrete High School Athletics"
+		/>
+		<meta
+			property="og:description"
+			content="Live scores, schedules, and team news for Concrete High School athletics in Concrete, WA."
+		/>
+		<meta property="og:url" content="https://concretesports.app/" />
+		<meta name="twitter:card" content="summary_large_image" />
 	</head>
 	<body>
 		<div id="root"></div>

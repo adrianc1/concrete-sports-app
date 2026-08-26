@@ -33,17 +33,19 @@ function SideNavBar({ show, logo, onClose }) {
 	return (
 		<Sheet open={show} onOpenChange={(open) => !open && onClose()}>
 			<SheetContent
+				id="side-nav"
 				side="left"
+				aria-label="Site menu"
 				className="flex flex-col gap-0 overflow-y-auto p-0 border-0"
 				style={{ background: '#420a72', width: '75%', maxWidth: '320px' }}
 			>
 				{/* Logo */}
 				<div style={{ padding: '2rem 1.5rem 1.5rem', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
-					<img src={logo} alt="Concrete Lions" style={{ width: '3rem' }} />
+					<img src={logo} alt="" width={200} height={138} style={{ width: '3rem', height: 'auto' }} />
 				</div>
 
 				{/* Main links */}
-				<nav style={{ padding: '1rem', borderBottom: '1px solid rgba(255,255,255,0.1)', display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+				<nav aria-label="Site" style={{ padding: '1rem', borderBottom: '1px solid rgba(255,255,255,0.1)', display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
 					{navLinks.map(({ to, label, end }) => (
 						<NavLink
 							key={to}

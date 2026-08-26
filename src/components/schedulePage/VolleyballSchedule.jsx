@@ -1,4 +1,4 @@
-import logo from '../../assets/Concrete-Logo.png';
+import logo from '../../assets/Concrete-Logo.webp';
 import SchedulePage from './SchedulePage';
 import recordKeeper from '../../utils/recordKeeper.js';
 import './schedulePage.css';

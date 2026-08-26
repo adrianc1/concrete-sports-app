@@ -1,5 +1,5 @@
 import { useSchedules } from '../../hooks/useSchedules';
-import logo from '../../assets/Concrete-Logo.png';
+import logo from '../../assets/Concrete-Logo.webp';
 import SchedulePage from './SchedulePage';
 import './schedulePage.css';
 

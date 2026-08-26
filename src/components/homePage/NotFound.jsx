@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import logo from '../../assets/Concrete-Logo.png';
+import logo from '../../assets/Concrete-Logo.webp';
 
 export default function NotFound() {
 	return (

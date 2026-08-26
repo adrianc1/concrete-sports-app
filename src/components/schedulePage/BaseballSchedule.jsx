@@ -1,4 +1,4 @@
-import logo from '../../assets/Concrete-Logo.png';
+import logo from '../../assets/Concrete-Logo.webp';
 import SchedulePage from './SchedulePage';
 import { useSchedules } from '../../hooks/useSchedules';
 import recordKeeper from '../../utils/recordKeeper';

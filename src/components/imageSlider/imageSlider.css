@@ -1,5 +1,8 @@
 .slider-container {
-	width: calc(100% - 2rem);
+	/* The gutter is owned by .page-container on the .banner wrapper. This used to
+	   subtract its own 2rem/4rem on top of that, insetting the carousel further
+	   than every other section on the page. */
+	width: 100%;
 	margin: 0 auto;
 	aspect-ratio: 2 / 1;
 	max-height: 200px;
@@ -36,8 +39,15 @@
 	cursor: pointer;
 	z-index: 2;
 	background: rgba(0, 0, 0, 0.3);
+	border: none;
 	border-radius: 50%;
 	padding: 0.5rem;
+	/* 48px minimum touch target (WCAG 2.5.8 / Lighthouse tap targets) */
+	min-width: 48px;
+	min-height: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
 	width: 40px;
 	height: 40px;
@@ -64,7 +74,6 @@
 
 .dot {
 	margin: 0 5px;
-	cursor: pointer;
 	font-size: 20px;
 	color: white;
 	opacity: 0.5;
@@ -78,7 +87,6 @@
 	.slider-container {
 		aspect-ratio: 3 / 1;
 		max-height: 400px;
-		width: calc(100% - 4rem);
 	}
 	.slide {
 		object-fit: cover;

@@ -2,7 +2,6 @@ import { Link } from 'react-router';
 import { MapPin, ChevronLeft } from 'lucide-react';
 import ScrollToTop from '../../layout/ScrollToTop';
 import ComingSoon from '../../layout/ComingSoon';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './schedulePage.css';
 
 function SchedulePage({ sportName, games, record }) {
@@ -26,7 +25,7 @@ function SchedulePage({ sportName, games, record }) {
 			<ScrollToTop />
 
 			<Link to="/schedules" className="schedule-back-btn">
-				<ChevronLeft size={15} strokeWidth={2.5} />
+				<ChevronLeft size={15} strokeWidth={2.5} aria-hidden="true" />
 				All Schedules
 			</Link>
 
@@ -64,7 +63,7 @@ function SchedulePage({ sportName, games, record }) {
 									</span>
 									{game.location && (
 										<span className="game-location">
-											<MapPin size={10} />
+											<MapPin size={10} aria-hidden="true" />
 											{game.location}
 										</span>
 									)}

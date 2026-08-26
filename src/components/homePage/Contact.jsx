@@ -64,7 +64,7 @@ function Contact() {
 								className="flex items-center gap-1.5 shrink-0 transition-opacity hover:opacity-70"
 								style={{ textDecoration: 'none', color: '#420a72', fontSize: '0.8rem', fontWeight: 600 }}
 							>
-								<Mail size={13} />
+								<Mail size={13} aria-hidden="true" />
 								<span className="max-md:hidden">{coach.coachEmail}</span>
 							</a>
 						</div>

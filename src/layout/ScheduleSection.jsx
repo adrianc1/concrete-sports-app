@@ -43,7 +43,7 @@ const seasons = [
 
 export default function ScheduleSection() {
 	return (
-		<div className="schedule-section">
+		<div className="schedule-section page-container">
 			<div className="schedule-header">
 				<h2>Team Schedules</h2>
 			</div>
@@ -65,7 +65,7 @@ export default function ScheduleSection() {
 								style={{ textDecoration: 'none' }}
 							>
 								View All Schedules
-								<ArrowRight size={13} strokeWidth={2.5} />
+								<ArrowRight size={13} strokeWidth={2.5} aria-hidden="true" />
 							</Link> */}
 						</div>
 
@@ -95,7 +95,7 @@ export default function ScheduleSection() {
 											}}
 										/>
 										{/* Text */}
-										<div className="relative z-10 flex flex-col justify-end h-full p-3 gap-0.5">
+										<div className="relative z-10 flex flex-col justify-end h-full p-4 gap-0.5">
 											<span className="font-black text-sm text-white leading-tight">
 												{sport.name}
 											</span>

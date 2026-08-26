@@ -6,7 +6,7 @@ import Footer from './Footer';
 import BottomNav from '../components/homePage/BottomNav';
 import DownloadBanner from '../components/homePage/DownloadBanner';
 import DownloadModal from '../components/homePage/DownloadModal';
-import logo from '../assets/Concrete-Logo.png';
+import logo from '../assets/Concrete-Logo.webp';
 import '../index.css';
 
 function Layout({ children }) {
@@ -42,6 +42,9 @@ function Layout({ children }) {
 
 	return (
 		<>
+			<a href="#main-content" className="skip-link">
+				Skip to main content
+			</a>
 			{bannerActive && !isRunningPWA && !isDesktop && (
 				<DownloadBanner
 					setBannerActive={setBannerActive}
@@ -56,9 +59,26 @@ function Layout({ children }) {
 				logo={logo}
 				display={showNav}
 			/>
-			<SideNavBar show={showNav} logo={logo} onClose={() => setShowNav(false)} />
+			<SideNavBar
+				show={showNav}
+				logo={logo}
+				onClose={() => setShowNav(false)}
+			/>
 
-			{children}
+			<main
+				id="main-content"
+				tabIndex={-1}
+				style={{
+					width: '100%',
+					maxWidth: '100%',
+					minWidth: 0,
+					display: 'flex',
+					flexDirection: 'column',
+					alignItems: 'center',
+				}}
+			>
+				{children}
+			</main>
 
 			{/* <ScheduleSection /> */}
 			<Footer />

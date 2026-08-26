@@ -6,11 +6,17 @@ export default function Header({ toggleNav, logo, display }) {
 		<header className="sticky top-0 left-0 z-50 w-full flex items-center justify-between px-4 py-3 md:px-12 md:py-5 bg-[#420a72]">
 			{/* Logo + school name */}
 			<div className="flex items-center gap-4 md:gap-6">
-				<Link to="/">
-					<img src={logo} alt="Logo" className="w-12 md:w-20 h-auto" />
+				<Link to="/" aria-label="Concrete Lions Sports, home">
+					<img
+						src={logo}
+						alt=""
+						width={200}
+						height={138}
+						className="w-12 md:w-20 h-auto"
+					/>
 				</Link>
 				<h1
-					className="font-normal text-sm md:text-base tracking-widest m-0"
+					className="font-normal text-base md:text-base tracking-widest m-0"
 					style={{ fontFamily: "'Anton', sans-serif", color: '#f2bc40' }}
 				>
 					Concrete Lions Sports
@@ -18,7 +24,7 @@ export default function Header({ toggleNav, logo, display }) {
 			</div>
 
 			{/* Desktop nav */}
-			<nav className="max-md:hidden flex gap-10 items-center">
+			<nav aria-label="Main" className="max-md:hidden flex gap-10 items-center">
 				<Link
 					to="/schedules"
 					style={{ color: 'white', textDecoration: 'none', fontWeight: 600 }}
@@ -51,10 +57,18 @@ export default function Header({ toggleNav, logo, display }) {
 
 			{/* Mobile toggle */}
 			<button
+				type="button"
 				className="md:hidden bg-transparent border-0 p-1 cursor-pointer text-white"
 				onClick={toggleNav}
+				aria-label={display ? 'Close menu' : 'Open menu'}
+				aria-expanded={display}
+				aria-controls="side-nav"
 			>
-				{display ? <X size={24} /> : <Menu size={24} />}
+				{display ? (
+					<X size={24} aria-hidden="true" />
+				) : (
+					<Menu size={24} aria-hidden="true" />
+				)}
 			</button>
 		</header>
 	);

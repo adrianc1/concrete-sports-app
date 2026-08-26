@@ -1,6 +1,6 @@
 import '../homePage/homePageStyles/modal.css';
-import step1 from '../../assets/step1.png';
-import step2 from '../../assets/step2.png';
+import step1 from '../../assets/step1.webp';
+import step2 from '../../assets/step2.webp';
 
 export default function DownloadModal({ setShowModal }) {
 	function closeModal() {
@@ -8,7 +8,14 @@ export default function DownloadModal({ setShowModal }) {
 	}
 	return (
 		<div className="modal-container">
-			<span onClick={closeModal}>X</span>
+			<button
+				type="button"
+				className="modal-close"
+				onClick={closeModal}
+				aria-label="Close"
+			>
+				X
+			</button>
 			<h2>Concrete Sports App</h2>
 			<div>Get the app in 5 seconds.</div>
 			<div>No download required.</div>

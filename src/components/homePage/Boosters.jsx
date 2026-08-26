@@ -106,24 +106,49 @@ function Boosters() {
 					<div className="modal-container">
 						<div className="modal-content">
 							<form>
-								<span className="close-modal-button" onClick={modalToggle}>
+								<button
+									type="button"
+									className="close-modal-button"
+									onClick={modalToggle}
+									aria-label="Close form"
+								>
 									X
-								</span>
+								</button>
 								<div>
-									<label>First Name</label>
-									<input type="text" name="firstName" />
+									<label htmlFor="booster-firstName">First Name</label>
+									<input
+										id="booster-firstName"
+										type="text"
+										name="firstName"
+										autoComplete="given-name"
+									/>
 								</div>
 								<div>
-									<label>Last Name</label>
-									<input type="text" name="lastName" />
+									<label htmlFor="booster-lastName">Last Name</label>
+									<input
+										id="booster-lastName"
+										type="text"
+										name="lastName"
+										autoComplete="family-name"
+									/>
 								</div>
 								<div>
-									<label>Phone Number</label>
-									<input type="tel" name="phone" />
+									<label htmlFor="booster-phone">Phone Number</label>
+									<input
+										id="booster-phone"
+										type="tel"
+										name="phone"
+										autoComplete="tel"
+									/>
 								</div>
 								<div>
-									<label>Email</label>
-									<input type="email" name="email" />
+									<label htmlFor="booster-email">Email</label>
+									<input
+										id="booster-email"
+										type="email"
+										name="email"
+										autoComplete="email"
+									/>
 								</div>
 								<button type="submit" className="submit-form-btn">
 									Submit

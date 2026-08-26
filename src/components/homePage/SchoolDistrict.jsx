@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Header from '../../layout/Header';
-import logo from '../../assets/Concrete-Logo.png';
+import logo from '../../assets/Concrete-Logo.webp';
 
 function SchoolDistrict() {
 	const [showExitIcon, setShowExitIcon] = useState(false);

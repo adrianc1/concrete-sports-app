@@ -12,12 +12,9 @@ const ImageSlider = ({ slides }) => {
 
 	const extendedSlides = [slides[totalSlides - 1], ...slides, slides[0]];
 
-	useEffect(() => {
-		slides.forEach((slide) => {
-			const img = new Image();
-			img.src = slide.url;
-		});
-	}, [slides]);
+	// This used to eagerly `new Image()` every slide on mount, pulling ~224KB and
+	// starving the one slide actually on screen. The browser fetches the rest as
+	// the track scrolls them in.
 
 	function goToNext() {
 		setCurrentIndex((prev) => prev + 1);
@@ -60,15 +57,17 @@ const ImageSlider = ({ slides }) => {
 	return (
 		<Link to="/sponsors">
 			<div className="slider-container">
-				<div
+				<button
+					type="button"
 					className="arrow left"
+					aria-label="Previous sponsor"
 					onClick={(e) => {
 						e.preventDefault();
 						goToPrevious();
 					}}
 				>
-					<ChevronLeft size={20} />
-				</div>
+					<ChevronLeft size={20} aria-hidden="true" />
+				</button>
 
 				<div className="slider-wrapper">
 					<div
@@ -81,28 +80,46 @@ const ImageSlider = ({ slides }) => {
 								: 'none',
 						}}
 					>
-						{extendedSlides.map((slide, index) => (
-							<img key={index} src={slide.url} alt="" className="slide" />
-						))}
+						{extendedSlides.map((slide, index) => {
+							// extendedSlides is [last, ...slides, first], so index 1 is the
+							// slide painted first and the LCP candidate.
+							const isFirstPainted = index === 1;
+							return (
+								<img
+									key={index}
+									src={slide.url}
+									alt=""
+									width={1200}
+									height={600}
+									className="slide"
+									loading={isFirstPainted ? 'eager' : 'lazy'}
+									fetchPriority={isFirstPainted ? 'high' : 'low'}
+									decoding={isFirstPainted ? 'sync' : 'async'}
+								/>
+							);
+						})}
 					</div>
 				</div>
 
-				<div
+				<button
+					type="button"
 					className="arrow right"
+					aria-label="Next sponsor"
 					onClick={(e) => {
 						e.preventDefault();
 						goToNext();
 					}}
 				>
-					<ChevronRight size={20} />
-				</div>
+					<ChevronRight size={20} aria-hidden="true" />
+				</button>
 
-				<div className="dots">
+				{/* Position indicators only. Not interactive, so they are hidden from
+				    assistive tech and are not measured as tap targets. */}
+				<div className="dots" aria-hidden="true">
 					{slides.map((_, index) => (
 						<span
 							key={index}
 							className={index + 1 === currentIndex ? 'dot active' : 'dot'}
-							onClick={() => setCurrentIndex(index + 1)}
 						>
 							<Circle size={8} fill={index + 1 === currentIndex ? 'currentColor' : 'none'} />
 						</span>

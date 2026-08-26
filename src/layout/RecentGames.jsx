@@ -72,15 +72,15 @@ const RecentGames = () => {
 
 	return (
 		<>
-			<div className="recent-container">
+			<div className="recent-container page-container">
 				<h3 className="recent-scores-title">Recent Scores</h3>
 				<div className="recent-games">
 					{loading
 						? Array(4)
 								.fill(0)
 								.map((_, index) => (
-									<Card key={index} className="min-w-72 max-w-72 shrink-0 py-0">
-										<CardContent className="flex flex-col gap-2.5 p-3">
+									<Card key={index} className="min-w-72 max-w-72 min-h-38 shrink-0 py-0">
+										<CardContent className="flex flex-col gap-2.5 p-4">
 											<Skeleton height={16} width={120} />
 											<Skeleton height={20} width="100%" />
 											<Skeleton height={20} width="100%" />
@@ -99,21 +99,17 @@ const RecentGames = () => {
 									return (
 										<Card
 											key={game.id}
-											className="min-w-72 max-w-72 shrink-0 py-0"
+											className="min-w-72 max-w-72 min-h-38 shrink-0 py-0"
 										>
-											<CardContent className="flex flex-col gap-2.5 p-3">
+											<CardContent className="flex flex-col gap-2.5 p-4">
 												{/* Sport + Final · date on one row */}
 												<div className="flex items-center justify-between">
 													<Link
 														to={`${game.sport}Schedule`}
 														style={{ textDecoration: 'none', color: '#420a72' }}
-														className="inline-flex items-center gap-1.5 hover:text-[#f2bc40] transition-colors font-bold text-sm"
+														className="inline-flex items-center gap-1.5 hover:underline focus-visible:underline transition-colors font-bold text-sm"
 													>
-														<span
-															style={{
-																color: sportColors[game.sport] || '#420a72',
-															}}
-														>
+														<span aria-hidden="true" style={{ color: sportColors[game.sport] || '#420a72' }}>
 															{sportIcons[game.sport] || <FaTrophy />}
 														</span>
 														{transformSport[game.sport]}
@@ -127,18 +123,14 @@ const RecentGames = () => {
 												<div className="flex flex-col gap-1.5 border-t border-border pt-2">
 													{game.location && (
 														<span className="inline-flex items-center gap-1 text-[10px] text-muted-foreground pb-1">
-															<MapPin size={10} />
+															<MapPin size={10} aria-hidden="true" />
 															{game.location}
 														</span>
 													)}
 													<div className="flex items-center justify-between gap-2">
 														<div className="flex items-center gap-2 min-w-0">
 															{getTeamLogo('concrete') && (
-																<img
-																	src={getTeamLogo('concrete')}
-																	alt="Concrete"
-																	className="w-6 h-6 object-contain shrink-0 rounded-full bg-gray-100 p-0.5"
-																/>
+																<img src={getTeamLogo('concrete')} alt="" className="w-6 h-6 object-contain shrink-0 rounded-full bg-gray-100 p-0.5" />
 															)}
 															<div className="flex flex-col min-w-0">
 																<span
@@ -162,11 +154,7 @@ const RecentGames = () => {
 													<div className="flex items-center justify-between gap-2">
 														<div className="flex items-center gap-2 min-w-0">
 															{getTeamLogo(game.opponent) && (
-																<img
-																	src={getTeamLogo(game.opponent)}
-																	alt={opponentName}
-																	className="w-6 h-6 object-contain shrink-0 rounded-full bg-gray-100 p-0.5"
-																/>
+																<img src={getTeamLogo(game.opponent)} alt="" className="w-6 h-6 object-contain shrink-0 rounded-full bg-gray-100 p-0.5" />
 															)}
 															<div className="flex flex-col min-w-0">
 																<span

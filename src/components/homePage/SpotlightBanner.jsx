@@ -8,12 +8,16 @@ const featuredAthletes = current?.players ?? [];
 const month = current?.month ?? '';
 export default function SpotlightBanner() {
 	return (
-		<div className="px-4 md:px-0">
-			<div className="relative w-full md:w-[90vw] mx-auto my-6 rounded-2xl overflow-hidden min-h-70 md:min-h-105">
+		<div className="page-container">
+			<div className="relative w-full my-8 rounded-2xl overflow-hidden min-h-70 md:min-h-105">
 				<img
 					src={spotlightBanner}
 					alt="Lions banner"
 					className="absolute inset-0 w-full h-full object-cover object-center"
+					width={1152}
+					height={768}
+					fetchPriority="high"
+					decoding="async"
 				/>
 
 				{/* Dark purple overlay */}
@@ -72,7 +76,7 @@ export default function SpotlightBanner() {
 						}}
 					>
 						View Spotlight
-						<ArrowRight size={16} strokeWidth={2.5} />
+						<ArrowRight size={16} strokeWidth={2.5} aria-hidden="true" />
 					</Link>
 				</div>
 			</div>
