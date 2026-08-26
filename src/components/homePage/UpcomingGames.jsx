@@ -65,7 +65,7 @@ export default function UpcomingGames() {
 
 	return (
 		<div className="upcoming-schedules">
-			<div className="upcoming-schedules-section">
+			<div className="upcoming-schedules-section page-container">
 				<h3 className="recent-scores-title">Upcoming Games</h3>
 				<div className="upcoming-games-grid">
 					{loading
