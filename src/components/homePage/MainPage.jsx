@@ -7,9 +7,8 @@ import ScheduleSection from '../../layout/ScheduleSection.jsx';
 function MainPage() {
 	return (
 		<>
-			<RecentGames />
 			<UpcomingGames />
-			{''}
+			<RecentGames />
 			<SpotlightBanner />
 			<ScheduleSection />
 		</>

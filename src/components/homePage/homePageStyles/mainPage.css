@@ -151,9 +151,15 @@ li.icon-title::marker {
 	list-style: none;
 }
 
-a {
-	color: inherit;
-	text-decoration: none;
+/* Unlayered, this beat every Tailwind text-* utility (utilities live in
+   @layer utilities, and unlayered rules outrank all layers), so a link with
+   text-white still inherited its parent's colour. Same trap as the universal
+   reset that used to sit at the top of this file. */
+@layer base {
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
 }
 
 /* Media Queries*/
