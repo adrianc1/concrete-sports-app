@@ -44,6 +44,7 @@ function scheduleUrl(sport) {
 
 const SCHEDULE_SOURCES = Object.keys(SPORT_IDS).map((sport) => ({
 	sport,
+	schoolYear: SCHEDULE_YEARS[sport],
 	url: scheduleUrl(sport),
 }));
 

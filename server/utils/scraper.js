@@ -4,7 +4,7 @@ async function fetchAndExtractSchedules(sources) {
 	const rawGames = [];
 
 	const fetchPromises = sources.map(async (source) => {
-		const { url, sport } = source;
+		const { url, sport, schoolYear } = source;
 		try {
 			const response = await fetch(url);
 			if (!response.ok) {
@@ -18,6 +18,7 @@ async function fetchAndExtractSchedules(sources) {
 				const row = $(element);
 				const game = {
 					sport: sport,
+					schoolYear: schoolYear,
 					date: row.find('.col_group1 .event_date_desktop').text().trim(),
 					time: row.find('.col_group1 .event_time').text().trim(),
 					home_team: row
