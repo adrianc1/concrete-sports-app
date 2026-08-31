@@ -81,7 +81,17 @@ export default function UpcomingGames() {
 									</Card>
 								))
 						: upcomingGames
-								.filter((game) => game.result === 'TBD')
+								// A game with no score scraped keeps result 'TBD' forever, so
+								// filtering on that alone surfaced finished games from past
+								// seasons as "upcoming". The date has to be in the future too.
+								.filter((game) => {
+									if (game.result !== 'TBD') return false;
+									const when = new Date(game.date);
+									if (Number.isNaN(when.getTime())) return false;
+									const today = new Date();
+									today.setHours(0, 0, 0, 0);
+									return when >= today;
+								})
 								.sort((a, b) => new Date(a.date) - new Date(b.date))
 								.slice(0, 4)
 								.map((game, index) => {
