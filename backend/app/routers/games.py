@@ -1,10 +1,8 @@
 # /api Routes
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 from sqlalchemy import text
-
 from app.database import engine
 from app.schemas import GameRead
-from backend.app.models import Game
 router = APIRouter(prefix="/api", tags=["games"])
 
 _GAMES_BASE = """
@@ -28,7 +26,10 @@ _GAMES_BASE = """
 
 ALL_GAMES = text(_GAMES_BASE + " ORDER BY g.starts_at DESC")
 
-GET_SPORT = text(_GAMES_BASE + " WHERE sp.slug = :sport ORDER BY g.starts_at DESC");
+GET_SPORT = text(_GAMES_BASE + " WHERE sp.slug = :sport ORDER BY g.starts_at DESC")
+
+SPORT_EXISTS = text('SELECT slug FROM sports WHERE slug = :sport ')
+
 
 @router.get("/all", response_model=list[GameRead])
 def get_all_games():
@@ -39,6 +40,9 @@ def get_all_games():
 @router.get("/{sport}", response_model=list[GameRead])
 def get_sport(sport:str):
     with engine.connect() as conn:
+        sport_exists = conn.execute(SPORT_EXISTS, {"sport": sport}).fetchone()
+        if not sport_exists:
+            raise HTTPException(status_code=404, detail="Sport not found")
         result = conn.execute(GET_SPORT, {"sport": sport})
         return [dict(row) for row in result.mappings()]
 
