@@ -1,9 +1,9 @@
+from datetime import datetime
+from zoneinfo import ZoneInfo
+
 import pytest
 
 from app.etl.transform import parse_score, parse_starts_at
-
-from datetime import datetime
-from zoneinfo import ZoneInfo
 
 
 # testing scores
@@ -21,7 +21,6 @@ def test_parse_score(raw, expected):
     assert parse_score(raw) == expected
 
 # testing date
-
 PT = ZoneInfo("America/Los_Angeles")
 
 @pytest.mark.parametrize("date, time, school_year, expected", [
@@ -31,3 +30,4 @@ PT = ZoneInfo("America/Los_Angeles")
 
 def test_parse_starts_at(date, time, school_year, expected):
     assert parse_starts_at(date, time, school_year) == expected
+

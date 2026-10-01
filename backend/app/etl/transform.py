@@ -1,5 +1,6 @@
-from datetime import datetime, tzinfo
+from datetime import datetime
 from zoneinfo import ZoneInfo
+
 
 def parse_score(raw_score):
     if raw_score is None or raw_score.strip() == "":
@@ -8,7 +9,6 @@ def parse_score(raw_score):
         return int(raw_score)
 
 def parse_starts_at(date, time, school_year):
-    MONTHS = {"JAN": 1, "FEB": 2, "MAR": 3, "APR": 4, "MAY":5, "JUN": 6, "JUL": 7, "AUG": 8, "SEP": 9, "OCT": 10, "NOV": 11, "DEC": 12 }
 
     new_date = date.strip().upper()
 

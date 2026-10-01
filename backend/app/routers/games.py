@@ -1,8 +1,10 @@
 # /api Routes
 from fastapi import APIRouter, HTTPException
 from sqlalchemy import text
+
 from app.database import engine
 from app.schemas import GameRead
+
 router = APIRouter(prefix="/api", tags=["games"])
 
 _GAMES_BASE = """
