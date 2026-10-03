@@ -76,17 +76,31 @@ def test_derive_status(home_score, away_score, expected):
     assert derive_status(home_score, away_score) == expected
 
 
-raw = {
+FINAL_GAME_RAW = {
     "date": "Fri, Dec 5",
     "time": "6:00 pm",
     "away_team": "Concrete",
     "away_team_score": "57",
+    "away_wpa_id": "43",
     "home_team": "Thorp",
     "home_team_score": "58",
+    "home_wpa_id": "328",
     "location": "Thorp HS",
 }
 
-tbd_raw = {
+UPCOMING_GAME_RAW = {
+    "date": "Fri, Oct 2",
+    "time": "6:00 pm",
+    "away_team": "Muckleshoot Tribal School",
+    "away_team_score": "",
+    "away_wpa_id": "191",
+    "home_team": "Concrete",
+    "home_team_score": "",
+    "home_wpa_id": "43",
+    "location": "Concrete HS",
+}
+
+TBD_GAME_RAW = {
     "date": "Fri, Sep 25",
     "time": "7:00 pm",
     "away_team": "TBD",
@@ -100,25 +114,44 @@ tbd_raw = {
 
 
 @pytest.mark.parametrize(
-    "raw, expected",
+    "raw, sport, school_year, expected",
     [
         (
-            raw,
+            FINAL_GAME_RAW,
+            "boys-basketball",
+            "2025-26",
             {
                 "sport": "boys-basketball",
                 "away_team": "Concrete",
                 "away_team_score": 57,
+                "away_wpa_id": 43,
                 "home_team": "Thorp",
                 "home_team_score": 58,
+                "home_wpa_id": 328,
                 "venue": "Thorp HS",
                 "status": "final",
                 "starts_at": datetime(2025, 12, 5, 18, 0, tzinfo=PT),
             },
         ),
-        (tbd_raw, None),
+        (
+            UPCOMING_GAME_RAW,
+            "football",
+            "2026-27",
+            {
+                "sport": "football",
+                "away_team": "Muckleshoot Tribal School",
+                "away_team_score": None,
+                "away_wpa_id": 191,
+                "home_team": "Concrete",
+                "home_team_score": None,
+                "home_wpa_id": 43,
+                "venue": "Concrete HS",
+                "status": "scheduled",
+                "starts_at": datetime(2026, 10, 2, 18, 0, tzinfo=PT),
+            },
+        ),
+        (TBD_GAME_RAW, "football", "2026-27", None),
     ],
 )
-def test_transform_game(raw, expected):
-    assert (
-        transform_game(raw, sport="boys-basketball", school_year="2025-26") == expected
-    )
+def test_transform_game(raw_game, sport, school_year, expected):
+    assert transform_game(raw_game, sport, school_year) == expected
