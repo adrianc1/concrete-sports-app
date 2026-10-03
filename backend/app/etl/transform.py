@@ -77,11 +77,12 @@ def transform_game(raw_game: dict, sport: str, school_year: str) -> dict | None:
     away_score = parse_score(raw_game["away_team_score"])
     game_start = parse_starts_at(raw_game["date"], raw_game["time"], school_year)
 
-    if home_team == "TBD" or away_team == "TBD":
+    if raw_game["home_wpa_id"] is None or raw_game["away_wpa_id"] is None:
         return None
 
     return {
         "sport": sport,
+        "school_year": school_year,
         "home_wpa_id": int(raw_game["home_wpa_id"]),
         "home_team": home_team,
         "away_wpa_id": int(raw_game["away_wpa_id"]),

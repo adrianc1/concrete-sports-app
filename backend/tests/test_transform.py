@@ -114,7 +114,7 @@ TBD_GAME_RAW = {
 
 
 @pytest.mark.parametrize(
-    "raw, sport, school_year, expected",
+    "raw_game, sport, school_year, expected",
     [
         (
             FINAL_GAME_RAW,
@@ -122,6 +122,7 @@ TBD_GAME_RAW = {
             "2025-26",
             {
                 "sport": "boys-basketball",
+                "school_year": "2025-26",
                 "away_team": "Concrete",
                 "away_team_score": 57,
                 "away_wpa_id": 43,
@@ -139,6 +140,7 @@ TBD_GAME_RAW = {
             "2026-27",
             {
                 "sport": "football",
+                "school_year": "2026-27",
                 "away_team": "Muckleshoot Tribal School",
                 "away_team_score": None,
                 "away_wpa_id": 191,
