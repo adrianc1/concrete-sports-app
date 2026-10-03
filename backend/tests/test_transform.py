@@ -8,6 +8,7 @@ from app.etl.transform import (
     normalize_team_name,
     parse_score,
     parse_starts_at,
+    transform_game,
 )
 
 
@@ -73,3 +74,51 @@ def test_normalize_team_name(team_name, expected):
 )
 def test_derive_status(home_score, away_score, expected):
     assert derive_status(home_score, away_score) == expected
+
+
+raw = {
+    "date": "Fri, Dec 5",
+    "time": "6:00 pm",
+    "away_team": "Concrete",
+    "away_team_score": "57",
+    "home_team": "Thorp",
+    "home_team_score": "58",
+    "location": "Thorp HS",
+}
+
+tbd_raw = {
+    "date": "Fri, Sep 25",
+    "time": "7:00 pm",
+    "away_team": "TBD",
+    "away_team_score": "",
+    "away_wpa_id": None,
+    "home_team": "Concrete",
+    "home_team_score": "",
+    "home_wpa_id": "43",
+    "location": "Concrete HS",
+}
+
+
+@pytest.mark.parametrize(
+    "raw, expected",
+    [
+        (
+            raw,
+            {
+                "sport": "boys-basketball",
+                "away_team": "Concrete",
+                "away_team_score": 57,
+                "home_team": "Thorp",
+                "home_team_score": 58,
+                "venue": "Thorp HS",
+                "status": "final",
+                "starts_at": datetime(2025, 12, 5, 18, 0, tzinfo=PT),
+            },
+        ),
+        (tbd_raw, None),
+    ],
+)
+def test_transform_game(raw, expected):
+    assert (
+        transform_game(raw, sport="boys-basketball", school_year="2025-26") == expected
+    )

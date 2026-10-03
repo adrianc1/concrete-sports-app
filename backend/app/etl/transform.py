@@ -70,5 +70,20 @@ def derive_status(home_score: int | None, away_score: int | None) -> str:
         return "scheduled"
 
 
-def game_location(venue: str) -> str:
-    return venue.strip()
+def transform_game(raw: dict, sport: str, school_year: str) -> dict | None:
+    home_score = parse_score(raw["home_team_score"])
+    away_score = parse_score(raw["away_team_score"])
+
+    if home_score is None or away_score is None:
+        return None
+
+    return {
+        "sport": sport,
+        "home_team": normalize_team_name(raw["home_team"]),
+        "away_team": normalize_team_name(raw["away_team"]),
+        "home_team_score": home_score,
+        "away_team_score": away_score,
+        "venue": raw["location"].strip(),
+        "status": derive_status(home_score, away_score),
+        "starts_at": parse_starts_at(raw["date"], raw["time"], school_year),
+    }
