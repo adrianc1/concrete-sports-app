@@ -4,7 +4,20 @@ import './homePageStyles/upcomingGames.css';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import { fetchUpcomingGames } from '../../utils/api';
-import { FaFootballBall, FaVolleyballBall, FaBasketballBall, FaBaseballBall, FaRunning, FaHandRock, FaTrophy } from 'react-icons/fa';
+import {
+	formatGameDate,
+	formatGameTime,
+	byStartsAtAsc,
+} from '../../utils/formatGame';
+import {
+	FaFootballBall,
+	FaVolleyballBall,
+	FaBasketballBall,
+	FaBaseballBall,
+	FaRunning,
+	FaHandRock,
+	FaTrophy,
+} from 'react-icons/fa';
 import { Card, CardContent } from '../ui/card';
 import { MapPin } from 'lucide-react';
 
@@ -72,7 +85,10 @@ export default function UpcomingGames() {
 						? Array(4)
 								.fill(0)
 								.map((_, index) => (
-									<Card key={index} className="min-w-72 max-w-72 min-h-44 shrink-0 py-0">
+									<Card
+										key={index}
+										className="min-w-72 max-w-72 min-h-44 shrink-0 py-0"
+									>
 										<CardContent className="flex flex-col gap-2.5 p-4">
 											<Skeleton height={16} width={120} />
 											<Skeleton height={16} width={160} />
@@ -81,6 +97,12 @@ export default function UpcomingGames() {
 									</Card>
 								))
 						: upcomingGames
+								.filter(
+									(game) =>
+										game.status === 'scheduled' || game.status === 'postponed',
+								)
+								.sort(byStartsAtAsc)
+
 								// A game with no score scraped keeps result 'TBD' forever, so
 								// filtering on that alone surfaced finished games from past
 								// seasons as "upcoming". The date has to be in the future too.
@@ -95,54 +117,69 @@ export default function UpcomingGames() {
 								.sort((a, b) => new Date(a.date) - new Date(b.date))
 								.slice(0, 4)
 								.map((game, index) => {
-									const opponentName = game.opponent?.replace(/\s*\([^)]*\)\s*/g, '').trim();
+									const opponentName = game.opponent
+										?.replace(/\s*\([^)]*\)\s*/g, '')
+										.trim();
 									return (
-										<Card key={index} className="min-w-72 max-w-72 min-h-44 shrink-0 py-0">
-										<CardContent className="flex flex-col gap-2.5 p-4">
-											{/* Sport + date on one row */}
-											<div className="flex items-center justify-between">
-												<Link
-													to={`${game.sport}Schedule`}
-													style={{ textDecoration: 'none', color: '#420a72' }}
-													className="inline-flex items-center gap-1.5 hover:underline focus-visible:underline transition-colors font-bold text-sm"
-												>
-													<span aria-hidden="true" style={{ color: sportColors[game.sport] || '#420a72' }}>
-														{sportIcons[game.sport] || <FaTrophy />}
+										<Card
+											key={index}
+											className="min-w-72 max-w-72 min-h-44 shrink-0 py-0"
+										>
+											<CardContent className="flex flex-col gap-2.5 p-4">
+												{/* Sport + date on one row */}
+												<div className="flex items-center justify-between">
+													<Link
+														to={`${game.sport}Schedule`}
+														style={{ textDecoration: 'none', color: '#420a72' }}
+														className="inline-flex items-center gap-1.5 hover:underline focus-visible:underline transition-colors font-bold text-sm"
+													>
+														<span
+															aria-hidden="true"
+															style={{
+																color: sportColors[game.sport] || '#420a72',
+															}}
+														>
+															{sportIcons[game.sport] || <FaTrophy />}
+														</span>
+														{transformSport[game.sport]}
+													</Link>
+													<span className="text-[11px] text-muted-foreground">
+														{formatGameDate(game.starts_at)}
 													</span>
-													{transformSport[game.sport]}
-												</Link>
-												<span className="text-[11px] text-muted-foreground">{game.date}</span>
-											</div>
+												</div>
 
-											{/* Matchup + time */}
-											<div className="flex flex-col gap-1 border-t border-border pt-2">
-												<span className="text-sm font-bold text-foreground">
-													{game.home_away?.includes('Away') ? '@ ' : 'vs '}{opponentName}
-												</span>
-												{game.time && (
-													<span className="text-[11px] text-muted-foreground">{game.time}</span>
-												)}
-												{game.location && (
-													<span className="inline-flex items-center gap-1 text-[11px] text-muted-foreground">
-														<MapPin size={10} aria-hidden="true" />
-														{game.location}
+												{/* Matchup + time */}
+												<div className="flex flex-col gap-1 border-t border-border pt-2">
+													<span className="text-sm font-bold text-foreground">
+														{game.home_away?.includes('Away') ? '@ ' : 'vs '}
+														{opponentName}
 													</span>
-												)}
-											</div>
+													{game.starts_at && (
+														<span className="text-[11px] text-muted-foreground">
+															{formatGameTime(game.starts_at)}
+														</span>
+													)}
+													{game.location && (
+														<span className="inline-flex items-center gap-1 text-[11px] text-muted-foreground">
+															<MapPin size={10} aria-hidden="true" />
+															{game.location}
+														</span>
+													)}
+												</div>
 
-											{/* See schedule button */}
-											<div className="border-t border-border pt-2">
-												<Link
-													to={`${game.sport}Schedule`}
-													style={{ textDecoration: 'none' }}
-													className="block w-full text-center text-[11px] font-bold py-2 rounded-full tracking-wide uppercase bg-linear-to-r from-[#420a72] to-[#6b2c91] text-white hover:from-[#6b2c91] hover:to-[#420a72] hover:shadow-md transition-all cursor-pointer"
-												>
-													See {transformSport[game.sport]} Schedule
-												</Link>
-											</div>
-										</CardContent>
-									</Card>
-								);
+												{/* See schedule button */}
+												<div className="border-t border-border pt-2">
+													<Link
+														to={`${game.sport}Schedule`}
+														style={{ textDecoration: 'none' }}
+														className="block w-full text-center text-[11px] font-bold py-2 rounded-full tracking-wide uppercase bg-linear-to-r from-[#420a72] to-[#6b2c91] text-white hover:from-[#6b2c91] hover:to-[#420a72] hover:shadow-md transition-all cursor-pointer"
+													>
+														See {transformSport[game.sport]} Schedule
+													</Link>
+												</div>
+											</CardContent>
+										</Card>
+									);
 								})}
 				</div>
 			</div>
