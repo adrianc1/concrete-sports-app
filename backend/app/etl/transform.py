@@ -24,13 +24,11 @@ def parse_starts_at(date, time, school_year):
 
     if len(end_str) == 2:
         end_str = start_str[:2] + end_str
-        start_year = int(start_str)
-        end_year = int(end_str)
 
-        if current_month < 7:
-            active_year = end_year
-        else:
-            active_year = start_year
+    if current_month < 7:
+        active_year = int(end_str)
+    else:
+        active_year = int(start_str)
 
     parsed_time = datetime.strptime(time.strip(), "%I:%M %p").replace(
         tzinfo=ZoneInfo("America/Los_Angeles")
