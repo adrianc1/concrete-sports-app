@@ -3,7 +3,7 @@ from zoneinfo import ZoneInfo
 
 import pytest
 
-from app.etl.transform import parse_score, parse_starts_at
+from app.etl.transform import normalize_team_name, parse_score, parse_starts_at
 
 
 # testing scores
@@ -37,3 +37,18 @@ PT = ZoneInfo("America/Los_Angeles")
 )
 def test_parse_starts_at(date, time, school_year, expected):
     assert parse_starts_at(date, time, school_year) == expected
+
+
+# normalize team name
+@pytest.mark.parametrize(
+    "team_name, expected",
+    [
+        (" Concrete ", "Concrete"),
+        ("Coupeville (2B)", "Coupeville"),
+        ("South Whidbey (1A)", "South Whidbey"),
+        ("Northwest Christian (Lacey)", "Northwest Christian (Lacey)"),
+        ("Cedar Park Christian (Lynnwood", "Cedar Park Christian (Lynnwood)"),
+    ],
+)
+def test_normalize_team_name(team_name, expected):
+    assert normalize_team_name(team_name) == expected

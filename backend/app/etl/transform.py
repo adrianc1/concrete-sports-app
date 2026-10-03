@@ -1,15 +1,16 @@
+import re
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
 
-def parse_score(raw_score):
+def parse_score(raw_score: str | None):
     if raw_score is None or raw_score.strip() == "":
         return None
     else:
         return int(raw_score)
 
 
-def parse_starts_at(date, time, school_year):
+def parse_starts_at(date: str, time: str, school_year: str):
 
     new_date = date.strip().upper()
     formatted_date = datetime.strptime(new_date, "%a, %b %d").replace(
@@ -44,3 +45,17 @@ def parse_starts_at(date, time, school_year):
     )
 
     return converted_time
+
+
+CLASSIFICATION_TAG = re.compile(r"\s*\(\d[AB]\)")
+
+
+def normalize_team_name(team_name: str) -> str:
+
+    team_name = team_name.strip()
+
+    if "(" in team_name and ")" not in team_name:
+        return team_name + ")"
+
+    without_tag = CLASSIFICATION_TAG.sub("", team_name)
+    return without_tag.strip()
