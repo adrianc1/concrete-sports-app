@@ -31,7 +31,7 @@ PT = ZoneInfo("America/Los_Angeles")
     "date, time, school_year, expected",
     [
         ("Fri, Sep 19", "7:00 pm", "2025-26", datetime(2025, 9, 19, 19, 0, tzinfo=PT)),
-        ("Fri, Feb 6", "7:00 pm", "2025-26", datetime(2026, 2, 6, 20, 0, tzinfo=PT)),
+        ("Fri, Feb 6", "7:00 pm", "2025-26", datetime(2026, 2, 6, 19, 0, tzinfo=PT)),
     ],
 )
 def test_parse_starts_at(date, time, school_year, expected):
