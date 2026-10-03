@@ -9,10 +9,6 @@ function MainPage() {
 		<>
 			<UpcomingGames />
 			<RecentGames />
-
-			<UpcomingGames />
-			{''}
-
 			<SpotlightBanner />
 			<ScheduleSection />
 		</>
