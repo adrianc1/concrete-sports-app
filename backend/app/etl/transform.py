@@ -51,11 +51,12 @@ CLASSIFICATION_TAG = re.compile(r"\s*\(\d[AB]\)")
 
 
 def normalize_team_name(team_name: str) -> str:
+    # normalize spacing
+    name = re.sub(r"\s*\(", " (", team_name)
+    name = CLASSIFICATION_TAG.sub("", name)
+    name = name.strip()
 
-    team_name = team_name.strip()
-
-    if "(" in team_name and ")" not in team_name:
-        return team_name + ")"
-
-    without_tag = CLASSIFICATION_TAG.sub("", team_name)
-    return without_tag.strip()
+    # if closing parenthesis is missing
+    if "(" in name and ")" not in name:
+        name += ")"
+    return name

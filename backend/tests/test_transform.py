@@ -48,6 +48,8 @@ def test_parse_starts_at(date, time, school_year, expected):
         ("South Whidbey (1A)", "South Whidbey"),
         ("Northwest Christian (Lacey)", "Northwest Christian (Lacey)"),
         ("Cedar Park Christian (Lynnwood", "Cedar Park Christian (Lynnwood)"),
+        (" Cedar Park Christian (Lynnwood", "Cedar Park Christian (Lynnwood)"),
+        ("Northwest Christian(Lacey)", "Northwest Christian (Lacey)"),
     ],
 )
 def test_normalize_team_name(team_name, expected):
