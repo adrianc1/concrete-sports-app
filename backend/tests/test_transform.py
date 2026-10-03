@@ -3,7 +3,12 @@ from zoneinfo import ZoneInfo
 
 import pytest
 
-from app.etl.transform import normalize_team_name, parse_score, parse_starts_at
+from app.etl.transform import (
+    derive_status,
+    normalize_team_name,
+    parse_score,
+    parse_starts_at,
+)
 
 
 # testing scores
@@ -54,3 +59,17 @@ def test_parse_starts_at(date, time, school_year, expected):
 )
 def test_normalize_team_name(team_name, expected):
     assert normalize_team_name(team_name) == expected
+
+
+@pytest.mark.parametrize(
+    "home_score, away_score, expected",
+    [
+        (75, 60, "final"),
+        (None, None, "scheduled"),
+        (60, None, "scheduled"),
+        (None, 75, "scheduled"),
+        (0, 0, "final"),
+    ],
+)
+def test_derive_status(home_score, away_score, expected):
+    assert derive_status(home_score, away_score) == expected

@@ -3,14 +3,14 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 
 
-def parse_score(raw_score: str | None):
+def parse_score(raw_score: str | None) -> int | None:
     if raw_score is None or raw_score.strip() == "":
         return None
     else:
         return int(raw_score)
 
 
-def parse_starts_at(date: str, time: str, school_year: str):
+def parse_starts_at(date: str, time: str, school_year: str) -> datetime:
 
     new_date = date.strip().upper()
     formatted_date = datetime.strptime(new_date, "%a, %b %d").replace(
@@ -60,3 +60,15 @@ def normalize_team_name(team_name: str) -> str:
     if "(" in name and ")" not in name:
         name += ")"
     return name
+
+
+# is game final or sheduled
+def derive_status(home_score: int | None, away_score: int | None) -> str:
+    if home_score is not None and away_score is not None:
+        return "final"
+    else:
+        return "scheduled"
+
+
+def game_location(venue: str) -> str:
+    return venue.strip()
