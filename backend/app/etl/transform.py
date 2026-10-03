@@ -8,12 +8,21 @@ def parse_score(raw_score):
     else:
         return int(raw_score)
 
+
 def parse_starts_at(date, time, school_year):
 
     new_date = date.strip().upper()
 
-    current_month = datetime.strptime(new_date, "%a, %b %d").replace(tzinfo=ZoneInfo("America/Los_Angeles")).month
-    day = datetime.strptime(new_date, "%a, %b %d").replace(tzinfo=ZoneInfo("America/Los_Angeles")).day
+    current_month = (
+        datetime.strptime(new_date, "%a, %b %d")
+        .replace(tzinfo=ZoneInfo("America/Los_Angeles"))
+        .month
+    )
+    day = (
+        datetime.strptime(new_date, "%a, %b %d")
+        .replace(tzinfo=ZoneInfo("America/Los_Angeles"))
+        .day
+    )
     start_str, end_str = school_year.split("-")
 
     if len(end_str) == 2:
@@ -22,11 +31,13 @@ def parse_starts_at(date, time, school_year):
         end_year = int(end_str)
 
         if current_month < 7:
-            active_year = end_year 
+            active_year = end_year
         else:
-            active_year = start_year  
-        
-    parsed_time = datetime.strptime(time.strip(), "%I:%M %p").replace(tzinfo=ZoneInfo("America/Los_Angeles"))
+            active_year = start_year
+
+    parsed_time = datetime.strptime(time.strip(), "%I:%M %p").replace(
+        tzinfo=ZoneInfo("America/Los_Angeles")
+    )
 
     converted_time = datetime(
         active_year,

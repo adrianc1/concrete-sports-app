@@ -30,7 +30,7 @@ ALL_GAMES = text(_GAMES_BASE + " ORDER BY g.starts_at DESC")
 
 GET_SPORT = text(_GAMES_BASE + " WHERE sp.slug = :sport ORDER BY g.starts_at DESC")
 
-SPORT_EXISTS = text('SELECT slug FROM sports WHERE slug = :sport ')
+SPORT_EXISTS = text("SELECT slug FROM sports WHERE slug = :sport ")
 
 
 @router.get("/all", response_model=list[GameRead])
@@ -39,12 +39,12 @@ def get_all_games():
         result = conn.execute(ALL_GAMES)
         return [dict(row) for row in result.mappings()]
 
+
 @router.get("/{sport}", response_model=list[GameRead])
-def get_sport(sport:str):
+def get_sport(sport: str):
     with engine.connect() as conn:
         sport_exists = conn.execute(SPORT_EXISTS, {"sport": sport}).fetchone()
         if not sport_exists:
             raise HTTPException(status_code=404, detail="Sport not found")
         result = conn.execute(GET_SPORT, {"sport": sport})
         return [dict(row) for row in result.mappings()]
-
