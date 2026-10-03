@@ -4,6 +4,6 @@ const scheduleRouter = express.Router();
 
 scheduleRouter.get('/all', scheduleController.getAllGames);
 scheduleRouter.get('/:sport', scheduleController.getSportSchedule);
-scheduleRouter.post('/sync', scheduleController.syncSchedules);
+scheduleRouter.post('/sync', scheduleController.syncSchedulesHandler);
 
 export default scheduleRouter;

@@ -24,8 +24,17 @@ const transformGame = (rawGame) => {
 		result = `${concreteScoreNum} - ${opponentScoreNum} ${outcome}`;
 	}
 
-	// Add year to game data
-	let sportYear = 2025;
+	// The scraped date carries no year ("Fri, Sep 4"), so derive it from the school
+	// year the game was scraped under. A school year spans two calendar years:
+	// Jul-Dec fall in the first, Jan-Jun in the second. This used to be hardcoded
+	// to 2025, which silently stamped the 2026-27 season a year in the past.
+	const startYear = parseInt(String(rawGame.schoolYear ?? '').slice(0, 4));
+	if (!Number.isInteger(startYear)) {
+		throw new Error(
+			`transformGame: missing or malformed schoolYear (${rawGame.schoolYear}) for ${rawGame.sport}`,
+		);
+	}
+
 	let gameDateString = rawGame.date.replace(/,/g, '');
 	let gameDateArray = gameDateString.split(' ');
 	const gameMonthStr = gameDateArray[1];
@@ -33,9 +42,7 @@ const transformGame = (rawGame) => {
 
 	const monthIndex = new Date(Date.parse(gameMonthStr + ' 1')).getMonth();
 
-	if (monthIndex < 6) {
-		sportYear += 1;
-	}
+	const sportYear = monthIndex < 6 ? startYear + 1 : startYear;
 	const transformedDate = `${gameMonthStr} ${gameDay} ${sportYear}`;
 
 	return {

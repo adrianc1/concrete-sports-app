@@ -44,6 +44,7 @@ function scheduleUrl(sport) {
 
 const SCHEDULE_SOURCES = Object.keys(SPORT_IDS).map((sport) => ({
 	sport,
+	schoolYear: SCHEDULE_YEARS[sport],
 	url: scheduleUrl(sport),
 }));
 
@@ -106,6 +107,7 @@ async function syncSchedules() {
 		});
 
 		// upsert games in to schedule database
+		const synced = {};
 		for (const [sport, games] of Object.entries(gamesBySport)) {
 			const db = mongoose.connection.db;
 			const collection = db.collection(sport);
@@ -124,18 +126,36 @@ async function syncSchedules() {
 
 			if (bulkOps.length > 0) {
 				await collection.bulkWrite(bulkOps);
+				synced[sport] = games.length;
 				console.log(`Synced ${games.length} games for ${sport}`);
 			}
 		}
 		console.log('Schedule sync complete');
+		return synced;
 	} catch (error) {
 		console.error('Error syncing schedules:', error);
 		throw error;
 	}
 }
 
+// syncSchedules is also called directly by the cron job, which passes no
+// arguments, so the express handler is kept separate rather than giving the
+// core function a (req, res) signature it would not always receive. Without
+// this the POST /api/sync route ran the sync but never responded, so callers
+// hung until they timed out.
+async function syncSchedulesHandler(req, res) {
+	try {
+		const synced = await syncSchedules();
+		const total = Object.values(synced).reduce((a, b) => a + b, 0);
+		res.json({ ok: true, total, bySport: synced });
+	} catch (error) {
+		res.status(500).json({ ok: false, error: error.message });
+	}
+}
+
 export default {
 	getAllGames,
 	syncSchedules,
+	syncSchedulesHandler,
 	getSportSchedule,
 };

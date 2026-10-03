@@ -19,7 +19,7 @@ Built as a real client engagement, the app serves students, families, coaches, a
 - **Live Scores & Records** — Recent game results with final scores, opponent, location, and W/L record per sport
 - **Upcoming Games** — Automatically surfaced from the pipeline; transitions to "Recent" post-game
 - **Team Schedules** — Season-organized by Fall, Winter, and Spring across all varsity sports (Football, Volleyball, Boys/Girls Basketball, Wrestling, Baseball, Softball)
-- **Athlete Spotlight** — Monthly athlete recognition section automatically updated once voted on by the Booster Club. 
+- **Athlete Spotlight** — Monthly athlete recognition section automatically updated once voted on by the Booster Club.
 - **Sponsor Directory** — Local business listings with outbound links to sponsor websites, creating a community fundraising loop
 - **Coach Connect** — Contact directory for coaching staff and booster club information
 - **PWA** — Installable on iOS and Android for a native app experience; no App Store required
@@ -96,4 +96,6 @@ coordinated change or a bug. The Express service stays running until parity is v
 
 ## Background
 
-The school approached this project with a clear community need: raise visibility for their athletic program, give local businesses a way to contribute, and give families a reliable place to follow their kids' seasons. The app has served 215+ users since launch across the Concrete, WA community.
+The school approached this project with a clear community need: raise visibility for their athletic program, give local businesses a way to contribute, and give families a reliable place to follow their kids' seasons. The app has served 220+ users since launch across the Concrete, WA community.
+
+**Fun Fact:** Concrete, WA is where _This Boy's Life_ (1993) was filmed, with Leonardo DiCaprio and Robert De Niro.
