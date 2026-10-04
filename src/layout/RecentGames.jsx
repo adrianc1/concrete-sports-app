@@ -4,9 +4,18 @@ import { fetchUpcomingGames } from '../utils/api';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import '../components/homePage/homePageStyles/upcomingGames.css';
-import { FaFootballBall, FaVolleyballBall, FaBasketballBall, FaBaseballBall, FaRunning, FaHandRock, FaTrophy } from 'react-icons/fa';
+import {
+	FaFootballBall,
+	FaVolleyballBall,
+	FaBasketballBall,
+	FaBaseballBall,
+	FaRunning,
+	FaHandRock,
+	FaTrophy,
+} from 'react-icons/fa';
 import { Card, CardContent } from '../components/ui/card';
 import { getTeamLogo } from '../utils/teamLogos';
+import { formatGameDate, byStartsAtDesc } from '../utils/formatGame';
 import { MapPin } from 'lucide-react';
 
 const sportIcons = {
@@ -21,14 +30,14 @@ const sportIcons = {
 };
 
 const sportColors = {
-	volleyball: '#f97316',       // orange
-	football: '#854d0e',         // brown
+	volleyball: '#f97316', // orange
+	football: '#854d0e', // brown
 	'boys-basketball': '#f59e0b', // amber
 	'girls-basketball': '#f59e0b',
-	baseball: '#3b82f6',         // blue
-	softball: '#84cc16',         // lime green
-	track: '#ef4444',            // red
-	wrestling: '#8b5cf6',        // violet
+	baseball: '#3b82f6', // blue
+	softball: '#84cc16', // lime green
+	track: '#ef4444', // red
+	wrestling: '#8b5cf6', // violet
 };
 
 const transformSport = {
@@ -79,14 +88,19 @@ const RecentGames = () => {
 									</Card>
 								))
 						: upcomingGames
-								.filter((game) => game.result !== 'TBD')
-								.sort((a, b) => new Date(b.date) - new Date(a.date))
+								.filter((game) => game.status === 'final')
+								.sort(byStartsAtDesc)
 								.slice(0, 4)
 								.map((game) => {
 									const concreteWon = game.concrete_score > game.opponent_score;
-									const opponentName = game.opponent?.replace(/\s*\([^)]*\)\s*/g, '').trim();
+									const opponentName = game.opponent
+										?.replace(/\s*\([^)]*\)\s*/g, '')
+										.trim();
 									return (
-										<Card key={game._id} className="min-w-72 max-w-72 min-h-38 shrink-0 py-0">
+										<Card
+											key={game.id}
+											className="min-w-72 max-w-72 min-h-38 shrink-0 py-0"
+										>
 											<CardContent className="flex flex-col gap-2.5 p-4">
 												{/* Sport + Final · date on one row */}
 												<div className="flex items-center justify-between">
@@ -100,7 +114,9 @@ const RecentGames = () => {
 														</span>
 														{transformSport[game.sport]}
 													</Link>
-													<span className="text-[11px] text-muted-foreground">Final · {game.date}</span>
+													<span className="text-[11px] text-muted-foreground">
+														Final · {formatGameDate(game.starts_at)}
+													</span>
 												</div>
 
 												{/* Teams + scores */}
@@ -117,13 +133,21 @@ const RecentGames = () => {
 																<img src={getTeamLogo('concrete')} alt="" className="w-6 h-6 object-contain shrink-0 rounded-full bg-gray-100 p-0.5" />
 															)}
 															<div className="flex flex-col min-w-0">
-																<span className={`truncate text-sm ${concreteWon ? 'font-bold text-foreground' : 'text-muted-foreground'}`}>
+																<span
+																	className={`truncate text-sm ${concreteWon ? 'font-bold text-foreground' : 'text-muted-foreground'}`}
+																>
 																	Concrete
 																</span>
-																<span className="text-[10px] text-muted-foreground">{game.home_away?.includes('Away') ? 'Away' : 'Home'}</span>
+																<span className="text-[10px] text-muted-foreground">
+																	{game.home_away?.includes('Away')
+																		? 'Away'
+																		: 'Home'}
+																</span>
 															</div>
 														</div>
-														<span className={`text-lg tabular-nums shrink-0 ${concreteWon ? 'font-black text-foreground' : 'font-normal text-muted-foreground'}`}>
+														<span
+															className={`text-lg tabular-nums shrink-0 ${concreteWon ? 'font-black text-foreground' : 'font-normal text-muted-foreground'}`}
+														>
 															{game.concrete_score}
 														</span>
 													</div>
@@ -133,13 +157,21 @@ const RecentGames = () => {
 																<img src={getTeamLogo(game.opponent)} alt="" className="w-6 h-6 object-contain shrink-0 rounded-full bg-gray-100 p-0.5" />
 															)}
 															<div className="flex flex-col min-w-0">
-																<span className={`truncate text-sm ${!concreteWon ? 'font-bold text-foreground' : 'text-muted-foreground'}`}>
+																<span
+																	className={`truncate text-sm ${!concreteWon ? 'font-bold text-foreground' : 'text-muted-foreground'}`}
+																>
 																	{opponentName}
 																</span>
-																<span className="text-[10px] text-muted-foreground">{game.home_away?.includes('Away') ? 'Home' : 'Away'}</span>
+																<span className="text-[10px] text-muted-foreground">
+																	{game.home_away?.includes('Away')
+																		? 'Home'
+																		: 'Away'}
+																</span>
 															</div>
 														</div>
-														<span className={`text-lg tabular-nums shrink-0 ${!concreteWon ? 'font-black text-foreground' : 'font-normal text-muted-foreground'}`}>
+														<span
+															className={`text-lg tabular-nums shrink-0 ${!concreteWon ? 'font-black text-foreground' : 'font-normal text-muted-foreground'}`}
+														>
 															{game.opponent_score}
 														</span>
 													</div>
