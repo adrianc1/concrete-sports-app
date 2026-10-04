@@ -13,6 +13,7 @@ CREATE TABLE schools (
     slug TEXT NOT NULL UNIQUE, -- /concrete-lions
     city TEXT, -- Concrete
     state CHAR(2), -- WA
+    wpa_id INT UNIQUE, -- WPA's internal ID for the school
     is_our_school BOOLEAN NOT NULL DEFAULT false -- school's app
 );
 

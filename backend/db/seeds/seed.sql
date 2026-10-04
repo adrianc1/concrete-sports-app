@@ -19,11 +19,11 @@ INSERT INTO sports (name, slug) VALUES
 -- ---------------------------------------------------------------------------
 -- schools       id 1 = Concrete (the home school), 2..4 = opponents
 -- ---------------------------------------------------------------------------
-INSERT INTO schools (name, slug, city, state, is_our_school) VALUES
-    ('Concrete High School',   'concrete',             'Concrete',   'WA', true),
-    ('La Conner High School',  'la-conner',            'La Conner',  'WA', false),
-    ('Darrington High School', 'darrington',           'Darrington', 'WA', false),
-    ('Cedar Park Christian',   'cedar-park-christian', 'Lynnwood',   'WA', false);
+INSERT INTO schools (name, slug, city, state, wpa_id, is_our_school) VALUES
+    ('Concrete High School',   'concrete',             'Concrete',   'WA', 43, true),
+    ('La Conner High School',  'la-conner',            'La Conner',  'WA',46, false),
+    ('Darrington High School', 'darrington',           'Darrington', 'WA',44, false),
+    ('Cedar Park Christian',   'cedar-park-christian', 'Lynnwood',   'WA',1293, false);
 
 -- ---------------------------------------------------------------------------
 -- school_aliases

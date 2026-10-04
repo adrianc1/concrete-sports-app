@@ -24,6 +24,7 @@ class School(Base):
     slug: Mapped[str] = mapped_column(unique=True)
     city: Mapped[str | None]
     state: Mapped[str | None] = mapped_column(CHAR(2))
+    wpa_id: Mapped[int | None] = mapped_column(unique=True)
     is_our_school: Mapped[bool] = mapped_column(default=False)
 
 
