@@ -1,0 +1,25 @@
+services:
+  db:
+    image: postgres:18
+    environment:
+      POSTGRES_USER: concrete
+      POSTGRES_PASSWORD: concrete
+      POSTGRES_DB: concrete_sports
+    ports:
+      - '5433:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql
+
+        # Auto-load schema + seed on first init. Needs Docker granted access to
+    # ~/Desktop (macOS Privacy & Security → Files & Folders).
+
+    # - ./backend/db/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
+    # - ./backend/db/seeds/seed.sql:/docker-entrypoint-initdb.d/02-seed.sql
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U concrete -d concrete_sports']
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  pgdata:
