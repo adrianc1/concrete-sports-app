@@ -1,5 +1,5 @@
-from bs4 import BeautifulSoup
 import httpx
+from bs4 import BeautifulSoup
 
 
 def fetch(url: str) -> str:
